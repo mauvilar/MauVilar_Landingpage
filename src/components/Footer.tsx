@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const socials = [
   {
@@ -35,9 +36,13 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-6 lg:px-10 py-12 grid gap-10 md:grid-cols-3">
         <div className="space-y-3">
           <div className="flex items-center gap-2.5">
-            <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-300 via-cyan-400 to-violet-400 text-[#0a0a14] font-mono text-sm">
-              MV
-            </span>
+            <Image
+              src="/logo.png"
+              alt="Mauricio Vilar"
+              width={80}
+              height={80}
+              className="h-10 w-10 object-contain"
+            />
             <span className="font-semibold tracking-tight">
               Mauricio Vilar Giribet
             </span>
