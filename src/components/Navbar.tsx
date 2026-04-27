@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -35,9 +36,16 @@ export function Navbar() {
           href="/"
           className="group flex items-center gap-2.5 font-semibold tracking-tight"
         >
-          <span className="relative flex h-8 w-8 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-300 via-cyan-400 to-violet-400 text-[#0a0a14] font-mono text-sm shadow-lg shadow-emerald-500/30">
-            MV
-            <span className="absolute inset-0 rounded-xl ring-1 ring-white/20 group-hover:ring-white/40 transition" />
+          <span className="relative flex h-10 w-10 items-center justify-center">
+            <Image
+              src="/logo.svg"
+              alt="Mauricio Vilar"
+              width={40}
+              height={40}
+              priority
+              unoptimized
+              className="h-10 w-10 object-contain"
+            />
           </span>
           <span className="hidden sm:flex flex-col leading-none">
             <span className="text-sm font-semibold">Mauricio Vilar</span>
