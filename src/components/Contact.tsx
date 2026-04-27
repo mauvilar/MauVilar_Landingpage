@@ -129,7 +129,7 @@ export function Contact() {
             <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a2 2 0 01-2.828 0L6.343 16.657a8 8 0 1111.314 0z" />
             <circle cx="12" cy="11" r="3" stroke="currentColor" strokeWidth="2" fill="none" />
           </svg>
-          Cuernavaca, Morelos · México
+          Ciudad de México · México
         </motion.div>
       </div>
     </section>

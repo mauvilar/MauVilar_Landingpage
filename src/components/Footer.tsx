@@ -113,7 +113,7 @@ export function Footer() {
             ))}
           </div>
           <p className="mt-4 text-sm text-white/50">
-            Cuernavaca, Morelos · México
+            Ciudad de México · México
           </p>
         </div>
       </div>

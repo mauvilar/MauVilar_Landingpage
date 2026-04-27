@@ -62,7 +62,7 @@ export function Hero() {
               <span className="absolute inset-0 rounded-full bg-emerald-300 animate-ping opacity-70" />
               <span className="relative h-1.5 w-1.5 rounded-full bg-emerald-300" />
             </span>
-            Disponible para nuevos proyectos · Cuernavaca, MX
+            Disponible para nuevos proyectos · Ciudad de México, MX
           </motion.div>
 
           <motion.h1
