@@ -1,0 +1,43 @@
+import DOMPurify from "isomorphic-dompurify";
+
+export function sanitizeHtml(input: string): string {
+  return DOMPurify.sanitize(input, {
+    ALLOWED_TAGS: [
+      "div",
+      "span",
+      "p",
+      "br",
+      "table",
+      "thead",
+      "tbody",
+      "tfoot",
+      "tr",
+      "th",
+      "td",
+      "ul",
+      "ol",
+      "li",
+      "strong",
+      "em",
+      "b",
+      "i",
+      "code",
+      "pre",
+      "h1",
+      "h2",
+      "h3",
+      "h4",
+      "h5",
+      "h6",
+      "small",
+      "sub",
+      "sup",
+      "hr",
+      "img",
+    ],
+    ALLOWED_ATTR: ["class", "id", "style", "src", "alt", "title", "colspan", "rowspan"],
+    ALLOWED_URI_REGEXP: /^(?:https?:|\/|#|data:image\/)/i,
+    FORBID_TAGS: ["script", "iframe", "object", "embed", "link", "meta", "style"],
+    FORBID_ATTR: ["onerror", "onload", "onclick", "onmouseover", "onfocus", "onblur"],
+  });
+}
