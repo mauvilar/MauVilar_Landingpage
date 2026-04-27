@@ -38,12 +38,11 @@ export function Navbar() {
         >
           <span className="relative flex h-10 w-10 items-center justify-center">
             <Image
-              src="/logo.svg"
+              src="/logo.png"
               alt="Mauricio Vilar"
-              width={40}
-              height={40}
+              width={80}
+              height={80}
               priority
-              unoptimized
               className="h-10 w-10 object-contain"
             />
           </span>
