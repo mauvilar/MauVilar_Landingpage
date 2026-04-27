@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <rect width="1600" height="900" fill="#0C324A"/>
+  <rect x="1240" y="0" width="360" height="900" fill="#C11720"/>
+  <g stroke="#FEF1D5" stroke-width="1" opacity="0.06">
+    <line x1="0" y1="180" x2="1240" y2="180"/>
+    <line x1="0" y1="360" x2="1240" y2="360"/>
+    <line x1="0" y1="540" x2="1240" y2="540"/>
+    <line x1="0" y1="720" x2="1240" y2="720"/>
+  </g>
+  <g transform="translate(540 450)" stroke="#FEF1D5" stroke-linejoin="round">
+    <rect x="-360" y="-300" width="720" height="100" fill="#FEF1D5" rx="8"/>
+    <rect x="-280" y="-170" width="560" height="100" fill="#FEF1D5" opacity="0.78" rx="8"/>
+    <rect x="-200" y="-40" width="400" height="100" fill="#FEF1D5" opacity="0.58" rx="8"/>
+    <rect x="-120" y="90" width="240" height="100" fill="#FEF1D5" opacity="0.4" rx="8"/>
+    <rect x="-60" y="220" width="120" height="100" fill="#C11720" rx="8"/>
+  </g>
+  <g transform="translate(540 450)" font-family="Inter, sans-serif" font-weight="700" font-size="22" fill="#0C324A" text-anchor="middle">
+    <text x="0" y="-238" letter-spacing="4">VISITS</text>
+    <text x="0" y="-108" letter-spacing="4">VIEWS</text>
+    <text x="0" y="22" letter-spacing="4">CART</text>
+    <text x="0" y="152" letter-spacing="4">CHECKOUT</text>
+    <text x="0" y="282" fill="#FEF1D5" letter-spacing="4">PAID</text>
+  </g>
+  <g transform="translate(1080 450)" stroke="#FEF1D5" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M0 -240 L0 240 M-30 210 L0 240 L30 210"/>
+  </g>
+  <g transform="translate(1420 450)" stroke="#FEF1D5" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-90 -150 L90 -150 L40 -50 L40 80 L-40 80 L-40 -50 Z"/>
+  </g>
+  <g transform="translate(1420 250)" font-family="Inter, sans-serif" font-weight="800" font-size="64" fill="#FEF1D5" text-anchor="middle">
+    <text x="0" y="0">A/A/B</text>
+  </g>
+</svg>

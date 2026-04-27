@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <rect width="800" height="900" fill="#0C324A"/>
+  <rect x="800" width="800" height="900" fill="#C11720"/>
+  <line x1="800" y1="0" x2="800" y2="900" stroke="#FEF1D5" stroke-width="4" stroke-dasharray="20 16"/>
+  <g transform="translate(400 380)">
+    <circle cx="0" cy="0" r="180" fill="#FEF1D5"/>
+    <text x="0" y="60" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="220" fill="#0C324A">A</text>
+  </g>
+  <g transform="translate(1200 380)">
+    <circle cx="0" cy="0" r="180" fill="#FEF1D5"/>
+    <text x="0" y="60" text-anchor="middle" font-family="Inter, sans-serif" font-weight="900" font-size="220" fill="#C11720">B</text>
+  </g>
+  <g transform="translate(400 700)" stroke-linecap="round">
+    <rect x="-160" y="-40" width="40" height="80" fill="#FEF1D5"/>
+    <rect x="-100" y="-30" width="40" height="70" fill="#FEF1D5"/>
+    <rect x="-40" y="-50" width="40" height="100" fill="#FEF1D5"/>
+    <rect x="20" y="-20" width="40" height="60" fill="#FEF1D5"/>
+    <rect x="80" y="-35" width="40" height="75" fill="#FEF1D5"/>
+  </g>
+  <g transform="translate(1200 700)" stroke-linecap="round">
+    <rect x="-160" y="-70" width="40" height="140" fill="#FEF1D5"/>
+    <rect x="-100" y="-60" width="40" height="120" fill="#FEF1D5"/>
+    <rect x="-40" y="-90" width="40" height="180" fill="#FEF1D5"/>
+    <rect x="20" y="-50" width="40" height="100" fill="#FEF1D5"/>
+    <rect x="80" y="-75" width="40" height="150" fill="#FEF1D5"/>
+  </g>
+  <g transform="translate(800 800)">
+    <text x="-90" y="0" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="22" fill="#FEF1D5" letter-spacing="6">CONTROL</text>
+    <text x="90" y="0" text-anchor="middle" font-family="Inter, sans-serif" font-weight="700" font-size="22" fill="#FEF1D5" letter-spacing="6">VARIANT</text>
+  </g>
+</svg>

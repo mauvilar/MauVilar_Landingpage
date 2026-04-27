@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <rect width="1600" height="900" fill="#0C324A"/>
+  <rect x="0" y="0" width="640" height="900" fill="#C11720"/>
+  <g stroke="#FEF1D5" stroke-width="1" opacity="0.06">
+    <line x1="640" y1="100" x2="1600" y2="100"/>
+    <line x1="640" y1="300" x2="1600" y2="300"/>
+    <line x1="640" y1="500" x2="1600" y2="500"/>
+    <line x1="640" y1="700" x2="1600" y2="700"/>
+  </g>
+  <g transform="translate(320 450)" stroke="#FEF1D5" stroke-width="14" fill="#FEF1D5" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-260" y="-30" width="520" height="60" rx="8" fill="#FEF1D5" stroke="none"/>
+    <rect x="-340" y="-80" width="80" height="160" rx="14" fill="#FEF1D5" stroke="none"/>
+    <rect x="260" y="-80" width="80" height="160" rx="14" fill="#FEF1D5" stroke="none"/>
+    <rect x="-380" y="-110" width="40" height="220" rx="14" fill="#FEF1D5" stroke="none"/>
+    <rect x="340" y="-110" width="40" height="220" rx="14" fill="#FEF1D5" stroke="none"/>
+  </g>
+  <g transform="translate(1140 450)">
+    <circle cx="0" cy="0" r="220" fill="none" stroke="#FEF1D5" stroke-width="14"/>
+    <path d="M0 0 L0 -220 A220 220 0 0 1 190 110 Z" fill="#FEF1D5"/>
+    <path d="M0 0 L190 110 A220 220 0 0 1 -50 215 Z" fill="#679CBC"/>
+    <path d="M0 0 L-50 215 A220 220 0 0 1 -210 -60 Z" fill="#C11720" stroke="#FEF1D5" stroke-width="6"/>
+    <path d="M0 0 L-210 -60 A220 220 0 0 1 0 -220 Z" fill="none" stroke="#FEF1D5" stroke-width="14"/>
+    <circle cx="0" cy="0" r="60" fill="#0C324A" stroke="#FEF1D5" stroke-width="10"/>
+  </g>
+</svg>

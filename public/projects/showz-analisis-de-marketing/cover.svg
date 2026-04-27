@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <rect width="1600" height="900" fill="#0C324A"/>
+  <rect x="0" y="0" width="1600" height="200" fill="#C11720"/>
+  <g stroke="#FEF1D5" stroke-width="1" opacity="0.06">
+    <line x1="0" y1="350" x2="1600" y2="350"/>
+    <line x1="0" y1="500" x2="1600" y2="500"/>
+    <line x1="0" y1="650" x2="1600" y2="650"/>
+    <line x1="0" y1="800" x2="1600" y2="800"/>
+  </g>
+  <g transform="translate(540 540)">
+    <path d="M-300 -180 L300 -180 L200 -60 L200 120 L-200 120 L-200 -60 Z" fill="none" stroke="#FEF1D5" stroke-width="14" stroke-linejoin="round"/>
+    <path d="M-300 -180 L300 -180 L200 -60 L-200 -60 Z" fill="#FEF1D5" opacity="0.12"/>
+    <path d="M-200 -60 L200 -60 L160 40 L-160 40 Z" fill="#FEF1D5" opacity="0.18"/>
+    <path d="M-160 40 L160 40 L100 120 L-100 120 Z" fill="#FEF1D5" opacity="0.28"/>
+    <circle cx="-100" cy="180" r="10" fill="#FEF1D5"/>
+    <circle cx="0" cy="180" r="10" fill="#FEF1D5"/>
+    <circle cx="100" cy="180" r="10" fill="#FEF1D5"/>
+  </g>
+  <g transform="translate(1180 540)" stroke="#FEF1D5" stroke-width="14" fill="#C11720" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-160 -60 L40 -120 L40 60 L-160 0 Z"/>
+    <rect x="-220" y="-50" width="60" height="80" fill="#FEF1D5" stroke="none"/>
+    <line x1="40" y1="-120" x2="120" y2="-180" stroke-width="10"/>
+    <line x1="40" y1="60" x2="120" y2="120" stroke-width="10"/>
+  </g>
+  <g transform="translate(1180 700)" stroke="#FEF1D5" stroke-width="6" fill="none" stroke-linecap="round">
+    <path d="M0 -20 Q40 -40, 80 -20"/>
+    <path d="M-20 0 Q40 -60, 100 0"/>
+  </g>
+</svg>

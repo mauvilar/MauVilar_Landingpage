@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <rect width="1600" height="900" fill="#0C324A"/>
+  <g fill="#FEF1D5" opacity="0.06">
+    <rect x="0" y="0" width="50" height="50"/>
+    <rect x="100" y="0" width="50" height="50"/>
+    <rect x="0" y="100" width="50" height="50"/>
+    <rect x="200" y="0" width="50" height="50"/>
+    <rect x="100" y="100" width="50" height="50"/>
+    <rect x="50" y="50" width="50" height="50"/>
+    <rect x="1450" y="800" width="50" height="50"/>
+    <rect x="1500" y="850" width="50" height="50"/>
+    <rect x="1550" y="800" width="50" height="50"/>
+    <rect x="1400" y="850" width="50" height="50"/>
+  </g>
+  <rect x="1100" y="0" width="500" height="900" fill="#C11720"/>
+  <g transform="translate(540 450)" stroke="#FEF1D5" stroke-width="14" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-220 -120 C-280 -120, -320 -60, -320 0 C-320 60, -280 120, -220 120 L220 120 C280 120, 320 60, 320 0 C320 -60, 280 -120, 220 -120 Z"/>
+    <line x1="-180" y1="-30" x2="-100" y2="-30"/>
+    <line x1="-140" y1="-70" x2="-140" y2="10"/>
+    <circle cx="160" cy="-50" r="22" fill="#FEF1D5" stroke="none"/>
+    <circle cx="220" cy="20" r="22" fill="#FEF1D5" stroke="none"/>
+  </g>
+  <g transform="translate(1340 450)" fill="#FEF1D5" stroke="#FEF1D5" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-100" y="-100" width="60" height="60" fill="#FEF1D5"/>
+    <rect x="-30" y="-100" width="60" height="60" fill="#0C324A" stroke="#FEF1D5"/>
+    <rect x="40" y="-100" width="60" height="60" fill="#FEF1D5"/>
+    <rect x="-100" y="-30" width="60" height="60" fill="#0C324A" stroke="#FEF1D5"/>
+    <rect x="-30" y="-30" width="60" height="60" fill="#FEF1D5"/>
+    <rect x="40" y="-30" width="60" height="60" fill="#0C324A" stroke="#FEF1D5"/>
+    <rect x="-100" y="40" width="60" height="60" fill="#FEF1D5"/>
+    <rect x="-30" y="40" width="60" height="60" fill="#0C324A" stroke="#FEF1D5"/>
+    <rect x="40" y="40" width="60" height="60" fill="#FEF1D5"/>
+  </g>
+</svg>

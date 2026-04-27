@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <rect width="1600" height="900" fill="#679CBC"/>
+  <rect x="0" y="0" width="540" height="900" fill="#0C324A"/>
+  <g fill="#FEF1D5">
+    <rect x="540" y="700" width="60" height="60"/>
+    <rect x="660" y="700" width="60" height="60"/>
+    <rect x="780" y="700" width="60" height="60"/>
+    <rect x="900" y="700" width="60" height="60"/>
+    <rect x="1020" y="700" width="60" height="60"/>
+    <rect x="1140" y="700" width="60" height="60"/>
+    <rect x="1260" y="700" width="60" height="60"/>
+    <rect x="1380" y="700" width="60" height="60"/>
+    <rect x="1500" y="700" width="60" height="60"/>
+    <rect x="600" y="760" width="60" height="60"/>
+    <rect x="720" y="760" width="60" height="60"/>
+    <rect x="840" y="760" width="60" height="60"/>
+    <rect x="960" y="760" width="60" height="60"/>
+    <rect x="1080" y="760" width="60" height="60"/>
+    <rect x="1200" y="760" width="60" height="60"/>
+    <rect x="1320" y="760" width="60" height="60"/>
+    <rect x="1440" y="760" width="60" height="60"/>
+    <rect x="1560" y="760" width="60" height="60"/>
+  </g>
+  <g transform="translate(900 380)">
+    <path d="M-260 100 L-220 -40 C-200 -100, -150 -120, -100 -120 L100 -120 C150 -120, 200 -100, 220 -40 L260 100 Z" fill="#FEF1D5" stroke="#0C324A" stroke-width="10" stroke-linejoin="round"/>
+    <rect x="-180" y="-90" width="140" height="80" rx="8" fill="#0C324A"/>
+    <rect x="40" y="-90" width="140" height="80" rx="8" fill="#0C324A"/>
+    <rect x="-30" y="-100" width="60" height="80" fill="#FEF1D5" stroke="#0C324A" stroke-width="6"/>
+    <rect x="-220" y="-160" width="440" height="40" fill="#C11720" rx="4"/>
+    <text x="0" y="-130" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800" font-size="22" fill="#FEF1D5">TAXI</text>
+    <circle cx="-160" cy="100" r="50" fill="#0C324A" stroke="#FEF1D5" stroke-width="10"/>
+    <circle cx="160" cy="100" r="50" fill="#0C324A" stroke="#FEF1D5" stroke-width="10"/>
+    <circle cx="-160" cy="100" r="22" fill="#FEF1D5"/>
+    <circle cx="160" cy="100" r="22" fill="#FEF1D5"/>
+  </g>
+  <g transform="translate(280 200)" stroke="#FEF1D5" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-80" y="0" width="60" height="200"/>
+    <rect x="0" y="-60" width="60" height="260"/>
+    <rect x="80" y="-30" width="60" height="230"/>
+    <line x1="-60" y1="40" x2="-60" y2="40" stroke-width="8"/>
+    <circle cx="-50" cy="40" r="3" fill="#FEF1D5"/>
+    <circle cx="-50" cy="80" r="3" fill="#FEF1D5"/>
+    <circle cx="-50" cy="120" r="3" fill="#FEF1D5"/>
+    <circle cx="30" cy="0" r="3" fill="#FEF1D5"/>
+    <circle cx="30" cy="40" r="3" fill="#FEF1D5"/>
+    <circle cx="30" cy="80" r="3" fill="#FEF1D5"/>
+    <circle cx="30" cy="120" r="3" fill="#FEF1D5"/>
+    <circle cx="110" cy="20" r="3" fill="#FEF1D5"/>
+    <circle cx="110" cy="60" r="3" fill="#FEF1D5"/>
+    <circle cx="110" cy="100" r="3" fill="#FEF1D5"/>
+  </g>
+</svg>
