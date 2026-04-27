@@ -105,8 +105,8 @@ export function Hero() {
           >
             Diseño soluciones end-to-end con{" "}
             <span className="text-white/90 font-medium">LLMs, MCP y arquitecturas multiagénticas</span>{" "}
-            para PYMEs. Especializado en IA generativa, automatización empresarial
-            y análisis de datos accionable.
+            para PYMEs. Especializado en Business Intelligence, automatización
+            empresarial e IA generativa aplicada.
           </motion.p>
 
           <motion.div

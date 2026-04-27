@@ -45,6 +45,18 @@ const education = [
     org: "Anthropic",
     year: "2025",
   },
+  {
+    title: "Certificación de Power BI",
+    org: "DataCamp",
+    year: "2025",
+  },
+];
+
+const inProgress = [
+  {
+    title: "Certificación A2 de Excel, macros y Power BI",
+    org: "En curso",
+  },
 ];
 
 const accentColor: Record<string, string> = {
@@ -143,6 +155,50 @@ export function About() {
                       <span className="text-xs font-mono text-white/40 shrink-0">
                         {ed.year}
                       </span>
+                    </div>
+                    <p className="mt-1 text-sm text-emerald-300/90">{ed.org}</p>
+                  </motion.li>
+                ))}
+              </ul>
+
+              <h3 className="text-xs uppercase tracking-[0.22em] text-white/45 mt-8 mb-4">
+                Cursando
+              </h3>
+              <ul className="space-y-3">
+                {inProgress.map((ed, i) => (
+                  <motion.li
+                    key={ed.title}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: 0.06 * i }}
+                    className="rounded-2xl border border-emerald-300/20 bg-emerald-300/[0.04] p-5 hover:border-emerald-300/40 transition"
+                  >
+                    <div className="flex items-start justify-between gap-3">
+                      <p className="font-medium text-white leading-snug">
+                        {ed.title}
+                      </p>
+                      <svg
+                        className="h-4 w-4 shrink-0 animate-spin text-emerald-300 mt-0.5"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        aria-label="Cursando"
+                      >
+                        <circle
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeOpacity="0.25"
+                          strokeWidth="3"
+                        />
+                        <path
+                          d="M22 12a10 10 0 0 1-10 10"
+                          stroke="currentColor"
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                        />
+                      </svg>
                     </div>
                     <p className="mt-1 text-sm text-emerald-300/90">{ed.org}</p>
                   </motion.li>

@@ -1,7 +1,7 @@
 [
   {
     "slug": "store-1-limpieza-de-datos-de-clientes",
-    "title": "Store 1 — Limpieza de datos de clientes",
+    "title": "Store 1 → Limpieza de datos de clientes",
     "summary": "Primera fase del proyecto Store 1: limpieza de strings y manipulación de listas y diccionarios para preparar datos de clientes desde Python puro, sin librerías externas.",
     "repoPath": "Sp_1/New_Project_1_student_version_ESP.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_1/New_Project_1_student_version_ESP.ipynb",
@@ -159,7 +159,7 @@
   },
   {
     "slug": "store-1-perfilado-de-clientes",
-    "title": "Store 1 — Perfilado de clientes",
+    "title": "Store 1 → Perfilado de clientes",
     "summary": "Segunda fase de Store 1: procesamiento avanzado en Python con listas anidadas, funciones y agregaciones para perfilar clientes y categorías de compra.",
     "repoPath": "Sp_2/Proyecto_2_Bootcamp.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_2/Proyecto_2_Bootcamp.ipynb",
@@ -782,7 +782,7 @@
   },
   {
     "slug": "instacart-llena-ese-carrito",
-    "title": "Instacart — Llena ese carrito",
+    "title": "Instacart → Llena ese carrito",
     "summary": "EDA completo del comportamiento de compra en Instacart: limpieza, valores ausentes, duplicados y análisis profundo de patrones de pedido en comestibles.",
     "repoPath": "Sp_4/notebook.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_4/notebook.ipynb",
@@ -1446,7 +1446,7 @@
   },
   {
     "slug": "megaline-cual-es-la-mejor-tarifa",
-    "title": "Megaline — ¿Cuál es la mejor tarifa?",
+    "title": "Megaline → ¿Cuál es la mejor tarifa?",
     "summary": "Estadística descriptiva e inferencial: comparación de las tarifas Surf vs. Ultimate de un operador móvil y prueba de hipótesis sobre ingresos por usuario.",
     "repoPath": "Sp_5/sp_5.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_5/sp_5.ipynb",
@@ -2068,7 +2068,7 @@
   },
   {
     "slug": "tienda-de-videojuegos-patrones-de-exito",
-    "title": "Tienda de videojuegos — Patrones de éxito",
+    "title": "Tienda de videojuegos → Patrones de éxito",
     "summary": "EDA y análisis de patrones de éxito por plataforma, género y región para una tienda global. Pruebas de hipótesis sobre calificaciones de usuarios y críticos.",
     "repoPath": "Sp_6/sp_6.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_6/sp_6.ipynb",
@@ -2545,7 +2545,7 @@
   },
   {
     "slug": "zuber-taxis-en-chicago",
-    "title": "Zuber — Taxis en Chicago",
+    "title": "Zuber → Taxis en Chicago",
     "summary": "Análisis de datos extraídos vía SQL: visualización de la demanda por barrio y empresa, y prueba de hipótesis (Welch t-test) sobre la duración de los viajes en condiciones climáticas adversas.",
     "repoPath": "Sp_8/sp_8.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_8/sp_8.ipynb",
@@ -2737,7 +2737,7 @@
   },
   {
     "slug": "showz-analisis-de-marketing",
-    "title": "Showz — Análisis de marketing",
+    "title": "Showz → Análisis de marketing",
     "summary": "Métricas de producto y marketing para una plataforma de eventos: cohortes, retención, LTV, CAC y ROI por fuente de adquisición para optimizar la inversión publicitaria.",
     "repoPath": "Sp_10/sp_10.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_10/sp_10.ipynb",
@@ -3877,7 +3877,7 @@
   },
   {
     "slug": "model-fitness-churn-y-segmentacion",
-    "title": "Model Fitness — Churn y segmentación",
+    "title": "Model Fitness → Churn y segmentación",
     "summary": "Machine learning aplicado a un gimnasio premium: modelo de clasificación para predecir cancelación de clientes y segmentación con clustering jerárquico/K-Means.",
     "repoPath": "Sp_14/sp_14.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_14/sp_14.ipynb",
@@ -4190,7 +4190,7 @@
   },
   {
     "slug": "telecom-identificacion-de-operadores-ineficaces",
-    "title": "Telecom — Identificación de operadores ineficaces",
+    "title": "Telecom → Identificación de operadores ineficaces",
     "summary": "Proyecto integral de un call center: análisis exploratorio + machine learning para clasificar a los operadores ineficaces e impulsar la calidad del servicio.",
     "repoPath": "Telecomunicaciones-Operadores-Ineficaces/Operadores-Ineficaces.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Telecomunicaciones-Operadores-Ineficaces/Operadores-Ineficaces.ipynb",
@@ -4509,7 +4509,7 @@
   },
   {
     "slug": "telecom-test-a-b-del-recomendador",
-    "title": "Telecom — Test A/B del recomendador",
+    "title": "Telecom → Test A/B del recomendador",
     "summary": "Prueba A/B sobre un sistema de recomendaciones para evaluar su impacto real en la conversión y experiencia del usuario.",
     "repoPath": "Telecomunicaciones-Operadores-Ineficaces/Test-AB-Recomendador.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Telecomunicaciones-Operadores-Ineficaces/Test-AB-Recomendador.ipynb",
@@ -4750,7 +4750,7 @@
   },
   {
     "slug": "telecom-analisis-sql-de-libros",
-    "title": "Telecom — Análisis SQL de libros",
+    "title": "Telecom → Análisis SQL de libros",
     "summary": "Resolución de tareas analíticas con SQL puro: agregaciones, joins, subconsultas y CTEs sobre un dataset de catálogo de libros y reseñas.",
     "repoPath": "Telecomunicaciones-Operadores-Ineficaces/SQL-Libros.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Telecomunicaciones-Operadores-Ineficaces/SQL-Libros.ipynb",
