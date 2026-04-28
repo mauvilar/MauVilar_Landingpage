@@ -57,6 +57,10 @@ const inProgress = [
     title: "Certificación A2 de Excel, macros y Power BI",
     org: "En curso",
   },
+  {
+    title: "Microsoft Azure Fundamentals (AZ-900)",
+    org: "En curso",
+  },
 ];
 
 const accentColor: Record<string, string> = {
