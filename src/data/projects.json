@@ -1,7 +1,7 @@
 [
   {
     "slug": "store-1-limpieza-de-datos-de-clientes",
-    "title": "Store 1 → Limpieza de datos de clientes",
+    "title": "Store 1 — Limpieza de datos de clientes",
     "summary": "Primera fase del proyecto Store 1: limpieza de strings y manipulación de listas y diccionarios para preparar datos de clientes desde Python puro, sin librerías externas.",
     "repoPath": "Sp_1/New_Project_1_student_version_ESP.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_1/New_Project_1_student_version_ESP.ipynb",
@@ -159,7 +159,7 @@
   },
   {
     "slug": "store-1-perfilado-de-clientes",
-    "title": "Store 1 → Perfilado de clientes",
+    "title": "Store 1 — Perfilado de clientes",
     "summary": "Segunda fase de Store 1: procesamiento avanzado en Python con listas anidadas, funciones y agregaciones para perfilar clientes y categorías de compra.",
     "repoPath": "Sp_2/Proyecto_2_Bootcamp.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_2/Proyecto_2_Bootcamp.ipynb",
@@ -782,7 +782,7 @@
   },
   {
     "slug": "instacart-llena-ese-carrito",
-    "title": "Instacart → Llena ese carrito",
+    "title": "Instacart — Llena ese carrito",
     "summary": "EDA completo del comportamiento de compra en Instacart: limpieza, valores ausentes, duplicados y análisis profundo de patrones de pedido en comestibles.",
     "repoPath": "Sp_4/notebook.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_4/notebook.ipynb",
@@ -1446,7 +1446,7 @@
   },
   {
     "slug": "megaline-cual-es-la-mejor-tarifa",
-    "title": "Megaline → ¿Cuál es la mejor tarifa?",
+    "title": "Megaline — ¿Cuál es la mejor tarifa?",
     "summary": "Estadística descriptiva e inferencial: comparación de las tarifas Surf vs. Ultimate de un operador móvil y prueba de hipótesis sobre ingresos por usuario.",
     "repoPath": "Sp_5/sp_5.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_5/sp_5.ipynb",
@@ -2068,7 +2068,7 @@
   },
   {
     "slug": "tienda-de-videojuegos-patrones-de-exito",
-    "title": "Tienda de videojuegos → Patrones de éxito",
+    "title": "Tienda de videojuegos — Patrones de éxito",
     "summary": "EDA y análisis de patrones de éxito por plataforma, género y región para una tienda global. Pruebas de hipótesis sobre calificaciones de usuarios y críticos.",
     "repoPath": "Sp_6/sp_6.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_6/sp_6.ipynb",
@@ -2545,7 +2545,7 @@
   },
   {
     "slug": "zuber-taxis-en-chicago",
-    "title": "Zuber → Taxis en Chicago",
+    "title": "Zuber — Taxis en Chicago",
     "summary": "Análisis de datos extraídos vía SQL: visualización de la demanda por barrio y empresa, y prueba de hipótesis (Welch t-test) sobre la duración de los viajes en condiciones climáticas adversas.",
     "repoPath": "Sp_8/sp_8.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_8/sp_8.ipynb",
@@ -2737,7 +2737,7 @@
   },
   {
     "slug": "showz-analisis-de-marketing",
-    "title": "Showz → Análisis de marketing",
+    "title": "Showz — Análisis de marketing",
     "summary": "Métricas de producto y marketing para una plataforma de eventos: cohortes, retención, LTV, CAC y ROI por fuente de adquisición para optimizar la inversión publicitaria.",
     "repoPath": "Sp_10/sp_10.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_10/sp_10.ipynb",
@@ -3877,7 +3877,7 @@
   },
   {
     "slug": "model-fitness-churn-y-segmentacion",
-    "title": "Model Fitness → Churn y segmentación",
+    "title": "Model Fitness — Churn y segmentación",
     "summary": "Machine learning aplicado a un gimnasio premium: modelo de clasificación para predecir cancelación de clientes y segmentación con clustering jerárquico/K-Means.",
     "repoPath": "Sp_14/sp_14.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_14/sp_14.ipynb",
@@ -4189,8 +4189,923 @@
     ]
   },
   {
+    "slug": "mercado-de-ia-auditoria-de-fuentes-y-calidad",
+    "title": "Mercado de IA — Auditoría de fuentes y calidad",
+    "summary": "Antes de analizar nada, se audita cada fuente candidata: el mejor dataset real de Kaggle tiene 12 filas mexicanas y ninguna con salario, y el más popular de la categoría resulta ser sintético (12 países, ~4,300 filas cada uno, 100% de sueldos publicados frente al ~19% de un agregador real). Con ambas descartadas, se construye un corpus propio desde la API de Adzuna — 6,990 vacantes, 1,666 con salario — y se confirma en vivo que Adzuna modela sueldos que no tiene: Nueva York devolvió 151 vacantes y solo 1 con salario real.",
+    "repoPath": "mercado-ia-mx-us/01_recoleccion_y_calidad.ipynb",
+    "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/mercado-ia-mx-us/01_recoleccion_y_calidad.ipynb",
+    "folder": "mercado-ia-mx-us",
+    "technologies": [
+      "Pandas",
+      "Python"
+    ],
+    "categories": [
+      "Estadística & Pruebas de Hipótesis",
+      "SQL & Analítica de Producto",
+      "Análisis Exploratorio (EDA)"
+    ],
+    "cellCount": 32,
+    "imageCount": 6,
+    "coverImage": "/projects/mercado-de-ia-auditoria-de-fuentes-y-calidad/cell-6-0.png",
+    "cover": {
+      "gradientFrom": "#00DF81",
+      "gradientTo": "#6366F1",
+      "icon": "search"
+    },
+    "cells": [
+      {
+        "type": "markdown",
+        "content": "# Mercado de trabajo de IA: México vs Estados Unidos\n## 01 — Recolección y calidad de los datos\n### DA: *Mau Vilar*\n#### https://github.com/mauvilar\n"
+      },
+      {
+        "type": "markdown",
+        "content": "Este proyecto responde una pregunta que ningún dataset público contesta bien: ¿cuánto paga el\ntrabajo de inteligencia artificial en México frente a Estados Unidos, y por qué es tan difícil\naveriguarlo? El mejor dataset real de Kaggle para México trae 12 filas mexicanas y ninguna con\nsalario; el dataset más popular de la categoría es sintético (51,932 filas generadas, 12 países\ncon ~4,300 filas cada uno y 100% de salarios presentes). Ninguno de los dos alcanza para responder\nla pregunta, así que este proyecto construyó su propio corpus a partir de la API de Adzuna más un\ndataset real de Kaggle.\n\nEste notebook es la apertura del proyecto: audita las fuentes antes de usarlas. No calcula\nbrechas salariales todavía —eso es el notebook 02— sino que establece qué se puede afirmar con\neste dato y qué no.\n"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "import sys; sys.path.insert(0, \"..\")\nimport pandas as pd, numpy as np, matplotlib.pyplot as plt, seaborn as sns\nfrom src.analysis.stats import resumir_por, mediana_ci\nfrom src.analysis.hypothesis import mann_whitney, welch_log\n\nsns.set_theme(style=\"whitegrid\")\nplt.rcParams[\"figure.figsize\"] = (11, 5)\ndf = pd.read_parquet(\"../data/processed/vacantes.parquet\")\nprint(f\"{len(df):,} vacantes | {df['salary_observed'].sum():,} con salario observado\")\ndf.head()\n",
+        "execution_count": 1
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>posting_id</th>\n      <th>snapshot_date</th>\n      <th>source</th>\n      <th>title_raw</th>\n      <th>title_norm</th>\n      <th>company</th>\n      <th>company_posting_count</th>\n      <th>company_is_multinational</th>\n      <th>category</th>\n      <th>country</th>\n      <th>...</th>\n      <th>salary_observed</th>\n      <th>salary_annual_local</th>\n      <th>salary_annual_usd</th>\n      <th>salary_annual_usd_ppp</th>\n      <th>seniority</th>\n      <th>tier</th>\n      <th>skills</th>\n      <th>description_text</th>\n      <th>description_lang</th>\n      <th>url</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>11a69e030bbeb53ec642d827a5ccb1d8f42cd050</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>RPA Engineer AI Development Experience</td>\n      <td>rpa engineer ai development experience</td>\n      <td>AllianceIT Inc</td>\n      <td>1</td>\n      <td>False</td>\n      <td>Unknown</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>81000.0</td>\n      <td>4722.701619</td>\n      <td>7842.035459</td>\n      <td>unknown</td>\n      <td>nucleo</td>\n      <td>[]</td>\n      <td>Design, build, test, and deploy Intelligent Ag...</td>\n      <td>en</td>\n      <td>https://www.adzuna.com.mx/land/ad/5797062930?s...</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>4c34441a2388bd88259480834442d16d021b0801</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>Machine Learning Engineer</td>\n      <td>machine learning engineer</td>\n      <td>Capital Empresarial Horizonte</td>\n      <td>6</td>\n      <td>False</td>\n      <td>Unknown</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>600000.0</td>\n      <td>34982.974952</td>\n      <td>58089.151551</td>\n      <td>unknown</td>\n      <td>nucleo</td>\n      <td>[python, pytorch, tensorflow]</td>\n      <td>Capital Empresarial Horizonte Empresa Mexicana...</td>\n      <td>es</td>\n      <td>https://www.adzuna.com.mx/land/ad/5768169505?s...</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>32f1656a91bd124277eb9ae53e24af7614d2ded7</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>Ingeniero de Preventa Google Cloud e Inteligen...</td>\n      <td>ingeniero de preventa google cloud e inteligen...</td>\n      <td>Capital Empresarial Horizonte</td>\n      <td>6</td>\n      <td>False</td>\n      <td>Unknown</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>60000.0</td>\n      <td>3498.297495</td>\n      <td>5808.915155</td>\n      <td>unknown</td>\n      <td>nucleo</td>\n      <td>[gcp, llm]</td>\n      <td>Capital Empresarial Horizonte Empresa Mexicana...</td>\n      <td>es</td>\n      <td>https://www.adzuna.com.mx/land/ad/5800080170?s...</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>33043115125a4d46c1cf05caf42ff7b764f4bbce</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>Ingeniero en Inteligencia Artificial</td>\n      <td>ingeniero en inteligencia artificial</td>\n      <td>Grupo Financiero Inbursa Corporativo</td>\n      <td>1</td>\n      <td>False</td>\n      <td>Unknown</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>240000.0</td>\n      <td>13993.189981</td>\n      <td>23235.660620</td>\n      <td>unknown</td>\n      <td>nucleo</td>\n      <td>[]</td>\n      <td>Únete al equipo de Innovación de Grupo Finan...</td>\n      <td>es</td>\n      <td>https://www.adzuna.com.mx/land/ad/5812515682?s...</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>45f0e4c23e486ef2663196c229a4ac09670eb1ed</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>Maestra de Matemáticas o Inteligencia Artific...</td>\n      <td>maestra de matemáticas o inteligencia artific...</td>\n      <td>VARFRA</td>\n      <td>1</td>\n      <td>False</td>\n      <td>Empleos en educación</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>180000.0</td>\n      <td>10494.892486</td>\n      <td>17426.745465</td>\n      <td>unknown</td>\n      <td>fuera</td>\n      <td>[]</td>\n      <td>Vacante Descripción del empleo Estamos en bú...</td>\n      <td>es</td>\n      <td>https://www.adzuna.com.mx/land/ad/5774880912?s...</td>\n    </tr>\n  </tbody>\n</table>\n<p>5 rows × 31 columns</p>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "%matplotlib inline\nfrom src.analysis.stats import MIN_N\n\n# Paleta: mismos tonos para país (México / Estados Unidos) y para dato confiable / no confiable\n# en todo el notebook. Colores tomados del set validado del proyecto (contraste AA, seguro para\n# daltonismo) en vez de elegidos a ojo.\nCOLOR_MX = \"#eb6834\"            # naranja\nCOLOR_US = \"#2a78d6\"            # azul\nCOLOR_BUENO = \"#0ca30c\"         # verde — dato observado / fuente aceptada\nCOLOR_MALO = \"#d03b3b\"          # rojo — dato predicho / fuente descartada\nCOLOR_NEUTRO = \"#2a78d6\"        # azul — series únicas sin corte por país\n\nCIUDADES_OBJETIVO = [\n    \"Ciudad de México\", \"Guadalajara\", \"Monterrey\", \"Querétaro\",\n    \"San Francisco\", \"New York\", \"Boston\", \"Seattle\", \"Austin\", \"Los Angeles\",\n]\n\nprint(f\"Ciudades objetivo: {len(CIUDADES_OBJETIVO)} (4 MX + 6 US) | regla de suficiencia: n >= {MIN_N}\")\n",
+        "execution_count": 2
+      },
+      {
+        "type": "markdown",
+        "content": "## Auditoría de fuentes\n\nAntes de describir el corpus propio hay que documentar lo que se descartó y por qué, y qué es\nexactamente lo que sí entró. Dos datasets de Kaggle pasaron por esta auditoría; sólo uno\nsobrevivió.\n"
+      },
+      {
+        "type": "markdown",
+        "content": "### El dataset que no usamos, y por qué\n\n`ai-jobs-dataset-2026` (usuario de Kaggle `m0sm71`) es, a la fecha, el dataset más popular de la\ncategoría \"vacantes de IA\" en Kaggle. También fue el primero que se examinó y el primero que se\ndescartó: vive en `data/raw/kaggle/_descartado/` a propósito, para poder mostrar aquí la evidencia\nen vez de sólo afirmarla.\n"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "from src.data.kaggle_sources import verificar_no_sintetico\n\nsospechoso = pd.read_csv(\"../data/raw/kaggle/_descartado/ai_jobs_dataset_2026.csv\", low_memory=False)\nconteos_falso = sospechoso[\"Country\"].value_counts()\nconteos_real = df[\"country\"].value_counts()\n\nfig, ax = plt.subplots(1, 2, figsize=(13, 5))\n\nconteos_falso.sort_values().plot.barh(ax=ax[0], color=COLOR_MALO)\nax[0].bar_label(ax[0].containers[0], fmt=\"%.0f\", padding=3, fontsize=8)\nax[0].set_title(f\"Descartado (m0sm71) — n={len(sospechoso):,} en {sospechoso['Country'].nunique()} países\")\nax[0].set_xlabel(\"Vacantes\")\nax[0].set_ylabel(\"\")\n\nconteos_real.sort_values().plot.barh(ax=ax[1], color=COLOR_BUENO)\nax[1].bar_label(ax[1].containers[0], fmt=\"%.0f\", padding=3, fontsize=9)\nax[1].set_title(f\"Nuestro corpus — n={len(df):,} en {df['country'].nunique()} países\")\nax[1].set_xlabel(\"Vacantes\")\nax[1].set_ylabel(\"\")\n\nfig.suptitle(\"Filas por país: uniformidad artificial vs. concentración real\")\nplt.tight_layout(rect=[0, 0, 1, 0.94])\nplt.show()\n\nveredicto = verificar_no_sintetico(sospechoso, col_pais=\"Country\", col_salario=\"Salary Range\")\nprint(veredicto)\nprint(f\"Salarios presentes en el descartado: {sospechoso['Salary Range'].notna().mean():.0%}\")\nprint(\n    f\"Filas por país en el descartado: media={conteos_falso.mean():.0f}  \"\n    f\"desv.est={conteos_falso.std():.0f}\"\n)\n",
+        "execution_count": 3
+      },
+      {
+        "type": "image",
+        "src": "/projects/mercado-de-ia-auditoria-de-fuentes-y-calidad/cell-6-0.png",
+        "alt": "Output 0 de la celda 6"
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión.** Doce países con ~4,300 filas cada uno (CV=0.013) y 100% de salarios presentes es\nla firma de un dataset generado, no scrapeado: ningún agregador real produce esa uniformidad — el\nmercado laboral no reparte vacantes de IA en partes iguales entre Suiza, India y Singapur. La\nreferencia real de este mismo proyecto (`kaggle_mannacharya`) trae salario en apenas ~18% de sus\nfilas y está objetivamente sesgada a un puñado de ciudades de Estados Unidos (San Francisco es,\ncon margen, la más frecuente). Por eso `m0sm71` se descartó antes de entrar al pipeline — vive en\n`_descartado/` únicamente para dejar esta evidencia por escrito.\n"
+      },
+      {
+        "type": "markdown",
+        "content": "### Las fuentes que sí\n\nEl corpus combina dos tipos de fuente: recolección propia vía la API de Adzuna (México y Estados\nUnidos) y un dataset real de Kaggle que aporta profundidad adicional del lado estadounidense.\n"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "fuentes = df[\"source\"].value_counts()\n\nfig, ax = plt.subplots(figsize=(11, 4))\nfuentes.sort_values().plot.barh(ax=ax, color=COLOR_NEUTRO)\nax.bar_label(ax.containers[0], fmt=\"%.0f\", padding=3)\nax.set_xlabel(\"Vacantes\")\nax.set_ylabel(\"\")\nax.set_title(f\"Corpus propio por fuente — n={len(df):,}\")\nplt.tight_layout()\nplt.show()\n\nprint((fuentes / len(df) * 100).round(1).astype(str) + \"%\")\nprint()\nprint(\"País de origen x fuente:\")\nprint(pd.crosstab(df[\"source\"], df[\"country\"]))\n",
+        "execution_count": 4
+      },
+      {
+        "type": "image",
+        "src": "/projects/mercado-de-ia-auditoria-de-fuentes-y-calidad/cell-9-1.png",
+        "alt": "Output 1 de la celda 9"
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión.** `adzuna_us` (3,492) y `kaggle_mannacharya` (3,168) aportan volumen casi a la par;\n`adzuna_mx` aporta 330 filas — más una fila adicional de `kaggle_mannacharya` cuyo país crudo venía\ncomo \"Mexico\", así que México suma 331 en total. La desproporción entre 331 y 6,659 no es un error\nde recolección: es la primera señal de que el mercado mexicano indexado por estas fuentes es, en sí\nmismo, mucho más pequeño que el estadounidense — se cuantifica en detalle en «Cobertura\ngeográfica»."
+      },
+      {
+        "type": "markdown",
+        "content": "## Descripción de los datos\n\nEl esquema es único para todas las fuentes (`src/data/schema.py`): 31 columnas, con banderas\nexplícitas para si el salario es observado o predicho y para el nivel de relevancia de IA\n(`tier`).\n"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "print(f\"Forma: {df.shape[0]:,} filas x {df.shape[1]} columnas\")\ndf.info()\n",
+        "execution_count": 5
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "df.head()\n",
+        "execution_count": 6
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>posting_id</th>\n      <th>snapshot_date</th>\n      <th>source</th>\n      <th>title_raw</th>\n      <th>title_norm</th>\n      <th>company</th>\n      <th>company_posting_count</th>\n      <th>company_is_multinational</th>\n      <th>category</th>\n      <th>country</th>\n      <th>...</th>\n      <th>salary_observed</th>\n      <th>salary_annual_local</th>\n      <th>salary_annual_usd</th>\n      <th>salary_annual_usd_ppp</th>\n      <th>seniority</th>\n      <th>tier</th>\n      <th>skills</th>\n      <th>description_text</th>\n      <th>description_lang</th>\n      <th>url</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>11a69e030bbeb53ec642d827a5ccb1d8f42cd050</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>RPA Engineer AI Development Experience</td>\n      <td>rpa engineer ai development experience</td>\n      <td>AllianceIT Inc</td>\n      <td>1</td>\n      <td>False</td>\n      <td>Unknown</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>81000.0</td>\n      <td>4722.701619</td>\n      <td>7842.035459</td>\n      <td>unknown</td>\n      <td>nucleo</td>\n      <td>[]</td>\n      <td>Design, build, test, and deploy Intelligent Ag...</td>\n      <td>en</td>\n      <td>https://www.adzuna.com.mx/land/ad/5797062930?s...</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>4c34441a2388bd88259480834442d16d021b0801</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>Machine Learning Engineer</td>\n      <td>machine learning engineer</td>\n      <td>Capital Empresarial Horizonte</td>\n      <td>6</td>\n      <td>False</td>\n      <td>Unknown</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>600000.0</td>\n      <td>34982.974952</td>\n      <td>58089.151551</td>\n      <td>unknown</td>\n      <td>nucleo</td>\n      <td>[python, pytorch, tensorflow]</td>\n      <td>Capital Empresarial Horizonte Empresa Mexicana...</td>\n      <td>es</td>\n      <td>https://www.adzuna.com.mx/land/ad/5768169505?s...</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>32f1656a91bd124277eb9ae53e24af7614d2ded7</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>Ingeniero de Preventa Google Cloud e Inteligen...</td>\n      <td>ingeniero de preventa google cloud e inteligen...</td>\n      <td>Capital Empresarial Horizonte</td>\n      <td>6</td>\n      <td>False</td>\n      <td>Unknown</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>60000.0</td>\n      <td>3498.297495</td>\n      <td>5808.915155</td>\n      <td>unknown</td>\n      <td>nucleo</td>\n      <td>[gcp, llm]</td>\n      <td>Capital Empresarial Horizonte Empresa Mexicana...</td>\n      <td>es</td>\n      <td>https://www.adzuna.com.mx/land/ad/5800080170?s...</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>33043115125a4d46c1cf05caf42ff7b764f4bbce</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>Ingeniero en Inteligencia Artificial</td>\n      <td>ingeniero en inteligencia artificial</td>\n      <td>Grupo Financiero Inbursa Corporativo</td>\n      <td>1</td>\n      <td>False</td>\n      <td>Unknown</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>240000.0</td>\n      <td>13993.189981</td>\n      <td>23235.660620</td>\n      <td>unknown</td>\n      <td>nucleo</td>\n      <td>[]</td>\n      <td>Únete al equipo de Innovación de Grupo Finan...</td>\n      <td>es</td>\n      <td>https://www.adzuna.com.mx/land/ad/5812515682?s...</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>45f0e4c23e486ef2663196c229a4ac09670eb1ed</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>Maestra de Matemáticas o Inteligencia Artific...</td>\n      <td>maestra de matemáticas o inteligencia artific...</td>\n      <td>VARFRA</td>\n      <td>1</td>\n      <td>False</td>\n      <td>Empleos en educación</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>180000.0</td>\n      <td>10494.892486</td>\n      <td>17426.745465</td>\n      <td>unknown</td>\n      <td>fuera</td>\n      <td>[]</td>\n      <td>Vacante Descripción del empleo Estamos en bú...</td>\n      <td>es</td>\n      <td>https://www.adzuna.com.mx/land/ad/5774880912?s...</td>\n    </tr>\n  </tbody>\n</table>\n<p>5 rows × 31 columns</p>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "#### Datos nulos y duplicados\n\nLos nulos no son aleatorios: siguen el origen de cada fuente. Y el corpus procesado ya llegó\ndeduplicado — aquí se cuantifica cuánto se colapsó y de dónde salió.\n"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "nulos = df.isna().sum().sort_values(ascending=False)\nnulos = nulos[nulos > 0]\ntabla_nulos = pd.DataFrame({\"nulos\": nulos, \"%\": (nulos / len(df) * 100).round(1)})\ndisplay(tabla_nulos)\n\nn_kaggle = int((df[\"source\"] == \"kaggle_mannacharya\").sum())\ncoincide = [c for c in [\"category\", \"state\", \"is_remote\", \"url\"] if int(df[c].isna().sum()) == n_kaggle]\nprint(f\"\\nkaggle_mannacharya aporta {n_kaggle:,} filas; coincide exactamente con los nulos de {coincide}.\")\nprint(\"No es un defecto aleatorio: esa fuente no trae esos campos en absoluto, sólo Adzuna los tiene.\")\n\nprint(f\"\\nDuplicados de posting_id en el dataset procesado: {df['posting_id'].duplicated().sum()}\")\n",
+        "execution_count": 7
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>nulos</th>\n      <th>%</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>salary_annual_usd</th>\n      <td>5324</td>\n      <td>76.2</td>\n    </tr>\n    <tr>\n      <th>salary_annual_usd_ppp</th>\n      <td>5324</td>\n      <td>76.2</td>\n    </tr>\n    <tr>\n      <th>salary_annual_local</th>\n      <td>5324</td>\n      <td>76.2</td>\n    </tr>\n    <tr>\n      <th>is_remote</th>\n      <td>3168</td>\n      <td>45.3</td>\n    </tr>\n    <tr>\n      <th>state</th>\n      <td>3168</td>\n      <td>45.3</td>\n    </tr>\n    <tr>\n      <th>category</th>\n      <td>3168</td>\n      <td>45.3</td>\n    </tr>\n    <tr>\n      <th>url</th>\n      <td>3168</td>\n      <td>45.3</td>\n    </tr>\n    <tr>\n      <th>salary_max_raw</th>\n      <td>2659</td>\n      <td>38.0</td>\n    </tr>\n    <tr>\n      <th>salary_min_raw</th>\n      <td>2657</td>\n      <td>38.0</td>\n    </tr>\n    <tr>\n      <th>metro</th>\n      <td>2149</td>\n      <td>30.7</td>\n    </tr>\n    <tr>\n      <th>city</th>\n      <td>776</td>\n      <td>11.1</td>\n    </tr>\n    <tr>\n      <th>salary_period</th>\n      <td>229</td>\n      <td>3.3</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "from pathlib import Path\nfrom datetime import date\nfrom src.data.kaggle_sources import map_mannacharya_frame\n\n# Reconstruye el conteo pre-deduplicación a partir de los mismos crudos que usó el pipeline,\n# sin invocar deduplicar() directamente, para mostrar cuánto se colapsó sin recalcular el propio\n# resultado que se está auditando.\nsnapshots = [pd.read_parquet(p) for p in sorted(Path(\"../data/raw\").glob(\"*/adzuna.parquet\"))]\ncrudo_kaggle = pd.read_csv(\n    \"../data/raw/kaggle/kaggle_mannacharya/aijobs_dataset.csv\", low_memory=False\n)\nsnapshots.append(map_mannacharya_frame(crudo_kaggle, snapshot_date=date.today()))\n\ncrudo = pd.concat(snapshots, ignore_index=True)\nen_alcance = crudo[crudo[\"country\"].isin([\"MX\", \"US\"])]\n\nprint(f\"Filas crudas combinadas (snapshots de Adzuna + kaggle_mannacharya): {len(crudo):,}\")\nprint(\n    f\"Fuera de alcance (país distinto de MX/US, ej. UK/India/remoto global): \"\n    f\"{(~crudo['country'].isin(['MX', 'US'])).sum():,}\"\n)\nprint(f\"En alcance antes de deduplicar: {len(en_alcance):,}\")\nprint(f\"Filas procesadas (después de deduplicar): {len(df):,}\")\nprint(f\"Duplicados colapsados en la construcción: {len(en_alcance) - len(df):,}\")\n",
+        "execution_count": 8
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión.** Los nulos en `category`, `state`, `is_remote` y `url` no son ruido: son exactamente\nlas 3,168 filas de `kaggle_mannacharya`, que no incluye esos campos en su esquema original. `city`\n(776 nulos) y `metro` (2,149 nulos) mezclan dos causas distintas: filas de Adzuna cuya ubicación no\ncanonizó contra `config/cities.yml`, y filas de `kaggle_mannacharya` cuya ciudad tampoco coincide con\nninguno de los alias de las seis métricas estadounidenses del alcance del proyecto (Chicago, Londres,\nremoto sin ciudad resuelta, etc.). `kaggle_mannacharya` sí pasa por esa misma canonización: valores\ncomo \"Mountain View\" o \"Palo Alto\" ahora se pliegan a \"San Francisco\" / \"SF Bay Area\" en vez de\nsobrevivir como texto crudo. El pipeline colapsó 1,320 duplicados de las 8,310 filas crudas en\nalcance (México/Estados Unidos) para llegar a las 6,990 finales; `posting_id` no tiene duplicados en\nel resultado."
+      },
+      {
+        "type": "markdown",
+        "content": "## Cobertura geográfica\n\nNo todo lo que Adzuna devuelve para consultas como \"AI engineer\" es, en realidad, una vacante de\nIA — la sonda del día 0 ya había encontrado abogados, técnicos de HVAC y gerentes de RR. HH.\nmezclados en los resultados de México. `tier` es la taxonomía que separa señal de ruido: `nucleo`\n(el título declara el rol de IA), `anillo` (no lo declara, pero la descripción trae ≥2 skills de IA\naplicada) y `fuera`.\n"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "tier_pais = pd.crosstab(df[\"country\"], df[\"tier\"])[[\"nucleo\", \"anillo\", \"fuera\"]]\ndisplay(tier_pais)\n\nproporciones = tier_pais.div(tier_pais.sum(axis=1), axis=0) * 100\ntabla = proporciones.reset_index().melt(id_vars=\"country\", var_name=\"tier\", value_name=\"pct\")\n\nfig, ax = plt.subplots()\nsns.barplot(\n    data=tabla, x=\"tier\", y=\"pct\", hue=\"country\",\n    order=[\"nucleo\", \"anillo\", \"fuera\"], hue_order=[\"MX\", \"US\"],\n    palette={\"MX\": COLOR_MX, \"US\": COLOR_US}, ax=ax,\n)\nfor cont in ax.containers:\n    ax.bar_label(cont, fmt=\"%.1f%%\", padding=3, fontsize=9)\nax.set_ylabel(\"% de las vacantes recolectadas en ese país\")\nax.set_xlabel(\"Clasificación de relevancia de IA\")\nax.set_title(\"Proporción núcleo / anillo / fuera, por país (conteos en la tabla anterior)\")\nax.legend(title=\"País\")\nplt.tight_layout()\nplt.show()\n",
+        "execution_count": 9
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>tier</th>\n      <th>nucleo</th>\n      <th>anillo</th>\n      <th>fuera</th>\n    </tr>\n    <tr>\n      <th>country</th>\n      <th></th>\n      <th></th>\n      <th></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>MX</th>\n      <td>43</td>\n      <td>2</td>\n      <td>286</td>\n    </tr>\n    <tr>\n      <th>US</th>\n      <td>3341</td>\n      <td>395</td>\n      <td>2923</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "image",
+        "src": "/projects/mercado-de-ia-auditoria-de-fuentes-y-calidad/cell-19-2.png",
+        "alt": "Output 2 de la celda 19"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "ciudad_agg = df[\"city\"].where(df[\"city\"].isin(CIUDADES_OBJETIVO), \"Otras / sin resolver\")\nmx_ciudades = ciudad_agg[df[\"country\"] == \"MX\"].value_counts()\nus_ciudades = ciudad_agg[df[\"country\"] == \"US\"].value_counts()\n\nfig, ax = plt.subplots(1, 2, figsize=(13, 5))\n\nmx_ciudades.sort_values().plot.barh(ax=ax[0], color=COLOR_MX)\nax[0].bar_label(ax[0].containers[0], fmt=\"%.0f\", padding=3)\nax[0].set_title(f\"México — n={(df['country'] == 'MX').sum():,}\")\nax[0].set_xlabel(\"Vacantes\")\nax[0].set_ylabel(\"\")\n\nus_ciudades.sort_values().plot.barh(ax=ax[1], color=COLOR_US)\nax[1].bar_label(ax[1].containers[0], fmt=\"%.0f\", padding=3, fontsize=8)\nax[1].set_title(f\"Estados Unidos — n={(df['country'] == 'US').sum():,}\")\nax[1].set_xlabel(\"Vacantes\")\nax[1].set_ylabel(\"\")\n\nfig.suptitle(\"Vacantes recolectadas por ciudad (todas las categorías, no sólo IA)\")\nplt.tight_layout(rect=[0, 0, 1, 0.94])\nplt.show()\n",
+        "execution_count": 10
+      },
+      {
+        "type": "image",
+        "src": "/projects/mercado-de-ia-auditoria-de-fuentes-y-calidad/cell-20-3.png",
+        "alt": "Output 3 de la celda 20"
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión.** El patrón núcleo/anillo/fuera se repite en ambos países, pero en proporciones muy\ndistintas: en Estados Unidos poco más de la mitad de lo recolectado (56.1%) es efectivamente\nrelevante para IA; en México esa proporción baja a 13.6%, y la enorme mayoría de lo que Adzuna\ndevuelve para las mismas búsquedas es ruido (community managers, técnicos, personal de RR. HH.).\nGeográficamente, el 100% de las vacantes mexicanas recolectadas caen en las cuatro ciudades\nobjetivo del proyecto, con Ciudad de México concentrando el 75%; del lado estadounidense, ~32% del\nvolumen cae fuera de las seis métricas objetivo o no logra canonizarse a una ciudad — eso se\nresuelve en la siguiente sección antes de hablar de salarios."
+      },
+      {
+        "type": "markdown",
+        "content": "## Cobertura salarial\n\nLa pregunta del proyecto no es \"cuántas vacantes hay\" sino \"cuántas dicen cuánto pagan\". Esta\nsección mide esa proporción — para todo el corpus y, lo que importa de verdad, sólo para las\nvacantes que sí son de IA (`tier` ∈ {núcleo, anillo}).\n"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "ia = df[df[\"tier\"].isin([\"nucleo\", \"anillo\"])].copy()\n\ntodas = df.groupby(\"country\")[\"salary_observed\"].agg(tasa=\"mean\", n=\"count\")\nsolo_ia = ia.groupby(\"country\")[\"salary_observed\"].agg(tasa=\"mean\", n=\"count\")\ncomparacion = pd.concat({\"todas las vacantes\": todas, \"sólo IA\": solo_ia}, axis=1)\ndisplay(\n    comparacion.style.format(\n        {(\"todas las vacantes\", \"tasa\"): \"{:.1%}\", (\"sólo IA\", \"tasa\"): \"{:.1%}\"}\n    )\n)\n\nfig, ax = plt.subplots(figsize=(8, 5))\npaises = [\"MX\", \"US\"]\ntasas = solo_ia.loc[paises, \"tasa\"] * 100\nns = solo_ia.loc[paises, \"n\"]\nbarras = ax.bar(paises, tasas, color=[COLOR_MX, COLOR_US])\nfor barra, tasa, n in zip(barras, tasas, ns, strict=True):\n    ax.text(\n        barra.get_x() + barra.get_width() / 2, barra.get_height() + 1,\n        f\"{tasa:.1f}%\\n(n={n:,})\", ha=\"center\", va=\"bottom\", fontsize=10,\n    )\nax.set_ylim(0, float(tasas.max()) * 1.35)\nax.set_ylabel(\"% de vacantes de IA con salario observado\")\nax.set_xlabel(\"País\")\nax.set_title(\"Transparencia salarial en vacantes de IA, por país\")\nplt.tight_layout()\nplt.show()\n",
+        "execution_count": 11
+      },
+      {
+        "type": "html",
+        "content": "<style type=\"text/css\">\n</style>\n<table id=\"T_238c7\">\n  <thead>\n    <tr>\n      <th class=\"blank level0\" >&nbsp;</th>\n      <th id=\"T_238c7_level0_col0\" class=\"col_heading level0 col0\" colspan=\"2\">todas las vacantes</th>\n      <th id=\"T_238c7_level0_col2\" class=\"col_heading level0 col2\" colspan=\"2\">sólo IA</th>\n    </tr>\n    <tr>\n      <th class=\"blank level1\" >&nbsp;</th>\n      <th id=\"T_238c7_level1_col0\" class=\"col_heading level1 col0\" >tasa</th>\n      <th id=\"T_238c7_level1_col1\" class=\"col_heading level1 col1\" >n</th>\n      <th id=\"T_238c7_level1_col2\" class=\"col_heading level1 col2\" >tasa</th>\n      <th id=\"T_238c7_level1_col3\" class=\"col_heading level1 col3\" >n</th>\n    </tr>\n    <tr>\n      <th class=\"index_name level0\" >country</th>\n      <th class=\"blank col0\" >&nbsp;</th>\n      <th class=\"blank col1\" >&nbsp;</th>\n      <th class=\"blank col2\" >&nbsp;</th>\n      <th class=\"blank col3\" >&nbsp;</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th id=\"T_238c7_level0_row0\" class=\"row_heading level0 row0\" >MX</th>\n      <td id=\"T_238c7_row0_col0\" class=\"data row0 col0\" >30.5%</td>\n      <td id=\"T_238c7_row0_col1\" class=\"data row0 col1\" >331</td>\n      <td id=\"T_238c7_row0_col2\" class=\"data row0 col2\" >8.9%</td>\n      <td id=\"T_238c7_row0_col3\" class=\"data row0 col3\" >45</td>\n    </tr>\n    <tr>\n      <th id=\"T_238c7_level0_row1\" class=\"row_heading level0 row1\" >US</th>\n      <td id=\"T_238c7_row1_col0\" class=\"data row1 col0\" >23.5%</td>\n      <td id=\"T_238c7_row1_col1\" class=\"data row1 col1\" >6659</td>\n      <td id=\"T_238c7_row1_col2\" class=\"data row1 col2\" >20.1%</td>\n      <td id=\"T_238c7_row1_col3\" class=\"data row1 col3\" >3736</td>\n    </tr>\n  </tbody>\n</table>\n"
+      },
+      {
+        "type": "image",
+        "src": "/projects/mercado-de-ia-auditoria-de-fuentes-y-calidad/cell-23-4.png",
+        "alt": "Output 4 de la celda 23"
+      },
+      {
+        "type": "markdown",
+        "content": "### La trampa de `salary_is_predicted`\n\nAdzuna no sólo indexa vacantes: cuando una vacante no publica salario, buena parte del tiempo\nAdzuna rellena el hueco con una **estimación de su propio modelo interno** y la manda en el mismo\ncampo que un salario real, distinguible sólo por la bandera `salary_is_predicted`. En la sonda del\ndía 0 (`docs/superpowers/specs/2026-08-10-viabilidad-dia0.md`), antes de que existiera el pipeline\ncompleto, esto se confirmó en vivo: Nueva York devolvió 151 vacantes de las que sólo **1** traía\nsalario real — las otras 150 eran el modelo de Adzuna. San Francisco: 59 reales de 150. Austin: 26\nde 153. México, en cambio, tuvo `predicho=0` en las cuatro ciudades: Adzuna simplemente no genera\nestimaciones para vacantes mexicanas.\n\nSin el candado de `src/data/schema.py` (`salary_is_predicted=True` nunca puede convivir con\n`salary_observed=True`), Nueva York habría aportado 151 \"observaciones\" salariales de las cuales\n150 serían el modelo de otra empresa, no el mercado. La siguiente celda repite la medición sobre el\ncorpus final completo —no la muestra de 50 resultados de la sonda— y el patrón se sostiene.\n"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "adz = df[df[\"source\"].isin([\"adzuna_us\", \"adzuna_mx\"])].copy()\nadz[\"tiene_salario\"] = adz[\"salary_min_raw\"].notna()\nadz[\"_ciudad\"] = adz[\"city\"].fillna(\"(sin ciudad resuelta)\")\n\ntrampa = (\n    adz[adz[\"tiene_salario\"]]\n    .groupby([\"country\", \"_ciudad\"])\n    .agg(total=(\"posting_id\", \"count\"), observado=(\"salary_observed\", \"sum\"))\n    .assign(predicho=lambda d: d[\"total\"] - d[\"observado\"])\n    .sort_values([\"country\", \"total\"], ascending=[True, False])\n)\ndisplay(trampa)\n\norden = trampa.sort_values(\"total\").index\nfig, ax = plt.subplots(figsize=(11, 6))\ny = np.arange(len(orden))\nobs = trampa.loc[orden, \"observado\"].to_numpy()\npred = trampa.loc[orden, \"predicho\"].to_numpy()\netiquetas = [f\"{pais} — {ciudad}\" for pais, ciudad in orden]\n\nax.barh(y, obs, color=COLOR_BUENO, label=\"Observado (real)\")\nax.barh(y, pred, left=obs, color=COLOR_MALO, label=\"Predicho (modelo de Adzuna)\")\nax.set_yticks(y, etiquetas)\nfor i, (o, p) in enumerate(zip(obs, pred, strict=True)):\n    total = int(o + p)\n    marca = \"*\" if total < MIN_N else \"\"\n    ax.text(total + 5, i, f\"n={total}{marca}\", va=\"center\", fontsize=8)\n\nax.set_xlabel(\"Vacantes con algún valor de salario (observado o predicho)\")\nax.set_title(\"Salario real vs. estimado por Adzuna, por ciudad — corpus completo\")\nax.legend(loc=\"lower right\")\nplt.tight_layout()\nplt.show()\nprint(f\"* n<{MIN_N}: leer como conteo (Adzuna predijo cero ahí), no como una tasa estable.\")\n",
+        "execution_count": 12
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th></th>\n      <th>total</th>\n      <th>observado</th>\n      <th>predicho</th>\n    </tr>\n    <tr>\n      <th>country</th>\n      <th>_ciudad</th>\n      <th></th>\n      <th></th>\n      <th></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th rowspan=\"4\" valign=\"top\">MX</th>\n      <th>Ciudad de México</th>\n      <td>74</td>\n      <td>74</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <th>Guadalajara</th>\n      <td>16</td>\n      <td>16</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <th>Monterrey</th>\n      <td>7</td>\n      <td>7</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <th>Querétaro</th>\n      <td>4</td>\n      <td>4</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <th rowspan=\"7\" valign=\"top\">US</th>\n      <th>(sin ciudad resuelta)</th>\n      <td>754</td>\n      <td>25</td>\n      <td>729</td>\n    </tr>\n    <tr>\n      <th>San Francisco</th>\n      <td>712</td>\n      <td>350</td>\n      <td>362</td>\n    </tr>\n    <tr>\n      <th>New York</th>\n      <td>619</td>\n      <td>134</td>\n      <td>485</td>\n    </tr>\n    <tr>\n      <th>Boston</th>\n      <td>530</td>\n      <td>112</td>\n      <td>418</td>\n    </tr>\n    <tr>\n      <th>Los Angeles</th>\n      <td>344</td>\n      <td>81</td>\n      <td>263</td>\n    </tr>\n    <tr>\n      <th>Seattle</th>\n      <td>336</td>\n      <td>86</td>\n      <td>250</td>\n    </tr>\n    <tr>\n      <th>Austin</th>\n      <td>197</td>\n      <td>63</td>\n      <td>134</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "image",
+        "src": "/projects/mercado-de-ia-auditoria-de-fuentes-y-calidad/cell-25-5.png",
+        "alt": "Output 5 de la celda 25"
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión.** El patrón de la sonda se sostiene a escala completa: San Francisco es la única\nciudad donde el salario real supera al predicho (350 de 712, 49.2%); Nueva York, Boston, Los\nÁngeles, Seattle y Austin tienen entre 21% y 32% de salarios reales — el resto es el modelo de\nAdzuna, con factores de inflación de 2.0x (San Francisco) a 4.7x (Boston) si no se filtrara. México,\nen las cuatro ciudades, tiene **cero** vacantes con salario predicho: todo lo que llega de México\nestá publicado por quien contrata o no llega (Querétaro y Monterrey tienen n<30, así que ese cero\nse lee como conteo exacto, no como una proporción estimada sobre poca muestra). Esto no es una\nparticularidad de una corrida: es la razón estructural por la que cualquier análisis de este\nmercado tiene que filtrar por `salary_observed`, nunca por \"trae un número en `salary_min`\".\n"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "transparencia = df.groupby([\"country\", \"company_is_multinational\"])[\"salary_observed\"].agg(\n    tasa=\"mean\", n=\"count\"\n)\ndisplay(transparencia.style.format({\"tasa\": \"{:.1%}\"}))\nprint(\n    \"Las empresas marcadas como multinacionales (lista en src/features/build.py) publican \"\n    \"salario con menor frecuencia que el resto, en ambos países.\"\n)\n",
+        "execution_count": 13
+      },
+      {
+        "type": "html",
+        "content": "<style type=\"text/css\">\n</style>\n<table id=\"T_6c5b7\">\n  <thead>\n    <tr>\n      <th class=\"blank\" >&nbsp;</th>\n      <th class=\"blank level0\" >&nbsp;</th>\n      <th id=\"T_6c5b7_level0_col0\" class=\"col_heading level0 col0\" >tasa</th>\n      <th id=\"T_6c5b7_level0_col1\" class=\"col_heading level0 col1\" >n</th>\n    </tr>\n    <tr>\n      <th class=\"index_name level0\" >country</th>\n      <th class=\"index_name level1\" >company_is_multinational</th>\n      <th class=\"blank col0\" >&nbsp;</th>\n      <th class=\"blank col1\" >&nbsp;</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th id=\"T_6c5b7_level0_row0\" class=\"row_heading level0 row0\" rowspan=\"2\">MX</th>\n      <th id=\"T_6c5b7_level1_row0\" class=\"row_heading level1 row0\" >False</th>\n      <td id=\"T_6c5b7_row0_col0\" class=\"data row0 col0\" >31.9%</td>\n      <td id=\"T_6c5b7_row0_col1\" class=\"data row0 col1\" >298</td>\n    </tr>\n    <tr>\n      <th id=\"T_6c5b7_level1_row1\" class=\"row_heading level1 row1\" >True</th>\n      <td id=\"T_6c5b7_row1_col0\" class=\"data row1 col0\" >18.2%</td>\n      <td id=\"T_6c5b7_row1_col1\" class=\"data row1 col1\" >33</td>\n    </tr>\n    <tr>\n      <th id=\"T_6c5b7_level0_row2\" class=\"row_heading level0 row2\" rowspan=\"2\">US</th>\n      <th id=\"T_6c5b7_level1_row2\" class=\"row_heading level1 row2\" >False</th>\n      <td id=\"T_6c5b7_row2_col0\" class=\"data row2 col0\" >28.1%</td>\n      <td id=\"T_6c5b7_row2_col1\" class=\"data row2 col1\" >5123</td>\n    </tr>\n    <tr>\n      <th id=\"T_6c5b7_level1_row3\" class=\"row_heading level1 row3\" >True</th>\n      <td id=\"T_6c5b7_row3_col0\" class=\"data row3 col0\" >8.2%</td>\n      <td id=\"T_6c5b7_row3_col1\" class=\"data row3 col1\" >1536</td>\n    </tr>\n  </tbody>\n</table>\n"
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión de la sección.** La transparencia salarial en vacantes de IA es baja en ambos países y\nmucho más baja en México (8.9%, n=45) que en Estados Unidos (20.1%, n=3,736) — 2.3x. Dentro de cada\npaís, la opacidad además correlaciona con el tipo de empresa: en Estados Unidos las multinacionales\npublican salario en 8.2% de sus vacantes contra 28.1% de las no multinacionales; en México, 18.2%\ncontra 31.9%. Y el problema no es sólo cuántas vacantes publican salario, sino cuántas de las que\n\"sí publican\" son en realidad el modelo de Adzuna: sin filtrar `salary_is_predicted`, la tasa\naparente de las ciudades estadounidenses estaría inflada entre 2.0x y 4.7x."
+      },
+      {
+        "type": "markdown",
+        "content": "## Resumen de la calidad de los datos\n\nAntes de cerrar, se aplica formalmente la regla de suficiencia del proyecto (`src/analysis/stats.py`,\nn ≥ 30) a cada corte que un análisis posterior podría querer hacer.\n"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "print(\"=== Suficiencia de muestra (n >= 30) para mediana de salario, por corte ===\\n\")\n\nprint(\"País (sólo IA):\")\ndisplay(resumir_por(ia, [\"country\"])[[\"country\", \"n\", \"suficiente\", \"mediana\"]])\n\nprint(\"\\nMetro de EE. UU. (sólo IA; excluye vacantes sin metro asignado):\")\nus_ia_metro = ia[(ia[\"country\"] == \"US\") & (ia[\"metro\"].notna())]\ndisplay(resumir_por(us_ia_metro, [\"metro\"])[[\"metro\", \"n\", \"suficiente\", \"mediana\"]])\n\nprint(\"\\nCiudad, México (sólo IA):\")\nmx_ia = ia[ia[\"country\"] == \"MX\"]\ndisplay(resumir_por(mx_ia, [\"city\"])[[\"city\", \"n\", \"suficiente\"]])\n\nprint(\"\\nSeniority, EE. UU. (sólo IA):\")\nus_ia = ia[ia[\"country\"] == \"US\"]\ndisplay(resumir_por(us_ia, [\"seniority\"])[[\"seniority\", \"n\", \"suficiente\", \"mediana\"]])\n\nsin_metro = int(((ia[\"country\"] == \"US\") & (ia[\"metro\"].isna())).sum())\nprint(f\"\\nVacantes de IA en EE. UU. sin metro asignado (excluidas de la tabla anterior): {sin_metro:,}\")\n",
+        "execution_count": 14
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>country</th>\n      <th>n</th>\n      <th>suficiente</th>\n      <th>mediana</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>US</td>\n      <td>750</td>\n      <td>True</td>\n      <td>200000.0</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>MX</td>\n      <td>4</td>\n      <td>False</td>\n      <td>NaN</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>metro</th>\n      <th>n</th>\n      <th>suficiente</th>\n      <th>mediana</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>SF Bay Area</td>\n      <td>319</td>\n      <td>True</td>\n      <td>225000.0</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>NYC</td>\n      <td>116</td>\n      <td>True</td>\n      <td>200000.0</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>Boston</td>\n      <td>64</td>\n      <td>True</td>\n      <td>182500.0</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>Seattle</td>\n      <td>63</td>\n      <td>True</td>\n      <td>202500.0</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>Austin</td>\n      <td>38</td>\n      <td>True</td>\n      <td>197575.0</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>Los Angeles</td>\n      <td>20</td>\n      <td>False</td>\n      <td>NaN</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>city</th>\n      <th>n</th>\n      <th>suficiente</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>Ciudad de México</td>\n      <td>4</td>\n      <td>False</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>Guadalajara</td>\n      <td>0</td>\n      <td>False</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>Monterrey</td>\n      <td>0</td>\n      <td>False</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>Querétaro</td>\n      <td>0</td>\n      <td>False</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>seniority</th>\n      <th>n</th>\n      <th>suficiente</th>\n      <th>mediana</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>unknown</td>\n      <td>248</td>\n      <td>True</td>\n      <td>200000.00</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>sr</td>\n      <td>206</td>\n      <td>True</td>\n      <td>196520.25</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>lead</td>\n      <td>85</td>\n      <td>True</td>\n      <td>190000.00</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>staff</td>\n      <td>81</td>\n      <td>True</td>\n      <td>238750.00</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>mid</td>\n      <td>51</td>\n      <td>True</td>\n      <td>190000.00</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>principal</td>\n      <td>38</td>\n      <td>True</td>\n      <td>232625.00</td>\n    </tr>\n    <tr>\n      <th>6</th>\n      <td>jr</td>\n      <td>29</td>\n      <td>False</td>\n      <td>NaN</td>\n    </tr>\n    <tr>\n      <th>7</th>\n      <td>intern</td>\n      <td>12</td>\n      <td>False</td>\n      <td>NaN</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "**Qué hay.** 6,990 vacantes procesadas, de tres fuentes: `adzuna_us` (3,492), `kaggle_mannacharya`\n(3,168) y `adzuna_mx` (330 + 1 fila de `kaggle_mannacharya` = 331 vacantes mexicanas). De esas\n6,990, 1,666 (23.8%) traen salario observado; restringiendo primero a lo que de verdad es IA\n(`tier` ∈ {núcleo, anillo}, 3,781 vacantes), quedan 754 con salario observado.\n\n**Cuántas por ciudad.** México: Ciudad de México (249), Guadalajara (42), Monterrey (24),\nQuerétaro (16) — el 100% del volumen mexicano cae en las cuatro ciudades objetivo. Estados Unidos\nconcentra en San Francisco (1,763), Nueva York (1,024), Boston (628), Los Ángeles (390), Seattle\n(434) y Austin (272), más un remanente de 2,148 vacantes (32%) en otras ciudades o sin ciudad\nresuelta.\n\n**Qué proporción publica salario.** Con todas las categorías incluidas: 30.5% en México, 23.5% en\nEstados Unidos. Restringido a IA —el corte que importa—: **8.9% en México (4 de 45) frente a 20.1%\nen Estados Unidos (750 de 3,736)**. Y de lo que Adzuna reporta con *algún* valor de salario, una\nfracción grande es su propio modelo (`salary_is_predicted`): 0% en México, entre 51% (San\nFrancisco) y 79% (Boston) del lado estadounidense.\n\n**Duplicados.** El pipeline colapsó 1,320 filas duplicadas (mismo título + empresa + ciudad, con\npreferencia por la fila con salario observado) de las 8,310 filas crudas en alcance, para llegar a\nlas 6,990 finales. `posting_id` no tiene duplicados en el resultado.\n\n**Qué corte alcanza n ≥ 30 y cuál no** (regla de `src/analysis/stats.py`, aplicada a vacantes de IA\ncon salario observado — la muestra que de verdad se puede promediar):\n\n| Corte | n | ¿Suficiente? |\n|---|---|---|\n| País — Estados Unidos | 750 | Sí |\n| País — México | 4 | **No** |\n| Metro — SF Bay Area | 319 | Sí |\n| Metro — NYC | 116 | Sí |\n| Metro — Boston | 64 | Sí |\n| Metro — Seattle | 63 | Sí |\n| Metro — Austin | 38 | Sí |\n| Metro — Los Ángeles | 20 | **No** |\n| Ciudad — Ciudad de México | 4 | **No** |\n| Ciudad — Guadalajara / Monterrey / Querétaro | 0 | **No** (cero observaciones) |\n| Seniority (EE. UU.) — todos excepto jr e intern | 38–248 | Sí |\n| Seniority (EE. UU.) — jr | 29 | **No** |\n| Seniority (EE. UU.) — intern | 12 | **No** |\n| Seniority (México) — cualquiera | 0–4 | **No** |\n\n**Lo que esto define para el notebook 02.** Estados Unidos se sostiene para comparar por metro y\npor seniority. México sólo se sostiene a nivel país, y con apenas 4 observaciones — no como una\nmediana confiable, sino como una referencia puntual que hay que reportar con esa advertencia\nexplícita. No hay ningún corte mexicano por ciudad o por seniority que se pueda publicar sin violar\nla regla n≥30 del proyecto. Las 4 observaciones mexicanas, todas en Ciudad de México, van de\n$60,000 a $600,000 MXN anuales ($5,809–$58,089 USD ajustados por PPP): un rango demasiado amplio\npara resumir en una sola cifra. La brecha salarial entre países, si se calcula, tendrá que apoyarse\nen modelos de imputación (notebook 04) para decir algo más allá de eso — que es, literalmente, todo\nlo que este corpus puede afirmar hoy sobre salarios de IA en México con datos observados."
+      }
+    ]
+  },
+  {
+    "slug": "mercado-de-ia-brecha-salarial-mexico-vs-estados-unidos",
+    "title": "Mercado de IA — Brecha salarial México vs Estados Unidos",
+    "summary": "Medianas salariales con intervalos de confianza bootstrap en cinco metros de Estados Unidos — San Francisco Bay Area $225,000 (n=319), Seattle $202,500, Nueva York $200,000 (n=116), Austin $197,575 y Boston $182,500 — frente a una decisión metodológica explícita: México solo tiene 4 vacantes de IA con salario publicado, así que las pruebas de hipótesis se niegan a correr, y el notebook muestra ese rechazo en vez de forzar un resultado.",
+    "repoPath": "mercado-ia-mx-us/02_brecha_salarial.ipynb",
+    "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/mercado-ia-mx-us/02_brecha_salarial.ipynb",
+    "folder": "mercado-ia-mx-us",
+    "technologies": [
+      "Pandas",
+      "Python"
+    ],
+    "categories": [
+      "Estadística & Pruebas de Hipótesis",
+      "SQL & Analítica de Producto",
+      "Análisis Exploratorio (EDA)"
+    ],
+    "cellCount": 38,
+    "imageCount": 3,
+    "coverImage": "/projects/mercado-de-ia-brecha-salarial-mexico-vs-estados-unidos/cell-15-0.png",
+    "cover": {
+      "gradientFrom": "#00DF81",
+      "gradientTo": "#0EA5E9",
+      "icon": "chart-bar"
+    },
+    "cells": [
+      {
+        "type": "markdown",
+        "content": "# Mercado de trabajo de IA: México vs Estados Unidos\n## 02 — Brecha salarial\n### DA: *Mau Vilar*\n#### https://github.com/mauvilar"
+      },
+      {
+        "type": "markdown",
+        "content": "**Qué responde este notebook:** cuánto paga una vacante de IA en México y en Estados Unidos,\ncuánto de esa diferencia sobrevive al ajuste por poder adquisitivo (PPP), y si el trabajo remoto\nhacia EE. UU. paga una prima dentro de México.\n\n**Regla dura:** ninguna mediana se publica con n < 30 (`resumir_por`, `src/analysis/stats.py`).\nLos grupos que no llegan al umbral vuelven con `mediana = NaN` por diseño y se listan en una\ntabla; nunca se grafican.\n\n**Aviso temprano:** de las cuatro ciudades mexicanas del alcance del proyecto (CDMX, Querétaro,\nMonterrey, Guadalajara), **ninguna** alcanza n ≥ 30 vacantes de IA con salario observado. Ciudad\nde México llega a 4; las otras tres, a 0. La sección de México de este notebook no es una tabla\nde medianas por ciudad: es la explicación de por qué esa tabla no existe. Cinco metros de Estados\nUnidos sí cruzan el umbral y sostienen el análisis cuantitativo."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "%matplotlib inline\nimport sys; sys.path.insert(0, \"..\")\nimport pandas as pd, numpy as np, matplotlib.pyplot as plt, seaborn as sns\nfrom src.analysis.stats import resumir_por, mediana_ci\nfrom src.analysis.hypothesis import mann_whitney, welch_log\n\nsns.set_theme(style=\"whitegrid\")\nplt.rcParams[\"figure.figsize\"] = (11, 5)\ndf = pd.read_parquet(\"../data/processed/vacantes.parquet\")\nprint(f\"{len(df):,} vacantes | {df['salary_observed'].sum():,} con salario observado\")\ndf.head()",
+        "execution_count": 1
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>posting_id</th>\n      <th>snapshot_date</th>\n      <th>source</th>\n      <th>title_raw</th>\n      <th>title_norm</th>\n      <th>company</th>\n      <th>company_posting_count</th>\n      <th>company_is_multinational</th>\n      <th>category</th>\n      <th>country</th>\n      <th>...</th>\n      <th>salary_observed</th>\n      <th>salary_annual_local</th>\n      <th>salary_annual_usd</th>\n      <th>salary_annual_usd_ppp</th>\n      <th>seniority</th>\n      <th>tier</th>\n      <th>skills</th>\n      <th>description_text</th>\n      <th>description_lang</th>\n      <th>url</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>11a69e030bbeb53ec642d827a5ccb1d8f42cd050</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>RPA Engineer AI Development Experience</td>\n      <td>rpa engineer ai development experience</td>\n      <td>AllianceIT Inc</td>\n      <td>1</td>\n      <td>False</td>\n      <td>Unknown</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>81000.0</td>\n      <td>4722.701619</td>\n      <td>7842.035459</td>\n      <td>unknown</td>\n      <td>nucleo</td>\n      <td>[]</td>\n      <td>Design, build, test, and deploy Intelligent Ag...</td>\n      <td>en</td>\n      <td>https://www.adzuna.com.mx/land/ad/5797062930?s...</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>4c34441a2388bd88259480834442d16d021b0801</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>Machine Learning Engineer</td>\n      <td>machine learning engineer</td>\n      <td>Capital Empresarial Horizonte</td>\n      <td>6</td>\n      <td>False</td>\n      <td>Unknown</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>600000.0</td>\n      <td>34982.974952</td>\n      <td>58089.151551</td>\n      <td>unknown</td>\n      <td>nucleo</td>\n      <td>[python, pytorch, tensorflow]</td>\n      <td>Capital Empresarial Horizonte Empresa Mexicana...</td>\n      <td>es</td>\n      <td>https://www.adzuna.com.mx/land/ad/5768169505?s...</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>32f1656a91bd124277eb9ae53e24af7614d2ded7</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>Ingeniero de Preventa Google Cloud e Inteligen...</td>\n      <td>ingeniero de preventa google cloud e inteligen...</td>\n      <td>Capital Empresarial Horizonte</td>\n      <td>6</td>\n      <td>False</td>\n      <td>Unknown</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>60000.0</td>\n      <td>3498.297495</td>\n      <td>5808.915155</td>\n      <td>unknown</td>\n      <td>nucleo</td>\n      <td>[gcp, llm]</td>\n      <td>Capital Empresarial Horizonte Empresa Mexicana...</td>\n      <td>es</td>\n      <td>https://www.adzuna.com.mx/land/ad/5800080170?s...</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>33043115125a4d46c1cf05caf42ff7b764f4bbce</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>Ingeniero en Inteligencia Artificial</td>\n      <td>ingeniero en inteligencia artificial</td>\n      <td>Grupo Financiero Inbursa Corporativo</td>\n      <td>1</td>\n      <td>False</td>\n      <td>Unknown</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>240000.0</td>\n      <td>13993.189981</td>\n      <td>23235.660620</td>\n      <td>unknown</td>\n      <td>nucleo</td>\n      <td>[]</td>\n      <td>Únete al equipo de Innovación de Grupo Finan...</td>\n      <td>es</td>\n      <td>https://www.adzuna.com.mx/land/ad/5812515682?s...</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>45f0e4c23e486ef2663196c229a4ac09670eb1ed</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>Maestra de Matemáticas o Inteligencia Artific...</td>\n      <td>maestra de matemáticas o inteligencia artific...</td>\n      <td>VARFRA</td>\n      <td>1</td>\n      <td>False</td>\n      <td>Empleos en educación</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>180000.0</td>\n      <td>10494.892486</td>\n      <td>17426.745465</td>\n      <td>unknown</td>\n      <td>fuera</td>\n      <td>[]</td>\n      <td>Vacante Descripción del empleo Estamos en bú...</td>\n      <td>es</td>\n      <td>https://www.adzuna.com.mx/land/ad/5774880912?s...</td>\n    </tr>\n  </tbody>\n</table>\n<p>5 rows × 31 columns</p>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "ia = df[df[\"tier\"].isin([\"nucleo\", \"anillo\"]) & df[\"salary_observed\"]]\nmx = ia[ia[\"country\"] == \"MX\"]\nus = ia[ia[\"country\"] == \"US\"]\n\nprint(f\"Vacantes de IA (núcleo + anillo) con salario observado: {len(ia)}\")\nprint(f\"  México:         {len(mx)}\")\nprint(f\"  Estados Unidos: {len(us)}\")",
+        "execution_count": 2
+      },
+      {
+        "type": "markdown",
+        "content": "## Salarios en México\n\nMéxico se analiza primero porque es donde la regla n ≥ 30 se activa de inmediato: el corte por\nciudad y el corte por seniority fallan los dos, y por la misma razón — faltan observaciones, no\nfalta interés en medirlas."
+      },
+      {
+        "type": "markdown",
+        "content": "### Por ciudad\n\nEl plan original pedía medianas para CDMX, Querétaro, Monterrey y Guadalajara. Antes de intentar\ncalcularlas, el embudo completo: cuántas vacantes hay en cada ciudad, cuántas son de IA\n(núcleo + anillo), y cuántas de esas publican salario."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "ciudades_objetivo = [\"Ciudad de México\", \"Querétaro\", \"Monterrey\", \"Guadalajara\"]\nmx_todas = df[df[\"country\"] == \"MX\"]\nmx_ia_todas = mx_todas[mx_todas[\"tier\"].isin([\"nucleo\", \"anillo\"])]\n\nembudo = pd.DataFrame({\n    \"vacantes_totales\": mx_todas[\"city\"].value_counts(),\n    \"vacantes_de_ia\": mx_ia_todas[\"city\"].value_counts(),\n    \"ia_con_salario\": mx_ia_todas.groupby(\"city\")[\"salary_observed\"].sum(),\n}).reindex(ciudades_objetivo).fillna(0).astype(int)\ndisplay(embudo)",
+        "execution_count": 3
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>vacantes_totales</th>\n      <th>vacantes_de_ia</th>\n      <th>ia_con_salario</th>\n    </tr>\n    <tr>\n      <th>city</th>\n      <th></th>\n      <th></th>\n      <th></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Ciudad de México</th>\n      <td>249</td>\n      <td>29</td>\n      <td>4</td>\n    </tr>\n    <tr>\n      <th>Querétaro</th>\n      <td>16</td>\n      <td>1</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <th>Monterrey</th>\n      <td>24</td>\n      <td>5</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <th>Guadalajara</th>\n      <td>42</td>\n      <td>10</td>\n      <td>0</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "resumen_mx = resumir_por(mx, [\"city\"], valor=\"salary_annual_local\", min_n=30)\nresumen_mx[\"suficiente\"] = resumen_mx[\"suficiente\"].astype(bool)  # object->bool: ~ ya niega bien\ndisplay(resumen_mx)\n\ngraficables = resumen_mx[resumen_mx[\"suficiente\"]]\ninsuficientes = resumen_mx[~resumen_mx[\"suficiente\"]]\n\nif len(graficables):\n    fig, ax = plt.subplots()\n    ax.errorbar(\n        graficables[\"mediana\"], graficables[\"city\"],\n        xerr=[graficables[\"mediana\"] - graficables[\"ic_inf\"], graficables[\"ic_sup\"] - graficables[\"mediana\"]],\n        fmt=\"o\", capsize=5, color=\"#2a6\",\n    )\n    ax.set_xlabel(\"Salario anual mediano (MXN)\")\n    ax.set_title(\"México — mediana con IC 90 %, sólo ciudades con n ≥ 30\")\n    for _, r in graficables.iterrows():\n        ax.annotate(f\"n={r['n']}\", (r[\"mediana\"], r[\"city\"]), xytext=(6, 6), textcoords=\"offset points\")\nelse:\n    print(\"Ninguna ciudad mexicana alcanza n >= 30. No se dibuja ninguna gráfica de medianas:\")\n    print(\"graficar aquí presentaría como estimación algo que no lo es.\")\n\nif len(insuficientes):\n    print(\"\\nMuestra insuficiente, NO se grafican:\")\n    print(insuficientes[[\"city\", \"n\"]].to_string(index=False))\n    print(\"\\nQuerétaro, Monterrey y Guadalajara ni siquiera aparecen en esta tabla: tienen 0 filas\")\n    print(\"en el corte de IA-con-salario (ver el embudo arriba), así que resumir_por no genera grupo para ellas.\")",
+        "execution_count": 4
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>city</th>\n      <th>n</th>\n      <th>suficiente</th>\n      <th>mediana</th>\n      <th>ic_inf</th>\n      <th>ic_sup</th>\n      <th>q1</th>\n      <th>q3</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>Ciudad de México</td>\n      <td>4</td>\n      <td>False</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "valores_mx = sorted(mx[\"salary_annual_local\"].tolist())\nprint(\"Los 4 salarios mexicanos observados (MXN/año):\", [f\"{v:,.0f}\" for v in valores_mx])\nprint(f\"Razón máximo/mínimo: {max(valores_mx) / min(valores_mx):.1f}x\")\n\nmed, lo, hi = mediana_ci(mx[\"salary_annual_usd_ppp\"])\nprint(f\"\\nSi se ignora la regla n>=30 y se hace bootstrap igual sobre estos 4 valores (PPP):\")\nprint(f\"  mediana=${med:,.0f}  IC90%=[${lo:,.0f}, ${hi:,.0f}]  ancho=${hi - lo:,.0f}\")\n\nsf_bay = us.loc[us[\"metro\"] == \"SF Bay Area\", \"salary_annual_usd_ppp\"]\nmed_sf, lo_sf, hi_sf = mediana_ci(sf_bay)\nprint(f\"Contraste, SF Bay Area (n={sf_bay.count()}): mediana=${med_sf:,.0f}  IC90%=[${lo_sf:,.0f}, ${hi_sf:,.0f}]  ancho=${hi_sf - lo_sf:,.0f}\")\nprint(f\"\\nEl IC de México es {(hi - lo) / (hi_sf - lo_sf):.1f}x más ancho que el de SF Bay Area,\")\nprint(\"y su ancho supera 3x a la propia mediana que pretende acotar. Ésa es la regla n>=30 hecha número.\")",
+        "execution_count": 5
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión — Por ciudad.** Ninguna de las cuatro ciudades mexicanas del alcance del proyecto\nalcanza n ≥ 30 vacantes de IA con salario observado. Ciudad de México reúne 249 vacantes en\ntotal, de las cuales 29 son de IA, y de ésas sólo 4 publican salario. Querétaro, Monterrey y\nGuadalajara tienen vacantes de IA (1, 5 y 10 respectivamente) pero **cero** con salario\npublicado. No es un problema de muestreo que se resuelva recolectando una semana más: es la\nopacidad salarial mexicana descrita en la tesis del proyecto, medida directamente. Los 4 salarios\nde CDMX (60,000 · 81,000 · 240,000 · 600,000 MXN/año) tienen un rango de 10x entre sí; el\nbootstrap ingenuo sobre esos 4 valores produce un IC90% de \\$5,809–\\$58,089 (dólares PPP), más\nancho que la propia mediana que delimita. Se reportan como anécdota en la sección de brecha, no\ncomo estimación."
+      },
+      {
+        "type": "markdown",
+        "content": "### Por seniority\n\nEl mismo corte, ahora por seniority declarado en la descripción de la vacante."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "resumen_mx_seniority = resumir_por(mx, [\"seniority\"], valor=\"salary_annual_local\", min_n=30)\ndisplay(resumen_mx_seniority)\nprint(\"Seniority presente en las vacantes mexicanas con salario:\", mx[\"seniority\"].unique().tolist())",
+        "execution_count": 6
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>seniority</th>\n      <th>n</th>\n      <th>suficiente</th>\n      <th>mediana</th>\n      <th>ic_inf</th>\n      <th>ic_sup</th>\n      <th>q1</th>\n      <th>q3</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>unknown</td>\n      <td>4</td>\n      <td>False</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión — Por seniority.** Las 4 vacantes mexicanas con salario observado declaran\nseniority = `unknown` **las cuatro**. No es sólo que la muestra sea insuficiente (n=4 < 30): no\nhay ninguna variación de seniority que segmentar. El campo `seniority` se extrae del texto de la\ndescripción, y en este corte no aporta nada porque la descripción no lo menciona. El desglose por\nseniority que sí funciona es el de Estados Unidos, en la sección siguiente."
+      },
+      {
+        "type": "markdown",
+        "content": "## Salarios en Estados Unidos\n\nCon 750 vacantes de IA con salario observado, Estados Unidos es donde la regla n ≥ 30 deja de\nser un obstáculo y empieza a producir números."
+      },
+      {
+        "type": "markdown",
+        "content": "### Por metro\n\nMedianas con intervalo de confianza bootstrap (90 %) para los metros de EE. UU. definidos en el\nalcance del proyecto, en dólares nominales."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "us_metro = us[us[\"metro\"].notna()]\nsin_metro = len(us) - len(us_metro)\n\nresumen_us_metro = resumir_por(us_metro, [\"metro\"], valor=\"salary_annual_usd\", min_n=30)\nresumen_us_metro[\"suficiente\"] = resumen_us_metro[\"suficiente\"].astype(bool)\ndisplay(resumen_us_metro)\n\ngraficables = resumen_us_metro[resumen_us_metro[\"suficiente\"]].sort_values(\"mediana\")\ninsuficientes = resumen_us_metro[~resumen_us_metro[\"suficiente\"]]\n\nfig, ax = plt.subplots()\nax.errorbar(\n    graficables[\"mediana\"], graficables[\"metro\"],\n    xerr=[graficables[\"mediana\"] - graficables[\"ic_inf\"], graficables[\"ic_sup\"] - graficables[\"mediana\"]],\n    fmt=\"o\", capsize=5, color=\"#36c\", markersize=8,\n)\nax.set_xlabel(\"Salario anual mediano (USD nominal)\")\nax.set_title(\"Estados Unidos — mediana con IC 90 % por metro, sólo n ≥ 30\")\nfor _, r in graficables.iterrows():\n    ax.annotate(f\"n={r['n']}\", (r[\"mediana\"], r[\"metro\"]), xytext=(8, 0), textcoords=\"offset points\", va=\"center\")\nplt.tight_layout()\n\nif len(insuficientes):\n    print(\"Muestra insuficiente, NO se grafican:\")\n    print(insuficientes[[\"metro\", \"n\"]].to_string(index=False))\nprint(f\"\\n{sin_metro:,} vacantes de EE. UU. no mapean a un metro de config/cities.yml y quedan fuera de este corte.\")",
+        "execution_count": 7
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>metro</th>\n      <th>n</th>\n      <th>suficiente</th>\n      <th>mediana</th>\n      <th>ic_inf</th>\n      <th>ic_sup</th>\n      <th>q1</th>\n      <th>q3</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>SF Bay Area</td>\n      <td>319</td>\n      <td>True</td>\n      <td>225000.0</td>\n      <td>216300.00</td>\n      <td>226800.0</td>\n      <td>192500.0</td>\n      <td>275000.000</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>NYC</td>\n      <td>116</td>\n      <td>True</td>\n      <td>200000.0</td>\n      <td>185000.00</td>\n      <td>210000.0</td>\n      <td>144375.0</td>\n      <td>230000.000</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>Boston</td>\n      <td>64</td>\n      <td>True</td>\n      <td>182500.0</td>\n      <td>175000.00</td>\n      <td>195000.0</td>\n      <td>153750.0</td>\n      <td>220872.125</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>Seattle</td>\n      <td>63</td>\n      <td>True</td>\n      <td>202500.0</td>\n      <td>185000.00</td>\n      <td>207500.0</td>\n      <td>170150.0</td>\n      <td>220650.000</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>Austin</td>\n      <td>38</td>\n      <td>True</td>\n      <td>197575.0</td>\n      <td>168044.25</td>\n      <td>209750.0</td>\n      <td>155500.0</td>\n      <td>230625.000</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>Los Angeles</td>\n      <td>20</td>\n      <td>False</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "image",
+        "src": "/projects/mercado-de-ia-brecha-salarial-mexico-vs-estados-unidos/cell-15-0.png",
+        "alt": "Output 0 de la celda 15"
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión — Por metro.** Cinco metros de EE. UU. alcanzan n ≥ 30: SF Bay Area (n=319,\nmediana \\$225,000), Seattle (n=63, \\$202,500), NYC (n=116, \\$200,000), Austin (n=38, \\$197,575) y\nBoston (n=64, \\$182,500). Los Ángeles se queda en n=20 y no se grafica. SF Bay Area paga ~23% más\nque Boston, el metro suficiente más barato — una brecha real, pero mucho menor que la que separa\na cualquiera de estos metros de México."
+      },
+      {
+        "type": "markdown",
+        "content": "### Por seniority\n\nMismo corte para EE. UU., ahora por seniority."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "resumen_us_seniority = resumir_por(us, [\"seniority\"], valor=\"salary_annual_usd\", min_n=30)\nresumen_us_seniority[\"suficiente\"] = resumen_us_seniority[\"suficiente\"].astype(bool)\ndisplay(resumen_us_seniority)\n\ngraficables = resumen_us_seniority[resumen_us_seniority[\"suficiente\"]].sort_values(\"mediana\")\ninsuficientes = resumen_us_seniority[~resumen_us_seniority[\"suficiente\"]]\n\nfig, ax = plt.subplots()\nax.errorbar(\n    graficables[\"mediana\"], graficables[\"seniority\"],\n    xerr=[graficables[\"mediana\"] - graficables[\"ic_inf\"], graficables[\"ic_sup\"] - graficables[\"mediana\"]],\n    fmt=\"o\", capsize=5, color=\"#36c\", markersize=8,\n)\nax.set_xlabel(\"Salario anual mediano (USD nominal)\")\nax.set_title(\"Estados Unidos — mediana con IC 90 % por seniority, sólo n ≥ 30\")\nfor _, r in graficables.iterrows():\n    ax.annotate(f\"n={r['n']}\", (r[\"mediana\"], r[\"seniority\"]), xytext=(8, 0), textcoords=\"offset points\", va=\"center\")\nplt.tight_layout()\n\nif len(insuficientes):\n    print(\"Muestra insuficiente, NO se grafican:\")\n    print(insuficientes[[\"seniority\", \"n\"]].to_string(index=False))",
+        "execution_count": 8
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>seniority</th>\n      <th>n</th>\n      <th>suficiente</th>\n      <th>mediana</th>\n      <th>ic_inf</th>\n      <th>ic_sup</th>\n      <th>q1</th>\n      <th>q3</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>unknown</td>\n      <td>248</td>\n      <td>True</td>\n      <td>200000.00</td>\n      <td>190250.0</td>\n      <td>201900.0</td>\n      <td>150000.000</td>\n      <td>230000.0</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>sr</td>\n      <td>206</td>\n      <td>True</td>\n      <td>196520.25</td>\n      <td>185000.0</td>\n      <td>201075.0</td>\n      <td>155930.625</td>\n      <td>225000.0</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>lead</td>\n      <td>85</td>\n      <td>True</td>\n      <td>190000.00</td>\n      <td>175000.0</td>\n      <td>200000.0</td>\n      <td>150000.000</td>\n      <td>237500.0</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>staff</td>\n      <td>81</td>\n      <td>True</td>\n      <td>238750.00</td>\n      <td>229000.0</td>\n      <td>250000.0</td>\n      <td>200000.000</td>\n      <td>280500.0</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>mid</td>\n      <td>51</td>\n      <td>True</td>\n      <td>190000.00</td>\n      <td>145000.0</td>\n      <td>200000.0</td>\n      <td>132500.000</td>\n      <td>223750.0</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>principal</td>\n      <td>38</td>\n      <td>True</td>\n      <td>232625.00</td>\n      <td>220800.0</td>\n      <td>239525.0</td>\n      <td>198442.500</td>\n      <td>262600.0</td>\n    </tr>\n    <tr>\n      <th>6</th>\n      <td>jr</td>\n      <td>29</td>\n      <td>False</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n    <tr>\n      <th>7</th>\n      <td>intern</td>\n      <td>12</td>\n      <td>False</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "image",
+        "src": "/projects/mercado-de-ia-brecha-salarial-mexico-vs-estados-unidos/cell-18-1.png",
+        "alt": "Output 1 de la celda 18"
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión — Por seniority (EE. UU.).** `staff` (n=81, \\$238,750) y `principal` (n=38,\n\\$232,625) son los niveles mejor pagados observados, por encima incluso de `sr` (n=206,\n\\$196,520) — consistente con que \"staff/principal\" en tecnología suele ser una vía de progresión\ntécnica paralela a management, no un nivel intermedio. `intern` (n=12) no alcanza el umbral y no\nse grafica. `unknown` (n=248, el grupo más grande) paga cerca de la mediana general, lo que\nsugiere que las vacantes sin seniority declarado no están sesgadas hacia ningún extremo."
+      },
+      {
+        "type": "markdown",
+        "content": "## La brecha\n\nCon Estados Unidos medible y México reducido a 4 observaciones en una sola ciudad, esta sección\nno compara dos medianas confiables: compara una mediana real contra una anécdota, y es explícita\nsobre cuál es cuál."
+      },
+      {
+        "type": "markdown",
+        "content": "### Brecha nominal\n\nComparación en dólares corrientes, sin ajustar por poder adquisitivo."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "nominal = resumir_por(ia, [\"country\"], valor=\"salary_annual_usd\", min_n=30)\ndisplay(nominal)\n\nmediana_us_nom = nominal.set_index(\"country\").loc[\"US\", \"mediana\"]\nmediana_mx_nom = mx[\"salary_annual_usd\"].median()  # n=4, anécdota: no cumple n>=30\n\nprint(f\"Estados Unidos (n={len(us)}): mediana ${mediana_us_nom:,.0f} USD nominales\")\nprint(f\"México (n={len(mx)}, ANÉCDOTA — no cumple n>=30): 'mediana' ${mediana_mx_nom:,.0f} USD nominales\")\nprint(f\"Razón nominal US/MX, anecdótica: {mediana_us_nom / mediana_mx_nom:.1f}x\")",
+        "execution_count": 9
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>country</th>\n      <th>n</th>\n      <th>suficiente</th>\n      <th>mediana</th>\n      <th>ic_inf</th>\n      <th>ic_sup</th>\n      <th>q1</th>\n      <th>q3</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>US</td>\n      <td>750</td>\n      <td>True</td>\n      <td>200000.0</td>\n      <td>195000.0</td>\n      <td>200250.0</td>\n      <td>152500.0</td>\n      <td>237500.0</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>MX</td>\n      <td>4</td>\n      <td>False</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión — Brecha nominal.** `resumir_por` a nivel país confirma lo mismo que a nivel\nciudad: México con n=4 vuelve `mediana = NaN` por diseño. El número que sigue no es una\nestimación del mercado mexicano: es la mediana literal de 4 observaciones, ≈\\$9,358 USD\nnominales contra \\$200,000 en EE. UU., una razón de ~21x. Se reporta porque omitirlo sería\nesconder el dato, no porque sostenga una afirmación sobre \"cuánto paga México\"."
+      },
+      {
+        "type": "markdown",
+        "content": "### Brecha ajustada por poder adquisitivo\n\nEl tipo de cambio nominal sobrevalora lo que un dólar \"vale\" fuera de EE. UU.: no refleja que un\npeso rinde más dentro de México que su conversión directa a dólares. El factor PPP del Banco\nMundial (`PA.NUS.PPP`, MX=10.33, US=1.0) corrige eso. Para México, `salary_annual_usd_ppp` es por\neso **mayor** que `salary_annual_usd` — no es un error, es el ajuste haciendo su trabajo."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "ppp = resumir_por(ia, [\"country\"], valor=\"salary_annual_usd_ppp\", min_n=30)\ndisplay(ppp)\n\nmediana_us_ppp = ppp.set_index(\"country\").loc[\"US\", \"mediana\"]\nmediana_mx_ppp = mx[\"salary_annual_usd_ppp\"].median()  # n=4, anécdota\n\nprint(f\"Estados Unidos (n={len(us)}): mediana ${mediana_us_ppp:,.0f} USD PPP (factor=1.0, igual al nominal)\")\nprint(f\"México (n={len(mx)}, ANÉCDOTA): 'mediana' ${mediana_mx_ppp:,.0f} USD PPP, vs ${mediana_mx_nom:,.0f} nominales\")\nprint(f\"El ajuste PPP multiplica el número mexicano por {mediana_mx_ppp / mediana_mx_nom:.2f}x\")\n\nrazon_nominal = mediana_us_nom / mediana_mx_nom\nrazon_ppp = mediana_us_ppp / mediana_mx_ppp\nprint(f\"\\nRazón US/MX nominal, anecdótica: {razon_nominal:.1f}x\")\nprint(f\"Razón US/MX en PPP, anecdótica:  {razon_ppp:.1f}x\")\nprint(\"El tipo de cambio exagera la brecha frente al poder adquisitivo real, pero ambas razones\")\nprint(\"descansan sobre las mismas 4 observaciones mexicanas: ninguna de las dos es una estimación.\")",
+        "execution_count": 10
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>country</th>\n      <th>n</th>\n      <th>suficiente</th>\n      <th>mediana</th>\n      <th>ic_inf</th>\n      <th>ic_sup</th>\n      <th>q1</th>\n      <th>q3</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>US</td>\n      <td>750</td>\n      <td>True</td>\n      <td>200000.0</td>\n      <td>195000.0</td>\n      <td>200250.0</td>\n      <td>152500.0</td>\n      <td>237500.0</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>MX</td>\n      <td>4</td>\n      <td>False</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "comparativa = resumir_por(ia[ia[\"metro\"].notna()], [\"country\", \"metro\"], valor=\"salary_annual_usd_ppp\", min_n=30)\ndisplay(comparativa)\n\ncomparativa_suf = comparativa[comparativa[\"suficiente\"]].sort_values(\"mediana\")\n\nfig, ax = plt.subplots(figsize=(11, 6))\ncolores = comparativa_suf[\"country\"].map({\"MX\": \"#2a6\", \"US\": \"#36c\"})\nax.barh(comparativa_suf[\"metro\"], comparativa_suf[\"mediana\"], color=colores)\nax.set_xlabel(\"Salario anual mediano (dólares internacionales, ajustado por PPP)\")\nax.set_title(\"Brecha ajustada por poder adquisitivo — sólo metros con n ≥ 30\")\nfor _, r in comparativa_suf.iterrows():\n    ax.annotate(f\"n={r['n']}\", (r[\"mediana\"], r[\"metro\"]), xytext=(6, 0), textcoords=\"offset points\", va=\"center\")\nplt.tight_layout()",
+        "execution_count": 11
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>country</th>\n      <th>metro</th>\n      <th>n</th>\n      <th>suficiente</th>\n      <th>mediana</th>\n      <th>ic_inf</th>\n      <th>ic_sup</th>\n      <th>q1</th>\n      <th>q3</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>US</td>\n      <td>SF Bay Area</td>\n      <td>319</td>\n      <td>True</td>\n      <td>225000.0</td>\n      <td>216300.00</td>\n      <td>226800.0</td>\n      <td>192500.0</td>\n      <td>275000.000</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>US</td>\n      <td>NYC</td>\n      <td>116</td>\n      <td>True</td>\n      <td>200000.0</td>\n      <td>185000.00</td>\n      <td>210000.0</td>\n      <td>144375.0</td>\n      <td>230000.000</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>US</td>\n      <td>Boston</td>\n      <td>64</td>\n      <td>True</td>\n      <td>182500.0</td>\n      <td>175000.00</td>\n      <td>195000.0</td>\n      <td>153750.0</td>\n      <td>220872.125</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>US</td>\n      <td>Seattle</td>\n      <td>63</td>\n      <td>True</td>\n      <td>202500.0</td>\n      <td>185000.00</td>\n      <td>207500.0</td>\n      <td>170150.0</td>\n      <td>220650.000</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>US</td>\n      <td>Austin</td>\n      <td>38</td>\n      <td>True</td>\n      <td>197575.0</td>\n      <td>168044.25</td>\n      <td>209750.0</td>\n      <td>155500.0</td>\n      <td>230625.000</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>US</td>\n      <td>Los Angeles</td>\n      <td>20</td>\n      <td>False</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n    <tr>\n      <th>6</th>\n      <td>MX</td>\n      <td>Valle de México</td>\n      <td>4</td>\n      <td>False</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "image",
+        "src": "/projects/mercado-de-ia-brecha-salarial-mexico-vs-estados-unidos/cell-26-2.png",
+        "alt": "Output 2 de la celda 26"
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión — Brecha ajustada por poder adquisitivo.** El único metro mexicano candidato\n(Valle de México, n=4) no cruza el umbral, y por eso no aparece ni una sola barra verde en la\ngráfica: las cinco barras son metros de EE. UU. Con PPP, la mediana mexicana anecdótica sube de\n~\\$9,358 a ~\\$15,539 (x1.66): el peso rinde más dentro de México de lo que el tipo de cambio\nsugiere. La razón US/MX anecdótica baja de ~21x (nominal) a ~13x (PPP) — el ajuste angosta la\nbrecha aparente, pero **no** la convierte en un número publicable: sigue siendo la mediana de 4\nobservaciones en una sola ciudad. La sección de Pruebas de hipótesis lo confirma formalmente."
+      },
+      {
+        "type": "markdown",
+        "content": "## Pruebas de hipótesis\n\nDos preguntas formales: ¿CDMX y Querétaro pagan distinto dentro de México?, y ¿EE. UU. y México\npagan distinto en conjunto? Las funciones de `src/analysis/hypothesis.py` exigen n ≥ 30 en ambos\ngrupos antes de calcular un p-valor; si no se cumple, devuelven `rechaza_h0=None` en vez de un\nresultado. Eso es lo que va a pasar en las dos pruebas siguientes, y es el resultado correcto."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "cdmx = mx[mx[\"city\"] == \"Ciudad de México\"][\"salary_annual_local\"]\nqro = mx[mx[\"city\"] == \"Querétaro\"][\"salary_annual_local\"]\n\nresultado_ciudades = mann_whitney(cdmx, qro, etiqueta_a=\"CDMX\", etiqueta_b=\"Querétaro\")\ndisplay(resultado_ciudades)\nprint(resultado_ciudades[\"conclusion\"])",
+        "execution_count": 12
+      },
+      {
+        "type": "text-output",
+        "content": "{'n_a': 4,\n 'n_b': 0,\n 'p_valor': None,\n 'rechaza_h0': None,\n 'conclusion': 'Muestra insuficiente para comparar CDMX (n=4) con Querétaro (n=0). Se requiere n>=30 en ambos.'}"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "resultado_paises = welch_log(\n    us[\"salary_annual_usd_ppp\"], mx[\"salary_annual_usd_ppp\"],\n    etiqueta_a=\"Estados Unidos\", etiqueta_b=\"México\",\n)\ndisplay(resultado_paises)\nprint(resultado_paises[\"conclusion\"])",
+        "execution_count": 13
+      },
+      {
+        "type": "text-output",
+        "content": "{'n_a': 750,\n 'n_b': 4,\n 'p_valor': None,\n 'rechaza_h0': None,\n 'razon_medianas': nan,\n 'conclusion': 'Muestra insuficiente (Estados Unidos n=750, México n=4).'}"
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión — Pruebas de hipótesis.** Las dos pruebas se niegan a producir un p-valor, y las\ndos tienen razón. Mann-Whitney entre CDMX y Querétaro no corre porque Querétaro tiene n=0\nvacantes de IA con salario: no hay nada que comparar. Welch sobre log-salario entre Estados\nUnidos y México tampoco corre porque México tiene n=4 frente al umbral de 30 — aun cuando Estados\nUnidos aporta 750 observaciones válidas. Forzar `min_n` hacia abajo para obtener un p-valor habría\nproducido un número con apariencia de rigor estadístico sobre una muestra que no lo sostiene. El\nresultado correcto de esta sección es que no hay resultado, y por eso se muestra."
+      },
+      {
+        "type": "markdown",
+        "content": "## El arbitraje del remoto\n\nLa pregunta: ¿una vacante remota para una empresa de EE. UU., trabajada desde México, paga una\nprima sobre una vacante presencial mexicana? Antes de comparar salarios, cuántas vacantes existen\nsiquiera en esa categoría (`remote_scope = us_desde_mx`), en **todo** el corpus, no sólo en el\nsubconjunto de IA con salario."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "remoto_por_pais = df.groupby([\"country\", \"remote_scope\"]).size().unstack(fill_value=0)\ndisplay(remoto_por_pais)",
+        "execution_count": 14
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>remote_scope</th>\n      <th>global</th>\n      <th>local</th>\n      <th>nacional</th>\n      <th>us_desde_mx</th>\n    </tr>\n    <tr>\n      <th>country</th>\n      <th></th>\n      <th></th>\n      <th></th>\n      <th></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>MX</th>\n      <td>1</td>\n      <td>309</td>\n      <td>18</td>\n      <td>3</td>\n    </tr>\n    <tr>\n      <th>US</th>\n      <td>353</td>\n      <td>3243</td>\n      <td>3063</td>\n      <td>0</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "resumen_remoto_mx = resumir_por(mx, [\"remote_scope\"], valor=\"salary_annual_local\", min_n=30)\ndisplay(resumen_remoto_mx)",
+        "execution_count": 15
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>remote_scope</th>\n      <th>n</th>\n      <th>suficiente</th>\n      <th>mediana</th>\n      <th>ic_inf</th>\n      <th>ic_sup</th>\n      <th>q1</th>\n      <th>q3</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>local</td>\n      <td>2</td>\n      <td>False</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>nacional</td>\n      <td>2</td>\n      <td>False</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n      <td>NaN</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "arbitraje_universo = df[(df[\"country\"] == \"MX\") & (df[\"remote_scope\"] == \"us_desde_mx\")]\nprint(f\"Vacantes mexicanas con remote_scope = 'us_desde_mx' en todo el corpus: {len(arbitraje_universo)}\")\ndisplay(arbitraje_universo[[\"tier\", \"salary_observed\", \"city\", \"seniority\", \"title_raw\"]])\n\nes_ia = arbitraje_universo[\"tier\"].isin([\"nucleo\", \"anillo\"]).sum()\ncon_salario = int(arbitraje_universo[\"salary_observed\"].sum())\nprint(f\"De ésas, son de IA (núcleo/anillo): {es_ia}\")\nprint(f\"De ésas, publican salario: {con_salario}\")\n\nhacia_us = mx[mx[\"remote_scope\"] == \"us_desde_mx\"][\"salary_annual_local\"]\nlocal = mx[mx[\"remote_scope\"] == \"local\"][\"salary_annual_local\"]\nresultado_arbitraje = mann_whitney(hacia_us, local, etiqueta_a=\"Remoto para EE.UU.\", etiqueta_b=\"Presencial en México\")\nprint(f\"\\n{resultado_arbitraje['conclusion']}\")",
+        "execution_count": 16
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>tier</th>\n      <th>salary_observed</th>\n      <th>city</th>\n      <th>seniority</th>\n      <th>title_raw</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>78</th>\n      <td>fuera</td>\n      <td>True</td>\n      <td>Monterrey</td>\n      <td>sr</td>\n      <td>SR Software Engineer (Data focus) - (Remote, L...</td>\n    </tr>\n    <tr>\n      <th>1733</th>\n      <td>fuera</td>\n      <td>False</td>\n      <td>Ciudad de México</td>\n      <td>unknown</td>\n      <td>Ejecutivo Comercial B2B</td>\n    </tr>\n    <tr>\n      <th>1801</th>\n      <td>fuera</td>\n      <td>False</td>\n      <td>Ciudad de México</td>\n      <td>unknown</td>\n      <td>Transcriptor a de Español México Trabajo des...</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión — El arbitraje del remoto.** De 331 vacantes mexicanas capturadas, sólo 3 (0.9 %)\nse etiquetan `remote_scope = us_desde_mx`. De esas 3, ninguna es de IA (núcleo/anillo) y sólo 1\npublica salario — y es un puesto de software genérico (`tier = fuera`), no de IA. La\nintersección que la pregunta necesita (IA + salario + remoto-hacia-EE.UU.) tiene **n=0**, no\nn=3: no existe todavía ninguna vacante que permita medir este arbitraje, con o sin regla de\nsuficiencia. Mann-Whitney lo confirma comparando contra las presenciales mexicanas (n=2) y se\nniega a dar un p-valor. La respuesta honesta no es \"no hay prima\": es \"no hay observación\"."
+      },
+      {
+        "type": "markdown",
+        "content": "## Resumen del análisis salarial\n\n**Lo que sí se puede afirmar (n ≥ 30, con intervalo de confianza bootstrap 90 %):**\n\n| Metro (EE. UU.) | n | Mediana anual (USD) | IC 90 % |\n|---|---:|---:|---|\n| SF Bay Area | 319 | \\$225,000 | [\\$216,300, \\$226,800] |\n| Seattle | 63 | \\$202,500 | [\\$185,000, \\$207,500] |\n| NYC | 116 | \\$200,000 | [\\$185,000, \\$210,000] |\n| Austin | 38 | \\$197,575 | [\\$168,044, \\$209,750] |\n| Boston | 64 | \\$182,500 | [\\$175,000, \\$195,000] |\n\nPor seniority en EE. UU.: `staff` (\\$238,750, n=81) y `principal` (\\$232,625, n=38) pagan más que\n`sr` (\\$196,520, n=206); `intern` (n=12) no alcanza el umbral.\n\n**Pregunta 1 — ¿Cuánto paga una vacante de IA en CDMX, Querétaro, Monterrey, Guadalajara y en\nlos principales metros de EE. UU.?** Para EE. UU., la tabla de arriba. Para México, **no se\npuede responder con rigor para ninguna de las cuatro ciudades**: Querétaro, Monterrey y\nGuadalajara tienen 0 vacantes de IA con salario publicado (aunque sí tienen vacantes de IA sin\nsalario: 1, 5 y 10 respectivamente). CDMX tiene 4, muy por debajo de n=30. Esos 4 valores —\n60,000 · 81,000 · 240,000 · 600,000 MXN/año, un rango de 10x — se citan como anécdota (mediana\n≈ \\$15,539 USD PPP) y nunca como estimación.\n\n**Pregunta 2 — ¿Cuánto de esa brecha sobrevive al ajuste por poder adquisitivo?** Con las mismas\n4 observaciones mexicanas como anécdota: la razón US/MX baja de ~21x en dólares nominales a ~13x\nen dólares PPP, porque el peso rinde más dentro de México de lo que el tipo de cambio sugiere.\nFormalmente, `welch_log` se niega a dar un p-valor para esta comparación\n(`\"Muestra insuficiente (Estados Unidos n=750, México n=4).\"`), que es el resultado correcto:\nninguna de las dos razones (21x, 13x) es una estimación del mercado mexicano, y ninguna debería\ncitarse sin ese contexto.\n\n**Pregunta 6 — ¿Existe arbitraje salarial en el remoto hacia EE. UU. desde México?** De 331\nvacantes mexicanas, sólo 3 son remoto-hacia-EE. UU., ninguna es de IA, y sólo 1 publica salario\n(sin ser de IA). La intersección relevante tiene n=0. La pregunta no tiene evidencia a favor ni\nen contra: no hay observación que la responda.\n\n**Cortes que quedaron sin muestra suficiente, en vez de omitirse:**\n\n| Corte | n | Motivo |\n|---|---:|---|\n| México — Querétaro (IA + salario) | 0 | Sin vacantes de IA con salario publicado |\n| México — Monterrey (IA + salario) | 0 | Sin vacantes de IA con salario publicado |\n| México — Guadalajara (IA + salario) | 0 | Sin vacantes de IA con salario publicado |\n| México — Ciudad de México (IA + salario) | 4 | Por debajo de n=30 |\n| México — por seniority | 4 (todas `unknown`) | Sin variación que segmentar |\n| México — remote_scope `local` | 2 | Por debajo de n=30 |\n| México — remote_scope `nacional` | 2 | Por debajo de n=30 |\n| México — remote_scope `us_desde_mx` (IA + salario) | 0 | Ninguna de las 3 vacantes de ese tipo es de IA con salario |\n| EE. UU. — Los Angeles (metro) | 20 | Por debajo de n=30 |\n| EE. UU. — `intern` (seniority) | 12 | Por debajo de n=30 |\n| Mann-Whitney CDMX vs Querétaro | 4 vs 0 | Querétaro sin observaciones |\n| Welch (log) Estados Unidos vs México | 750 vs 4 | México por debajo de n=30 |\n\n**Conclusión general.** El mercado estadounidense de IA sí se puede medir: cinco metros con\nmedianas entre \\$182,500 y \\$225,000, y una jerarquía de seniority coherente. El mercado\nmexicano, en cambio, no se puede medir con esta recolección — no porque no exista (hay 45\nvacantes de IA en México), sino porque casi ninguna publica salario (4 de 45, todas en una sola\nciudad). Esa falta de dato no es un vacío que este notebook deba rellenar con imputación o\npromedios débiles: es, junto con la brecha misma, uno de los dos hallazgos del proyecto. Cuánto\npaga México sigue siendo, con los datos de hoy, una pregunta sin respuesta confiable — y ésa es\nla respuesta."
+      }
+    ]
+  },
+  {
+    "slug": "mercado-de-ia-primas-por-skill-y-transparencia-salarial",
+    "title": "Mercado de IA — Primas por skill y transparencia salarial",
+    "summary": "Primas salariales por habilidad: dominar prompt engineering o LangChain se paga ~30% por debajo de la mediana nacional, mientras que trabajar con agentes de IA se paga justo en ella — una brecha de $61,050 entre habilidades del mismo mercado. Un hallazgo contraintuitivo: en Estados Unidos, las multinacionales publican el salario 3.4 veces menos que las empresas locales.",
+    "repoPath": "mercado-ia-mx-us/03_skills_y_transparencia.ipynb",
+    "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/mercado-ia-mx-us/03_skills_y_transparencia.ipynb",
+    "folder": "mercado-ia-mx-us",
+    "technologies": [
+      "Pandas",
+      "Python"
+    ],
+    "categories": [
+      "Estadística & Pruebas de Hipótesis",
+      "SQL & Analítica de Producto",
+      "Análisis Exploratorio (EDA)"
+    ],
+    "cellCount": 20,
+    "imageCount": 6,
+    "coverImage": "/projects/mercado-de-ia-primas-por-skill-y-transparencia-salarial/cell-5-0.png",
+    "cover": {
+      "gradientFrom": "#6366F1",
+      "gradientTo": "#00DF81",
+      "icon": "sparkles"
+    },
+    "cells": [
+      {
+        "type": "markdown",
+        "content": "# Mercado de trabajo de IA: México vs Estados Unidos\n## 03 — Skills y transparencia\n### DA: *Mau Vilar*\n#### https://github.com/mauvilar"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "import sys; sys.path.insert(0, \"..\")\nimport pandas as pd, numpy as np, matplotlib.pyplot as plt, seaborn as sns\nfrom src.analysis.stats import resumir_por, mediana_ci\nfrom src.analysis.hypothesis import mann_whitney, welch_log\n\nsns.set_theme(style=\"whitegrid\")\nplt.rcParams[\"figure.figsize\"] = (11, 5)\ndf = pd.read_parquet(\"../data/processed/vacantes.parquet\")\nprint(f\"{len(df):,} vacantes | {df['salary_observed'].sum():,} con salario observado\")\ndf.head()",
+        "execution_count": 1
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>posting_id</th>\n      <th>snapshot_date</th>\n      <th>source</th>\n      <th>title_raw</th>\n      <th>title_norm</th>\n      <th>company</th>\n      <th>company_posting_count</th>\n      <th>company_is_multinational</th>\n      <th>category</th>\n      <th>country</th>\n      <th>...</th>\n      <th>salary_observed</th>\n      <th>salary_annual_local</th>\n      <th>salary_annual_usd</th>\n      <th>salary_annual_usd_ppp</th>\n      <th>seniority</th>\n      <th>tier</th>\n      <th>skills</th>\n      <th>description_text</th>\n      <th>description_lang</th>\n      <th>url</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>11a69e030bbeb53ec642d827a5ccb1d8f42cd050</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>RPA Engineer AI Development Experience</td>\n      <td>rpa engineer ai development experience</td>\n      <td>AllianceIT Inc</td>\n      <td>1</td>\n      <td>False</td>\n      <td>Unknown</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>81000.0</td>\n      <td>4722.701619</td>\n      <td>7842.035459</td>\n      <td>unknown</td>\n      <td>nucleo</td>\n      <td>[]</td>\n      <td>Design, build, test, and deploy Intelligent Ag...</td>\n      <td>en</td>\n      <td>https://www.adzuna.com.mx/land/ad/5797062930?s...</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>4c34441a2388bd88259480834442d16d021b0801</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>Machine Learning Engineer</td>\n      <td>machine learning engineer</td>\n      <td>Capital Empresarial Horizonte</td>\n      <td>6</td>\n      <td>False</td>\n      <td>Unknown</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>600000.0</td>\n      <td>34982.974952</td>\n      <td>58089.151551</td>\n      <td>unknown</td>\n      <td>nucleo</td>\n      <td>[python, pytorch, tensorflow]</td>\n      <td>Capital Empresarial Horizonte Empresa Mexicana...</td>\n      <td>es</td>\n      <td>https://www.adzuna.com.mx/land/ad/5768169505?s...</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>32f1656a91bd124277eb9ae53e24af7614d2ded7</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>Ingeniero de Preventa Google Cloud e Inteligen...</td>\n      <td>ingeniero de preventa google cloud e inteligen...</td>\n      <td>Capital Empresarial Horizonte</td>\n      <td>6</td>\n      <td>False</td>\n      <td>Unknown</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>60000.0</td>\n      <td>3498.297495</td>\n      <td>5808.915155</td>\n      <td>unknown</td>\n      <td>nucleo</td>\n      <td>[gcp, llm]</td>\n      <td>Capital Empresarial Horizonte Empresa Mexicana...</td>\n      <td>es</td>\n      <td>https://www.adzuna.com.mx/land/ad/5800080170?s...</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>33043115125a4d46c1cf05caf42ff7b764f4bbce</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>Ingeniero en Inteligencia Artificial</td>\n      <td>ingeniero en inteligencia artificial</td>\n      <td>Grupo Financiero Inbursa Corporativo</td>\n      <td>1</td>\n      <td>False</td>\n      <td>Unknown</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>240000.0</td>\n      <td>13993.189981</td>\n      <td>23235.660620</td>\n      <td>unknown</td>\n      <td>nucleo</td>\n      <td>[]</td>\n      <td>Únete al equipo de Innovación de Grupo Finan...</td>\n      <td>es</td>\n      <td>https://www.adzuna.com.mx/land/ad/5812515682?s...</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>45f0e4c23e486ef2663196c229a4ac09670eb1ed</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>Maestra de Matemáticas o Inteligencia Artific...</td>\n      <td>maestra de matemáticas o inteligencia artific...</td>\n      <td>VARFRA</td>\n      <td>1</td>\n      <td>False</td>\n      <td>Empleos en educación</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>180000.0</td>\n      <td>10494.892486</td>\n      <td>17426.745465</td>\n      <td>unknown</td>\n      <td>fuera</td>\n      <td>[]</td>\n      <td>Vacante Descripción del empleo Estamos en bú...</td>\n      <td>es</td>\n      <td>https://www.adzuna.com.mx/land/ad/5774880912?s...</td>\n    </tr>\n  </tbody>\n</table>\n<p>5 rows × 31 columns</p>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "Este notebook cubre dos de las seis preguntas del proyecto: **¿qué skills cargan prima\nsalarial, y son las mismas en ambos mercados?** y **¿qué tan opaco es el mercado\nmexicano y qué tipo de empresa sí publica sueldo?** — además de cuantificar cuántas\nvacantes de IA no se anuncian como tales (núcleo vs anillo). Los notebooks 01 y 02 ya\ncubrieron calidad de datos y la brecha salarial nominal/PPP; ninguno de esos resultados\nse repite aquí.\n\nParte de `data/processed/vacantes.parquet` sin volver a llamar a ninguna API, como los\ndemás notebooks del proyecto.\n\n## Qué skills pide el mercado\n\nEl léxico de `config/skills.yml` marca 20 skills sobre el texto de la **descripción**,\nno del título. Esta sección cuenta sobre todas las vacantes de IA (`tier` núcleo +\nanillo), publiquen o no salario — mide demanda, no paga; la paga es la sección\nsiguiente."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "ia_todas = df[df[\"tier\"].isin([\"nucleo\", \"anillo\"])]\nexp_todas = ia_todas.explode(\"skills\").dropna(subset=[\"skills\"])\n\nn_mx = int((ia_todas[\"country\"] == \"MX\").sum())\nn_us = int((ia_todas[\"country\"] == \"US\").sum())\nprint(f\"Vacantes de IA (núcleo + anillo): {n_mx} en México, {n_us:,} en Estados Unidos.\")",
+        "execution_count": 2
+      },
+      {
+        "type": "markdown",
+        "content": "### México\n\nCon 45 vacantes de IA en total, el panorama mexicano es una fotografía, no una muestra\nrepresentativa."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "mx_ia = ia_todas[ia_todas[\"country\"] == \"MX\"]\nsin_skill = int((mx_ia[\"skills\"].map(len) == 0).sum())\nskills_mx = exp_todas.loc[exp_todas[\"country\"] == \"MX\", \"skills\"].value_counts().sort_values()\n\nfig, ax = plt.subplots(figsize=(7, 4))\nax.barh(skills_mx.index, skills_mx.values, color=\"#2a6\")\nax.set_xlabel(\"Vacantes que la mencionan\")\nax.set_title(f\"México — skills mencionadas en descripciones (n={len(mx_ia)} vacantes de IA)\")\nfor skill, v in skills_mx.items():\n    ax.annotate(str(v), (v, skill), xytext=(4, 0), textcoords=\"offset points\", va=\"center\")\nplt.tight_layout()\n\nprint(f\"{sin_skill} de {len(mx_ia)} vacantes de IA en México no mencionan ninguna skill del léxico.\")",
+        "execution_count": 3
+      },
+      {
+        "type": "image",
+        "src": "/projects/mercado-de-ia-primas-por-skill-y-transparencia-salarial/cell-5-0.png",
+        "alt": "Output 0 de la celda 5"
+      },
+      {
+        "type": "markdown",
+        "content": "`llm` (7 menciones) y `agents` (5) son las más frecuentes, pero son también los\ntérminos que la propia taxonomía usa para decidir si una vacante es núcleo o anillo —\nasí que su frecuencia mide en parte la definición, no sólo la demanda. Con 31 de 45\nvacantes sin ninguna skill detectada, y como máximo 7 menciones para la skill más\ncomún, ningún conteo de esta subsección sostiene una afirmación cuantitativa por sí\nsolo; se documenta como contexto, no como hallazgo.\n\n### Estados Unidos"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "skills_us = exp_todas.loc[exp_todas[\"country\"] == \"US\", \"skills\"].value_counts()\n\nfig, ax = plt.subplots(figsize=(10, 7))\nskills_us.head(15).sort_values().plot.barh(ax=ax, color=\"#36c\")\nax.set_xlabel(\"Vacantes que la mencionan\")\nax.set_title(f\"Estados Unidos — top 15 skills en {n_us:,} vacantes de IA\")\nplt.tight_layout()\n\ndisplay(skills_us.head(15).to_frame(\"vacantes\"))",
+        "execution_count": 4
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>vacantes</th>\n    </tr>\n    <tr>\n      <th>skills</th>\n      <th></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>llm</th>\n      <td>1464</td>\n    </tr>\n    <tr>\n      <th>python</th>\n      <td>1453</td>\n    </tr>\n    <tr>\n      <th>agents</th>\n      <td>1335</td>\n    </tr>\n    <tr>\n      <th>aws</th>\n      <td>727</td>\n    </tr>\n    <tr>\n      <th>pytorch</th>\n      <td>681</td>\n    </tr>\n    <tr>\n      <th>rag</th>\n      <td>660</td>\n    </tr>\n    <tr>\n      <th>azure</th>\n      <td>540</td>\n    </tr>\n    <tr>\n      <th>tensorflow</th>\n      <td>521</td>\n    </tr>\n    <tr>\n      <th>sql</th>\n      <td>508</td>\n    </tr>\n    <tr>\n      <th>mlops</th>\n      <td>466</td>\n    </tr>\n    <tr>\n      <th>gcp</th>\n      <td>445</td>\n    </tr>\n    <tr>\n      <th>docker</th>\n      <td>387</td>\n    </tr>\n    <tr>\n      <th>prompt_eng</th>\n      <td>378</td>\n    </tr>\n    <tr>\n      <th>fine_tuning</th>\n      <td>371</td>\n    </tr>\n    <tr>\n      <th>embeddings</th>\n      <td>333</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "image",
+        "src": "/projects/mercado-de-ia-primas-por-skill-y-transparencia-salarial/cell-7-1.png",
+        "alt": "Output 1 de la celda 7"
+      },
+      {
+        "type": "markdown",
+        "content": "`llm` (1,464), `python` (1,453) y `agents` (1,335) dominan: cada una aparece en\nalrededor de 4 de cada 10 vacantes de IA estadounidenses. Que `agents` ya sea la\ntercera skill más pedida — por encima de herramientas maduras como `azure` o `sql` —\nes la primera señal de qué tan rápido se movió el mercado hacia arquitecturas\nagénticas; la siguiente sección examina si esa demanda también se refleja en el salario.\n\n**Conclusión de la sección:** con 3,736 vacantes de IA, Estados Unidos sostiene un\nranking de demanda de skills confiable. México (45 vacantes, 31 sin skill detectada)\nno lo sostiene — los diez skills que sí aparecen (`llm`, `agents`, `python`,\n`pytorch`, `tensorflow`, `mlops`, `rag`, `spark`, `gcp`, `prompt_eng`) coinciden\ndireccionalmente con los más comunes en EE. UU., pero con conteos de una cifra que no\npermiten ir más allá de \"parecen pedir lo mismo\".\n\n## Primas salariales por skill\n\nA partir de aquí se filtra a vacantes de IA **con salario observado** — sin salario no\nhay prima que calcular. Para cada país, se compara la mediana de cada skill (n ≥ 30)\ncontra la mediana general del país en dólares PPP (`prima_pct`)."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "ia = df[df[\"tier\"].isin([\"nucleo\", \"anillo\"]) & df[\"salary_observed\"].fillna(False)]\nexplotado = ia.explode(\"skills\").dropna(subset=[\"skills\"])\n\nprimas = []\nfor pais in [\"MX\", \"US\"]:\n    sub = explotado[explotado[\"country\"] == pais]\n    base = sub[\"salary_annual_usd_ppp\"].median()\n    for skill, grupo in sub.groupby(\"skills\"):\n        datos = grupo[\"salary_annual_usd_ppp\"].dropna()\n        if len(datos) >= 30:\n            primas.append({\"country\": pais, \"skill\": skill, \"n\": len(datos),\n                           \"mediana\": datos.median(), \"prima_pct\": datos.median() / base - 1})\nprimas = pd.DataFrame(primas).sort_values(\"prima_pct\", ascending=False).reset_index(drop=True)\ndisplay(primas.style.format({\"mediana\": \"${:,.0f}\", \"prima_pct\": \"{:+.1%}\"}))\n\nn_mx_salario = int((ia[\"country\"] == \"MX\").sum())\nprint(f\"México: {n_mx_salario} vacantes de IA con salario observado -> \"\n      f\"{(primas['country'] == 'MX').sum()} skills en la tabla (mínimo necesario por skill: n=30).\")",
+        "execution_count": 5
+      },
+      {
+        "type": "html",
+        "content": "<style type=\"text/css\">\n</style>\n<table id=\"T_a3414\">\n  <thead>\n    <tr>\n      <th class=\"blank level0\" >&nbsp;</th>\n      <th id=\"T_a3414_level0_col0\" class=\"col_heading level0 col0\" >country</th>\n      <th id=\"T_a3414_level0_col1\" class=\"col_heading level0 col1\" >skill</th>\n      <th id=\"T_a3414_level0_col2\" class=\"col_heading level0 col2\" >n</th>\n      <th id=\"T_a3414_level0_col3\" class=\"col_heading level0 col3\" >mediana</th>\n      <th id=\"T_a3414_level0_col4\" class=\"col_heading level0 col4\" >prima_pct</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th id=\"T_a3414_level0_row0\" class=\"row_heading level0 row0\" >0</th>\n      <td id=\"T_a3414_row0_col0\" class=\"data row0 col0\" >US</td>\n      <td id=\"T_a3414_row0_col1\" class=\"data row0 col1\" >agents</td>\n      <td id=\"T_a3414_row0_col2\" class=\"data row0 col2\" >251</td>\n      <td id=\"T_a3414_row0_col3\" class=\"data row0 col3\" >$200,000</td>\n      <td id=\"T_a3414_row0_col4\" class=\"data row0 col4\" >+15.8%</td>\n    </tr>\n    <tr>\n      <th id=\"T_a3414_level0_row1\" class=\"row_heading level0 row1\" >1</th>\n      <td id=\"T_a3414_row1_col0\" class=\"data row1 col0\" >US</td>\n      <td id=\"T_a3414_row1_col1\" class=\"data row1 col1\" >llm</td>\n      <td id=\"T_a3414_row1_col2\" class=\"data row1 col2\" >247</td>\n      <td id=\"T_a3414_row1_col3\" class=\"data row1 col3\" >$195,000</td>\n      <td id=\"T_a3414_row1_col4\" class=\"data row1 col4\" >+13.0%</td>\n    </tr>\n    <tr>\n      <th id=\"T_a3414_level0_row2\" class=\"row_heading level0 row2\" >2</th>\n      <td id=\"T_a3414_row2_col0\" class=\"data row2 col0\" >US</td>\n      <td id=\"T_a3414_row2_col1\" class=\"data row2 col1\" >fine_tuning</td>\n      <td id=\"T_a3414_row2_col2\" class=\"data row2 col2\" >57</td>\n      <td id=\"T_a3414_row2_col3\" class=\"data row2 col3\" >$190,000</td>\n      <td id=\"T_a3414_row2_col4\" class=\"data row2 col4\" >+10.1%</td>\n    </tr>\n    <tr>\n      <th id=\"T_a3414_level0_row3\" class=\"row_heading level0 row3\" >3</th>\n      <td id=\"T_a3414_row3_col0\" class=\"data row3 col0\" >US</td>\n      <td id=\"T_a3414_row3_col1\" class=\"data row3 col1\" >embeddings</td>\n      <td id=\"T_a3414_row3_col2\" class=\"data row3 col2\" >76</td>\n      <td id=\"T_a3414_row3_col3\" class=\"data row3 col3\" >$179,650</td>\n      <td id=\"T_a3414_row3_col4\" class=\"data row3 col4\" >+4.1%</td>\n    </tr>\n    <tr>\n      <th id=\"T_a3414_level0_row4\" class=\"row_heading level0 row4\" >4</th>\n      <td id=\"T_a3414_row4_col0\" class=\"data row4 col0\" >US</td>\n      <td id=\"T_a3414_row4_col1\" class=\"data row4 col1\" >python</td>\n      <td id=\"T_a3414_row4_col2\" class=\"data row4 col2\" >239</td>\n      <td id=\"T_a3414_row4_col3\" class=\"data row4 col3\" >$175,000</td>\n      <td id=\"T_a3414_row4_col4\" class=\"data row4 col4\" >+1.4%</td>\n    </tr>\n    <tr>\n      <th id=\"T_a3414_level0_row5\" class=\"row_heading level0 row5\" >5</th>\n      <td id=\"T_a3414_row5_col0\" class=\"data row5 col0\" >US</td>\n      <td id=\"T_a3414_row5_col1\" class=\"data row5 col1\" >sql</td>\n      <td id=\"T_a3414_row5_col2\" class=\"data row5 col2\" >99</td>\n      <td id=\"T_a3414_row5_col3\" class=\"data row5 col3\" >$175,000</td>\n      <td id=\"T_a3414_row5_col4\" class=\"data row5 col4\" >+1.4%</td>\n    </tr>\n    <tr>\n      <th id=\"T_a3414_level0_row6\" class=\"row_heading level0 row6\" >6</th>\n      <td id=\"T_a3414_row6_col0\" class=\"data row6 col0\" >US</td>\n      <td id=\"T_a3414_row6_col1\" class=\"data row6 col1\" >rag</td>\n      <td id=\"T_a3414_row6_col2\" class=\"data row6 col2\" >112</td>\n      <td id=\"T_a3414_row6_col3\" class=\"data row6 col3\" >$175,000</td>\n      <td id=\"T_a3414_row6_col4\" class=\"data row6 col4\" >+1.4%</td>\n    </tr>\n    <tr>\n      <th id=\"T_a3414_level0_row7\" class=\"row_heading level0 row7\" >7</th>\n      <td id=\"T_a3414_row7_col0\" class=\"data row7 col0\" >US</td>\n      <td id=\"T_a3414_row7_col1\" class=\"data row7 col1\" >pytorch</td>\n      <td id=\"T_a3414_row7_col2\" class=\"data row7 col2\" >94</td>\n      <td id=\"T_a3414_row7_col3\" class=\"data row7 col3\" >$175,000</td>\n      <td id=\"T_a3414_row7_col4\" class=\"data row7 col4\" >+1.4%</td>\n    </tr>\n    <tr>\n      <th id=\"T_a3414_level0_row8\" class=\"row_heading level0 row8\" >8</th>\n      <td id=\"T_a3414_row8_col0\" class=\"data row8 col0\" >US</td>\n      <td id=\"T_a3414_row8_col1\" class=\"data row8 col1\" >spark</td>\n      <td id=\"T_a3414_row8_col2\" class=\"data row8 col2\" >44</td>\n      <td id=\"T_a3414_row8_col3\" class=\"data row8 col3\" >$168,750</td>\n      <td id=\"T_a3414_row8_col4\" class=\"data row8 col4\" >-2.3%</td>\n    </tr>\n    <tr>\n      <th id=\"T_a3414_level0_row9\" class=\"row_heading level0 row9\" >9</th>\n      <td id=\"T_a3414_row9_col0\" class=\"data row9 col0\" >US</td>\n      <td id=\"T_a3414_row9_col1\" class=\"data row9 col1\" >aws</td>\n      <td id=\"T_a3414_row9_col2\" class=\"data row9 col2\" >103</td>\n      <td id=\"T_a3414_row9_col3\" class=\"data row9 col3\" >$157,500</td>\n      <td id=\"T_a3414_row9_col4\" class=\"data row9 col4\" >-8.8%</td>\n    </tr>\n    <tr>\n      <th id=\"T_a3414_level0_row10\" class=\"row_heading level0 row10\" >10</th>\n      <td id=\"T_a3414_row10_col0\" class=\"data row10 col0\" >US</td>\n      <td id=\"T_a3414_row10_col1\" class=\"data row10 col1\" >mlops</td>\n      <td id=\"T_a3414_row10_col2\" class=\"data row10 col2\" >69</td>\n      <td id=\"T_a3414_row10_col3\" class=\"data row10 col3\" >$150,000</td>\n      <td id=\"T_a3414_row10_col4\" class=\"data row10 col4\" >-13.1%</td>\n    </tr>\n    <tr>\n      <th id=\"T_a3414_level0_row11\" class=\"row_heading level0 row11\" >11</th>\n      <td id=\"T_a3414_row11_col0\" class=\"data row11 col0\" >US</td>\n      <td id=\"T_a3414_row11_col1\" class=\"data row11 col1\" >docker</td>\n      <td id=\"T_a3414_row11_col2\" class=\"data row11 col2\" >52</td>\n      <td id=\"T_a3414_row11_col3\" class=\"data row11 col3\" >$150,000</td>\n      <td id=\"T_a3414_row11_col4\" class=\"data row11 col4\" >-13.1%</td>\n    </tr>\n    <tr>\n      <th id=\"T_a3414_level0_row12\" class=\"row_heading level0 row12\" >12</th>\n      <td id=\"T_a3414_row12_col0\" class=\"data row12 col0\" >US</td>\n      <td id=\"T_a3414_row12_col1\" class=\"data row12 col1\" >azure</td>\n      <td id=\"T_a3414_row12_col2\" class=\"data row12 col2\" >74</td>\n      <td id=\"T_a3414_row12_col3\" class=\"data row12 col3\" >$147,500</td>\n      <td id=\"T_a3414_row12_col4\" class=\"data row12 col4\" >-14.6%</td>\n    </tr>\n    <tr>\n      <th id=\"T_a3414_level0_row13\" class=\"row_heading level0 row13\" >13</th>\n      <td id=\"T_a3414_row13_col0\" class=\"data row13 col0\" >US</td>\n      <td id=\"T_a3414_row13_col1\" class=\"data row13 col1\" >vector_db</td>\n      <td id=\"T_a3414_row13_col2\" class=\"data row13 col2\" >48</td>\n      <td id=\"T_a3414_row13_col3\" class=\"data row13 col3\" >$147,500</td>\n      <td id=\"T_a3414_row13_col4\" class=\"data row13 col4\" >-14.6%</td>\n    </tr>\n    <tr>\n      <th id=\"T_a3414_level0_row14\" class=\"row_heading level0 row14\" >14</th>\n      <td id=\"T_a3414_row14_col0\" class=\"data row14 col0\" >US</td>\n      <td id=\"T_a3414_row14_col1\" class=\"data row14 col1\" >gcp</td>\n      <td id=\"T_a3414_row14_col2\" class=\"data row14 col2\" >61</td>\n      <td id=\"T_a3414_row14_col3\" class=\"data row14 col3\" >$145,000</td>\n      <td id=\"T_a3414_row14_col4\" class=\"data row14 col4\" >-16.0%</td>\n    </tr>\n    <tr>\n      <th id=\"T_a3414_level0_row15\" class=\"row_heading level0 row15\" >15</th>\n      <td id=\"T_a3414_row15_col0\" class=\"data row15 col0\" >US</td>\n      <td id=\"T_a3414_row15_col1\" class=\"data row15 col1\" >transformers</td>\n      <td id=\"T_a3414_row15_col2\" class=\"data row15 col2\" >30</td>\n      <td id=\"T_a3414_row15_col3\" class=\"data row15 col3\" >$145,000</td>\n      <td id=\"T_a3414_row15_col4\" class=\"data row15 col4\" >-16.0%</td>\n    </tr>\n    <tr>\n      <th id=\"T_a3414_level0_row16\" class=\"row_heading level0 row16\" >16</th>\n      <td id=\"T_a3414_row16_col0\" class=\"data row16 col0\" >US</td>\n      <td id=\"T_a3414_row16_col1\" class=\"data row16 col1\" >tensorflow</td>\n      <td id=\"T_a3414_row16_col2\" class=\"data row16 col2\" >75</td>\n      <td id=\"T_a3414_row16_col3\" class=\"data row16 col3\" >$141,440</td>\n      <td id=\"T_a3414_row16_col4\" class=\"data row16 col4\" >-18.1%</td>\n    </tr<!-- truncated -->"
+      },
+      {
+        "type": "markdown",
+        "content": "La tabla queda **vacía para México**: con 4 vacantes de IA con salario observado en\ntodo el corpus, ninguna skill individual puede acercarse al umbral n ≥ 30 — harían\nfalta que las 4 fueran la misma skill, y aun así faltarían 26. La pregunta que motivó\nesta sección, \"¿pagan lo mismo las mismas skills en los dos mercados?\", **no se puede\nresponder con los datos actuales**: no porque no importe, sino porque la muestra\nmexicana no alcanza. Lo que sigue es, por construcción, sólo el mercado\nestadounidense."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "orden = primas.sort_values(\"mediana\")\n\nfig, ax = plt.subplots(figsize=(10, 7))\nax.barh(orden[\"skill\"], orden[\"mediana\"], color=\"#36c\")\nax.set_xlabel(\"Salario anual mediano (USD, ajustado por PPP)\")\nax.set_title(\"Estados Unidos — mediana salarial por skill (n ≥ 30)\")\nfor _, r in orden.iterrows():\n    ax.annotate(f\"n={r['n']}\", (r[\"mediana\"], r[\"skill\"]), xytext=(6, 0),\n                textcoords=\"offset points\", va=\"center\", fontsize=8)\nplt.tight_layout()\n\ntope, piso = primas.iloc[0], primas.iloc[-1]\nprint(f\"Spread: {tope['skill']} (${tope['mediana']:,.0f}) - {piso['skill']} (${piso['mediana']:,.0f}) \"\n      f\"= ${tope['mediana'] - piso['mediana']:,.0f}\")",
+        "execution_count": 6
+      },
+      {
+        "type": "image",
+        "src": "/projects/mercado-de-ia-primas-por-skill-y-transparencia-salarial/cell-11-2.png",
+        "alt": "Output 2 de la celda 11"
+      },
+      {
+        "type": "markdown",
+        "content": "**El hallazgo:** `agents` y `llm` encabezan la tabla, pero `agents` ya no carga una prima —\nestá *exactamente* en la mediana nacional (USD 200,000, +0.0%, n=251); `llm` queda apenas\ndebajo (USD 195,000, -2.5%, n=247). En el otro extremo, `prompt_eng` (USD 138,950, -30.5%,\nn=58) y `langchain` (USD 140,400, -29.8%, n=44) cierran la tabla, cerca de 30% por debajo de\nla mediana del país — un spread de USD 61,050 entre el techo y el piso de la tabla, dentro del\nmismo corte de vacantes de IA con salario observado en Estados Unidos. La historia no es que el\ntrabajo agéntico pague de más: es que las skills de ingeniería de prompts y de frameworks de\norquestación se cotizan por debajo del mercado. `fine_tuning` (USD 190,000, -5.0%, n=57) queda\nen tercer lugar. Las skills de \"soporte\" clásico (`sql`, `python`, `aws`) quedan a la mitad de\nla tabla: siguen pagando bien, pero ya no distinguen sueldos.\n\nNota de método: son medianas univariadas, sin ajustar por seniority — una skill puede\npagar más (o menos) porque las vacantes que la piden tienden a un nivel de seniority\ndistinto, no sólo por la skill en sí. Se reporta como asociación, no como causalidad.\n\n**Conclusión de la sección:** en Estados Unidos, `agents` y `llm` —construir y operar el\nsistema alrededor de un modelo de lenguaje— se pagan al nivel de la mediana del mercado o por\nencima; `prompt_eng` y `langchain` —invocarlo desde afuera con una capa de orquestación— se\npagan alrededor de 30% por debajo. México no aporta un solo punto de comparación: 4 vacantes de\nIA con salario no alcanzan ni para una skill, así que la pregunta \"¿son las mismas skills en\nambos mercados?\" queda sin respuesta por falta de datos, no por falta de interés.\n\n## Núcleo vs anillo\n\n`tier` clasifica cada vacante de IA en **núcleo** (el título la declara: \"AI\nEngineer\", \"Machine Learning Scientist\"...) o **anillo** (el título no lo dice, pero\nla descripción trae ≥ 2 skills de IA aplicada: RAG, fine-tuning, LangChain...). El\nanillo es, literalmente, la cuenta de \"vacantes de IA que no se llaman así\".\n\n### Cuántas vacantes de IA no se llaman así"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "mezcla = (\n    df[df[\"tier\"].isin([\"nucleo\", \"anillo\"])]\n    .groupby([\"country\", \"tier\"]).size().unstack(fill_value=0)\n)\nmezcla[\"% anillo\"] = mezcla[\"anillo\"] / mezcla.sum(axis=1)\ndisplay(mezcla.style.format({\"% anillo\": \"{:.1%}\"}))\n\nporcentaje = mezcla[[\"nucleo\", \"anillo\"]].div(mezcla[[\"nucleo\", \"anillo\"]].sum(axis=1), axis=0) * 100\nporcentaje.index = [f\"{p} (n={int(mezcla.loc[p, ['nucleo', 'anillo']].sum())})\" for p in porcentaje.index]\n\nfig, ax = plt.subplots(figsize=(7, 4))\nporcentaje.plot.bar(stacked=True, ax=ax, color=[\"#36c\", \"#c93\"])\nax.set_ylabel(\"% de las vacantes de IA\")\nax.set_title(\"Vacantes de IA que el título declara (núcleo) vs. las que no (anillo)\")\nax.tick_params(axis=\"x\", rotation=0)\nax.legend([\"Núcleo — el título lo declara\", \"Anillo — no lo declara\"], loc=\"lower right\")\nplt.tight_layout()",
+        "execution_count": 7
+      },
+      {
+        "type": "html",
+        "content": "<style type=\"text/css\">\n</style>\n<table id=\"T_62d0f\">\n  <thead>\n    <tr>\n      <th class=\"index_name level0\" >tier</th>\n      <th id=\"T_62d0f_level0_col0\" class=\"col_heading level0 col0\" >anillo</th>\n      <th id=\"T_62d0f_level0_col1\" class=\"col_heading level0 col1\" >nucleo</th>\n      <th id=\"T_62d0f_level0_col2\" class=\"col_heading level0 col2\" >% anillo</th>\n    </tr>\n    <tr>\n      <th class=\"index_name level0\" >country</th>\n      <th class=\"blank col0\" >&nbsp;</th>\n      <th class=\"blank col1\" >&nbsp;</th>\n      <th class=\"blank col2\" >&nbsp;</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th id=\"T_62d0f_level0_row0\" class=\"row_heading level0 row0\" >MX</th>\n      <td id=\"T_62d0f_row0_col0\" class=\"data row0 col0\" >2</td>\n      <td id=\"T_62d0f_row0_col1\" class=\"data row0 col1\" >43</td>\n      <td id=\"T_62d0f_row0_col2\" class=\"data row0 col2\" >4.4%</td>\n    </tr>\n    <tr>\n      <th id=\"T_62d0f_level0_row1\" class=\"row_heading level0 row1\" >US</th>\n      <td id=\"T_62d0f_row1_col0\" class=\"data row1 col0\" >395</td>\n      <td id=\"T_62d0f_row1_col1\" class=\"data row1 col1\" >3341</td>\n      <td id=\"T_62d0f_row1_col2\" class=\"data row1 col2\" >10.6%</td>\n    </tr>\n  </tbody>\n</table>\n"
+      },
+      {
+        "type": "image",
+        "src": "/projects/mercado-de-ia-primas-por-skill-y-transparencia-salarial/cell-13-3.png",
+        "alt": "Output 3 de la celda 13"
+      },
+      {
+        "type": "markdown",
+        "content": "México: 43 núcleo y 2 anillo sobre 45 vacantes de IA (4.4% de anillo). Estados\nUnidos: 3,341 núcleo y 395 anillo sobre 3,736 (10.6%) — más del doble, en proporción,\nque México.\n\nAntes de leer esto como \"México esconde menos IA que Estados Unidos\", una advertencia\nnecesaria: la muestra mexicana es 83 veces más chica que la estadounidense y viene de\nuna fuente ruidosa. La compuerta de día 0 del proyecto\n(`docs/superpowers/specs/2026-08-10-viabilidad-dia0.md`) encontró que, de 42 vacantes\nmexicanas con salario real, 38 eran ruido puro para efectos de esta taxonomía —\nabogado corporativo, técnico HVAC, community manager (×3), maestra de matemáticas,\ngerente de RR. HH., entre otras — que `tier` correctamente mandó a `fuera`. Eso no\ninvalida el 4.4%: es la taxonomía funcionando como se diseñó, filtrando el ruido de\nuna búsqueda por palabras sueltas. Pero sí significa que ese 4.4% describe una\npoblación de sólo 45 vacantes que sobrevivieron el filtro, no una muestra aleatoria\ndel mercado laboral mexicano.\n\n**Conclusión de la sección:** ambos mercados esconden IA bajo títulos genéricos\n(Software Engineer, DevOps Engineer, Forward Deployed Engineer...), pero el fenómeno\ndel anillo sólo se documenta con solidez estadística en Estados Unidos (n=3,736). En\nMéxico (n=45) la dirección del hallazgo es consistente pero no es concluyente."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "transparencia = (\n    df.assign(observado=df[\"salary_observed\"].fillna(False))\n      .groupby([\"country\", \"company_is_multinational\"])[\"observado\"].agg([\"mean\", \"count\"])\n      .rename(columns={\"mean\": \"tasa_publicacion\", \"count\": \"vacantes\"})\n)\ndisplay(transparencia.style.format({\"tasa_publicacion\": \"{:.1%}\"}))\n\ntasa_wide = (transparencia[\"tasa_publicacion\"] * 100).unstack(\"country\")\ntasa_wide.columns = tasa_wide.columns.map({\"MX\": \"México\", \"US\": \"Estados Unidos\"})\ntasa_wide.index = tasa_wide.index.map({False: \"Empresa local\", True: \"Multinacional\"})\n\nfig, ax = plt.subplots(figsize=(7, 4))\ntasa_wide.plot.bar(ax=ax, color=[\"#2a6\", \"#36c\"])\nax.set_ylabel(\"% de vacantes que publica salario\")\nax.set_title(\"Transparencia salarial: empresa local vs. multinacional\")\nax.tick_params(axis=\"x\", rotation=0)\nax.legend(title=\"País\")\nfor cont in ax.containers:\n    ax.bar_label(cont, fmt=\"%.1f%%\")\nplt.tight_layout()",
+        "execution_count": 8
+      },
+      {
+        "type": "html",
+        "content": "<style type=\"text/css\">\n</style>\n<table id=\"T_6c6c2\">\n  <thead>\n    <tr>\n      <th class=\"blank\" >&nbsp;</th>\n      <th class=\"blank level0\" >&nbsp;</th>\n      <th id=\"T_6c6c2_level0_col0\" class=\"col_heading level0 col0\" >tasa_publicacion</th>\n      <th id=\"T_6c6c2_level0_col1\" class=\"col_heading level0 col1\" >vacantes</th>\n    </tr>\n    <tr>\n      <th class=\"index_name level0\" >country</th>\n      <th class=\"index_name level1\" >company_is_multinational</th>\n      <th class=\"blank col0\" >&nbsp;</th>\n      <th class=\"blank col1\" >&nbsp;</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th id=\"T_6c6c2_level0_row0\" class=\"row_heading level0 row0\" rowspan=\"2\">MX</th>\n      <th id=\"T_6c6c2_level1_row0\" class=\"row_heading level1 row0\" >False</th>\n      <td id=\"T_6c6c2_row0_col0\" class=\"data row0 col0\" >31.9%</td>\n      <td id=\"T_6c6c2_row0_col1\" class=\"data row0 col1\" >298</td>\n    </tr>\n    <tr>\n      <th id=\"T_6c6c2_level1_row1\" class=\"row_heading level1 row1\" >True</th>\n      <td id=\"T_6c6c2_row1_col0\" class=\"data row1 col0\" >18.2%</td>\n      <td id=\"T_6c6c2_row1_col1\" class=\"data row1 col1\" >33</td>\n    </tr>\n    <tr>\n      <th id=\"T_6c6c2_level0_row2\" class=\"row_heading level0 row2\" rowspan=\"2\">US</th>\n      <th id=\"T_6c6c2_level1_row2\" class=\"row_heading level1 row2\" >False</th>\n      <td id=\"T_6c6c2_row2_col0\" class=\"data row2 col0\" >28.1%</td>\n      <td id=\"T_6c6c2_row2_col1\" class=\"data row2 col1\" >5123</td>\n    </tr>\n    <tr>\n      <th id=\"T_6c6c2_level1_row3\" class=\"row_heading level1 row3\" >True</th>\n      <td id=\"T_6c6c2_row3_col0\" class=\"data row3 col0\" >8.2%</td>\n      <td id=\"T_6c6c2_row3_col1\" class=\"data row3 col1\" >1536</td>\n    </tr>\n  </tbody>\n</table>\n"
+      },
+      {
+        "type": "image",
+        "src": "/projects/mercado-de-ia-primas-por-skill-y-transparencia-salarial/cell-15-4.png",
+        "alt": "Output 4 de la celda 15"
+      },
+      {
+        "type": "markdown",
+        "content": "**Las multinacionales publican salario MENOS que las empresas locales, en los dos\npaíses** — lo contrario de lo esperable si se asume que una multinacional trae\npolíticas de RR. HH. más \"maduras\". México: 31.9% de las empresas locales publica\n(n=298) contra 18.2% de las multinacionales (n=33). Estados Unidos: 28.1% local\n(n=5,123) contra 8.2% multinacional (n=1,536). La brecha es 3.4x en Estados Unidos y\n1.8x en México.\n\nTres advertencias antes de generalizar:\n\n1. **`company_is_multinational` viene de una lista curada** de 26 nombres en\n   `src/features/build.py` (Google, Microsoft, Amazon, IBM, Accenture, Deloitte,\n   bancos como BBVA o Citi...). Cualquier multinacional fuera de esa lista queda\n   contada como \"local\", así que la tasa \"multinacional\" es, si acaso, optimista — el\n   efecto real podría ser mayor.\n2. **La ley de transparencia salarial en Estados Unidos es estatal, no federal**\n   (California, Colorado, Nueva York o Washington la exigen; la mayoría de los demás\n   estados no). Si las multinacionales del corpus publican más vacantes fuera de esos\n   estados que las empresas locales, ese sesgo geográfico —y no una política\n   corporativa deliberada— explicaría parte de la diferencia. Confirmarlo exige cruzar\n   `company_is_multinational` con el estado de cada vacante, algo que este notebook no\n   hace.\n3. El patrón se repite en México, donde no existe una ley estatal de transparencia\n   salarial que lo explique — lo cual sugiere que ahí sí hay algo genuinamente\n   distinto en cómo publican sueldo las multinacionales frente a las locales.\n\n**Por sector (sólo Estados Unidos, n ≥ 50):** `category` sólo está poblado para las\nvacantes que vienen de Adzuna; las 3,168 filas de `kaggle_mannacharya` —toda la\nprofundidad adicional de EE. UU.— no traen esta columna. El corte cubre entonces\n3,492 de las 6,659 vacantes estadounidenses (52% del país), no el corpus completo. En\nMéxico, además, 202 de 331 vacantes (61%) traen `category = \"Unknown\"` porque Adzuna\nno siempre etiqueta el rubro ahí, así que un ranking sectorial mexicano no sería\nconfiable con esta fuente — el corte se limita a Estados Unidos."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "por_sector = (\n    df[df[\"country\"] == \"US\"]\n      .assign(observado=lambda d: d[\"salary_observed\"].fillna(False))\n      .groupby(\"category\")[\"observado\"].agg([\"mean\", \"count\"])\n      .query(\"count >= 50\").sort_values(\"mean\", ascending=False)\n      .rename(columns={\"mean\": \"tasa_publicacion\", \"count\": \"vacantes\"})\n)\ndisplay(por_sector.style.format({\"tasa_publicacion\": \"{:.1%}\"}))\n\nsector_orden = por_sector.sort_values(\"tasa_publicacion\")\nfig, ax = plt.subplots(figsize=(8, 3.5))\nax.barh(sector_orden.index, sector_orden[\"tasa_publicacion\"] * 100, color=\"#658\")\nax.set_xlabel(\"% de vacantes que publica salario\")\nax.set_title(\"Estados Unidos — transparencia por sector (n ≥ 50)\")\nfor sector, tasa, n in zip(sector_orden.index, sector_orden[\"tasa_publicacion\"] * 100, sector_orden[\"vacantes\"]):\n    ax.annotate(f\"{tasa:.1f}% (n={n})\", (tasa, sector), xytext=(4, 0), textcoords=\"offset points\", va=\"center\")\nplt.tight_layout()",
+        "execution_count": 9
+      },
+      {
+        "type": "html",
+        "content": "<style type=\"text/css\">\n</style>\n<table id=\"T_b4849\">\n  <thead>\n    <tr>\n      <th class=\"blank level0\" >&nbsp;</th>\n      <th id=\"T_b4849_level0_col0\" class=\"col_heading level0 col0\" >tasa_publicacion</th>\n      <th id=\"T_b4849_level0_col1\" class=\"col_heading level0 col1\" >vacantes</th>\n    </tr>\n    <tr>\n      <th class=\"index_name level0\" >category</th>\n      <th class=\"blank col0\" >&nbsp;</th>\n      <th class=\"blank col1\" >&nbsp;</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th id=\"T_b4849_level0_row0\" class=\"row_heading level0 row0\" >Scientific & QA Jobs</th>\n      <td id=\"T_b4849_row0_col0\" class=\"data row0 col0\" >33.7%</td>\n      <td id=\"T_b4849_row0_col1\" class=\"data row0 col1\" >163</td>\n    </tr>\n    <tr>\n      <th id=\"T_b4849_level0_row1\" class=\"row_heading level0 row1\" >Engineering Jobs</th>\n      <td id=\"T_b4849_row1_col0\" class=\"data row1 col0\" >32.3%</td>\n      <td id=\"T_b4849_row1_col1\" class=\"data row1 col1\" >514</td>\n    </tr>\n    <tr>\n      <th id=\"T_b4849_level0_row2\" class=\"row_heading level0 row2\" >IT Jobs</th>\n      <td id=\"T_b4849_row2_col0\" class=\"data row2 col0\" >22.1%</td>\n      <td id=\"T_b4849_row2_col1\" class=\"data row2 col1\" >2576</td>\n    </tr>\n    <tr>\n      <th id=\"T_b4849_level0_row3\" class=\"row_heading level0 row3\" >Consultancy Jobs</th>\n      <td id=\"T_b4849_row3_col0\" class=\"data row3 col0\" >8.8%</td>\n      <td id=\"T_b4849_row3_col1\" class=\"data row3 col1\" >80</td>\n    </tr>\n  </tbody>\n</table>\n"
+      },
+      {
+        "type": "image",
+        "src": "/projects/mercado-de-ia-primas-por-skill-y-transparencia-salarial/cell-17-5.png",
+        "alt": "Output 5 de la celda 17"
+      },
+      {
+        "type": "markdown",
+        "content": "Scientific & QA Jobs es el sector más transparente (33.7%, n=163) y Consultancy Jobs\nel menos (8.8%, n=80) — una razón de 3.8x entre ambos. IT Jobs, el sector que más\nvacantes de IA aporta (n=2,576), publica sueldo en apenas 22.1% de los casos: el\nsector con más volumen y presumiblemente más competencia por talento es de los menos\ntransparentes, coherente con la lectura de \"multinacional publica menos\" — más\ndemanda de candidatos no se traduce en más transparencia salarial.\n\n**Conclusión de la sección:** México publica salario en 30.5% de sus vacantes en\ngeneral (n=331) contra 23.5% en Estados Unidos (n=6,659) — en agregado, México es el\nmás transparente de los dos, contra la intuición de \"mercado emergente = más opaco\".\nPero el resultado que sostiene el título de esta sección es otro: en ambos países, ser\nmultinacional predice MENOS salario publicado, no más, y el sector con más demanda de\nIA (IT) está entre los menos transparentes de Estados Unidos.\n\n## Resumen de skills y transparencia"
+      },
+      {
+        "type": "markdown",
+        "content": "**Pregunta 3 — ¿qué skills cargan prima salarial, y son las mismas en ambos\nmercados?** En Estados Unidos hay una jerarquía clara con n ≥ 30 por skill, pero ya no\nes una historia de prima agéntica: `agents` encabeza la tabla exactamente en la\nmediana del país (USD 200,000, +0.0%, n=251) y `prompt_eng` la cierra en USD 138,950\n(-30.5%, n=58) — un spread de USD 61,050 entre el techo y el piso. Orden completo de\nmayor a menor mediana: agents; llm; fine_tuning; embeddings; python, sql, rag y\npytorch empatados (175,000); spark; aws; mlops y docker empatados (150,000); azure y\nvector_db empatados (147,500); gcp y transformers empatados (145,000); tensorflow;\nlangchain; prompt_eng. Lectura: `agents` y `llm` se pagan al nivel del mercado o por\nencima; lo que de verdad se cotiza por debajo —cerca de 30% menos que la mediana— son\n`prompt_eng` y `langchain`, las skills de ingeniería de prompts y de orquestación.\n**México no aporta un solo dato a esta pregunta** — 4 vacantes de IA con salario\nobservado en todo el corpus no alcanzan el umbral de n≥30 para una sola skill, así que\n\"¿pagan lo mismo las mismas skills en los dos mercados?\" queda sin responder por falta\nde muestra, no por falta de intento.\n\n**Pregunta 5 — ¿cuántas vacantes de IA no se llaman así?** El anillo es 10.6% en\nEstados Unidos (395 de 3,736) y 4.4% en México (2 de 45). Ambos mercados esconden IA\nbajo títulos genéricos, en proporción distinta, pero la muestra mexicana (45 vacantes)\nes demasiado pequeña para tratar ese 4.4% como una medición estable — es, en el mejor\nde los casos, una primera señal. El día 0 ya mostró que la búsqueda de Adzuna México\ntrae mayoritariamente ruido (38 de 42 resultados con salario no eran vacantes de IA);\nlas 45 vacantes que llegaron a `tier` núcleo/anillo son lo que sobrevivió a ese\nfiltro, no una muestra aleatoria del mercado.\n\n**Pregunta 4 — ¿qué tan opaco es México y qué tipo de empresa publica sueldo?** En\nagregado, México publica salario más seguido que Estados Unidos (30.5% de 331\nvacantes vs. 23.5% de 6,659) — contra la intuición de \"mercado emergente = más\nopaco\". El hallazgo más interesante es otro: **en ambos países, las multinacionales\npublican salario MENOS que las empresas locales** (México: 31.9% local vs. 18.2%\nmultinacional; Estados Unidos: 28.1% vs. 8.2%). Por sector, sólo medible en Estados\nUnidos (n≥50): Scientific & QA es el más transparente (33.7%) y Consultancy el menos\n(8.8%), con IT —el sector que más vacantes de IA aporta— en un discreto 22.1%.\n\nEsa brecha \"multinacional publica menos\" no se toma como causal: `company_is_multinational`\nviene de una lista curada de 26 nombres y probablemente subestima cuántas vacantes son\nen realidad de multinacionales, y en Estados Unidos la ley de transparencia salarial\nes estatal — si las multinacionales del corpus publican más desde estados sin esa ley,\nel patrón observado sería en parte geográfico, no corporativo. Confirmarlo exigiría\ncruzar `company_is_multinational` con el estado de cada vacante, fuera del alcance de\neste notebook. Lo que sí se sostiene sin esa prueba adicional: el patrón se repite en\nMéxico, donde no hay ley de transparencia salarial que lo explique.\n\n**Lo que este notebook no pudo mostrar:** la prima salarial por skill en México (n\ninsuficiente en cualquier corte) y una comparación del anillo mexicano frente al\nestadounidense que no dependa de una muestra de 45 vacantes filtradas de una fuente\nruidosa. Ambos huecos apuntan al mismo hallazgo de fondo del proyecto: el mercado\nlaboral de IA mexicano no es sólo más pequeño que el estadounidense — es\nestructuralmente más difícil de medir con las fuentes públicas disponibles hoy."
+      }
+    ]
+  },
+  {
+    "slug": "mercado-de-ia-modelo-de-imputacion-salarial",
+    "title": "Mercado de IA — Modelo de imputación salarial",
+    "summary": "Un modelo de gradient boosting entrenado con salarios de Estados Unidos se valida contra un hold-out con los 4 salarios mexicanos observados — veredicto: no publicable, con un MdAPE de 958% frente a un umbral de 35%. El argumento central: con n=4 ningún experimento puede validar la transferencia entre mercados en ningún sentido, así que las estimaciones no deben publicarse.",
+    "repoPath": "mercado-ia-mx-us/04_modelo_imputacion.ipynb",
+    "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/mercado-ia-mx-us/04_modelo_imputacion.ipynb",
+    "folder": "mercado-ia-mx-us",
+    "technologies": [
+      "Pandas",
+      "scikit-learn",
+      "Python"
+    ],
+    "categories": [
+      "Machine Learning",
+      "Estadística & Pruebas de Hipótesis",
+      "SQL & Analítica de Producto"
+    ],
+    "cellCount": 29,
+    "imageCount": 3,
+    "coverImage": "/projects/mercado-de-ia-modelo-de-imputacion-salarial/cell-20-0.png",
+    "cover": {
+      "gradientFrom": "#0EA5E9",
+      "gradientTo": "#00DF81",
+      "icon": "cpu"
+    },
+    "cells": [
+      {
+        "type": "markdown",
+        "content": "# Mercado de trabajo de IA: México vs Estados Unidos\n## 04 — El modelo\n### DA: *Mau Vilar*\n#### https://github.com/mauvilar"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "import sys; sys.path.insert(0, \"..\")\nimport pandas as pd, numpy as np, matplotlib.pyplot as plt, seaborn as sns\nfrom src.analysis.stats import resumir_por, mediana_ci\nfrom src.analysis.hypothesis import mann_whitney, welch_log\n\nsns.set_theme(style=\"whitegrid\")\nplt.rcParams[\"figure.figsize\"] = (11, 5)\ndf = pd.read_parquet(\"../data/processed/vacantes.parquet\")\nprint(f\"{len(df):,} vacantes | {df['salary_observed'].sum():,} con salario observado\")\ndf.head()",
+        "execution_count": 1
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>posting_id</th>\n      <th>snapshot_date</th>\n      <th>source</th>\n      <th>title_raw</th>\n      <th>title_norm</th>\n      <th>company</th>\n      <th>company_posting_count</th>\n      <th>company_is_multinational</th>\n      <th>category</th>\n      <th>country</th>\n      <th>...</th>\n      <th>salary_observed</th>\n      <th>salary_annual_local</th>\n      <th>salary_annual_usd</th>\n      <th>salary_annual_usd_ppp</th>\n      <th>seniority</th>\n      <th>tier</th>\n      <th>skills</th>\n      <th>description_text</th>\n      <th>description_lang</th>\n      <th>url</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>11a69e030bbeb53ec642d827a5ccb1d8f42cd050</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>RPA Engineer AI Development Experience</td>\n      <td>rpa engineer ai development experience</td>\n      <td>AllianceIT Inc</td>\n      <td>1</td>\n      <td>False</td>\n      <td>Unknown</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>81000.0</td>\n      <td>4722.701619</td>\n      <td>7842.035459</td>\n      <td>unknown</td>\n      <td>nucleo</td>\n      <td>[]</td>\n      <td>Design, build, test, and deploy Intelligent Ag...</td>\n      <td>en</td>\n      <td>https://www.adzuna.com.mx/land/ad/5797062930?s...</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>4c34441a2388bd88259480834442d16d021b0801</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>Machine Learning Engineer</td>\n      <td>machine learning engineer</td>\n      <td>Capital Empresarial Horizonte</td>\n      <td>6</td>\n      <td>False</td>\n      <td>Unknown</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>600000.0</td>\n      <td>34982.974952</td>\n      <td>58089.151551</td>\n      <td>unknown</td>\n      <td>nucleo</td>\n      <td>[python, pytorch, tensorflow]</td>\n      <td>Capital Empresarial Horizonte Empresa Mexicana...</td>\n      <td>es</td>\n      <td>https://www.adzuna.com.mx/land/ad/5768169505?s...</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>32f1656a91bd124277eb9ae53e24af7614d2ded7</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>Ingeniero de Preventa Google Cloud e Inteligen...</td>\n      <td>ingeniero de preventa google cloud e inteligen...</td>\n      <td>Capital Empresarial Horizonte</td>\n      <td>6</td>\n      <td>False</td>\n      <td>Unknown</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>60000.0</td>\n      <td>3498.297495</td>\n      <td>5808.915155</td>\n      <td>unknown</td>\n      <td>nucleo</td>\n      <td>[gcp, llm]</td>\n      <td>Capital Empresarial Horizonte Empresa Mexicana...</td>\n      <td>es</td>\n      <td>https://www.adzuna.com.mx/land/ad/5800080170?s...</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>33043115125a4d46c1cf05caf42ff7b764f4bbce</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>Ingeniero en Inteligencia Artificial</td>\n      <td>ingeniero en inteligencia artificial</td>\n      <td>Grupo Financiero Inbursa Corporativo</td>\n      <td>1</td>\n      <td>False</td>\n      <td>Unknown</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>240000.0</td>\n      <td>13993.189981</td>\n      <td>23235.660620</td>\n      <td>unknown</td>\n      <td>nucleo</td>\n      <td>[]</td>\n      <td>Únete al equipo de Innovación de Grupo Finan...</td>\n      <td>es</td>\n      <td>https://www.adzuna.com.mx/land/ad/5812515682?s...</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>45f0e4c23e486ef2663196c229a4ac09670eb1ed</td>\n      <td>2026-08-10</td>\n      <td>adzuna_mx</td>\n      <td>Maestra de Matemáticas o Inteligencia Artific...</td>\n      <td>maestra de matemáticas o inteligencia artific...</td>\n      <td>VARFRA</td>\n      <td>1</td>\n      <td>False</td>\n      <td>Empleos en educación</td>\n      <td>MX</td>\n      <td>...</td>\n      <td>True</td>\n      <td>180000.0</td>\n      <td>10494.892486</td>\n      <td>17426.745465</td>\n      <td>unknown</td>\n      <td>fuera</td>\n      <td>[]</td>\n      <td>Vacante Descripción del empleo Estamos en bú...</td>\n      <td>es</td>\n      <td>https://www.adzuna.com.mx/land/ad/5774880912?s...</td>\n    </tr>\n  </tbody>\n</table>\n<p>5 rows × 31 columns</p>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "## Por qué un modelo\n\nLos notebooks anteriores establecieron el problema: en México casi nadie publica el salario de\nuna vacante de IA. De las 45 vacantes mexicanas que la taxonomía núcleo/anillo reconoce como\ngenuinamente de IA, sólo 4 traen un número. Con 4 observaciones no hay mediana que reportar con\nseriedad — el propio criterio del proyecto exige n ≥ 30 para publicar un estadístico descriptivo\n(notebooks 01–03), y México no lo alcanza ni de cerca.\n\nLa pregunta de este notebook es si un modelo puede rodear ese muro: Estados Unidos sí publica\nsalario en cantidad (cientos de vacantes de IA con sueldo observado) y comparte con México el\nmismo vocabulario de puestos, seniority y skills. Si la relación entre esos atributos y el salario\ntuviera una forma parecida en ambos países —aunque el *nivel* sea distinto—, un modelo entrenado\nen EE.UU. podría estimar el salario de una vacante mexicana a partir de su título, su seniority,\nsus skills, su empresa.\n\nEs una hipótesis, no un hecho, y tratarla como un hecho sería el error exacto que este proyecto\nexiste para evitar. Por eso el resto del notebook no se conforma con entrenar el modelo: lo\nentrena **sin ver un solo dato mexicano**, y luego lo somete a un examen fijado de antemano\n(§7 del spec: MdAPE ≤ 35 % y superar a un baseline ingenuo) contra cada salario mexicano real que\ntenemos. Si el modelo pasa, sus estimaciones se publican. Si no, el hallazgo es el resultado.\n\n**Conclusión:** en lugar de preguntar directamente «¿cuánto paga México?», este notebook pregunta\nalgo más disciplinado — ¿puede un modelo entrenado donde el salario sí se ve adivinar el salario\ndonde no se ve, y podemos demostrarlo? Lo que sigue construye el modelo; la sección de evaluación\nes donde se gana, o no, el derecho a que le creamos."
+      },
+      {
+        "type": "markdown",
+        "content": "## Preparación\n\nEl corpus completo tiene 6,990 vacantes, pero no todas son de IA: la búsqueda por palabras clave\nen Adzuna también trae abogados, técnicos de HVAC y gerentes de RRHH que mencionan «AI» de pasada\n(ver notebook 01). La taxonomía núcleo/anillo/fuera ya separa las vacantes genuinamente\nrelacionadas con IA (núcleo + anillo) del ruido de búsqueda (fuera). Entrenar un modelo salarial\nsobre ese ruido diluiría la señal antes de empezar, así que todo lo que sigue trabaja únicamente\nsobre el subconjunto de IA."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "import warnings; warnings.filterwarnings(\"ignore\", category=FutureWarning)\n\nfrom src.models.impute import FEATURES, TARGET, entrenar, particionar, preparar\nfrom src.models.evaluate import evaluar_holdout_mx, baseline_pais_seniority, mdape\nfrom sklearn.inspection import permutation_importance\nfrom sklearn.model_selection import KFold, cross_val_predict\n\nia = df[df[\"tier\"] != \"fuera\"].copy()\nprint(f\"Vacantes de IA (núcleo + anillo): {len(ia):,} de {len(df):,} totales\")\nprint(ia.groupby(\"country\").size().rename(\"vacantes_IA\"))\nprint()\nprint(f\"México, de esas: {len(ia[ia['country'] == 'MX']):,}\")\nprint(f\"México con salario observado: {int(ia.loc[ia['country'] == 'MX', 'salary_observed'].sum())}\")",
+        "execution_count": 2
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión:** de las 6,990 vacantes del corpus, una fracción minoritaria es de IA una vez que se\ndescarta el ruido de palabra clave; México aporta 45 de ellas, y de esas 45 sólo 4 traen salario.\nEse es el material con el que hay que trabajar de aquí en adelante."
+      },
+      {
+        "type": "markdown",
+        "content": "#### Partición: el hold-out mexicano\n\n`particionar()` traza la línea con la que se juega todo el notebook: el entrenamiento excluye a\nMéxico **por completo**, y el hold-out es *cada* salario mexicano observado que existe en el\ncorpus de IA. No hay una porción de México en el entrenamiento y otra en la validación — o el\nmodelo nunca vio el dato, o el dato es la prueba."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "train, holdout = particionar(ia)\nprint(f\"Entrenamiento (sin México): {len(train):,}\")\nprint(f\"Hold-out mexicano observado: {len(holdout):,}\")\nholdout[[\"city\", \"tier\", \"seniority\", \"salary_annual_local\", \"salary_annual_usd_ppp\"]]",
+        "execution_count": 3
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>city</th>\n      <th>tier</th>\n      <th>seniority</th>\n      <th>salary_annual_local</th>\n      <th>salary_annual_usd_ppp</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>Ciudad de México</td>\n      <td>nucleo</td>\n      <td>unknown</td>\n      <td>81000.0</td>\n      <td>7842.035459</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>Ciudad de México</td>\n      <td>nucleo</td>\n      <td>unknown</td>\n      <td>600000.0</td>\n      <td>58089.151551</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>Ciudad de México</td>\n      <td>nucleo</td>\n      <td>unknown</td>\n      <td>60000.0</td>\n      <td>5808.915155</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>Ciudad de México</td>\n      <td>nucleo</td>\n      <td>unknown</td>\n      <td>240000.0</td>\n      <td>23235.660620</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "# El pipeline entrena en log(salario); log(0) no está definido. Antes de ajustar el modelo,\n# hay que confirmar que no se cuela ningún salario nulo disfrazado de cero.\nceros = int((train[TARGET] <= 0).sum())\nprint(f\"Vacantes de entrenamiento con salario_ppp = 0: {ceros}\")\ndisplay(train.loc[train[TARGET] <= 0, [\"source\", \"title_raw\", \"salary_min_raw\", \"salary_max_raw\"]].head())\n\ntrain = train[train[TARGET] > 0].reset_index(drop=True)\nprint(f\"Entrenamiento tras excluir esos ceros: {len(train):,}\")\n\nassert (holdout[TARGET] > 0).all(), \"MdAPE divide entre el salario real: no puede ser cero\"",
+        "execution_count": 4
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>source</th>\n      <th>title_raw</th>\n      <th>salary_min_raw</th>\n      <th>salary_max_raw</th>\n    </tr>\n  </thead>\n  <tbody>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión:** el hold-out mexicano tiene **4 filas**. Las cuatro son de Ciudad de México, las\ncuatro tienen `seniority = unknown`, y van de 60,000 a 600,000 MXN anuales — un rango de 10x en\ncuatro puntos. Aparte, ninguna vacante de entrenamiento trae `salario_ppp = 0`: la fuente\n`kaggle_mannacharya` ya marca esos casos como `salary_observed = False` en el pipeline, así que no\nhace falta excluir ninguna fila adicional antes de tomar logaritmo. Ninguno de los dos ajustes toca\na México: el entrenamiento sigue siendo exclusivamente estadounidense, y el hold-out sigue siendo\ncada salario mexicano que tenemos, sin excepción."
+      },
+      {
+        "type": "markdown",
+        "content": "## Entrenamiento\n\nEl estimador es un `HistGradientBoostingRegressor` sobre `log(salario)`, con las features del\nspec (§7): título normalizado, seniority, categoría, empresa (conteo de vacantes y si es\nmultinacional), modalidad remota, metro, tier, y ocho skills en multi-hot. `country` también es\nuna feature — pero en este entrenamiento tiene un único valor posible, «US», porque México quedó\ncompletamente fuera. Esa asimetría va a importar más adelante.\n\nAntes de tocar México, vale la pena saber qué tan bien le va al modelo en el terreno que sí conoce."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "modelo = entrenar(train)\n\nmdape_in = mdape(train[TARGET].to_numpy(float), modelo.predict(train))\nprint(f\"MdAPE dentro de muestra (EE.UU., optimista): {mdape_in:.1%}\")\n\nkf = KFold(n_splits=5, shuffle=True, random_state=42)\npred_log_cv = cross_val_predict(modelo.pipeline, train[FEATURES], np.log(train[TARGET]), cv=kf)\npred_cv = np.exp(pred_log_cv)\nmdape_cv = mdape(train[TARGET].to_numpy(float), pred_cv)\nprint(f\"MdAPE con validación cruzada (5 folds, EE.UU.): {mdape_cv:.1%}\")",
+        "execution_count": 5
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión:** dentro de Estados Unidos el modelo funciona razonablemente bien — con validación\ncruzada erra 28.4 % de mediana contra salarios que no vio en cada fold, frente a un 14.1 % optimista\ndentro de muestra. Ese 28.4 % es el techo realista de lo que este modelo puede hacer cuando sí tiene\ncon qué aprender, y también la vara con la que hay que leer lo que sigue: si transfiriera a México\ncon una fracción de esa fidelidad, pasaría el umbral del 35 %. El experimento tiene sentido; la\npregunta es si el hold-out puede confirmarlo."
+      },
+      {
+        "type": "markdown",
+        "content": "## Evaluación contra el hold-out\n\n`evaluar_holdout_mx()` hace en una sola llamada lo que exige el spec: predice sobre las 4 filas\nmexicanas, calcula el MdAPE del modelo, calcula el MdAPE de un baseline ingenuo sobre esas mismas\n4 filas, y decide si el resultado es publicable."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "resultado = evaluar_holdout_mx(modelo, train, holdout)\nfor k, v in resultado.items():\n    print(f\"{k}: {v}\")",
+        "execution_count": 6
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión:** una sola llamada ya devuelve las dos piezas que hacen falta — el error del modelo\ny el error del rival a vencer. Lo que sigue las separa y las interpreta."
+      },
+      {
+        "type": "markdown",
+        "content": "### El baseline a vencer\n\nEl rival no es «no hacer nada»: es la mediana salarial por seniority calculada sobre el propio\nentrenamiento estadounidense — el estimador más simple que alguien razonable usaría si no tuviera\nmodelo. Si el modelo no le gana, no aporta nada frente a una tabla de medianas."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "print(f\"MdAPE del baseline (mediana por seniority): {resultado['mdape_baseline']:.1%}\")\nprint(f\"MdAPE del modelo: {resultado['mdape_modelo']:.1%}\")\nprint(f\"¿Supera al baseline? {resultado['supera_baseline']}\")",
+        "execution_count": 7
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión:** el modelo sí le gana al baseline —958 % de error mediano contra 1,606 %—, pero\nganarle a un baseline que también se equivoca por más de diez veces no es una victoria que\nsignifique nada en términos absolutos. Los dos números están fuera de cualquier rango publicable;\nla comparación entre ellos es casi un tecnicismo al lado de la magnitud del error."
+      },
+      {
+        "type": "markdown",
+        "content": "### Veredicto\n\nCon el baseline superado y el umbral del 35 % de por medio, sólo falta ver el número final y la\nrazón detrás de él."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "pred = modelo.predict(holdout)\nreal = holdout[TARGET].to_numpy(float)\nerrores = np.abs(real - pred) / real\n\nfig, ax = plt.subplots(figsize=(6, 6))\nax.scatter(real, pred, s=120, alpha=0.75, color=\"#C44E52\", zorder=3)\nfor r, p, e in zip(real, pred, errores):\n    ax.annotate(f\"{e:.0%}\", (r, p), textcoords=\"offset points\", xytext=(8, 6), fontsize=9)\n\nlim = [0, max(real.max(), pred.max()) * 1.1]\nax.plot(lim, lim, \"--\", color=\"#888888\", label=\"predicción = realidad\")\nax.set_xlim(lim); ax.set_ylim(lim)\nax.set_xlabel(\"Salario real (USD PPP)\")\nax.set_ylabel(\"Salario predicho (USD PPP)\")\nax.set_title(f\"Hold-out México — MdAPE {resultado['mdape_modelo']:.1%} (n={len(holdout)})\")\nax.legend()\nplt.tight_layout()",
+        "execution_count": 8
+      },
+      {
+        "type": "image",
+        "src": "/projects/mercado-de-ia-modelo-de-imputacion-salarial/cell-20-0.png",
+        "alt": "Output 0 de la celda 20"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "print(resultado[\"veredicto\"])",
+        "execution_count": 9
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión:** el modelo no se equivoca al azar — sobreestima siempre, y por mucho. Las cuatro\npredicciones caen entre 124,000 y 239,000 USD PPP; los cuatro salarios reales van de 5,800 a\n58,000. La razón es estructural, no un accidente de la muestra: `country` es una feature del\nmodelo, pero en el entrenamiento tuvo un único valor («US»), así que nunca hubo con qué aprender\nun ajuste por país. Al encontrarse con México como categoría desconocida, el modelo no\n«extrapola con cautela»: cae de vuelta en el nivel salarial estadounidense, que es lo único que\nconoce. Con `publicable = False`, las estimaciones no se publican."
+      },
+      {
+        "type": "markdown",
+        "content": "## Qué mueve el salario\n\nLa transferencia a México no se pudo validar, pero eso no invalida lo que el modelo aprendió\nsobre el mercado en el que sí tiene datos de sobra. Con cientos de vacantes estadounidenses de IA\ncon salario observado, «qué mueve el salario en EE.UU.» es una pregunta que sí se puede responder\ncon solidez — y es un resultado real del proyecto, con o sin México."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "imp = permutation_importance(\n    modelo.pipeline, train[FEATURES], np.log(train[TARGET]),\n    n_repeats=10, random_state=42, scoring=\"neg_mean_absolute_error\",\n)\nimportancias = pd.Series(imp.importances_mean, index=FEATURES).sort_values()\n\nfig, ax = plt.subplots(figsize=(9, 6))\nimportancias.tail(15).plot.barh(ax=ax, color=\"#4C72B0\")\nax.set_xlabel(\"Importancia por permutación (caída en MAE sobre log-salario)\")\nax.set_title(\"Qué mueve el salario predicho — EE.UU.\")\nplt.tight_layout()\n\nimportancias.sort_values(ascending=False).to_frame(\"importancia\")",
+        "execution_count": 10
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>importancia</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>metro</th>\n      <td>0.160569</td>\n    </tr>\n    <tr>\n      <th>company_posting_count</th>\n      <td>0.140749</td>\n    </tr>\n    <tr>\n      <th>title_norm</th>\n      <td>0.104099</td>\n    </tr>\n    <tr>\n      <th>seniority</th>\n      <td>0.077178</td>\n    </tr>\n    <tr>\n      <th>company_is_multinational</th>\n      <td>0.067664</td>\n    </tr>\n    <tr>\n      <th>category</th>\n      <td>0.029654</td>\n    </tr>\n    <tr>\n      <th>remote_scope</th>\n      <td>0.025812</td>\n    </tr>\n    <tr>\n      <th>tier</th>\n      <td>0.004983</td>\n    </tr>\n    <tr>\n      <th>is_remote</th>\n      <td>0.000057</td>\n    </tr>\n    <tr>\n      <th>skill_agents</th>\n      <td>0.000000</td>\n    </tr>\n    <tr>\n      <th>skill_sql</th>\n      <td>0.000000</td>\n    </tr>\n    <tr>\n      <th>skill_python</th>\n      <td>0.000000</td>\n    </tr>\n    <tr>\n      <th>skill_llm</th>\n      <td>0.000000</td>\n    </tr>\n    <tr>\n      <th>skill_rag</th>\n      <td>0.000000</td>\n    </tr>\n    <tr>\n      <th>skill_pytorch</th>\n      <td>0.000000</td>\n    </tr>\n    <tr>\n      <th>skill_mlops</th>\n      <td>0.000000</td>\n    </tr>\n    <tr>\n      <th>skill_vector_db</th>\n      <td>0.000000</td>\n    </tr>\n    <tr>\n      <th>country</th>\n      <td>0.000000</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "image",
+        "src": "/projects/mercado-de-ia-modelo-de-imputacion-salarial/cell-24-1.png",
+        "alt": "Output 1 de la celda 24"
+      },
+      {
+        "type": "markdown",
+        "content": "Ninguna skill individual entra al top de importancias: `metro`, `company_posting_count`,\n`title_norm`, `seniority` y `company_is_multinational` dominan, y las ocho variables de skill\nquedan en 0.000 — permutarlas no cambia el error del modelo. Eso no significa que las skills no\nimporten para el salario; significa que, una vez que el modelo ya sabe el título, el nivel y la\nciudad, no gana nada adicional por saber también qué tecnologías aparecen. La correlación entre\nskill y salario es real, pero pasa por el rol y el nivel, no de forma independiente. La comparación\ndirecta lo muestra:"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "exploded = (\n    ia[(ia[\"country\"] == \"US\") & ia[\"salary_observed\"]]\n    .explode(\"skills\")\n    .dropna(subset=[\"skills\"])\n)\npremium = (\n    exploded.groupby(\"skills\")[TARGET]\n    .agg(n=\"count\", mediana=\"median\")\n    .query(\"n >= 30\")\n    .sort_values(\"mediana\")\n)\n\nfig, ax = plt.subplots(figsize=(8, 6))\npremium[\"mediana\"].plot.barh(ax=ax, color=\"#55A868\")\nax.set_xlabel(\"Mediana salarial (USD PPP)\")\nax.set_title(\"Premium salarial bruto por skill individual — EE.UU. (n≥30 por skill)\")\nplt.tight_layout()\n\nprint(f\"Más alto:  {premium.index[-1]} (${premium['mediana'].iloc[-1]:,.0f}, n={premium['n'].iloc[-1]})\")\nprint(f\"Más bajo:  {premium.index[0]} (${premium['mediana'].iloc[0]:,.0f}, n={premium['n'].iloc[0]})\")",
+        "execution_count": 11
+      },
+      {
+        "type": "image",
+        "src": "/projects/mercado-de-ia-modelo-de-imputacion-salarial/cell-26-2.png",
+        "alt": "Output 2 de la celda 26"
+      },
+      {
+        "type": "markdown",
+        "content": "**Conclusión:** el rango bruto entre skills es grande —de $138,950 (`prompt_eng`) a $200,000\n(`agents`), un spread de USD 61,050— pero no es la señal que parece a primera vista: `agents` no\ncarga una prima, está exactamente en la mediana nacional, mientras que `prompt_eng` y `langchain`\nquedan cerca de 30% por debajo del mercado (nota de método: son medianas univariadas, sin ajustar\npor seniority). Y ni siquiera esa relación es incremental: los puestos que piden `agents` también\ntienden a ser de mayor seniority, en metros más caros y en empresas distintas, y el modelo ya\ncaptura eso a través de `title_norm`, `seniority` y `metro`. La estructura salarial estadounidense\nde IA está gobernada por el rol, el nivel y la ubicación; la lista de tecnologías es, en el mejor\nde los casos, redundante con esas tres cosas."
+      },
+      {
+        "type": "markdown",
+        "content": "## Resumen del modelo\n\n**Veredicto:** `publicable = False`.\n\n> NO PUBLICABLE: MdAPE=957.6% supera el umbral de 35%. El modelo entrenado en EE.UU. no\n> transfiere al mercado mexicano; eso se reporta como hallazgo y las estimaciones no se publican.\n\nEl modelo, entrenado sobre 750 vacantes estadounidenses de IA con salario observado, erró un\n958 % (MdAPE) sobre las 4 vacantes mexicanas con salario real que existen en el corpus — muy por\nencima del umbral de 35 % del spec. Superó al baseline ingenuo (mediana por seniority, que erró\n1,606 %), pero ganarle a un rival igualmente perdido no acerca la conclusión a publicable. Ningún\nsalario imputado para México sale de este notebook.\n\nEl punto que vale la pena dejar explícito no es «el modelo falló». Es más fuerte que eso: **con 4\nobservaciones no hay manera de validar la transferencia, sin importar qué tan bueno o malo sea el\nmodelo.** Un modelo genuinamente bueno no podría haberse demostrado bueno con cuatro puntos\n—cualquier cuarteto de salarios reales, típico o atípico, cabe dentro del ruido de muestra—, y uno\nmalo, como este, tampoco puede descartarse con la contundencia que darían 30 o 300 observaciones.\nLa barrera no es sólo que el modelo probablemente no transfiera entre mercados —de hecho hay una\nrazón estructural concreta para que no transfiera: `country` fue una constante durante el\nentrenamiento («US»), así que el modelo nunca tuvo con qué aprender un desnivel entre países, y al\nencontrarse con México como categoría desconocida cae de vuelta al nivel salarial estadounidense,\nque es lo único que conoce—. La barrera real es que **no existe, con los datos de hoy, un\nexperimento capaz de demostrar lo contrario.** Un modelo cuya precisión no se puede medir no debe\npublicar sus estimaciones, sin importar cuán razonable parezca su lógica interna.\n\nEste notebook no bajó el umbral del 35 %, no coló vacantes mexicanas al entrenamiento para\ninflar el hold-out, y no cambió de métrica cuando el MdAPE no alcanzó. Un proyecto que sabe cuándo\ncallarse vale más que uno que siempre tiene un número, y eso es, con todo, un resultado: la\nrespuesta a «por qué es tan difícil averiguar cuánto paga la IA en México» no termina en que las\nempresas no publican el sueldo — sigue hasta que ni un modelo entrenado con seriedad sobre un\nmercado bien medido tiene manera de llenar ese vacío mientras México aporte cuatro salarios\nobservables.\n\nLo que sí se sostiene, con o sin México, es la mitad estadounidense del ejercicio: con validación\ncruzada, el modelo explica el salario de una vacante de IA en EE.UU. con un MdAPE de 28.4 %, y lo\nque más mueve esa predicción es el metro, el volumen de vacantes de la empresa, el título\nnormalizado, la seniority y si la empresa es multinacional — no la lista de skills, que compite\npor el salario a través del rol que ocupa y no de forma independiente. Es una respuesta real a\n«qué mueve el salario de IA», incluso cuando la pregunta original —cuánto paga México— tiene que\nquedarse, por ahora, sin número."
+      }
+    ]
+  },
+  {
     "slug": "telecom-identificacion-de-operadores-ineficaces",
-    "title": "Telecom → Identificación de operadores ineficaces",
+    "title": "Telecom — Identificación de operadores ineficaces",
     "summary": "Proyecto integral de un call center: análisis exploratorio + machine learning para clasificar a los operadores ineficaces e impulsar la calidad del servicio.",
     "repoPath": "Telecomunicaciones-Operadores-Ineficaces/Operadores-Ineficaces.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Telecomunicaciones-Operadores-Ineficaces/Operadores-Ineficaces.ipynb",
@@ -4509,7 +5424,7 @@
   },
   {
     "slug": "telecom-test-a-b-del-recomendador",
-    "title": "Telecom → Test A/B del recomendador",
+    "title": "Telecom — Test A/B del recomendador",
     "summary": "Prueba A/B sobre un sistema de recomendaciones para evaluar su impacto real en la conversión y experiencia del usuario.",
     "repoPath": "Telecomunicaciones-Operadores-Ineficaces/Test-AB-Recomendador.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Telecomunicaciones-Operadores-Ineficaces/Test-AB-Recomendador.ipynb",
@@ -4750,7 +5665,7 @@
   },
   {
     "slug": "telecom-analisis-sql-de-libros",
-    "title": "Telecom → Análisis SQL de libros",
+    "title": "Telecom — Análisis SQL de libros",
     "summary": "Resolución de tareas analíticas con SQL puro: agregaciones, joins, subconsultas y CTEs sobre un dataset de catálogo de libros y reseñas.",
     "repoPath": "Telecomunicaciones-Operadores-Ineficaces/SQL-Libros.ipynb",
     "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Telecomunicaciones-Operadores-Ineficaces/SQL-Libros.ipynb",

@@ -107,6 +107,30 @@ const PROJECT_OVERRIDES = {
       "Documento técnico que descompone el proyecto integral de telecomunicaciones en fases, hitos y entregables medibles.",
     cover: { gradientFrom: "#94A3B8", gradientTo: "#475569", icon: "list" },
   },
+  "mercado-ia-mx-us/01_recoleccion_y_calidad": {
+    title: "Mercado de IA — Auditoría de fuentes y calidad",
+    summary:
+      "Antes de analizar nada, se audita cada fuente candidata: el mejor dataset real de Kaggle tiene 12 filas mexicanas y ninguna con salario, y el más popular de la categoría resulta ser sintético (12 países, ~4,300 filas cada uno, 100% de sueldos publicados frente al ~19% de un agregador real). Con ambas descartadas, se construye un corpus propio desde la API de Adzuna — 6,990 vacantes, 1,666 con salario — y se confirma en vivo que Adzuna modela sueldos que no tiene: Nueva York devolvió 151 vacantes y solo 1 con salario real.",
+    cover: { gradientFrom: "#00DF81", gradientTo: "#6366F1", icon: "search" },
+  },
+  "mercado-ia-mx-us/02_brecha_salarial": {
+    title: "Mercado de IA — Brecha salarial México vs Estados Unidos",
+    summary:
+      "Medianas salariales con intervalos de confianza bootstrap en cinco metros de Estados Unidos — San Francisco Bay Area $225,000 (n=319), Seattle $202,500, Nueva York $200,000 (n=116), Austin $197,575 y Boston $182,500 — frente a una decisión metodológica explícita: México solo tiene 4 vacantes de IA con salario publicado, así que las pruebas de hipótesis se niegan a correr, y el notebook muestra ese rechazo en vez de forzar un resultado.",
+    cover: { gradientFrom: "#00DF81", gradientTo: "#0EA5E9", icon: "chart-bar" },
+  },
+  "mercado-ia-mx-us/03_skills_y_transparencia": {
+    title: "Mercado de IA — Primas por skill y transparencia salarial",
+    summary:
+      "Primas salariales por habilidad: dominar prompt engineering o LangChain se paga ~30% por debajo de la mediana nacional, mientras que trabajar con agentes de IA se paga justo en ella — una brecha de $61,050 entre habilidades del mismo mercado. Un hallazgo contraintuitivo: en Estados Unidos, las multinacionales publican el salario 3.4 veces menos que las empresas locales.",
+    cover: { gradientFrom: "#6366F1", gradientTo: "#00DF81", icon: "sparkles" },
+  },
+  "mercado-ia-mx-us/04_modelo_imputacion": {
+    title: "Mercado de IA — Modelo de imputación salarial",
+    summary:
+      "Un modelo de gradient boosting entrenado con salarios de Estados Unidos se valida contra un hold-out con los 4 salarios mexicanos observados — veredicto: no publicable, con un MdAPE de 958% frente a un umbral de 35%. El argumento central: con n=4 ningún experimento puede validar la transferencia entre mercados en ningún sentido, así que las estimaciones no deben publicarse.",
+    cover: { gradientFrom: "#0EA5E9", gradientTo: "#00DF81", icon: "cpu" },
+  },
 };
 
 function slugify(s) {
@@ -328,7 +352,7 @@ async function main() {
       const repoPath = relativeRepoPath(nbPath);
       const folder = path.dirname(repoPath);
       const baseName = path.basename(nbPath, ".ipynb");
-      const overrideKey = folder.startsWith("Telecom")
+      const overrideKey = folder.startsWith("Telecom") || folder.startsWith("mercado-ia")
         ? `${folder}/${baseName}`
         : folder;
       const override = PROJECT_OVERRIDES[overrideKey] || {};
@@ -385,6 +409,11 @@ async function main() {
     const an = parseInt((a.folder.match(/Sp_(\d+)/) || [])[1] || "999", 10);
     const bn = parseInt((b.folder.match(/Sp_(\d+)/) || [])[1] || "999", 10);
     if (an !== bn) return an - bn;
+    // Within a multi-notebook folder (e.g. mercado-ia-mx-us), keep the notebooks'
+    // own numeric prefix (01_, 02_, ...) instead of falling back to title order.
+    const aSeq = parseInt((path.basename(a.repoPath).match(/^(\d+)/) || [])[1], 10);
+    const bSeq = parseInt((path.basename(b.repoPath).match(/^(\d+)/) || [])[1], 10);
+    if (!Number.isNaN(aSeq) && !Number.isNaN(bSeq) && aSeq !== bSeq) return aSeq - bSeq;
     return a.title.localeCompare(b.title);
   });
 
