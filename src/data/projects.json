@@ -15,11 +15,7 @@
     "cellCount": 29,
     "imageCount": 0,
     "coverImage": null,
-    "cover": {
-      "gradientFrom": "#00DF81",
-      "gradientTo": "#0EA5E9",
-      "icon": "broom"
-    },
+    "results": null,
     "cells": [
       {
         "type": "markdown",
@@ -173,11 +169,7 @@
     "cellCount": 29,
     "imageCount": 0,
     "coverImage": null,
-    "cover": {
-      "gradientFrom": "#6366F1",
-      "gradientTo": "#00DF81",
-      "icon": "users"
-    },
+    "results": null,
     "cells": [
       {
         "type": "markdown",
@@ -332,11 +324,7 @@
     "cellCount": 93,
     "imageCount": 0,
     "coverImage": null,
-    "cover": {
-      "gradientFrom": "#A855F7",
-      "gradientTo": "#00DF81",
-      "icon": "music"
-    },
+    "results": null,
     "cells": [
       {
         "type": "markdown",
@@ -800,11 +788,7 @@
     "cellCount": 120,
     "imageCount": 6,
     "coverImage": "/projects/instacart-llena-ese-carrito/cell-76-0.png",
-    "cover": {
-      "gradientFrom": "#F59E0B",
-      "gradientTo": "#EF4444",
-      "icon": "cart"
-    },
+    "results": null,
     "cells": [
       {
         "type": "markdown",
@@ -1466,11 +1450,7 @@
     "cellCount": 89,
     "imageCount": 12,
     "coverImage": "/projects/megaline-cual-es-la-mejor-tarifa/cell-62-0.png",
-    "cover": {
-      "gradientFrom": "#06B6D4",
-      "gradientTo": "#6366F1",
-      "icon": "phone"
-    },
+    "results": null,
     "cells": [
       {
         "type": "markdown",
@@ -2087,11 +2067,7 @@
     "cellCount": 68,
     "imageCount": 16,
     "coverImage": "/projects/tienda-de-videojuegos-patrones-de-exito/cell-24-0.png",
-    "cover": {
-      "gradientFrom": "#EC4899",
-      "gradientTo": "#6366F1",
-      "icon": "gamepad"
-    },
+    "results": null,
     "cells": [
       {
         "type": "markdown",
@@ -2565,11 +2541,7 @@
     "cellCount": 25,
     "imageCount": 2,
     "coverImage": "/projects/zuber-taxis-en-chicago/cell-8-0.png",
-    "cover": {
-      "gradientFrom": "#FBBF24",
-      "gradientTo": "#00DF81",
-      "icon": "taxi"
-    },
+    "results": null,
     "cells": [
       {
         "type": "markdown",
@@ -2756,11 +2728,7 @@
     "cellCount": 65,
     "imageCount": 15,
     "coverImage": "/projects/showz-analisis-de-marketing/cell-18-0.png",
-    "cover": {
-      "gradientFrom": "#00DF81",
-      "gradientTo": "#6366F1",
-      "icon": "chart"
-    },
+    "results": null,
     "cells": [
       {
         "type": "markdown",
@@ -3230,11 +3198,7 @@
     "cellCount": 72,
     "imageCount": 6,
     "coverImage": "/projects/tests-a-b-priorizados-con-ice-rice/cell-17-0.png",
-    "cover": {
-      "gradientFrom": "#3B82F6",
-      "gradientTo": "#A855F7",
-      "icon": "flask"
-    },
+    "results": null,
     "cells": [
       {
         "type": "markdown",
@@ -3628,11 +3592,7 @@
     "cellCount": 44,
     "imageCount": 1,
     "coverImage": "/projects/embudo-de-eventos-test-a-a-b/cell-21-0.png",
-    "cover": {
-      "gradientFrom": "#10B981",
-      "gradientTo": "#0EA5E9",
-      "icon": "funnel"
-    },
+    "results": null,
     "cells": [
       {
         "type": "markdown",
@@ -3899,11 +3859,7 @@
     "cellCount": 46,
     "imageCount": 7,
     "coverImage": "/projects/model-fitness-churn-y-segmentacion/cell-13-0.png",
-    "cover": {
-      "gradientFrom": "#00DF81",
-      "gradientTo": "#EC4899",
-      "icon": "dumbbell"
-    },
+    "results": null,
     "cells": [
       {
         "type": "markdown",
@@ -4207,11 +4163,7 @@
     "cellCount": 32,
     "imageCount": 6,
     "coverImage": "/projects/mercado-de-ia-auditoria-de-fuentes-y-calidad/cell-6-0.png",
-    "cover": {
-      "gradientFrom": "#00DF81",
-      "gradientTo": "#6366F1",
-      "icon": "search"
-    },
+    "results": null,
     "cells": [
       {
         "type": "markdown",
@@ -4464,11 +4416,7 @@
     "cellCount": 38,
     "imageCount": 3,
     "coverImage": "/projects/mercado-de-ia-brecha-salarial-mexico-vs-estados-unidos/cell-15-0.png",
-    "cover": {
-      "gradientFrom": "#00DF81",
-      "gradientTo": "#0EA5E9",
-      "icon": "chart-bar"
-    },
+    "results": null,
     "cells": [
       {
         "type": "markdown",
@@ -4746,11 +4694,7 @@
     "cellCount": 20,
     "imageCount": 6,
     "coverImage": "/projects/mercado-de-ia-primas-por-skill-y-transparencia-salarial/cell-5-0.png",
-    "cover": {
-      "gradientFrom": "#6366F1",
-      "gradientTo": "#00DF81",
-      "icon": "sparkles"
-    },
+    "results": null,
     "cells": [
       {
         "type": "markdown",
@@ -4926,11 +4870,7 @@
     "cellCount": 29,
     "imageCount": 3,
     "coverImage": "/projects/mercado-de-ia-modelo-de-imputacion-salarial/cell-20-0.png",
-    "cover": {
-      "gradientFrom": "#0EA5E9",
-      "gradientTo": "#00DF81",
-      "icon": "cpu"
-    },
+    "results": null,
     "cells": [
       {
         "type": "markdown",
@@ -5127,11 +5067,7 @@
     "cellCount": 43,
     "imageCount": 7,
     "coverImage": "/projects/telecom-identificacion-de-operadores-ineficaces/cell-11-0.png",
-    "cover": {
-      "gradientFrom": "#F97316",
-      "gradientTo": "#A855F7",
-      "icon": "headset"
-    },
+    "results": null,
     "cells": [
       {
         "type": "markdown",
@@ -5443,11 +5379,7 @@
     "cellCount": 30,
     "imageCount": 2,
     "coverImage": "/projects/telecom-test-a-b-del-recomendador/cell-16-0.png",
-    "cover": {
-      "gradientFrom": "#A855F7",
-      "gradientTo": "#00DF81",
-      "icon": "flask"
-    },
+    "results": null,
     "cells": [
       {
         "type": "markdown",
@@ -5681,11 +5613,7 @@
     "cellCount": 16,
     "imageCount": 0,
     "coverImage": null,
-    "cover": {
-      "gradientFrom": "#0EA5E9",
-      "gradientTo": "#6366F1",
-      "icon": "database"
-    },
+    "results": null,
     "cells": [
       {
         "type": "markdown",
@@ -5810,6 +5738,463 @@
       {
         "type": "markdown",
         "content": "## Conclusiones\n\n### 1) Libros publicados después del 1 de enero de 2000\nSe identificaron **819 libros** publicados después de **2000-01-01**, lo que indica que una parte importante del catálogo es relativamente reciente (útil si el producto quiere enfocarse en contenidos “modernos”).\n\n---\n\n### 2) Reseñas y calificación promedio por libro\nSe generó una tabla por libro con **número de reseñas (reviews_cnt)** y **calificación promedio (avg_rating)**. Esto permite:\n- Detectar libros con **alta aceptación** (avg_rating alto).\n- Detectar libros con **mayor interacción** (muchas reseñas).\n- Priorizar para recomendaciones o campañas aquellos que combinen **buena calificación + alta actividad**.\n\n---\n\n### 3) Editorial con más libros (solo libros con más de 50 páginas)\nLa editorial con más libros (filtrando **num_pages > 50**) fue **Penguin Books** con **42 libros**. Esto sugiere que es una editorial clave en el catálogo y un buen candidato para colaboraciones o para armar colecciones destacadas.\n\n---\n\n### 4) Autor con mayor calificación promedio (solo libros con al menos 50 calificaciones)\nEl mejor promedio (considerando solo libros con **≥ 50 calificaciones**) fue **J.K. Rowling/Mary GrandPré**, con **avg_rating ≈ 4.2871** y **310 calificaciones**. Esto muestra un desempeño alto con una muestra grande, lo cual hace el resultado más confiable para recomendaciones.\n\n---\n\n### 5) Promedio de reseñas entre usuarios que calificaron más de 50 libros\nEntre usuarios que calificaron **más de 50 libros**, el promedio fue **24.33 reseñas** por usuario. Esto indica que los usuarios más activos no solo califican, sino que también tienden a dejar reseñas de texto con frecuencia, por lo que son un segmento valioso para engagement (reviews, comunidad, badges, etc.).\n"
+      }
+    ]
+  },
+  {
+    "slug": "riesgo-crediticio-exploracion-y-fuga-de-datos",
+    "title": "Riesgo crediticio — Exploración y fuga de datos",
+    "summary": "Análisis exploratorio de 30,000 tarjetahabientes de Taiwán (UCI, abril a septiembre de 2005) para predecir el impago del mes siguiente. La clase positiva es minoría, 22% de impago o unos 3.5 a 1, así que las métricas quedan elegidas desde el principio: ROC AUC, PR AUC, Gini y KS en lugar de exactitud. Incluye una prueba explícita de fuga de datos que descarta las tres vías por las que podría colarse, y cierra escribiendo la partición estratificada 80/20 que las fases siguientes reutilizan sin volver a tocar el test.",
+    "repoPath": "credit-risk-scoring/01_eda.ipynb",
+    "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/credit-risk-scoring/01_eda.ipynb",
+    "folder": "credit-risk-scoring",
+    "technologies": [
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+      "Seaborn",
+      "scikit-learn",
+      "Python"
+    ],
+    "categories": [
+      "Machine Learning",
+      "Análisis Exploratorio (EDA)"
+    ],
+    "cellCount": 27,
+    "imageCount": 6,
+    "coverImage": "/projects/riesgo-crediticio-exploracion-y-fuga-de-datos/cell-8-0.png",
+    "results": null,
+    "cells": [
+      {
+        "type": "markdown",
+        "content": "# 01 · Exploratory Data Analysis\n\n**Dataset:** *Default of Credit Card Clients* (UCI ML Repository, id 350) — 30,000 credit-card\nclients in Taiwan (Apr–Sep 2005). The task is to predict whether a client **defaults on\ntheir payment next month** (`TARGET = 1`).\n\nThis notebook covers: dataset overview, the **data dictionary**, **class balance**,\n**missing-value** analysis, univariate **distributions**, **bivariate** default-rate\nanalysis, the **correlation** structure, an explicit **target-leakage** check, and finally\nwrites a reproducible **stratified train/test split** to `data/processed/`.\n\n> All paths come from `src.utils.config` — nothing is hardcoded. Re-run top-to-bottom with\n> `make eda`."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "from __future__ import annotations\n\nimport sys\nimport warnings\nfrom pathlib import Path\n\n# Make the repo root importable regardless of the kernel's working directory.\n_root = Path.cwd()\nwhile not (_root / \"pyproject.toml\").exists() and _root != _root.parent:\n    _root = _root.parent\nif str(_root) not in sys.path:\n    sys.path.insert(0, str(_root))\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\n\nfrom src.data.dataset import (\n    BILL_AMT_FEATURES,\n    CATEGORICAL_FEATURES,\n    DATA_DICTIONARY,\n    NUMERIC_FEATURES,\n    PAY_AMT_FEATURES,\n    REPAYMENT_STATUS_FEATURES,\n    TARGET_COLUMN,\n    make_splits,\n    save_splits,\n)\nfrom src.data.download import load_application_frame\nfrom src.utils.config import get_settings\n\nwarnings.filterwarnings(\"ignore\", category=FutureWarning)\nsns.set_theme(style=\"whitegrid\", context=\"notebook\")\npd.set_option(\"display.max_columns\", 50)\n\nsettings = get_settings()\nREPORTS = settings.reports_dir / \"eda\"\nREPORTS.mkdir(parents=True, exist_ok=True)\nRNG = settings.random_seed\nprint(f\"Random seed: {RNG}\")\nprint(f\"Reports dir: {REPORTS}\")",
+        "execution_count": 1
+      },
+      {
+        "type": "markdown",
+        "content": "## 1 · Load the data\n\nDownloads + checksum-verifies on first run, then reads the tidy CSV."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "df = load_application_frame(settings)\nprint(f\"Shape: {df.shape[0]:,} rows x {df.shape[1]} columns\")\ndf.head()",
+        "execution_count": 2
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>LIMIT_BAL</th>\n      <th>SEX</th>\n      <th>EDUCATION</th>\n      <th>MARRIAGE</th>\n      <th>AGE</th>\n      <th>PAY_1</th>\n      <th>PAY_2</th>\n      <th>PAY_3</th>\n      <th>PAY_4</th>\n      <th>PAY_5</th>\n      <th>PAY_6</th>\n      <th>BILL_AMT1</th>\n      <th>BILL_AMT2</th>\n      <th>BILL_AMT3</th>\n      <th>BILL_AMT4</th>\n      <th>BILL_AMT5</th>\n      <th>BILL_AMT6</th>\n      <th>PAY_AMT1</th>\n      <th>PAY_AMT2</th>\n      <th>PAY_AMT3</th>\n      <th>PAY_AMT4</th>\n      <th>PAY_AMT5</th>\n      <th>PAY_AMT6</th>\n      <th>TARGET</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>20000</td>\n      <td>2</td>\n      <td>2</td>\n      <td>1</td>\n      <td>24</td>\n      <td>2</td>\n      <td>2</td>\n      <td>-1</td>\n      <td>-1</td>\n      <td>-2</td>\n      <td>-2</td>\n      <td>3913</td>\n      <td>3102</td>\n      <td>689</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>689</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>1</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>120000</td>\n      <td>2</td>\n      <td>2</td>\n      <td>2</td>\n      <td>26</td>\n      <td>-1</td>\n      <td>2</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>2</td>\n      <td>2682</td>\n      <td>1725</td>\n      <td>2682</td>\n      <td>3272</td>\n      <td>3455</td>\n      <td>3261</td>\n      <td>0</td>\n      <td>1000</td>\n      <td>1000</td>\n      <td>1000</td>\n      <td>0</td>\n      <td>2000</td>\n      <td>1</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>90000</td>\n      <td>2</td>\n      <td>2</td>\n      <td>2</td>\n      <td>34</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>29239</td>\n      <td>14027</td>\n      <td>13559</td>\n      <td>14331</td>\n      <td>14948</td>\n      <td>15549</td>\n      <td>1518</td>\n      <td>1500</td>\n      <td>1000</td>\n      <td>1000</td>\n      <td>1000</td>\n      <td>5000</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>50000</td>\n      <td>2</td>\n      <td>2</td>\n      <td>1</td>\n      <td>37</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>46990</td>\n      <td>48233</td>\n      <td>49291</td>\n      <td>28314</td>\n      <td>28959</td>\n      <td>29547</td>\n      <td>2000</td>\n      <td>2019</td>\n      <td>1200</td>\n      <td>1100</td>\n      <td>1069</td>\n      <td>1000</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>50000</td>\n      <td>1</td>\n      <td>2</td>\n      <td>1</td>\n      <td>57</td>\n      <td>-1</td>\n      <td>0</td>\n      <td>-1</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0</td>\n      <td>8617</td>\n      <td>5670</td>\n      <td>35835</td>\n      <td>20940</td>\n      <td>19146</td>\n      <td>19131</td>\n      <td>2000</td>\n      <td>36681</td>\n      <td>10000</td>\n      <td>9000</td>\n      <td>689</td>\n      <td>679</td>\n      <td>0</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "# Dtypes and a quick statistical summary.\ndisplay(df.dtypes.to_frame(\"dtype\").T)\ndf.describe().T.round(2)",
+        "execution_count": 3
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>LIMIT_BAL</th>\n      <th>SEX</th>\n      <th>EDUCATION</th>\n      <th>MARRIAGE</th>\n      <th>AGE</th>\n      <th>PAY_1</th>\n      <th>PAY_2</th>\n      <th>PAY_3</th>\n      <th>PAY_4</th>\n      <th>PAY_5</th>\n      <th>PAY_6</th>\n      <th>BILL_AMT1</th>\n      <th>BILL_AMT2</th>\n      <th>BILL_AMT3</th>\n      <th>BILL_AMT4</th>\n      <th>BILL_AMT5</th>\n      <th>BILL_AMT6</th>\n      <th>PAY_AMT1</th>\n      <th>PAY_AMT2</th>\n      <th>PAY_AMT3</th>\n      <th>PAY_AMT4</th>\n      <th>PAY_AMT5</th>\n      <th>PAY_AMT6</th>\n      <th>TARGET</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>dtype</th>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n      <td>int64</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>count</th>\n      <th>mean</th>\n      <th>std</th>\n      <th>min</th>\n      <th>25%</th>\n      <th>50%</th>\n      <th>75%</th>\n      <th>max</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>LIMIT_BAL</th>\n      <td>30000.0</td>\n      <td>167484.32</td>\n      <td>129747.66</td>\n      <td>10000.0</td>\n      <td>50000.00</td>\n      <td>140000.0</td>\n      <td>240000.00</td>\n      <td>1000000.0</td>\n    </tr>\n    <tr>\n      <th>SEX</th>\n      <td>30000.0</td>\n      <td>1.60</td>\n      <td>0.49</td>\n      <td>1.0</td>\n      <td>1.00</td>\n      <td>2.0</td>\n      <td>2.00</td>\n      <td>2.0</td>\n    </tr>\n    <tr>\n      <th>EDUCATION</th>\n      <td>30000.0</td>\n      <td>1.84</td>\n      <td>0.74</td>\n      <td>1.0</td>\n      <td>1.00</td>\n      <td>2.0</td>\n      <td>2.00</td>\n      <td>4.0</td>\n    </tr>\n    <tr>\n      <th>MARRIAGE</th>\n      <td>30000.0</td>\n      <td>1.56</td>\n      <td>0.52</td>\n      <td>1.0</td>\n      <td>1.00</td>\n      <td>2.0</td>\n      <td>2.00</td>\n      <td>3.0</td>\n    </tr>\n    <tr>\n      <th>AGE</th>\n      <td>30000.0</td>\n      <td>35.49</td>\n      <td>9.22</td>\n      <td>21.0</td>\n      <td>28.00</td>\n      <td>34.0</td>\n      <td>41.00</td>\n      <td>79.0</td>\n    </tr>\n    <tr>\n      <th>PAY_1</th>\n      <td>30000.0</td>\n      <td>-0.02</td>\n      <td>1.12</td>\n      <td>-2.0</td>\n      <td>-1.00</td>\n      <td>0.0</td>\n      <td>0.00</td>\n      <td>8.0</td>\n    </tr>\n    <tr>\n      <th>PAY_2</th>\n      <td>30000.0</td>\n      <td>-0.13</td>\n      <td>1.20</td>\n      <td>-2.0</td>\n      <td>-1.00</td>\n      <td>0.0</td>\n      <td>0.00</td>\n      <td>8.0</td>\n    </tr>\n    <tr>\n      <th>PAY_3</th>\n      <td>30000.0</td>\n      <td>-0.17</td>\n      <td>1.20</td>\n      <td>-2.0</td>\n      <td>-1.00</td>\n      <td>0.0</td>\n      <td>0.00</td>\n      <td>8.0</td>\n    </tr>\n    <tr>\n      <th>PAY_4</th>\n      <td>30000.0</td>\n      <td>-0.22</td>\n      <td>1.17</td>\n      <td>-2.0</td>\n      <td>-1.00</td>\n      <td>0.0</td>\n      <td>0.00</td>\n      <td>8.0</td>\n    </tr>\n    <tr>\n      <th>PAY_5</th>\n      <td>30000.0</td>\n      <td>-0.27</td>\n      <td>1.13</td>\n      <td>-2.0</td>\n      <td>-1.00</td>\n      <td>0.0</td>\n      <td>0.00</td>\n      <td>8.0</td>\n    </tr>\n    <tr>\n      <th>PAY_6</th>\n      <td>30000.0</td>\n      <td>-0.29</td>\n      <td>1.15</td>\n      <td>-2.0</td>\n      <td>-1.00</td>\n      <td>0.0</td>\n      <td>0.00</td>\n      <td>8.0</td>\n    </tr>\n    <tr>\n      <th>BILL_AMT1</th>\n      <td>30000.0</td>\n      <td>51223.33</td>\n      <td>73635.86</td>\n      <td>-165580.0</td>\n      <td>3558.75</td>\n      <td>22381.5</td>\n      <td>67091.00</td>\n      <td>964511.0</td>\n    </tr>\n    <tr>\n      <th>BILL_AMT2</th>\n      <td>30000.0</td>\n      <td>49179.08</td>\n      <td>71173.77</td>\n      <td>-69777.0</td>\n      <td>2984.75</td>\n      <td>21200.0</td>\n      <td>64006.25</td>\n      <td>983931.0</td>\n    </tr>\n    <tr>\n      <th>BILL_AMT3</th>\n      <td>30000.0</td>\n      <td>47013.15</td>\n      <td>69349.39</td>\n      <td>-157264.0</td>\n      <td>2666.25</td>\n      <td>20088.5</td>\n      <td>60164.75</td>\n      <td>1664089.0</td>\n    </tr>\n    <tr>\n      <th>BILL_AMT4</th>\n      <td>30000.0</td>\n      <td>43262.95</td>\n      <td>64332.86</td>\n      <td>-170000.0</td>\n      <td>2326.75</td>\n      <td>19052.0</td>\n      <td>54506.00</td>\n      <td>891586.0</td>\n    </tr>\n    <tr>\n      <th>BILL_AMT5</th>\n      <td>30000.0</td>\n      <td>40311.40</td>\n      <td>60797.16</td>\n      <td>-81334.0</td>\n      <td>1763.00</td>\n      <td>18104.5</td>\n      <td>50190.50</td>\n      <td>927171.0</td>\n    </tr>\n    <tr>\n      <th>BILL_AMT6</th>\n      <td>30000.0</td>\n      <td>38871.76</td>\n      <td>59554.11</td>\n      <td>-339603.0</td>\n      <td>1256.00</td>\n      <td>17071.0</td>\n      <td>49198.25</td>\n      <td>961664.0</td>\n    </tr>\n    <tr>\n      <th>PAY_AMT1</th>\n      <td>30000.0</td>\n      <td>5663.58</td>\n      <td>16563.28</td>\n      <td>0.0</td>\n      <td>1000.00</td>\n      <td>2100.0</td>\n      <td>5006.00</td>\n      <td>873552.0</td>\n    </tr>\n    <tr>\n      <th>PAY_AMT2</th>\n      <td>30000.0</td>\n      <td>5921.16</td>\n      <td>23040.87</td>\n      <td>0.0</td>\n      <td>833.00</td>\n      <td>2009.0</td>\n      <td>5000.00</td>\n      <td>1684259.0</td>\n    </tr>\n    <tr>\n      <th>PAY_AMT3</th>\n      <td>30000.0</td>\n      <td>5225.68</td>\n      <td>17606.96</td>\n      <td>0.0</td>\n      <td>390.00</td>\n      <td>1800.0</td>\n      <td>4505.00</td>\n      <td>896040.0</td>\n    </tr>\n    <tr>\n      <th>PAY_AMT4</th>\n      <td>30000.0</td>\n      <td>4826.08</td>\n      <td>15666.16</td>\n      <td>0.0</td>\n      <td>296.00</td>\n      <td>1500.0</td>\n      <td>4013.25</td>\n      <td>621000.0</td>\n    </tr>\n    <tr>\n      <th>PAY_AMT5</th>\n      <td>30000.0</td>\n      <td>4799.39</td>\n      <td>15278.31</td>\n      <td>0.0</td>\n      <td>252.50</td>\n      <td>1500.0</td>\n      <td>4031.50</td>\n      <td>426529.0</td>\n    </tr>\n    <tr>\n      <th>PAY_AMT6</th>\n      <td>30000.0</td>\n      <td>5215.50</td>\n      <td>17777.47</td>\n      <td>0.0</td>\n      <td>117.75</td>\n      <td>1500.0</td>\n      <td>4000.00</td>\n      <td>528666.0</td>\n    </tr>\n    <tr>\n      <th>TARGET</th>\n      <td>30000.0</td>\n      <td>0.22</td>\n      <td>0.42</td>\n      <td>0.0</td>\n      <td>0.00</td>\n      <td>0.0</td>\n      <td>0.00</td>\n      <td>1.0</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "## 2 · Data dictionary\n\nWhat every column means (the basis for the docs/data card)."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "data_card = pd.DataFrame(\n    [(c, DATA_DICTIONARY.get(c, \"—\"), str(df[c].dtype), df[c].nunique())\n     for c in df.columns],\n    columns=[\"feature\", \"description\", \"dtype\", \"n_unique\"],\n)\ndata_card",
+        "execution_count": 4
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>feature</th>\n      <th>description</th>\n      <th>dtype</th>\n      <th>n_unique</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>LIMIT_BAL</td>\n      <td>Amount of given credit (NT dollars), incl. ind...</td>\n      <td>int64</td>\n      <td>81</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>SEX</td>\n      <td>Gender (1 = male, 2 = female)</td>\n      <td>int64</td>\n      <td>2</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>EDUCATION</td>\n      <td>Education (1 = graduate school, 2 = university...</td>\n      <td>int64</td>\n      <td>4</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>MARRIAGE</td>\n      <td>Marital status (1 = married, 2 = single, 3 = o...</td>\n      <td>int64</td>\n      <td>3</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>AGE</td>\n      <td>Age in years</td>\n      <td>int64</td>\n      <td>56</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>PAY_1</td>\n      <td>Repayment status in month -1 (-1 = paid duly, ...</td>\n      <td>int64</td>\n      <td>11</td>\n    </tr>\n    <tr>\n      <th>6</th>\n      <td>PAY_2</td>\n      <td>Repayment status in month -2</td>\n      <td>int64</td>\n      <td>11</td>\n    </tr>\n    <tr>\n      <th>7</th>\n      <td>PAY_3</td>\n      <td>Repayment status in month -3</td>\n      <td>int64</td>\n      <td>11</td>\n    </tr>\n    <tr>\n      <th>8</th>\n      <td>PAY_4</td>\n      <td>Repayment status in month -4</td>\n      <td>int64</td>\n      <td>11</td>\n    </tr>\n    <tr>\n      <th>9</th>\n      <td>PAY_5</td>\n      <td>Repayment status in month -5</td>\n      <td>int64</td>\n      <td>10</td>\n    </tr>\n    <tr>\n      <th>10</th>\n      <td>PAY_6</td>\n      <td>Repayment status in month -6</td>\n      <td>int64</td>\n      <td>10</td>\n    </tr>\n    <tr>\n      <th>11</th>\n      <td>BILL_AMT1</td>\n      <td>Bill statement amount in month -1 (NT dollars)</td>\n      <td>int64</td>\n      <td>22723</td>\n    </tr>\n    <tr>\n      <th>12</th>\n      <td>BILL_AMT2</td>\n      <td>Bill statement amount in month -2</td>\n      <td>int64</td>\n      <td>22346</td>\n    </tr>\n    <tr>\n      <th>13</th>\n      <td>BILL_AMT3</td>\n      <td>Bill statement amount in month -3</td>\n      <td>int64</td>\n      <td>22026</td>\n    </tr>\n    <tr>\n      <th>14</th>\n      <td>BILL_AMT4</td>\n      <td>Bill statement amount in month -4</td>\n      <td>int64</td>\n      <td>21548</td>\n    </tr>\n    <tr>\n      <th>15</th>\n      <td>BILL_AMT5</td>\n      <td>Bill statement amount in month -5</td>\n      <td>int64</td>\n      <td>21010</td>\n    </tr>\n    <tr>\n      <th>16</th>\n      <td>BILL_AMT6</td>\n      <td>Bill statement amount in month -6</td>\n      <td>int64</td>\n      <td>20604</td>\n    </tr>\n    <tr>\n      <th>17</th>\n      <td>PAY_AMT1</td>\n      <td>Amount of previous payment in month -1 (NT dol...</td>\n      <td>int64</td>\n      <td>7943</td>\n    </tr>\n    <tr>\n      <th>18</th>\n      <td>PAY_AMT2</td>\n      <td>Amount of previous payment in month -2</td>\n      <td>int64</td>\n      <td>7899</td>\n    </tr>\n    <tr>\n      <th>19</th>\n      <td>PAY_AMT3</td>\n      <td>Amount of previous payment in month -3</td>\n      <td>int64</td>\n      <td>7518</td>\n    </tr>\n    <tr>\n      <th>20</th>\n      <td>PAY_AMT4</td>\n      <td>Amount of previous payment in month -4</td>\n      <td>int64</td>\n      <td>6937</td>\n    </tr>\n    <tr>\n      <th>21</th>\n      <td>PAY_AMT5</td>\n      <td>Amount of previous payment in month -5</td>\n      <td>int64</td>\n      <td>6897</td>\n    </tr>\n    <tr>\n      <th>22</th>\n      <td>PAY_AMT6</td>\n      <td>Amount of previous payment in month -6</td>\n      <td>int64</td>\n      <td>6939</td>\n    </tr>\n    <tr>\n      <th>23</th>\n      <td>TARGET</td>\n      <td>Default on payment next month (1 = default, 0 ...</td>\n      <td>int64</td>\n      <td>2</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "## 3 · Target & class balance\n\nThe positive class (default) is the minority — this drives our choice of metrics\n(ROC AUC / PR AUC over raw accuracy) and class-imbalance handling in modelling."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "counts = df[TARGET_COLUMN].value_counts().sort_index()\nrates = df[TARGET_COLUMN].value_counts(normalize=True).sort_index()\nbalance = pd.DataFrame({\"count\": counts, \"proportion\": rates.round(4)})\nbalance.index = [\"No default (0)\", \"Default (1)\"]\ndisplay(balance)\n\nfig, ax = plt.subplots(figsize=(5, 4))\nsns.barplot(x=balance.index, y=balance[\"count\"], hue=balance.index,\n            palette=[\"#2a9d8f\", \"#e76f51\"], legend=False, ax=ax)\nfor i, v in enumerate(balance[\"count\"]):\n    ax.text(i, v + 200, f\"{v:,}\\n({rates.iloc[i]:.1%})\", ha=\"center\", fontweight=\"bold\")\nax.set_title(\"Class balance — default next month\")\nax.set_ylabel(\"clients\")\nfig.tight_layout()\nfig.savefig(REPORTS / \"class_balance.png\", dpi=120)\nplt.show()\n\nimbalance = counts.max() / counts.min()\nprint(f\"Imbalance ratio (majority:minority) = {imbalance:.2f} : 1\")",
+        "execution_count": 5
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>count</th>\n      <th>proportion</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>No default (0)</th>\n      <td>23364</td>\n      <td>0.7788</td>\n    </tr>\n    <tr>\n      <th>Default (1)</th>\n      <td>6636</td>\n      <td>0.2212</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "image",
+        "src": "/projects/riesgo-crediticio-exploracion-y-fuga-de-datos/cell-8-0.png",
+        "alt": "Output 0 de la celda 8"
+      },
+      {
+        "type": "markdown",
+        "content": "## 4 · Missing values & data quality\n\nUCI ships this set fully populated, but we verify explicitly and also probe for\n*implicit* missingness — sentinel codes and undocumented categories."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "missing = df.isna().sum()\nprint(\"Columns with NaN:\", int((missing > 0).sum()))\ndisplay(missing[missing > 0])\n\n# Implicit issues: documented categorical domains.\nprint(\"EDUCATION codes:\", sorted(df['EDUCATION'].unique()))   # 1..4 after cleaning\nprint(\"MARRIAGE codes :\", sorted(df['MARRIAGE'].unique()))     # 1..3 after cleaning\nprint(\"SEX codes      :\", sorted(df['SEX'].unique()))          # 1,2\n\n# Duplicate rows?\nprint(\"Exact duplicate rows:\", int(df.duplicated().sum()))",
+        "execution_count": 6
+      },
+      {
+        "type": "text-output",
+        "content": "Series([], dtype: int64)"
+      },
+      {
+        "type": "markdown",
+        "content": "## 5 · Numeric distributions\n\n`LIMIT_BAL` and the monetary `BILL_AMT*` / `PAY_AMT*` features are heavily right-skewed —\na signal that tree models (robust to monotonic transforms) will likely beat linear ones,\nand that we should consider log-scaling for the linear baseline."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "skew_cols = [\"LIMIT_BAL\", \"AGE\", \"BILL_AMT1\", \"PAY_AMT1\"]\nfig, axes = plt.subplots(2, 2, figsize=(11, 7))\nfor ax, col in zip(axes.ravel(), skew_cols):\n    sns.histplot(df[col], bins=50, kde=True, color=\"#264653\", ax=ax)\n    ax.set_title(f\"{col}  (skew={df[col].skew():.2f})\")\nfig.suptitle(\"Distributions of key numeric features\", fontweight=\"bold\")\nfig.tight_layout()\nfig.savefig(REPORTS / \"numeric_distributions.png\", dpi=120)\nplt.show()",
+        "execution_count": 7
+      },
+      {
+        "type": "image",
+        "src": "/projects/riesgo-crediticio-exploracion-y-fuga-de-datos/cell-12-1.png",
+        "alt": "Output 1 de la celda 12"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "# Repayment-status features are ordinal (-2..8): months of payment delay.\npay_dist = df[list(REPAYMENT_STATUS_FEATURES)].apply(pd.Series.value_counts).fillna(0).astype(int)\ndisplay(pay_dist)\nfig, ax = plt.subplots(figsize=(9, 4))\ndf[list(REPAYMENT_STATUS_FEATURES)].melt(var_name=\"month\", value_name=\"status\").pipe(\n    lambda d: sns.boxplot(data=d, x=\"month\", y=\"status\", hue=\"month\", legend=False,\n                          palette=\"crest\", ax=ax)\n)\nax.set_title(\"Repayment-status (delay months) across the 6-month window\")\nfig.tight_layout()\nfig.savefig(REPORTS / \"repayment_status.png\", dpi=120)\nplt.show()",
+        "execution_count": 8
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>PAY_1</th>\n      <th>PAY_2</th>\n      <th>PAY_3</th>\n      <th>PAY_4</th>\n      <th>PAY_5</th>\n      <th>PAY_6</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>-2</th>\n      <td>2759</td>\n      <td>3782</td>\n      <td>4085</td>\n      <td>4348</td>\n      <td>4546</td>\n      <td>4895</td>\n    </tr>\n    <tr>\n      <th>-1</th>\n      <td>5686</td>\n      <td>6050</td>\n      <td>5938</td>\n      <td>5687</td>\n      <td>5539</td>\n      <td>5740</td>\n    </tr>\n    <tr>\n      <th>0</th>\n      <td>14737</td>\n      <td>15730</td>\n      <td>15764</td>\n      <td>16455</td>\n      <td>16947</td>\n      <td>16286</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>3688</td>\n      <td>28</td>\n      <td>4</td>\n      <td>2</td>\n      <td>0</td>\n      <td>0</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>2667</td>\n      <td>3927</td>\n      <td>3819</td>\n      <td>3159</td>\n      <td>2626</td>\n      <td>2766</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>322</td>\n      <td>326</td>\n      <td>240</td>\n      <td>180</td>\n      <td>178</td>\n      <td>184</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>76</td>\n      <td>99</td>\n      <td>76</td>\n      <td>69</td>\n      <td>84</td>\n      <td>49</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>26</td>\n      <td>25</td>\n      <td>21</td>\n      <td>35</td>\n      <td>17</td>\n      <td>13</td>\n    </tr>\n    <tr>\n      <th>6</th>\n      <td>11</td>\n      <td>12</td>\n      <td>23</td>\n      <td>5</td>\n      <td>4</td>\n      <td>19</td>\n    </tr>\n    <tr>\n      <th>7</th>\n      <td>9</td>\n      <td>20</td>\n      <td>27</td>\n      <td>58</td>\n      <td>58</td>\n      <td>46</td>\n    </tr>\n    <tr>\n      <th>8</th>\n      <td>19</td>\n      <td>1</td>\n      <td>3</td>\n      <td>2</td>\n      <td>1</td>\n      <td>2</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "image",
+        "src": "/projects/riesgo-crediticio-exploracion-y-fuga-de-datos/cell-13-2.png",
+        "alt": "Output 2 de la celda 13"
+      },
+      {
+        "type": "markdown",
+        "content": "## 6 · Bivariate analysis — default rate by segment\n\nHow the default rate moves across categorical segments and recent repayment status.\n`PAY_1` (most recent month's delay) shows a very strong, monotonic relationship with\ndefault — our strongest single predictor."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "fig, axes = plt.subplots(1, 3, figsize=(14, 4))\nfor ax, col in zip(axes, CATEGORICAL_FEATURES):\n    rate = df.groupby(col)[TARGET_COLUMN].mean().sort_index()\n    sns.barplot(x=rate.index.astype(str), y=rate.values, hue=rate.index.astype(str),\n                palette=\"flare\", legend=False, ax=ax)\n    ax.axhline(df[TARGET_COLUMN].mean(), ls=\"--\", c=\"grey\", label=\"overall\")\n    ax.set_title(f\"Default rate by {col}\")\n    ax.set_ylabel(\"default rate\")\nfig.tight_layout()\nfig.savefig(REPORTS / \"default_rate_categorical.png\", dpi=120)\nplt.show()",
+        "execution_count": 9
+      },
+      {
+        "type": "image",
+        "src": "/projects/riesgo-crediticio-exploracion-y-fuga-de-datos/cell-15-3.png",
+        "alt": "Output 3 de la celda 15"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "fig, ax = plt.subplots(figsize=(8, 4))\nrate_pay = df.groupby(\"PAY_1\")[TARGET_COLUMN].agg([\"mean\", \"count\"])\nsns.barplot(x=rate_pay.index.astype(int), y=rate_pay[\"mean\"], hue=rate_pay.index.astype(int),\n            palette=\"rocket\", legend=False, ax=ax)\nax.axhline(df[TARGET_COLUMN].mean(), ls=\"--\", c=\"grey\")\nax.set_title(\"Default rate by most-recent repayment status (PAY_1)\")\nax.set_xlabel(\"PAY_1 (months delayed)\"); ax.set_ylabel(\"default rate\")\nfig.tight_layout()\nfig.savefig(REPORTS / \"default_rate_pay1.png\", dpi=120)\nplt.show()\ndisplay(rate_pay.round(3))",
+        "execution_count": 10
+      },
+      {
+        "type": "image",
+        "src": "/projects/riesgo-crediticio-exploracion-y-fuga-de-datos/cell-16-4.png",
+        "alt": "Output 4 de la celda 16"
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>mean</th>\n      <th>count</th>\n    </tr>\n    <tr>\n      <th>PAY_1</th>\n      <th></th>\n      <th></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>-2</th>\n      <td>0.132</td>\n      <td>2759</td>\n    </tr>\n    <tr>\n      <th>-1</th>\n      <td>0.168</td>\n      <td>5686</td>\n    </tr>\n    <tr>\n      <th>0</th>\n      <td>0.128</td>\n      <td>14737</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>0.339</td>\n      <td>3688</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>0.691</td>\n      <td>2667</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>0.758</td>\n      <td>322</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>0.684</td>\n      <td>76</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>0.500</td>\n      <td>26</td>\n    </tr>\n    <tr>\n      <th>6</th>\n      <td>0.545</td>\n      <td>11</td>\n    </tr>\n    <tr>\n      <th>7</th>\n      <td>0.778</td>\n      <td>9</td>\n    </tr>\n    <tr>\n      <th>8</th>\n      <td>0.579</td>\n      <td>19</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "## 7 · Correlation structure\n\nThe `BILL_AMT*` features are highly collinear (consecutive monthly balances)."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "corr = df[list(NUMERIC_FEATURES) + [TARGET_COLUMN]].corr()\nfig, ax = plt.subplots(figsize=(13, 10))\nsns.heatmap(corr, cmap=\"coolwarm\", center=0, square=True, linewidths=0.4,\n            cbar_kws={\"shrink\": 0.7}, ax=ax)\nax.set_title(\"Correlation matrix (numeric features + target)\", fontweight=\"bold\")\nfig.tight_layout()\nfig.savefig(REPORTS / \"correlation_heatmap.png\", dpi=120)\nplt.show()",
+        "execution_count": 11
+      },
+      {
+        "type": "image",
+        "src": "/projects/riesgo-crediticio-exploracion-y-fuga-de-datos/cell-18-5.png",
+        "alt": "Output 5 de la celda 18"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "target_corr = corr[TARGET_COLUMN].drop(TARGET_COLUMN).sort_values(key=np.abs, ascending=False)\nprint(\"Top correlations with TARGET:\")\ndisplay(target_corr.head(10).to_frame(\"pearson_r\").round(3))",
+        "execution_count": 12
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>pearson_r</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>PAY_1</th>\n      <td>0.325</td>\n    </tr>\n    <tr>\n      <th>PAY_2</th>\n      <td>0.264</td>\n    </tr>\n    <tr>\n      <th>PAY_3</th>\n      <td>0.235</td>\n    </tr>\n    <tr>\n      <th>PAY_4</th>\n      <td>0.217</td>\n    </tr>\n    <tr>\n      <th>PAY_5</th>\n      <td>0.204</td>\n    </tr>\n    <tr>\n      <th>PAY_6</th>\n      <td>0.187</td>\n    </tr>\n    <tr>\n      <th>LIMIT_BAL</th>\n      <td>-0.154</td>\n    </tr>\n    <tr>\n      <th>PAY_AMT1</th>\n      <td>-0.073</td>\n    </tr>\n    <tr>\n      <th>PAY_AMT2</th>\n      <td>-0.059</td>\n    </tr>\n    <tr>\n      <th>PAY_AMT4</th>\n      <td>-0.057</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "## 8 · Target-leakage check\n\nLeakage would mean a feature that encodes the outcome itself (information unavailable at\nscoring time). We check three things:\n\n1. **No feature is a perfect/near-perfect predictor.** The strongest correlation with the\n   target is `PAY_1` (~0.32) — strong but far from leakage; it is a *legitimate* historical\n   signal (last month's payment delay), known **before** the prediction month.\n2. **All features are pre-decision.** Every `PAY_*`, `BILL_AMT*`, `PAY_AMT*` is from months\n   -1 to -6 relative to the predicted month, so none can leak the future label.\n3. **No duplicate of the target** under another name / no constant-vs-target columns."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "max_abs_corr = target_corr.abs().max()\nstrongest = target_corr.abs().idxmax()\nassert max_abs_corr < 0.95, \"Potential leakage: a feature is near-perfectly correlated!\"\nprint(f\"Strongest |corr| with TARGET: {strongest} = {target_corr[strongest]:.3f}  -> OK (< 0.95)\")\n\n# Single-feature AUC sweep: any feature alone achieving AUC>~0.9 would be suspicious.\nfrom sklearn.metrics import roc_auc_score\nsingle = {}\nfor col in NUMERIC_FEATURES:\n    try:\n        single[col] = roc_auc_score(df[TARGET_COLUMN], df[col])\n    except ValueError:\n        single[col] = np.nan\nsingle_auc = pd.Series(single).apply(lambda a: max(a, 1 - a)).sort_values(ascending=False)\nprint(\"\\nTop single-feature AUCs (any > 0.90 would flag leakage):\")\ndisplay(single_auc.head(8).to_frame(\"auc\").round(3))\nassert single_auc.max() < 0.90, \"Potential leakage: a single feature is too predictive!\"\nprint(\"\\n✅ No target leakage detected.\")",
+        "execution_count": 13
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>auc</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>PAY_1</th>\n      <td>0.690</td>\n    </tr>\n    <tr>\n      <th>PAY_2</th>\n      <td>0.639</td>\n    </tr>\n    <tr>\n      <th>PAY_3</th>\n      <td>0.624</td>\n    </tr>\n    <tr>\n      <th>LIMIT_BAL</th>\n      <td>0.618</td>\n    </tr>\n    <tr>\n      <th>PAY_AMT1</th>\n      <td>0.611</td>\n    </tr>\n    <tr>\n      <th>PAY_4</th>\n      <td>0.610</td>\n    </tr>\n    <tr>\n      <th>PAY_AMT2</th>\n      <td>0.605</td>\n    </tr>\n    <tr>\n      <th>PAY_5</th>\n      <td>0.600</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "## 9 · Feature-engineering preview\n\nA glimpse of the financial ratios Phase 2 will formalize — credit utilization and a\npayment-to-bill ratio already separate the classes."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "preview = df.copy()\npreview[\"utilization_1\"] = (preview[\"BILL_AMT1\"] / preview[\"LIMIT_BAL\"]).clip(-1, 5)\npreview[\"pay_to_bill_1\"] = (preview[\"PAY_AMT1\"] / preview[\"BILL_AMT1\"].replace(0, np.nan)).clip(0, 5)\ndisplay(preview.groupby(TARGET_COLUMN)[[\"utilization_1\", \"pay_to_bill_1\"]].median().round(3))",
+        "execution_count": 14
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>utilization_1</th>\n      <th>pay_to_bill_1</th>\n    </tr>\n    <tr>\n      <th>TARGET</th>\n      <th></th>\n      <th></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>0.267</td>\n      <td>0.063</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>0.493</td>\n      <td>0.049</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "## 10 · Reproducible train/test split\n\nA single **stratified 80/20 split** (seeded from config) written to `data/processed/`.\nAll downstream phases load these exact partitions, so results are reproducible and the\ntest set is never touched during training."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "train_df, test_df = make_splits(df, test_size=0.2, seed=RNG)\npaths = save_splits(train_df, test_df, settings)\n\nsummary = pd.DataFrame({\n    \"rows\": [len(train_df), len(test_df)],\n    \"default_rate\": [train_df[TARGET_COLUMN].mean(), test_df[TARGET_COLUMN].mean()],\n}, index=[\"train\", \"test\"]).round(4)\ndisplay(summary)\nprint(\"Written:\")\nfor name, p in paths.items():\n    print(f\"  {name}: {p}\")",
+        "execution_count": 15
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>rows</th>\n      <th>default_rate</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>train</th>\n      <td>24000</td>\n      <td>0.2212</td>\n    </tr>\n    <tr>\n      <th>test</th>\n      <td>6000</td>\n      <td>0.2212</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "## Key findings\n\n- **30,000 clients, 23 features, no missing values.** Undocumented `EDUCATION`/`MARRIAGE`\n  codes folded into an `other` bucket during ingestion.\n- **Imbalanced target (~22% default, ~3.5:1).** Use ROC AUC / PR AUC, Gini, KS — not accuracy.\n- **Strongest signal is recent repayment status (`PAY_1`).** Monotonic with default; a\n  legitimate pre-decision feature, not leakage.\n- **Heavy right-skew** in monetary features and **strong collinearity** among `BILL_AMT*` →\n  favors tree-based models; financial **ratios** (utilization, payment coverage) look\n  promising and will be engineered in Phase 2.\n- **No target leakage**: max single-feature AUC < 0.90, max |corr| < 0.95, all features pre-decision.\n- Stratified 80/20 split persisted to `data/processed/{train,test}.parquet`."
+      }
+    ]
+  },
+  {
+    "slug": "riesgo-crediticio-ingenieria-de-variables",
+    "title": "Riesgo crediticio — Ingeniería de variables",
+    "summary": "Los datos crudos traen seis fotos mensuales de saldo, pago y morosidad. Las señales que de verdad predicen el impago son razones entre esas fotos, y ninguna existe como columna. Aquí se construye el pipeline de producción: un transformador de scikit-learn que añade 15 variables derivadas fila por fila, y un ColumnTransformer que imputa, escala y codifica según la cardinalidad. Cada variable derivada se valida por su ROC AUC univariado contra el objetivo antes de entrar.",
+    "repoPath": "credit-risk-scoring/02_feature_engineering.ipynb",
+    "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/credit-risk-scoring/02_feature_engineering.ipynb",
+    "folder": "credit-risk-scoring",
+    "technologies": [
+      "Pandas",
+      "NumPy",
+      "Matplotlib",
+      "Seaborn",
+      "scikit-learn",
+      "Python"
+    ],
+    "categories": [
+      "Machine Learning"
+    ],
+    "cellCount": 16,
+    "imageCount": 2,
+    "coverImage": "/projects/riesgo-crediticio-ingenieria-de-variables/cell-6-0.png",
+    "results": {
+      "heading": "Fase 3 · Comparación de modelos",
+      "note": "Estos números no salen de este notebook: los produjo el pipeline de entrenamiento (`make train`, 50 trials de Optuna por modelo, validación cruzada estratificada de 5 folds). La selección se hace por ROC AUC de validación cruzada, nunca por el test. Los notebooks 03 y 04, que grafican curvas ROC, KS, calibración y SHAP, están escritos pero todavía sin ejecutar.",
+      "source": "comparison.json · 2026-05-27",
+      "columns": [
+        {
+          "key": "model_name",
+          "label": "Modelo",
+          "numeric": false
+        },
+        {
+          "key": "cv_roc_auc",
+          "label": "ROC AUC (CV)",
+          "numeric": true
+        },
+        {
+          "key": "test_roc_auc",
+          "label": "ROC AUC (test)",
+          "numeric": true
+        },
+        {
+          "key": "test_gini",
+          "label": "Gini",
+          "numeric": true
+        },
+        {
+          "key": "test_ks",
+          "label": "KS",
+          "numeric": true
+        },
+        {
+          "key": "test_brier",
+          "label": "Brier",
+          "numeric": true
+        }
+      ],
+      "rows": [
+        {
+          "model_name": "XGBoost",
+          "cv_roc_auc": "0.7891",
+          "test_roc_auc": "0.7829",
+          "test_gini": "0.5658",
+          "test_ks": "0.4379",
+          "test_brier": "0.1410",
+          "best": true
+        },
+        {
+          "model_name": "LightGBM",
+          "cv_roc_auc": "0.7885",
+          "test_roc_auc": "0.7839",
+          "test_gini": "0.5678",
+          "test_ks": "0.4354",
+          "test_brier": "0.1431",
+          "best": false
+        },
+        {
+          "model_name": "Random Forest",
+          "cv_roc_auc": "0.7864",
+          "test_roc_auc": "0.7803",
+          "test_gini": "0.5606",
+          "test_ks": "0.4317",
+          "test_brier": "0.1761",
+          "best": false
+        },
+        {
+          "model_name": "Regresión logística",
+          "cv_roc_auc": "0.7604",
+          "test_roc_auc": "0.7465",
+          "test_gini": "0.4931",
+          "test_ks": "0.3869",
+          "test_brier": "0.1938",
+          "best": false
+        }
+      ]
+    },
+    "cells": [
+      {
+        "type": "markdown",
+        "content": "# 02 · Feature Engineering\n\nThe raw data gives six monthly snapshots (bills, payments, repayment status). The strongest\nsignals for default are **behavioural ratios across that window** — credit utilization,\npayment coverage, and delinquency dynamics — none of which exist as raw columns.\n\nThis notebook builds and validates the production feature pipeline from `src.features`:\n\n1. `FinancialFeatureEngineer` — appends 15 derived features (row-wise, **stateless**).\n2. A `ColumnTransformer` — **median-imputes + scales** numeric columns and **encodes**\n   categoricals (one-hot vs. target encoding by cardinality).\n\nThe pipeline is **fit on the training split only**; the test split is transformed with\ntraining-learned statistics, so there is no leakage."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "from __future__ import annotations\n\nimport sys\nimport warnings\nfrom pathlib import Path\n\n_root = Path.cwd()\nwhile not (_root / \"pyproject.toml\").exists() and _root != _root.parent:\n    _root = _root.parent\nif str(_root) not in sys.path:\n    sys.path.insert(0, str(_root))\n\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nimport seaborn as sns\nfrom sklearn.metrics import roc_auc_score\n\nfrom src.data.dataset import ALL_FEATURES, CATEGORICAL_FEATURES, TARGET_COLUMN, load_splits\nfrom src.features import (\n    DERIVED_FEATURE_DESCRIPTIONS,\n    DERIVED_FEATURES,\n    FinancialFeatureEngineer,\n    build_feature_pipeline,\n    get_feature_names,\n)\nfrom src.features.pipeline import _split_categoricals_by_cardinality\nfrom src.utils.config import get_settings\n\nwarnings.filterwarnings(\"ignore\", category=FutureWarning)\nsns.set_theme(style=\"whitegrid\", context=\"notebook\")\npd.set_option(\"display.max_columns\", 60)\n\nsettings = get_settings()\nREPORTS = settings.reports_dir / \"features\"\nREPORTS.mkdir(parents=True, exist_ok=True)\n\ntrain, test = load_splits()\nX_train, y_train = train[list(ALL_FEATURES)], train[TARGET_COLUMN]\nX_test, y_test = test[list(ALL_FEATURES)], test[TARGET_COLUMN]\nprint(f\"train: {X_train.shape}  test: {X_test.shape}\")",
+        "execution_count": 1
+      },
+      {
+        "type": "markdown",
+        "content": "## 1 · The derived features\n\n`FinancialFeatureEngineer` is a scikit-learn transformer. Because each output depends only\non a single row, it is safe to apply before any train/test split."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "engineer = FinancialFeatureEngineer(keep_original=True)\nengineered = engineer.fit_transform(X_train)\nprint(f\"{X_train.shape[1]} raw features -> {engineered.shape[1]} \"\n      f\"({len(DERIVED_FEATURES)} engineered added)\")\nengineered[list(DERIVED_FEATURES)].head()",
+        "execution_count": 2
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>util_mean</th>\n      <th>util_max</th>\n      <th>util_last</th>\n      <th>bill_total</th>\n      <th>pay_total</th>\n      <th>payment_ratio_total</th>\n      <th>payment_ratio_mean</th>\n      <th>num_delayed_months</th>\n      <th>max_delay</th>\n      <th>mean_delay</th>\n      <th>recent_delay</th>\n      <th>delay_trend</th>\n      <th>bill_trend</th>\n      <th>has_any_delay</th>\n      <th>credit_per_age</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>1.034312</td>\n      <td>1.078950</td>\n      <td>1.011069</td>\n      <td>992940</td>\n      <td>39500</td>\n      <td>0.039781</td>\n      <td>0.040480</td>\n      <td>4</td>\n      <td>3</td>\n      <td>1.500000</td>\n      <td>2</td>\n      <td>2</td>\n      <td>-1234</td>\n      <td>1</td>\n      <td>4848.484848</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>0.000059</td>\n      <td>0.000353</td>\n      <td>0.000000</td>\n      <td>53</td>\n      <td>53</td>\n      <td>1.000000</td>\n      <td>8.833333</td>\n      <td>1</td>\n      <td>1</td>\n      <td>-1.166667</td>\n      <td>1</td>\n      <td>3</td>\n      <td>0</td>\n      <td>1</td>\n      <td>4411.764706</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>0.857683</td>\n      <td>1.017100</td>\n      <td>1.017100</td>\n      <td>51461</td>\n      <td>4016</td>\n      <td>0.078040</td>\n      <td>0.080701</td>\n      <td>2</td>\n      <td>2</td>\n      <td>0.500000</td>\n      <td>1</td>\n      <td>1</td>\n      <td>1771</td>\n      <td>1</td>\n      <td>200.000000</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>0.846647</td>\n      <td>0.993241</td>\n      <td>0.940359</td>\n      <td>1117574</td>\n      <td>41687</td>\n      <td>0.037301</td>\n      <td>0.037856</td>\n      <td>0</td>\n      <td>0</td>\n      <td>0.000000</td>\n      <td>0</td>\n      <td>0</td>\n      <td>72533</td>\n      <td>0</td>\n      <td>7586.206897</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>0.000098</td>\n      <td>0.001052</td>\n      <td>0.000000</td>\n      <td>182</td>\n      <td>1526</td>\n      <td>8.384615</td>\n      <td>254.333333</td>\n      <td>1</td>\n      <td>1</td>\n      <td>-0.666667</td>\n      <td>1</td>\n      <td>3</td>\n      <td>235</td>\n      <td>1</td>\n      <td>9687.500000</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "# Catalogue of engineered features.\ncatalog = pd.DataFrame(\n    [(f, DERIVED_FEATURE_DESCRIPTIONS[f]) for f in DERIVED_FEATURES],\n    columns=[\"feature\", \"description\"],\n)\ncatalog",
+        "execution_count": 3
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>feature</th>\n      <th>description</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>util_mean</td>\n      <td>Mean credit utilization over 6 months (avg bil...</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>util_max</td>\n      <td>Peak monthly credit utilization (max bill / cr...</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>util_last</td>\n      <td>Most recent month's credit utilization (BILL_A...</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>bill_total</td>\n      <td>Total amount billed across the 6-month window</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>pay_total</td>\n      <td>Total amount paid across the 6-month window</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>payment_ratio_total</td>\n      <td>Debt-service coverage: total paid / total billed</td>\n    </tr>\n    <tr>\n      <th>6</th>\n      <td>payment_ratio_mean</td>\n      <td>Average of per-month payment-to-bill coverage ...</td>\n    </tr>\n    <tr>\n      <th>7</th>\n      <td>num_delayed_months</td>\n      <td>Number of months with a payment delay (PAY_i &gt;...</td>\n    </tr>\n    <tr>\n      <th>8</th>\n      <td>max_delay</td>\n      <td>Worst repayment-status value in the window (mo...</td>\n    </tr>\n    <tr>\n      <th>9</th>\n      <td>mean_delay</td>\n      <td>Average repayment-status value across the window</td>\n    </tr>\n    <tr>\n      <th>10</th>\n      <td>recent_delay</td>\n      <td>Most recent month's repayment status (PAY_1)</td>\n    </tr>\n    <tr>\n      <th>11</th>\n      <td>delay_trend</td>\n      <td>Change in delay PAY_1 - PAY_6 (positive =&gt; det...</td>\n    </tr>\n    <tr>\n      <th>12</th>\n      <td>bill_trend</td>\n      <td>Change in balance BILL_AMT1 - BILL_AMT6 (posit...</td>\n    </tr>\n    <tr>\n      <th>13</th>\n      <td>has_any_delay</td>\n      <td>Binary flag: any month showed a payment delay</td>\n    </tr>\n    <tr>\n      <th>14</th>\n      <td>credit_per_age</td>\n      <td>Credit limit per year of age (capacity proxy)</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "## 2 · Do the engineered features carry signal?\n\nWe compare each engineered feature's univariate ROC AUC against the target. Several derived\nfeatures (utilization, delinquency counts, recent delay) rival or exceed the best raw\nfeatures — confirming the engineering adds value."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "eng_for_auc = engineered.assign(**{TARGET_COLUMN: y_train.values})\nrows = []\nfor f in DERIVED_FEATURES:\n    col = eng_for_auc[f].replace([np.inf, -np.inf], np.nan)\n    mask = col.notna()\n    auc = roc_auc_score(eng_for_auc.loc[mask, TARGET_COLUMN], col[mask])\n    rows.append((f, max(auc, 1 - auc)))\nauc_df = pd.DataFrame(rows, columns=[\"feature\", \"auc\"]).sort_values(\"auc\", ascending=False)\n\nfig, ax = plt.subplots(figsize=(8, 5))\nsns.barplot(data=auc_df, y=\"feature\", x=\"auc\", hue=\"feature\", palette=\"viridis\",\n            legend=False, ax=ax)\nax.axvline(0.5, ls=\"--\", c=\"grey\")\nax.set_title(\"Univariate ROC AUC of engineered features\")\nax.set_xlim(0.5, auc_df[\"auc\"].max() + 0.02)\nfig.tight_layout()\nfig.savefig(REPORTS / \"engineered_feature_auc.png\", dpi=120)\nplt.show()\ndisplay(auc_df.round(3).reset_index(drop=True))",
+        "execution_count": 4
+      },
+      {
+        "type": "image",
+        "src": "/projects/riesgo-crediticio-ingenieria-de-variables/cell-6-0.png",
+        "alt": "Output 0 de la celda 6"
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>feature</th>\n      <th>auc</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>num_delayed_months</td>\n      <td>0.729</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>max_delay</td>\n      <td>0.712</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>has_any_delay</td>\n      <td>0.704</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>recent_delay</td>\n      <td>0.693</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>mean_delay</td>\n      <td>0.678</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>credit_per_age</td>\n      <td>0.627</td>\n    </tr>\n    <tr>\n      <th>6</th>\n      <td>pay_total</td>\n      <td>0.621</td>\n    </tr>\n    <tr>\n      <th>7</th>\n      <td>payment_ratio_total</td>\n      <td>0.599</td>\n    </tr>\n    <tr>\n      <th>8</th>\n      <td>payment_ratio_mean</td>\n      <td>0.595</td>\n    </tr>\n    <tr>\n      <th>9</th>\n      <td>delay_trend</td>\n      <td>0.576</td>\n    </tr>\n    <tr>\n      <th>10</th>\n      <td>util_mean</td>\n      <td>0.568</td>\n    </tr>\n    <tr>\n      <th>11</th>\n      <td>util_last</td>\n      <td>0.555</td>\n    </tr>\n    <tr>\n      <th>12</th>\n      <td>bill_trend</td>\n      <td>0.554</td>\n    </tr>\n    <tr>\n      <th>13</th>\n      <td>util_max</td>\n      <td>0.553</td>\n    </tr>\n    <tr>\n      <th>14</th>\n      <td>bill_total</td>\n      <td>0.518</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "# How a few top engineered features separate the classes.\ntop = auc_df[\"feature\"].head(3).tolist()\nfig, axes = plt.subplots(1, 3, figsize=(14, 4))\nfor ax, f in zip(axes, top):\n    data = engineered[[f]].assign(**{TARGET_COLUMN: y_train.values})\n    data[f] = data[f].clip(data[f].quantile(0.01), data[f].quantile(0.99))\n    sns.kdeplot(data=data, x=f, hue=TARGET_COLUMN, fill=True, common_norm=False,\n                palette=[\"#2a9d8f\", \"#e76f51\"], ax=ax)\n    ax.set_title(f\"{f} by default\")\nfig.tight_layout()\nfig.savefig(REPORTS / \"engineered_top_distributions.png\", dpi=120)\nplt.show()",
+        "execution_count": 5
+      },
+      {
+        "type": "image",
+        "src": "/projects/riesgo-crediticio-ingenieria-de-variables/cell-7-1.png",
+        "alt": "Output 1 de la celda 7"
+      },
+      {
+        "type": "markdown",
+        "content": "## 3 · Encoder selection by cardinality\n\nLow-cardinality categoricals are one-hot encoded; anything above the threshold (default 10)\nwould use scikit-learn's `TargetEncoder` (with internal CV to avoid leakage). All three\ncategoricals here are low-cardinality, so all are one-hot encoded — but the logic generalises."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "onehot_cols, target_cols = _split_categoricals_by_cardinality(train, threshold=10)\ncard = pd.DataFrame(\n    [(c, int(train[c].nunique()), \"one-hot\" if c in onehot_cols else \"target\")\n     for c in CATEGORICAL_FEATURES],\n    columns=[\"feature\", \"cardinality\", \"encoder\"],\n)\ncard",
+        "execution_count": 6
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>feature</th>\n      <th>cardinality</th>\n      <th>encoder</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>SEX</td>\n      <td>2</td>\n      <td>one-hot</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>EDUCATION</td>\n      <td>4</td>\n      <td>one-hot</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>MARRIAGE</td>\n      <td>3</td>\n      <td>one-hot</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "## 4 · The full pipeline — fit on train, transform both\n\n`build_feature_pipeline` chains the engineer and the column transformer. We fit on the\ntraining split only and transform both splits."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "pipe = build_feature_pipeline(train, scale=True)\npipe.fit(X_train, y_train)              # learns impute medians, scaler stats, encodings\n\nZ_train = pipe.transform(X_train)\nZ_test = pipe.transform(X_test)\nfeature_names = get_feature_names(pipe)\n\nprint(f\"Output matrix: train {Z_train.shape}, test {Z_test.shape}\")\nprint(f\"Output features: {len(feature_names)}\")\nassert not np.isnan(Z_train.to_numpy()).any(), \"NaNs leaked into the output!\"\nassert not np.isnan(Z_test.to_numpy()).any(), \"NaNs leaked into the output!\"\nprint(\"No NaNs in either matrix ✅\")\nZ_train.iloc[:3, :8]",
+        "execution_count": 7
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>LIMIT_BAL</th>\n      <th>AGE</th>\n      <th>PAY_1</th>\n      <th>PAY_2</th>\n      <th>PAY_3</th>\n      <th>PAY_4</th>\n      <th>PAY_5</th>\n      <th>PAY_6</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>-0.056866</td>\n      <td>-0.264558</td>\n      <td>1.793311</td>\n      <td>1.780193</td>\n      <td>2.652046</td>\n      <td>1.911811</td>\n      <td>0.240260</td>\n      <td>0.256087</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>-0.134081</td>\n      <td>-0.155804</td>\n      <td>0.902944</td>\n      <td>-0.722324</td>\n      <td>-0.697642</td>\n      <td>-1.530826</td>\n      <td>-1.537252</td>\n      <td>-1.489963</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>-1.215090</td>\n      <td>1.584260</td>\n      <td>0.902944</td>\n      <td>1.780193</td>\n      <td>0.139780</td>\n      <td>0.190493</td>\n      <td>0.240260</td>\n      <td>0.256087</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "# Numeric columns are standardised on TRAIN (mean~0, std~1); TEST uses train stats\n# (so test mean/std need NOT be exactly 0/1 — that is the correct, leakage-free behaviour).\nnum_cols = [c for c in feature_names if c in (*ALL_FEATURES, *DERIVED_FEATURES)][:6]\ncheck = pd.DataFrame({\n    \"train_mean\": Z_train[num_cols].mean().round(3),\n    \"train_std\": Z_train[num_cols].std().round(3),\n    \"test_mean\": Z_test[num_cols].mean().round(3),\n    \"test_std\": Z_test[num_cols].std().round(3),\n})\ndisplay(check)\nprint(\"Train means ~0 and stds ~1; test differs slightly -> confirms no leakage.\")",
+        "execution_count": 8
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>train_mean</th>\n      <th>train_std</th>\n      <th>test_mean</th>\n      <th>test_std</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>LIMIT_BAL</th>\n      <td>0.0</td>\n      <td>1.0</td>\n      <td>0.005</td>\n      <td>1.009</td>\n    </tr>\n    <tr>\n      <th>AGE</th>\n      <td>-0.0</td>\n      <td>1.0</td>\n      <td>0.029</td>\n      <td>1.012</td>\n    </tr>\n    <tr>\n      <th>PAY_1</th>\n      <td>0.0</td>\n      <td>1.0</td>\n      <td>-0.011</td>\n      <td>1.003</td>\n    </tr>\n    <tr>\n      <th>PAY_2</th>\n      <td>-0.0</td>\n      <td>1.0</td>\n      <td>0.001</td>\n      <td>0.993</td>\n    </tr>\n    <tr>\n      <th>PAY_3</th>\n      <td>-0.0</td>\n      <td>1.0</td>\n      <td>0.003</td>\n      <td>1.011</td>\n    </tr>\n    <tr>\n      <th>PAY_4</th>\n      <td>0.0</td>\n      <td>1.0</td>\n      <td>0.003</td>\n      <td>1.031</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "## 5 · Persist the feature manifest\n\nThe ordered output feature names are saved for the docs / model card and to assert pipeline stability in tests."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "import json\nmanifest = {\n    \"n_input_features\": len(ALL_FEATURES),\n    \"n_engineered_features\": len(DERIVED_FEATURES),\n    \"n_output_features\": len(feature_names),\n    \"output_feature_names\": feature_names,\n    \"engineered_features\": list(DERIVED_FEATURES),\n}\nout_path = settings.processed_data_dir / \"feature_manifest.json\"\nout_path.write_text(json.dumps(manifest, indent=2) + \"\\n\")\nprint(f\"Wrote {out_path}\")\nprint(f\"{manifest['n_input_features']} raw -> {manifest['n_output_features']} model-ready features\")",
+        "execution_count": 9
+      },
+      {
+        "type": "markdown",
+        "content": "## Key takeaways\n\n- **15 engineered features** capture utilization, payment coverage, and delinquency dynamics;\n  several have higher univariate AUC than any raw column.\n- The pipeline outputs **43 model-ready features** (35 numeric + 8 one-hot) with **zero NaNs**.\n- **Median imputation + standardisation** make the matrix safe for linear models; trees ignore\n  the scaling.\n- Encoders are chosen **by cardinality** (one-hot here; target encoding wired in for high-card).\n- **Leakage-free by construction**: stateless engineering + a pipeline fit on training folds only.\n  This same pipeline object is fit inside cross-validation in Phase 3."
       }
     ]
   }

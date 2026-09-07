@@ -1,22 +1,16 @@
-"use client";
-
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-
-type Accent = "emerald" | "cyan" | "violet" | "pink";
-
 type Group = {
   label: string;
-  accent: Accent;
+  note: string;
   items: readonly string[];
   extras?: readonly string[];
-  extrasMono?: boolean;
+  extrasLabel?: string;
+  mono?: boolean;
 };
 
 const groups: Group[] = [
   {
     label: "IA & LLMs",
-    accent: "emerald",
+    note: "Lo que uso para construir agentes y producto con modelos",
     items: [
       "Claude",
       "Anthropic API",
@@ -39,15 +33,15 @@ const groups: Group[] = [
     ],
   },
   {
-    label: "Data & BI",
-    accent: "cyan",
+    label: "Datos & BI",
+    note: "El stack de los notebooks de este portafolio",
     items: [
       "Python",
       "pandas",
       "numpy",
-      "matplotlib.pyplot",
+      "matplotlib",
       "seaborn",
-      "sklearn",
+      "scikit-learn",
       "plotly",
       "SQL",
       "PostgreSQL",
@@ -75,11 +69,12 @@ const groups: Group[] = [
       "json",
       "requests",
     ],
-    extrasMono: true,
+    extrasLabel: "Ver los módulos que aparecen en el código",
+    mono: true,
   },
   {
     label: "Automatización",
-    accent: "violet",
+    note: "Cómo conecto sistemas que no se hablaban",
     items: [
       "n8n",
       "Make",
@@ -94,7 +89,7 @@ const groups: Group[] = [
   },
   {
     label: "Dev & Cloud",
-    accent: "pink",
+    note: "Dónde termina viviendo lo que construyo",
     items: [
       "Next.js",
       "React",
@@ -103,170 +98,103 @@ const groups: Group[] = [
       "Node.js",
       "Supabase",
       "Stripe",
-      "pencil.dev",
       "Vercel",
       "Docker",
       "AWS",
     ],
     extras: [
       "Vite",
-      "Framer Motion",
-      "Radix UI",
       "GitHub Actions",
-      "REST APIs",
       "Git",
       "SSH",
       "Linux/Ubuntu",
       "Caddy",
       "Hostinger VPS",
+      "pencil.dev",
     ],
   },
 ];
 
-const accentClass: Record<Accent, string> = {
-  emerald: "from-emerald-300 to-cyan-300 text-emerald-300",
-  cyan: "from-cyan-300 to-sky-400 text-cyan-300",
-  violet: "from-violet-300 to-fuchsia-400 text-violet-300",
-  pink: "from-pink-300 to-rose-400 text-pink-300",
-};
-
-const cardAccentRing: Record<Accent, string> = {
-  emerald: "hover:border-emerald-300/40 hover:shadow-emerald-300/10",
-  cyan: "hover:border-cyan-300/40 hover:shadow-cyan-300/10",
-  violet: "hover:border-violet-300/40 hover:shadow-violet-300/10",
-  pink: "hover:border-pink-300/40 hover:shadow-pink-300/10",
-};
-
-const buttonAccent: Record<Accent, string> = {
-  emerald: "border-emerald-300/30 text-emerald-200 hover:bg-emerald-300/10 hover:border-emerald-300/50",
-  cyan: "border-cyan-300/30 text-cyan-200 hover:bg-cyan-300/10 hover:border-cyan-300/50",
-  violet: "border-violet-300/30 text-violet-200 hover:bg-violet-300/10 hover:border-violet-300/50",
-  pink: "border-pink-300/30 text-pink-200 hover:bg-pink-300/10 hover:border-pink-300/50",
-};
-
 export function TechStack() {
-  const [expanded, setExpanded] = useState<Record<string, boolean>>({});
-
   return (
-    <section
-      id="stack"
-      className="relative py-24 lg:py-32 border-t border-white/5"
-    >
-      <div className="absolute inset-0 dot-bg opacity-30 [mask-image:radial-gradient(ellipse_60%_70%_at_50%_50%,#000_0%,transparent_100%)]" />
-      <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-          className="max-w-2xl mb-16"
-        >
-          <span className="text-xs tracking-[0.25em] uppercase text-emerald-300/80 font-medium">
-            Tech Stack
-          </span>
-          <h2 className="mt-3 text-4xl sm:text-5xl font-bold tracking-tight">
-            Las herramientas con las que{" "}
-            <span className="gradient-text">construyo</span>
-          </h2>
-          <p className="mt-4 text-lg text-white/60 leading-relaxed">
-            Un stack moderno y enfocado: desde la analítica clásica con Python
-            hasta arquitecturas multiagénticas con MCP y Claude.
-          </p>
-        </motion.div>
+    <section id="stack" className="rule-section py-20 lg:py-28">
+      <div className="mx-auto max-w-[88rem] px-6 lg:px-10">
+        <div className="grid lg:grid-cols-[22rem_1fr] gap-10 lg:gap-16">
+          <div className="lg:sticky lg:top-24 lg:self-start">
+            <h2 className="display-sm text-[clamp(1.875rem,3.5vw,2.75rem)]">
+              Herramientas
+            </h2>
+            <p className="mt-4 prose-measure text-ink-muted">
+              Lo que de verdad tengo abierto en el día. El primer bloque es el
+              que aparece en los notebooks de este sitio; el resto es lo que uso
+              para llevar un análisis a producción.
+            </p>
+          </div>
 
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-4 items-start">
-          {groups.map((group, i) => {
-            const isOpen = !!expanded[group.label];
-            const hasExtras = !!group.extras && group.extras.length > 0;
-
-            return (
-              <motion.div
+          <dl className="border-t border-rule-strong">
+            {groups.map((group) => (
+              <div
                 key={group.label}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.6, delay: i * 0.1, ease: [0.16, 1, 0.3, 1] }}
-                className={`relative rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition shadow-[0_0_0_1px_rgba(255,255,255,0)_inset] ${cardAccentRing[group.accent]} hover:bg-white/[0.04]`}
+                className="grid sm:grid-cols-[10rem_1fr] gap-x-8 gap-y-3 py-7 border-b border-rule"
               >
-                <div className={`inline-flex items-center gap-2 mb-4 text-xs uppercase tracking-[0.18em] font-semibold ${accentClass[group.accent].split(" ")[2]}`}>
-                  <span className={`h-1.5 w-1.5 rounded-full bg-gradient-to-r ${accentClass[group.accent].split(" ").slice(0, 2).join(" ")}`} />
-                  {group.label}
+                <div>
+                  <dt className="text-[0.9375rem] font-semibold text-ink">
+                    {group.label}
+                  </dt>
+                  <p className="mt-1.5 text-[0.8125rem] leading-snug text-ink-faint sm:pr-4">
+                    {group.note}
+                  </p>
                 </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {group.items.map((item) => (
-                    <span
-                      key={item}
-                      className="px-2.5 py-1 rounded-md text-[12.5px] font-medium bg-white/[0.04] border border-white/[0.06] text-white/80"
-                    >
-                      {item}
-                    </span>
-                  ))}
 
-                  <AnimatePresence initial={false}>
-                    {hasExtras && isOpen && (
-                      <motion.div
-                        key="extras"
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: "auto" }}
-                        exit={{ opacity: 0, height: 0 }}
-                        transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                        className="basis-full overflow-hidden"
+                <dd>
+                  <ul className="flex flex-wrap gap-x-5 gap-y-2">
+                    {group.items.map((item) => (
+                      <li
+                        key={item}
+                        className={`text-[0.9375rem] text-ink-muted ${
+                          group.mono ? "font-mono text-[0.875rem]" : ""
+                        }`}
                       >
-                        <div className="flex flex-wrap gap-1.5 pt-1.5">
-                          {group.extras!.map((item) => (
-                            <motion.span
-                              key={item}
-                              initial={{ opacity: 0, y: 4 }}
-                              animate={{ opacity: 1, y: 0 }}
-                              transition={{ duration: 0.25 }}
-                              className={`px-2.5 py-1 rounded-md text-[12.5px] font-medium bg-white/[0.03] border border-white/[0.06] text-white/70 ${group.extrasMono ? "font-mono" : ""}`}
-                            >
-                              {item}
-                            </motion.span>
-                          ))}
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
 
-                {hasExtras && (
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setExpanded((prev) => ({
-                        ...prev,
-                        [group.label]: !prev[group.label],
-                      }))
-                    }
-                    aria-expanded={isOpen}
-                    className={`mt-4 inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border bg-white/[0.02] text-[11.5px] font-medium uppercase tracking-[0.12em] transition ${buttonAccent[group.accent]}`}
-                  >
-                    <span>
-                      {isOpen
-                        ? "Ver menos"
-                        : `Ver todas (+${group.extras!.length})`}
-                    </span>
-                    <motion.svg
-                      animate={{ rotate: isOpen ? 180 : 0 }}
-                      transition={{ duration: 0.25 }}
-                      width="11"
-                      height="11"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <polyline points="6 9 12 15 18 9" />
-                    </motion.svg>
-                  </button>
-                )}
-              </motion.div>
-            );
-          })}
+                  {group.extras && (
+                    <details className="group/ex mt-4">
+                      <summary className="inline-flex items-center gap-2 text-[0.8125rem] text-ink-faint hover:text-ink transition-colors">
+                        <span
+                          aria-hidden
+                          className="inline-block w-3 text-center transition-transform group-open/ex:rotate-90"
+                        >
+                          ›
+                        </span>
+                        <span className="group-open/ex:hidden">
+                          {group.extrasLabel ??
+                            `Ver los otros ${group.extras.length}`}
+                        </span>
+                        <span className="hidden group-open/ex:inline">
+                          Ocultar
+                        </span>
+                      </summary>
+                      <ul className="mt-3 pl-5 flex flex-wrap gap-x-5 gap-y-2 border-l border-rule">
+                        {group.extras.map((item) => (
+                          <li
+                            key={item}
+                            className={`text-[0.875rem] text-ink-faint ${
+                              group.mono ? "font-mono text-[0.8125rem]" : ""
+                            }`}
+                          >
+                            {item}
+                          </li>
+                        ))}
+                      </ul>
+                    </details>
+                  )}
+                </dd>
+              </div>
+            ))}
+          </dl>
         </div>
       </div>
     </section>

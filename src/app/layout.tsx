@@ -1,18 +1,26 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Fraunces, IBM_Plex_Mono, Public_Sans } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
-const inter = Inter({
-  variable: "--font-inter",
+const fraunces = Fraunces({
+  variable: "--font-fraunces",
+  subsets: ["latin"],
+  axes: ["opsz", "SOFT", "WONK"],
+  display: "swap",
+});
+
+const publicSans = Public_Sans({
+  variable: "--font-public-sans",
   subsets: ["latin"],
   display: "swap",
 });
 
-const jetBrainsMono = JetBrains_Mono({
-  variable: "--font-jetbrains-mono",
+const plexMono = IBM_Plex_Mono({
+  variable: "--font-plex-mono",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -21,11 +29,11 @@ const SITE_URL = "https://portfolio.nyxaistudio.com";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Mauricio Vilar Giribet — Data Science & AI Portfolio",
+    default: "Mauricio Vilar Giribet · Portafolio de Data Science",
     template: "%s · Mauricio Vilar Giribet",
   },
   description:
-    "Portfolio de Data Science y AI Engineering de Mauricio Vilar Giribet — proyectos de Machine Learning, EDA, SQL, estadística y automatización con LLMs.",
+    "Veinte proyectos de ciencia de datos con el notebook completo a la vista: limpieza, análisis exploratorio, pruebas de hipótesis, SQL y modelos de machine learning.",
   keywords: [
     "Data Science",
     "AI Engineer",
@@ -34,7 +42,7 @@ export const metadata: Metadata = {
     "Análisis de Datos",
     "Mauricio Vilar Giribet",
     "NyxAI Studio",
-    "Portfolio",
+    "Portafolio",
   ],
   authors: [{ name: "Mauricio Vilar Giribet" }],
   creator: "Mauricio Vilar Giribet",
@@ -42,16 +50,16 @@ export const metadata: Metadata = {
     type: "website",
     locale: "es_MX",
     url: SITE_URL,
-    title: "Mauricio Vilar Giribet — Data Science & AI Portfolio",
+    title: "Mauricio Vilar Giribet · Portafolio de Data Science",
     description:
-      "AI Engineer y Data Analyst especializado en IA generativa, automatización y análisis de datos.",
-    siteName: "Mauricio Vilar — Portfolio",
+      "Veinte proyectos de ciencia de datos con el notebook completo a la vista, de la limpieza al modelo.",
+    siteName: "Mauricio Vilar · Portafolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mauricio Vilar Giribet — Data Science & AI Portfolio",
+    title: "Mauricio Vilar Giribet · Portafolio de Data Science",
     description:
-      "AI Engineer y Data Analyst especializado en IA generativa, automatización y análisis de datos.",
+      "Veinte proyectos de ciencia de datos con el notebook completo a la vista, de la limpieza al modelo.",
   },
   robots: { index: true, follow: true },
 };
@@ -62,12 +70,22 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" suppressHydrationWarning>
-      <body
-        className={`${inter.variable} ${jetBrainsMono.variable} antialiased min-h-screen flex flex-col`}
-      >
+    /* Las variables de fuente van en <html>, no en <body>: `@theme` las lee
+       desde :root, y una custom property que referencia otra no definida en
+       ese mismo elemento se hereda ya inválida. */
+    <html
+      lang="es"
+      suppressHydrationWarning
+      className={`${fraunces.variable} ${publicSans.variable} ${plexMono.variable}`}
+    >
+      <body className="antialiased min-h-screen flex flex-col">
+        <a href="#contenido" className="skip-link">
+          Saltar al contenido
+        </a>
         <Navbar />
-        <main className="relative flex-1">{children}</main>
+        <main id="contenido" className="relative flex-1">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

@@ -1,23 +1,46 @@
 import Link from "next/link";
+import { projects } from "@/lib/projects";
 
 export default function NotFound() {
+  const sugerencias = projects.slice(0, 4);
+
   return (
-    <section className="min-h-[80vh] grid place-items-center px-6 py-32 relative overflow-hidden">
-      <div className="aurora opacity-50" />
-      <div className="relative text-center max-w-xl">
-        <p className="text-xs uppercase tracking-[0.25em] text-emerald-300/80 font-semibold">
-          Error 404
-        </p>
-        <h1 className="mt-3 text-6xl sm:text-7xl font-bold tracking-tight">
-          <span className="gradient-text">Página no encontrada</span>
-        </h1>
-        <p className="mt-6 text-lg text-white/65">
-          La página que buscas no existe o se movió. Puedes volver al inicio
-          y explorar los proyectos.
-        </p>
-        <Link href="/" className="btn-primary mt-8 inline-flex">
-          Volver al inicio
-        </Link>
+    <section className="mx-auto max-w-[88rem] px-6 lg:px-10 pt-36 pb-24">
+      <div className="grid lg:grid-cols-[1fr_28rem] gap-12 lg:gap-20">
+        <div>
+          <p className="label">Error 404</p>
+          <h1 className="display mt-5 text-[clamp(2.25rem,6vw,4.5rem)]">
+            Esta página no existe
+          </h1>
+          <p className="mt-7 prose-measure text-ink-muted">
+            La dirección que escribiste no corresponde a ningún proyecto. Puede
+            que el enlace esté viejo o que tenga una letra de más.
+          </p>
+          <div className="mt-9 flex flex-wrap gap-3">
+            <Link href="/" className="btn btn-solid">
+              Ir al inicio
+            </Link>
+            <Link href="/#proyectos" className="btn btn-outline">
+              Ver todos los proyectos
+            </Link>
+          </div>
+        </div>
+
+        <aside className="border-t-2 border-accent pt-5">
+          <h2 className="label">Quizá buscabas</h2>
+          <ul className="mt-5 border-t border-rule">
+            {sugerencias.map((p) => (
+              <li key={p.slug} className="border-b border-rule">
+                <Link
+                  href={`/projects/${p.slug}`}
+                  className="block py-3.5 text-[0.9375rem] text-ink-muted hover:text-ink transition-colors"
+                >
+                  {p.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </aside>
       </div>
     </section>
   );

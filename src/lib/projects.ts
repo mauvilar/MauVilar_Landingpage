@@ -7,6 +7,15 @@ export type NotebookCell =
   | { type: "html"; content: string }
   | { type: "text-output"; content: string };
 
+export interface ResultsTable {
+  heading: string;
+  note: string;
+  /** De qué artefacto salieron las cifras, para que se puedan rastrear. */
+  source: string;
+  columns: { key: string; label: string; numeric: boolean }[];
+  rows: (Record<string, string | number> & { best?: boolean })[];
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -19,7 +28,8 @@ export interface Project {
   cellCount: number;
   imageCount: number;
   coverImage: string | null;
-  cover: { gradientFrom: string; gradientTo: string; icon: string } | null;
+  /** Resultados que no vienen del notebook y se citan con su fuente. */
+  results: ResultsTable | null;
   cells: NotebookCell[];
 }
 
@@ -38,6 +48,18 @@ const COVER_OVERRIDES: Record<string, string> = {
   "telecom-identificacion-de-operadores-ineficaces": "/projects/telecom-identificacion-de-operadores-ineficaces/cover.svg",
   "telecom-test-a-b-del-recomendador": "/projects/telecom-test-a-b-del-recomendador/cover.svg",
   "telecom-analisis-sql-de-libros": "/projects/telecom-analisis-sql-de-libros/cover.svg",
+  "mercado-de-ia-auditoria-de-fuentes-y-calidad":
+    "/projects/mercado-de-ia-auditoria-de-fuentes-y-calidad/cover.svg",
+  "mercado-de-ia-brecha-salarial-mexico-vs-estados-unidos":
+    "/projects/mercado-de-ia-brecha-salarial-mexico-vs-estados-unidos/cover.svg",
+  "mercado-de-ia-primas-por-skill-y-transparencia-salarial":
+    "/projects/mercado-de-ia-primas-por-skill-y-transparencia-salarial/cover.svg",
+  "mercado-de-ia-modelo-de-imputacion-salarial":
+    "/projects/mercado-de-ia-modelo-de-imputacion-salarial/cover.svg",
+  "riesgo-crediticio-exploracion-y-fuga-de-datos":
+    "/projects/riesgo-crediticio-exploracion-y-fuga-de-datos/cover.svg",
+  "riesgo-crediticio-ingenieria-de-variables":
+    "/projects/riesgo-crediticio-ingenieria-de-variables/cover.svg",
 };
 
 export const projects = (projectsData as Project[]).map((p) => ({

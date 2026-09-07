@@ -7,6 +7,9 @@ import { sanitizeHtml } from "@/lib/sanitize";
 const COLLAPSE_THRESHOLD = 30;
 
 export async function NotebookRenderer({ cells }: { cells: NotebookCell[] }) {
+  /* Las figuras se numeran de corrido, como las láminas de un informe. */
+  let figure = 0;
+
   const rendered = await Promise.all(
     cells.map(async (cell, idx) => {
       const key = `cell-${idx}`;
@@ -16,7 +19,7 @@ export async function NotebookRenderer({ cells }: { cells: NotebookCell[] }) {
           return (
             <div
               key={key}
-              className="markdown-body max-w-none"
+              className="markdown-body"
               dangerouslySetInnerHTML={{ __html: html }}
             />
           );
@@ -26,12 +29,20 @@ export async function NotebookRenderer({ cells }: { cells: NotebookCell[] }) {
           const html = await highlightCode(cell.content, cell.language || "python");
           if (lines > COLLAPSE_THRESHOLD) {
             return (
-              <details key={key} className="code-block group/code">
-                <summary className="flex items-center gap-2 mb-2 px-3 py-1.5 rounded-full text-xs font-mono text-emerald-300/80 bg-emerald-300/[0.06] border border-emerald-300/15 w-fit hover:bg-emerald-300/[0.1] transition cursor-pointer">
-                  <svg className="h-3 w-3 transition group-open/code:rotate-90" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                  </svg>
-                  Mostrar bloque ({lines} líneas)
+              <details key={key} className="group/code my-5">
+                <summary className="inline-flex items-center gap-2 mb-2 font-mono text-[0.75rem] text-ink-faint hover:text-ink transition-colors">
+                  <span
+                    aria-hidden
+                    className="inline-block w-3 text-center transition-transform group-open/code:rotate-90"
+                  >
+                    ›
+                  </span>
+                  <span className="group-open/code:hidden">
+                    Mostrar las {lines} líneas de código
+                  </span>
+                  <span className="hidden group-open/code:inline">
+                    Ocultar el código
+                  </span>
                 </summary>
                 <div
                   className="code-block"
@@ -43,33 +54,44 @@ export async function NotebookRenderer({ cells }: { cells: NotebookCell[] }) {
           return (
             <div
               key={key}
-              className="code-block"
+              className="code-block my-5"
               dangerouslySetInnerHTML={{ __html: html }}
             />
           );
         }
-        case "image":
+        case "image": {
+          figure += 1;
+          const n = figure;
           return (
-            <figure
-              key={key}
-              className="my-6 rounded-xl border border-white/10 bg-white/[0.02] p-3 overflow-hidden"
-            >
-              <Image
-                src={cell.src}
-                alt={cell.alt}
-                width={1200}
-                height={720}
-                className="w-full h-auto rounded-lg"
-                unoptimized
-              />
+            <figure key={key} className="my-8">
+              {/* Passe-partout crema: la gráfica de matplotlib llega con fondo
+                  claro, así que se monta como lámina en vez de flotar sobre
+                  el navy. */}
+              <div className="bg-ink p-4 sm:p-6 border border-rule">
+                <Image
+                  src={cell.src}
+                  alt={cell.alt}
+                  width={1200}
+                  height={720}
+                  className="w-full h-auto"
+                  unoptimized
+                />
+              </div>
+              <figcaption className="mt-2.5 flex items-baseline gap-3 text-[0.75rem] text-ink-faint">
+                <span className="num shrink-0">Fig. {n}</span>
+                <span className="border-l border-rule pl-3 min-w-0 truncate">
+                  {cell.alt}
+                </span>
+              </figcaption>
             </figure>
           );
+        }
         case "html": {
           const html = sanitizeHtml(cell.content);
           return (
             <div
               key={key}
-              className="my-4 rounded-xl border border-white/10 bg-white/[0.02] p-4 overflow-x-auto text-sm [&_table]:w-full [&_table]:text-left [&_th]:p-2 [&_th]:bg-white/[0.04] [&_td]:p-2 [&_td]:border-t [&_td]:border-white/5"
+              className="my-6 overflow-x-auto border border-rule bg-paper-deep p-4 font-mono text-[0.8125rem] [&_table]:w-full [&_table]:border-collapse [&_table]:text-left [&_th]:p-2 [&_th]:text-ink [&_th]:border-b [&_th]:border-rule-strong [&_td]:p-2 [&_td]:border-b [&_td]:border-rule [&_td]:tabular-nums"
               dangerouslySetInnerHTML={{ __html: html }}
             />
           );
@@ -78,7 +100,7 @@ export async function NotebookRenderer({ cells }: { cells: NotebookCell[] }) {
           return (
             <pre
               key={key}
-              className="my-3 px-4 py-3 rounded-lg bg-black/40 border border-white/[0.06] text-[13px] font-mono text-white/70 overflow-x-auto whitespace-pre-wrap"
+              className="my-4 overflow-x-auto whitespace-pre-wrap border border-rule bg-paper-deep px-4 py-3 font-mono text-[0.75rem] leading-relaxed text-ink-muted"
             >
               {cell.content}
             </pre>
@@ -89,5 +111,5 @@ export async function NotebookRenderer({ cells }: { cells: NotebookCell[] }) {
     })
   );
 
-  return <div className="space-y-1">{rendered}</div>;
+  return <div>{rendered}</div>;
 }

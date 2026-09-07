@@ -1,330 +1,400 @@
 @import "tailwindcss";
 
+/* ==========================================================================
+   Sistema "Informe"
+   Fondo navy, tinta crema, un solo rojo. La jerarquía la hacen los filetes,
+   la tipografía y el espacio, no las sombras,
+   los degradados ni el vidrio.
+   Contrastes verificados contra el fondo #0C324A (WCAG AA).
+   ========================================================================== */
+
 @theme {
-  /* Base brand */
-  --color-bg: #0C324A;
-  --color-bg-elevated: #143b56;
-  --color-bg-card: #154057;
-  --color-bg-card-hover: #1a4862;
-  --color-border: #1f4d6b;
-  --color-border-strong: #2c6588;
+  /* Superficies. Tres valores sólidos, sin translúcidos. */
+  --color-paper: #0c324a;        /* página */
+  --color-paper-deep: #07253a;   /* pie, pozos de código */
+  --color-paper-raised: #10405d; /* cabeceras de tabla, hover */
 
-  --color-text-primary: #FEF1D5;
-  --color-text-secondary: #d4c8af;
-  --color-text-muted: #94aabb;
+  /* Tintas. Todas derivadas de la crema sobre el navy: una sola familia. */
+  --color-ink: #fef1d5;          /* 11.9:1 */
+  --color-ink-muted: #bfbfb1;    /*  7.2:1 */
+  --color-ink-faint: #9da59d;    /*  5.3:1 */
 
-  --color-brand-navy: #0C324A;
-  --color-brand-red: #C11720;
-  --color-brand-blue: #679CBC;
-  --color-brand-cream: #FEF1D5;
+  /* Filetes. */
+  --color-rule: #2c6183;         /* separación tranquila */
+  --color-rule-strong: #4e85a6;  /* estructura, 3.3:1 */
 
-  /* Tailwind palette overrides — keep class names, repaint with brand */
-  --color-emerald-200: #fcd5d8;
-  --color-emerald-300: #C11720;
-  --color-emerald-400: #a31019;
-  --color-emerald-500: #8a0c14;
+  /* Acentos. El rojo se usa como relleno o marca; nunca como texto pequeño
+     (2.2:1 sobre navy). Para texto acentuado existe su versión clara. */
+  --color-accent: #c11720;
+  --color-accent-ink: #e8737a;   /*  4.6:1 */
+  --color-marine: #679cbc;
+  --color-marine-ink: #7baecb;   /*  5.6:1 */
 
-  --color-cyan-200: #b7d2e0;
-  --color-cyan-300: #679CBC;
-  --color-cyan-400: #4f88a8;
-  --color-cyan-500: #3d7592;
-
-  --color-violet-200: #fbe6c4;
-  --color-violet-300: #FEF1D5;
-  --color-violet-400: #e5d9bd;
-
-  --color-fuchsia-300: #C11720;
-  --color-fuchsia-400: #a31019;
-
-  --color-pink-200: #fcd5d8;
-  --color-pink-300: #C11720;
-  --color-pink-400: #a31019;
-
-  --color-amber-200: #fcefcc;
-  --color-amber-300: #FEF1D5;
-
-  --color-rose-300: #C11720;
-  --color-rose-400: #a31019;
-
-  --color-sky-300: #679CBC;
-  --color-sky-400: #4f88a8;
-
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
-  --radius: 1rem;
+  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", monospace;
 }
 
 :root {
   color-scheme: dark;
+  --measure: 68ch;
+  --nav-h: 4rem;
+}
+
+/* La barra es fija: las secciones ancladas se detienen debajo de ella. */
+section[id],
+main[id] {
+  scroll-margin-top: calc(var(--nav-h) + 1rem);
 }
 
 html {
   scroll-behavior: smooth;
-  background: var(--color-bg);
+  background: var(--color-paper);
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--color-bg);
-  color: var(--color-text-primary);
+  background: var(--color-paper);
+  color: var(--color-ink);
   font-family: var(--font-sans);
-  font-feature-settings: "ss01", "cv11";
+  font-size: 1rem;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
   overflow-x: hidden;
 }
 
+/* --- Superficies del navegador -------------------------------------------
+   Selección, cursor, barras y anillo de foco vienen sin diseñar por defecto.
+   Se pintan desde la paleta para que nada delate al navegador. */
+
 ::selection {
-  background: rgba(193, 23, 32, 0.35);
-  color: #FEF1D5;
+  background: var(--color-accent);
+  color: var(--color-ink);
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
 }
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: var(--color-paper-deep);
 }
 ::-webkit-scrollbar-thumb {
-  background: #1f4d6b;
-  border-radius: 999px;
-  border: 2px solid var(--color-bg);
+  background: var(--color-rule);
+  border: 3px solid var(--color-paper-deep);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #2c6588;
+  background: var(--color-rule-strong);
+}
+* {
+  scrollbar-color: var(--color-rule) var(--color-paper-deep);
 }
 
-.glass {
-  background: linear-gradient(180deg, rgba(254, 241, 213, 0.04), rgba(254, 241, 213, 0.01));
-  border: 1px solid rgba(254, 241, 213, 0.08);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+:where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 3px;
+  border-radius: 1px;
 }
 
-.glass-strong {
-  background: linear-gradient(180deg, rgba(254, 241, 213, 0.06), rgba(254, 241, 213, 0.015));
-  border: 1px solid rgba(254, 241, 213, 0.1);
-  backdrop-filter: blur(22px);
+input,
+textarea {
+  caret-color: var(--color-accent-ink);
 }
 
-.gradient-text {
-  color: #C11720;
+@layer components {
+/* --- Tipografía ---------------------------------------------------------- */
+
+/* Fraunces es variable: opsz da el corte de titular, WONK las formas
+   inclinadas que le dan carácter. wght va explícito porque
+   font-variation-settings gana sobre font-weight. */
+.display {
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 1, "wght" 600;
+  letter-spacing: -0.024em;
+  line-height: 1.02;
+  text-wrap: balance;
 }
 
-.gradient-text-warm {
-  color: #C11720;
+.display-sm {
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 48, "SOFT" 0, "WONK" 1, "wght" 600;
+  letter-spacing: -0.016em;
+  line-height: 1.12;
+  text-wrap: balance;
 }
 
-.gradient-border {
+.display-quote {
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 20, "SOFT" 40, "WONK" 0, "wght" 400;
+  font-style: italic;
+}
+
+/* Etiqueta de ficha: mono, versalitas ópticas, muy espaciada. */
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+}
+
+/* Cifras: siempre tabulares, para que alineen en columna. */
+.num {
+  font-family: var(--font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+.prose-measure {
+  max-width: var(--measure);
+  text-wrap: pretty;
+}
+
+/* --- Filete de sección ---------------------------------------------------
+   El separador estructural del informe: una barra de acento sobre la
+   hairline que cruza todo el ancho. */
+
+.rule-section {
+  border-top: 1px solid var(--color-rule);
   position: relative;
-  isolation: isolate;
 }
-.gradient-border::before {
+.rule-section::before {
   content: "";
   position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(193, 23, 32, 0.6), rgba(254, 241, 213, 0.2) 50%, rgba(103, 156, 188, 0.6));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
+  top: -1px;
+  left: 1.5rem;
+  width: 56px;
+  height: 3px;
+  background: var(--color-accent);
+}
+/* La marca arranca donde arranca el contenido, no en el borde de la ventana. */
+@media (min-width: 64rem) {
+  .rule-section::before {
+    left: max(2.5rem, calc((100% - 88rem) / 2 + 2.5rem));
+  }
 }
 
-.grid-bg {
-  background-image:
-    linear-gradient(rgba(254, 241, 213, 0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(254, 241, 213, 0.05) 1px, transparent 1px);
-  background-size: 64px 64px;
-  background-position: -1px -1px;
+/* --- Controles ----------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.375rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border: 1px solid transparent;
+  transition: background-color 0.16s ease, color 0.16s ease,
+    border-color 0.16s ease, transform 0.1s ease;
+}
+.btn:active {
+  transform: translateY(1px);
 }
 
-.dot-bg {
-  background-image: radial-gradient(rgba(254, 241, 213, 0.08) 1px, transparent 1px);
-  background-size: 28px 28px;
+.btn-solid {
+  background: var(--color-accent);
+  color: var(--color-ink);
+}
+.btn-solid:hover {
+  background: #a5121a;
 }
 
-.aurora {
+.btn-outline {
+  border-color: var(--color-rule-strong);
+  color: var(--color-ink);
+}
+.btn-outline:hover {
+  background: var(--color-paper-raised);
+  border-color: var(--color-ink-faint);
+}
+
+.btn-quiet {
+  padding-left: 0;
+  padding-right: 0;
+  color: var(--color-ink-muted);
+  border-bottom: 1px solid var(--color-rule-strong);
+}
+.btn-quiet:hover {
+  color: var(--color-ink);
+  border-bottom-color: var(--color-ink);
+}
+
+/* --- Etiqueta de categoría ----------------------------------------------
+   Una sola forma para todas. La categoría se distingue por su texto, no por
+   un color distinto cada una. */
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.06em;
+  color: var(--color-ink-muted);
+  border: 1px solid var(--color-rule);
+  white-space: nowrap;
+}
+.tag-lead {
+  color: var(--color-ink);
+  border-color: var(--color-rule-strong);
+  background: var(--color-paper-raised);
+}
+
+/* --- Salto a contenido --------------------------------------------------- */
+
+.skip-link {
   position: absolute;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 0;
+  left: 1rem;
+  top: -100%;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-weight: 600;
+  font-size: 0.875rem;
 }
-.aurora::before,
-.aurora::after {
-  content: "";
-  position: absolute;
-  width: 60vw;
-  height: 60vw;
-  border-radius: 50%;
-  filter: blur(140px);
-  opacity: 0.4;
-  animation: aurora 22s ease-in-out infinite alternate;
+.skip-link:focus {
+  top: 1rem;
 }
-.aurora::before {
-  background: radial-gradient(circle at 30% 30%, #C11720 0%, transparent 60%);
-  top: -20vw;
-  left: -10vw;
-}
-.aurora::after {
-  background: radial-gradient(circle at 70% 30%, #679CBC 0%, transparent 60%);
-  top: -10vw;
-  right: -15vw;
-  animation-delay: -8s;
 }
 
-@keyframes aurora {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  100% {
-    transform: translate(8vw, 4vw) scale(1.15);
-  }
-}
-
-.shine {
-  background: linear-gradient(120deg, rgba(254, 241, 213, 0) 30%, rgba(254, 241, 213, 0.15) 50%, rgba(254, 241, 213, 0) 70%);
-  background-size: 200% 100%;
-  animation: shine 6s ease-in-out infinite;
-}
-@keyframes shine {
-  0% {
-    background-position: 200% 0;
-  }
-  100% {
-    background-position: -200% 0;
-  }
-}
+/* --- Cuerpo del notebook ------------------------------------------------- */
 
 .markdown-body {
-  color: var(--color-text-primary);
-  line-height: 1.75;
+  color: var(--color-ink-muted);
+  line-height: 1.7;
   font-size: 1.0625rem;
+  max-width: var(--measure);
+  text-wrap: pretty;
 }
 .markdown-body h1,
 .markdown-body h2,
 .markdown-body h3,
 .markdown-body h4 {
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: #FEF1D5;
-  margin-top: 2.25rem;
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 36, "SOFT" 0, "WONK" 1, "wght" 600;
+  letter-spacing: -0.015em;
+  color: var(--color-ink);
+  margin-top: 2.5rem;
   margin-bottom: 0.75rem;
   scroll-margin-top: 5rem;
+  text-wrap: balance;
 }
 .markdown-body h1 {
   font-size: 1.875rem;
 }
 .markdown-body h2 {
   font-size: 1.5rem;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-rule);
   padding-bottom: 0.5rem;
 }
 .markdown-body h3 {
   font-size: 1.25rem;
-  color: #C11720;
 }
 .markdown-body h4 {
   font-size: 1.0625rem;
+  color: var(--color-ink-muted);
 }
 .markdown-body p {
-  margin: 0.85rem 0;
-  color: rgba(254, 241, 213, 0.85);
+  margin: 0.9rem 0;
 }
 .markdown-body strong {
-  color: #FEF1D5;
+  color: var(--color-ink);
   font-weight: 600;
 }
 .markdown-body em {
-  color: #679CBC;
+  font-style: italic;
 }
 .markdown-body code {
   font-family: var(--font-mono);
   font-size: 0.85em;
-  background: rgba(193, 23, 32, 0.14);
-  color: #FEF1D5;
-  padding: 0.15rem 0.4rem;
-  border-radius: 0.35rem;
-  border: 1px solid rgba(193, 23, 32, 0.32);
+  background: var(--color-paper-deep);
+  color: var(--color-ink);
+  padding: 0.1rem 0.35rem;
+  border: 1px solid var(--color-rule);
 }
 .markdown-body ul,
 .markdown-body ol {
-  margin: 0.9rem 0 0.9rem 1.25rem;
-  color: rgba(254, 241, 213, 0.85);
+  margin: 0.9rem 0 0.9rem 1.5rem;
 }
 .markdown-body ul {
-  list-style: disc;
+  list-style: square;
 }
 .markdown-body ol {
   list-style: decimal;
 }
 .markdown-body li {
-  margin: 0.4rem 0;
+  margin: 0.35rem 0;
+  padding-left: 0.25rem;
 }
 .markdown-body li::marker {
-  color: #C11720;
+  color: var(--color-accent-ink);
 }
 .markdown-body a {
-  color: #679CBC;
+  color: var(--color-marine-ink);
   text-decoration: underline;
-  text-decoration-color: rgba(103, 156, 188, 0.5);
-  text-underline-offset: 4px;
-  transition: color 0.2s ease;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: var(--color-rule-strong);
+  transition: text-decoration-color 0.16s ease;
 }
 .markdown-body a:hover {
-  color: #FEF1D5;
+  text-decoration-color: currentColor;
 }
 .markdown-body blockquote {
-  border-left: 3px solid #C11720;
-  padding-left: 1rem;
-  color: rgba(254, 241, 213, 0.7);
-  margin: 1rem 0;
+  margin: 1.75rem 0 1.75rem 1.5rem;
+  padding: 0;
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-variation-settings: "opsz" 20, "SOFT" 40, "WONK" 0, "wght" 400;
   font-style: italic;
+  font-size: 1.125rem;
+  line-height: 1.55;
+}
+.markdown-body blockquote p {
+  margin: 0.35rem 0;
 }
 .markdown-body table {
   width: 100%;
   border-collapse: collapse;
-  margin: 1rem 0;
-  font-size: 0.95rem;
-  background: rgba(254, 241, 213, 0.03);
-  border-radius: 0.6rem;
-  overflow: hidden;
+  margin: 1.5rem 0;
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
 }
 .markdown-body th,
 .markdown-body td {
-  padding: 0.6rem 0.85rem;
-  border: 1px solid var(--color-border);
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--color-rule);
   text-align: left;
 }
 .markdown-body th {
-  background: rgba(193, 23, 32, 0.14);
-  color: #FEF1D5;
+  color: var(--color-ink);
   font-weight: 600;
+  border-bottom-color: var(--color-rule-strong);
+  letter-spacing: 0.04em;
 }
 .markdown-body hr {
   border: none;
-  border-top: 1px solid var(--color-border);
-  margin: 2rem 0;
+  border-top: 1px solid var(--color-rule);
+  margin: 2.5rem 0;
 }
-.markdown-body img {
-  border-radius: 0.6rem;
-  border: 1px solid var(--color-border);
-  margin: 1rem 0;
-}
+
+/* --- Bloques de código --------------------------------------------------- */
 
 .code-block pre {
   font-family: var(--font-mono);
-  font-size: 0.875rem;
-  line-height: 1.65;
+  font-size: 0.8125rem;
+  line-height: 1.7;
   padding: 1.25rem 1.5rem;
   overflow-x: auto;
-  border-radius: 0.75rem;
-  background: #06243a !important;
-  border: 1px solid var(--color-border);
+  background: var(--color-paper-deep) !important;
+  border: 1px solid var(--color-rule);
   margin: 0;
+  tab-size: 4;
 }
 .code-block pre code {
   background: transparent;
@@ -334,98 +404,51 @@ body {
   font-size: inherit;
 }
 
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.85rem 1.5rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #C11720, #d92231);
-  color: #FEF1D5;
-  transition: transform 0.18s ease, box-shadow 0.18s ease;
-  box-shadow: 0 10px 30px -10px rgba(193, 23, 32, 0.55), 0 0 0 1px rgba(254, 241, 213, 0.08) inset;
-}
-.btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 18px 36px -12px rgba(193, 23, 32, 0.7), 0 0 0 1px rgba(254, 241, 213, 0.12) inset;
+/* --- Movimiento ----------------------------------------------------------
+   Un solo momento: la entrada del encabezado. Nada más se anima al aparecer. */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.85rem 1.5rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border-radius: 999px;
-  background: rgba(254, 241, 213, 0.05);
-  color: #FEF1D5;
-  border: 1px solid rgba(254, 241, 213, 0.12);
-  transition: all 0.2s ease;
-}
-.btn-ghost:hover {
-  background: rgba(254, 241, 213, 0.1);
-  border-color: rgba(193, 23, 32, 0.5);
-  color: #FEF1D5;
+.rise {
+  animation: rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-.chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.35rem;
-  padding: 0.3rem 0.7rem;
-  font-size: 0.75rem;
-  font-weight: 500;
-  border-radius: 999px;
-  background: rgba(254, 241, 213, 0.05);
-  border: 1px solid rgba(254, 241, 213, 0.12);
-  color: rgba(254, 241, 213, 0.85);
-  white-space: nowrap;
-}
-.chip-accent {
-  background: rgba(193, 23, 32, 0.15);
-  border-color: rgba(193, 23, 32, 0.4);
-  color: #fcd5d8;
-}
-.chip-violet {
-  background: rgba(254, 241, 213, 0.1);
-  border-color: rgba(254, 241, 213, 0.28);
-  color: #FEF1D5;
-}
-.chip-cyan {
-  background: rgba(103, 156, 188, 0.15);
-  border-color: rgba(103, 156, 188, 0.4);
-  color: #b7d2e0;
-}
-.chip-pink {
-  background: rgba(193, 23, 32, 0.15);
-  border-color: rgba(193, 23, 32, 0.4);
-  color: #fcd5d8;
-}
-.chip-amber {
-  background: rgba(254, 241, 213, 0.1);
-  border-color: rgba(254, 241, 213, 0.28);
-  color: #FEF1D5;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .rise {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
-.card-hover {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.4s ease;
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
-.card-hover:hover {
-  transform: translateY(-4px);
-  border-color: rgba(193, 23, 32, 0.35);
-  box-shadow: 0 20px 50px -20px rgba(193, 23, 32, 0.3), 0 0 0 1px rgba(193, 23, 32, 0.15) inset;
-}
-
-.fade-mask-r {
-  -webkit-mask-image: linear-gradient(90deg, #000 70%, transparent 100%);
-  mask-image: linear-gradient(90deg, #000 70%, transparent 100%);
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-details > summary { list-style: none; cursor: pointer; }
-details > summary::-webkit-details-marker { display: none; }
+details > summary {
+  list-style: none;
+  cursor: pointer;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}

@@ -21,117 +21,166 @@ const PROJECT_OVERRIDES = {
     title: "Store 1 — Limpieza de datos de clientes",
     summary:
       "Primera fase del proyecto Store 1: limpieza de strings y manipulación de listas y diccionarios para preparar datos de clientes desde Python puro, sin librerías externas.",
-    cover: { gradientFrom: "#00DF81", gradientTo: "#0EA5E9", icon: "broom" },
   },
   Sp_2: {
     title: "Store 1 — Perfilado de clientes",
     summary:
       "Segunda fase de Store 1: procesamiento avanzado en Python con listas anidadas, funciones y agregaciones para perfilar clientes y categorías de compra.",
-    cover: { gradientFrom: "#6366F1", gradientTo: "#00DF81", icon: "users" },
   },
   Sp_3: {
     title: "Déjame escuchar música",
     summary:
       "Análisis exploratorio con pandas: hábitos musicales de usuarios en dos ciudades. Limpieza de datos, agrupaciones y prueba de hipótesis sobre días de la semana y géneros.",
-    cover: { gradientFrom: "#A855F7", gradientTo: "#00DF81", icon: "music" },
   },
   Sp_4: {
     title: "Instacart — Llena ese carrito",
     summary:
       "EDA completo del comportamiento de compra en Instacart: limpieza, valores ausentes, duplicados y análisis profundo de patrones de pedido en comestibles.",
-    cover: { gradientFrom: "#F59E0B", gradientTo: "#EF4444", icon: "cart" },
   },
   Sp_5: {
     title: "Megaline — ¿Cuál es la mejor tarifa?",
     summary:
       "Estadística descriptiva e inferencial: comparación de las tarifas Surf vs. Ultimate de un operador móvil y prueba de hipótesis sobre ingresos por usuario.",
-    cover: { gradientFrom: "#06B6D4", gradientTo: "#6366F1", icon: "phone" },
   },
   Sp_6: {
     title: "Tienda de videojuegos — Patrones de éxito",
     summary:
       "EDA y análisis de patrones de éxito por plataforma, género y región para una tienda global. Pruebas de hipótesis sobre calificaciones de usuarios y críticos.",
-    cover: { gradientFrom: "#EC4899", gradientTo: "#6366F1", icon: "gamepad" },
   },
   Sp_8: {
     title: "Zuber — Taxis en Chicago",
     summary:
       "Análisis de datos extraídos vía SQL: visualización de la demanda por barrio y empresa, y prueba de hipótesis (Welch t-test) sobre la duración de los viajes en condiciones climáticas adversas.",
-    cover: { gradientFrom: "#FBBF24", gradientTo: "#00DF81", icon: "taxi" },
   },
   Sp_10: {
     title: "Showz — Análisis de marketing",
     summary:
       "Métricas de producto y marketing para una plataforma de eventos: cohortes, retención, LTV, CAC y ROI por fuente de adquisición para optimizar la inversión publicitaria.",
-    cover: { gradientFrom: "#00DF81", gradientTo: "#6366F1", icon: "chart" },
   },
   Sp_11: {
     title: "Tests A/B priorizados con ICE/RICE",
     summary:
       "Análisis estadístico de un test A/B: priorización de hipótesis con frameworks ICE y RICE y evaluación de significancia estadística entre los grupos de prueba.",
-    cover: { gradientFrom: "#3B82F6", gradientTo: "#A855F7", icon: "flask" },
   },
   Sp_12: {
     title: "Embudo de eventos & test A/A/B",
     summary:
       "Análisis de logs de eventos de una app: construcción del embudo de conversión paso a paso y evaluación de un test A/A/B para validar cambios en la UI.",
-    cover: { gradientFrom: "#10B981", gradientTo: "#0EA5E9", icon: "funnel" },
   },
   Sp_14: {
     title: "Model Fitness — Churn y segmentación",
     summary:
       "Machine learning aplicado a un gimnasio premium: modelo de clasificación para predecir cancelación de clientes y segmentación con clustering jerárquico/K-Means.",
-    cover: { gradientFrom: "#00DF81", gradientTo: "#EC4899", icon: "dumbbell" },
   },
   "Telecomunicaciones-Operadores-Ineficaces/Operadores-Ineficaces": {
     title: "Telecom — Identificación de operadores ineficaces",
     summary:
       "Proyecto integral de un call center: análisis exploratorio + machine learning para clasificar a los operadores ineficaces e impulsar la calidad del servicio.",
-    cover: { gradientFrom: "#F97316", gradientTo: "#A855F7", icon: "headset" },
   },
   "Telecomunicaciones-Operadores-Ineficaces/Test-AB-Recomendador": {
     title: "Telecom — Test A/B del recomendador",
     summary:
       "Prueba A/B sobre un sistema de recomendaciones para evaluar su impacto real en la conversión y experiencia del usuario.",
-    cover: { gradientFrom: "#A855F7", gradientTo: "#00DF81", icon: "flask" },
   },
   "Telecomunicaciones-Operadores-Ineficaces/SQL-Libros": {
     title: "Telecom — Análisis SQL de libros",
     summary:
       "Resolución de tareas analíticas con SQL puro: agregaciones, joins, subconsultas y CTEs sobre un dataset de catálogo de libros y reseñas.",
-    cover: { gradientFrom: "#0EA5E9", gradientTo: "#6366F1", icon: "database" },
   },
   "Telecomunicaciones-Operadores-Ineficaces/Descomposicion": {
     title: "Telecom — Plan de descomposición",
     summary:
       "Documento técnico que descompone el proyecto integral de telecomunicaciones en fases, hitos y entregables medibles.",
-    cover: { gradientFrom: "#94A3B8", gradientTo: "#475569", icon: "list" },
+  },
+  "credit-risk-scoring/01_eda": {
+    title: "Riesgo crediticio — Exploración y fuga de datos",
+    summary:
+      "Análisis exploratorio de 30,000 tarjetahabientes de Taiwán (UCI, abril a septiembre de 2005) para predecir el impago del mes siguiente. La clase positiva es minoría, 22% de impago o unos 3.5 a 1, así que las métricas quedan elegidas desde el principio: ROC AUC, PR AUC, Gini y KS en lugar de exactitud. Incluye una prueba explícita de fuga de datos que descarta las tres vías por las que podría colarse, y cierra escribiendo la partición estratificada 80/20 que las fases siguientes reutilizan sin volver a tocar el test.",
+  },
+  "credit-risk-scoring/02_feature_engineering": {
+    title: "Riesgo crediticio — Ingeniería de variables",
+    summary:
+      "Los datos crudos traen seis fotos mensuales de saldo, pago y morosidad. Las señales que de verdad predicen el impago son razones entre esas fotos, y ninguna existe como columna. Aquí se construye el pipeline de producción: un transformador de scikit-learn que añade 15 variables derivadas fila por fila, y un ColumnTransformer que imputa, escala y codifica según la cardinalidad. Cada variable derivada se valida por su ROC AUC univariado contra el objetivo antes de entrar.",
+    results: {
+      heading: "Fase 3 · Comparación de modelos",
+      note:
+        "Estos números no salen de este notebook: los produjo el pipeline de entrenamiento (`make train`, 50 trials de Optuna por modelo, validación cruzada estratificada de 5 folds). La selección se hace por ROC AUC de validación cruzada, nunca por el test. Los notebooks 03 y 04, que grafican curvas ROC, KS, calibración y SHAP, están escritos pero todavía sin ejecutar.",
+      /* Se leen del artefacto real que dejó el entrenamiento, no se escriben
+         a mano: si vuelve a correr, la tabla del sitio cambia sola. */
+      from: "comparison.json",
+    },
   },
   "mercado-ia-mx-us/01_recoleccion_y_calidad": {
     title: "Mercado de IA — Auditoría de fuentes y calidad",
     summary:
       "Antes de analizar nada, se audita cada fuente candidata: el mejor dataset real de Kaggle tiene 12 filas mexicanas y ninguna con salario, y el más popular de la categoría resulta ser sintético (12 países, ~4,300 filas cada uno, 100% de sueldos publicados frente al ~19% de un agregador real). Con ambas descartadas, se construye un corpus propio desde la API de Adzuna — 6,990 vacantes, 1,666 con salario — y se confirma en vivo que Adzuna modela sueldos que no tiene: Nueva York devolvió 151 vacantes y solo 1 con salario real.",
-    cover: { gradientFrom: "#00DF81", gradientTo: "#6366F1", icon: "search" },
   },
   "mercado-ia-mx-us/02_brecha_salarial": {
     title: "Mercado de IA — Brecha salarial México vs Estados Unidos",
     summary:
       "Medianas salariales con intervalos de confianza bootstrap en cinco metros de Estados Unidos — San Francisco Bay Area $225,000 (n=319), Seattle $202,500, Nueva York $200,000 (n=116), Austin $197,575 y Boston $182,500 — frente a una decisión metodológica explícita: México solo tiene 4 vacantes de IA con salario publicado, así que las pruebas de hipótesis se niegan a correr, y el notebook muestra ese rechazo en vez de forzar un resultado.",
-    cover: { gradientFrom: "#00DF81", gradientTo: "#0EA5E9", icon: "chart-bar" },
   },
   "mercado-ia-mx-us/03_skills_y_transparencia": {
     title: "Mercado de IA — Primas por skill y transparencia salarial",
     summary:
       "Primas salariales por habilidad: dominar prompt engineering o LangChain se paga ~30% por debajo de la mediana nacional, mientras que trabajar con agentes de IA se paga justo en ella — una brecha de $61,050 entre habilidades del mismo mercado. Un hallazgo contraintuitivo: en Estados Unidos, las multinacionales publican el salario 3.4 veces menos que las empresas locales.",
-    cover: { gradientFrom: "#6366F1", gradientTo: "#00DF81", icon: "sparkles" },
   },
   "mercado-ia-mx-us/04_modelo_imputacion": {
     title: "Mercado de IA — Modelo de imputación salarial",
     summary:
       "Un modelo de gradient boosting entrenado con salarios de Estados Unidos se valida contra un hold-out con los 4 salarios mexicanos observados — veredicto: no publicable, con un MdAPE de 958% frente a un umbral de 35%. El argumento central: con n=4 ningún experimento puede validar la transferencia entre mercados en ningún sentido, así que las estimaciones no deben publicarse.",
-    cover: { gradientFrom: "#0EA5E9", gradientTo: "#00DF81", icon: "cpu" },
   },
 };
+
+const RESULT_COLUMNS = [
+  { key: "model_name", label: "Modelo", numeric: false },
+  { key: "cv_roc_auc", label: "ROC AUC (CV)", numeric: true },
+  { key: "test_roc_auc", label: "ROC AUC (test)", numeric: true },
+  { key: "test_gini", label: "Gini", numeric: true },
+  { key: "test_ks", label: "KS", numeric: true },
+  { key: "test_brier", label: "Brier", numeric: true },
+];
+
+const MODEL_LABELS = {
+  logistic_regression: "Regresión logística",
+  random_forest: "Random Forest",
+  xgboost: "XGBoost",
+  lightgbm: "LightGBM",
+};
+
+/**
+ * Lee la tabla de resultados del artefacto que dejó el entrenamiento, junto al
+ * notebook. Se ordena por la misma métrica con la que se seleccionó el modelo
+ * (ROC AUC de validación cruzada) para que la tabla cuente la misma historia
+ * que el pipeline.
+ */
+function loadResults(spec, notebookDir) {
+  if (!spec) return null;
+  const file = path.join(notebookDir, spec.from);
+  if (!fs.existsSync(file)) {
+    console.warn(`  ⚠ resultados no encontrados: ${file}`);
+    return null;
+  }
+  const raw = JSON.parse(fs.readFileSync(file, "utf-8"));
+  const rows = [...raw.models]
+    .sort((a, b) => b.cv_roc_auc - a.cv_roc_auc)
+    .map((m) => {
+      const row = { model_name: MODEL_LABELS[m.model_name] || m.model_name };
+      for (const col of RESULT_COLUMNS) {
+        // Cadena, no número: 0.141 rompería la alineación tabular contra 0.1431.
+        if (col.numeric) row[col.key] = m[col.key].toFixed(4);
+      }
+      row.best = m.model_name === raw.best_model;
+      return row;
+    });
+  return {
+    heading: spec.heading,
+    note: spec.note,
+    source: `${spec.from} · ${new Date(raw.generated_at).toISOString().slice(0, 10)}`,
+    columns: RESULT_COLUMNS,
+    rows,
+  };
+}
 
 function slugify(s) {
   return s
@@ -352,10 +401,12 @@ async function main() {
       const repoPath = relativeRepoPath(nbPath);
       const folder = path.dirname(repoPath);
       const baseName = path.basename(nbPath, ".ipynb");
-      const overrideKey = folder.startsWith("Telecom") || folder.startsWith("mercado-ia")
-        ? `${folder}/${baseName}`
-        : folder;
-      const override = PROJECT_OVERRIDES[overrideKey] || {};
+      // Una carpeta con varios notebooks se identifica por carpeta/archivo;
+      // una carpeta con uno solo, por la carpeta. Se resuelve mirando qué
+      // clave existe, sin listar prefijos a mano.
+      const nestedKey = `${folder}/${baseName}`;
+      const override =
+        PROJECT_OVERRIDES[nestedKey] || PROJECT_OVERRIDES[folder] || {};
 
       const filenameClean = baseName.replace(/[_-]+/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
       const title = override.title || extractTitle(nb, filenameClean);
@@ -380,7 +431,7 @@ async function main() {
         cellCount: nb.cells.length,
         imageCount,
         coverImage: firstImagePath,
-        cover: override.cover || null,
+        results: loadResults(override.results, path.dirname(nbPath)),
         cells,
       };
 
@@ -398,12 +449,15 @@ async function main() {
     "telecom-test-a-b-del-recomendador",
     "telecom-analisis-sql-de-libros",
   ];
+  // Bloques del portafolio, del más viejo al más reciente.
+  const blockRank = (folder) =>
+    folder.startsWith("credit-risk") ? 2 : folder.startsWith("Telecom") ? 1 : 0;
+
   projects.sort((a, b) => {
-    const aIsTelecom = a.folder.startsWith("Telecom");
-    const bIsTelecom = b.folder.startsWith("Telecom");
-    if (aIsTelecom && !bIsTelecom) return 1;
-    if (!aIsTelecom && bIsTelecom) return -1;
-    if (aIsTelecom && bIsTelecom) {
+    const aBlock = blockRank(a.folder);
+    const bBlock = blockRank(b.folder);
+    if (aBlock !== bBlock) return aBlock - bBlock;
+    if (aBlock === 1) {
       return TELECOM_ORDER.indexOf(a.slug) - TELECOM_ORDER.indexOf(b.slug);
     }
     const an = parseInt((a.folder.match(/Sp_(\d+)/) || [])[1] || "999", 10);

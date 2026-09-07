@@ -3,132 +3,164 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
-  { href: "/#proyectos", label: "Proyectos" },
-  { href: "/#stack", label: "Stack" },
-  { href: "/#sobre-mi", label: "Sobre mí" },
-  { href: "https://nyxaistudio.com", label: "NyxAI Studio", external: true },
+  { href: "/#proyectos", label: "Proyectos", section: "proyectos" },
+  { href: "/#stack", label: "Herramientas", section: "stack" },
+  { href: "/#sobre-mi", label: "Trayectoria", section: "sobre-mi" },
 ];
 
 export function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState<string | null>(null);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const targets = links
+      .map((l) => document.getElementById(l.section))
+      .filter((el): el is HTMLElement => el !== null);
+    if (targets.length === 0) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+        if (visible[0]) setActive(visible[0].target.id);
+      },
+      { rootMargin: "-20% 0px -70% 0px" }
+    );
+    targets.forEach((t) => observer.observe(t));
+    return () => observer.disconnect();
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? "backdrop-blur-xl bg-[#07070b]/70 border-b border-white/[0.06]"
-          : "bg-transparent border-b border-transparent"
-      }`}
-    >
-      <nav className="mx-auto max-w-7xl px-6 lg:px-10 h-16 flex items-center justify-between">
-        <Link
-          href="/"
-          className="group flex items-center gap-2.5 font-semibold tracking-tight"
-        >
-          <span className="relative flex h-10 w-10 items-center justify-center">
-            <Image
-              src="/logo.png"
-              alt="Mauricio Vilar"
-              width={80}
-              height={80}
-              priority
-              className="h-10 w-10 object-contain"
-            />
-          </span>
-          <span className="hidden sm:flex flex-col leading-none">
-            <span className="text-sm font-semibold">Mauricio Vilar</span>
-            <span className="text-[10px] text-white/50 tracking-[0.2em] uppercase mt-0.5">
-              Data · AI
+    <header className="fixed top-0 inset-x-0 z-50 bg-paper border-b border-rule">
+      <nav
+        aria-label="Principal"
+        className="mx-auto max-w-[88rem] px-6 lg:px-10 h-16 flex items-center justify-between gap-6"
+      >
+        <Link href="/" className="flex items-center gap-3 shrink-0">
+          <Image
+            src="/logo.png"
+            alt=""
+            width={80}
+            height={80}
+            priority
+            className="h-9 w-9 object-contain"
+          />
+          <span className="flex flex-col leading-none">
+            <span className="text-[0.9375rem] font-semibold tracking-tight">
+              Mauricio Vilar
             </span>
+            <span className="label mt-1 text-[0.625rem] hidden sm:block">Datos · IA</span>
           </span>
         </Link>
 
-        <div className="hidden md:flex items-center gap-1">
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-              className="relative px-3.5 py-2 text-sm text-white/70 hover:text-white transition rounded-full hover:bg-white/5"
-            >
-              {l.label}
-              {l.external && (
-                <span className="ml-1 text-[10px] text-emerald-300/70">↗</span>
-              )}
-            </Link>
-          ))}
+        <div className="hidden md:flex items-center h-full">
+          {links.map((l) => {
+            const isActive = active === l.section;
+            return (
+              <Link
+                key={l.href}
+                href={l.href}
+                aria-current={isActive ? "true" : undefined}
+                className={`relative h-full flex items-center px-4 text-sm transition-colors ${
+                  isActive
+                    ? "text-ink"
+                    : "text-ink-muted hover:text-ink"
+                }`}
+              >
+                {l.label}
+                <span
+                  aria-hidden
+                  className={`absolute inset-x-3 bottom-0 h-[2px] transition-opacity ${
+                    isActive ? "bg-accent opacity-100" : "opacity-0"
+                  }`}
+                />
+              </Link>
+            );
+          })}
+          <span aria-hidden className="mx-3 h-4 w-px bg-rule" />
+          <a
+            href="https://nyxaistudio.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-ink-muted hover:text-ink transition-colors px-2"
+          >
+            NyxAI Studio
+            <span aria-hidden className="text-ink-faint ml-1">
+              ↗
+            </span>
+          </a>
         </div>
 
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-3">
           <a
             href="mailto:unicemau@gmail.com"
-            className="hidden md:inline-flex items-center gap-1.5 px-4 py-2 text-sm font-semibold rounded-full bg-gradient-to-r from-emerald-300 to-cyan-300 text-[#0a0a14] hover:shadow-lg hover:shadow-emerald-400/30 transition"
+            className="hidden md:inline-flex btn btn-solid text-[0.8125rem] py-2 px-4"
           >
-            <svg className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2.5" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-            </svg>
-            Contacto
+            Escríbeme
           </a>
           <button
             type="button"
-            aria-label="Menu"
+            aria-label={open ? "Cerrar menú" : "Abrir menú"}
+            aria-expanded={open}
+            aria-controls="menu-movil"
             onClick={() => setOpen((v) => !v)}
-            className="md:hidden p-2 rounded-lg text-white/80 hover:text-white hover:bg-white/5"
+            className="md:hidden p-2 -mr-2 text-ink"
           >
-            <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+            <svg
+              className="h-5 w-5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              aria-hidden
+            >
               {open ? (
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 6l12 12M6 18L18 6" />
+                <path d="M6 6l12 12M6 18L18 6" />
               ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 7h16M4 12h16M4 17h16" />
+                <path d="M3 7h18M3 12h18M3 17h18" />
               )}
             </svg>
           </button>
         </div>
       </nav>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden border-t border-white/5 bg-[#07070b]/95 backdrop-blur-xl"
+      <div
+        id="menu-movil"
+        hidden={!open}
+        className="md:hidden border-t border-rule bg-paper"
+      >
+        <div className="px-6 py-2 flex flex-col">
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              onClick={() => setOpen(false)}
+              className="py-3 text-sm text-ink border-b border-rule last:border-b-0"
+            >
+              {l.label}
+            </Link>
+          ))}
+          <a
+            href="https://nyxaistudio.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
+            className="py-3 text-sm text-ink-muted border-t border-rule"
           >
-            <div className="px-6 py-4 flex flex-col gap-1">
-              {links.map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  onClick={() => setOpen(false)}
-                  {...(l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                  className="px-3 py-2.5 text-sm text-white/80 rounded-lg hover:bg-white/5"
-                >
-                  {l.label}
-                </Link>
-              ))}
-              <a
-                href="mailto:unicemau@gmail.com"
-                onClick={() => setOpen(false)}
-                className="mt-1 px-3 py-2.5 text-sm font-semibold rounded-lg bg-gradient-to-r from-emerald-300 to-cyan-300 text-[#0a0a14]"
-              >
-                Contacto
-              </a>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            NyxAI Studio ↗
+          </a>
+          <a
+            href="mailto:unicemau@gmail.com"
+            onClick={() => setOpen(false)}
+            className="btn btn-solid my-4 justify-center"
+          >
+            Escríbeme
+          </a>
+        </div>
+      </div>
     </header>
   );
 }
