@@ -24,7 +24,7 @@ const plexMono = IBM_Plex_Mono({
   display: "swap",
 });
 
-const SITE_URL = "https://portfolio.nyxaistudio.com";
+const SITE_URL = "https://mauvilarlandingpage.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
