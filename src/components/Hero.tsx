@@ -64,6 +64,14 @@ export function Hero() {
                   PDF
                 </span>
               </a>
+              <a
+                href="/cv-en.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-quiet text-sm"
+              >
+                En inglés
+              </a>
             </div>
 
             <ul className="mt-10 flex flex-wrap gap-x-7 gap-y-2 text-sm">

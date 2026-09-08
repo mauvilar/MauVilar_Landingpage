@@ -1,5 +1,13 @@
 const experience = [
   {
+    role: "Ingeniero de Software",
+    org: "Dot Com Media, remoto para California",
+    period: "Jul 2026",
+    periodEnd: "Actualidad",
+    description:
+      "Construyo y opero flujos de datos y automatizaciones en producción que integran el CRM de la agencia, bases de datos y APIs, y depuro su desempeño con datos de uso real. Trabajo en inglés con un equipo distribuido.",
+  },
+  {
     role: "Founder & AI Engineer",
     org: "NyxAI Studio",
     period: "Oct 2025",
@@ -8,20 +16,20 @@ const experience = [
       "Fundé NyxAI Studio para llevar IA generativa, automatización y análisis de datos a PYMEs. Diseño y entrego el sistema completo, del pipeline de datos a la interfaz con la que el cliente lo usa.",
   },
   {
-    role: "Trader independiente",
-    org: "Autónomo",
-    period: "Ene 2020",
-    periodEnd: "Actualidad",
-    description:
-      "Operación sistemática en mercados financieros. Desarrollo modelos cuantitativos, backtests y tableros para gestión de portafolio y control de riesgo.",
-  },
-  {
     role: "Business Development Associate",
     org: "Cenote Gardens, Tulum",
     period: "Jun 2024",
     periodEnd: "Jul 2025",
     description:
       "Estrategia comercial y analítica de un destino turístico premium. Traduje datos de ocupación, marketing y experiencia del huésped en decisiones operativas.",
+  },
+  {
+    role: "Trader independiente",
+    org: "Autónomo",
+    period: "Ene 2020",
+    periodEnd: "Actualidad",
+    description:
+      "Operación sistemática en mercados financieros. Desarrollo modelos cuantitativos, backtests y tableros para gestión de portafolio y control de riesgo.",
   },
 ];
 
