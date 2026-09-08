@@ -1,0 +1,229 @@
+/* =========================================================================
+   COPIA del núcleo de tokens de NyxAI (Editorial v3).
+   FUENTE DE VERDAD: ~/Desktop/Nyx/02_Marca/Brand_Kit/tokens.css
+   -------------------------------------------------------------------------
+   No se edita aquí. Si un valor de marca cambia, cambia allá y se vuelve a
+   copiar este archivo entero. La capa semántica de este sitio (qué token
+   pinta qué) vive en globals.css y sólo referencia estos primitivos.
+   Verificar que no derivó:  node ~/Desktop/Nyx/02_Marca/Brand_Kit/check-drift.mjs
+   ========================================================================= */
+
+:root {
+
+  /* ───────────────────────────────────────────────────────────────────────
+     1 · ACENTO — caribbean green · único golpe de color del sistema
+     ─────────────────────────────────────────────────────────────────────── */
+  --nyx-green:        #00DF81;   /* base · el acento */
+  --nyx-green-deep:   #00C271;   /* hover / pressed */
+
+  /* Escala derivada (tints → shades) */
+  --nyx-green-100:    #B7F6DC;
+  --nyx-green-200:    #7CEEC0;
+  --nyx-green-300:    #40E5A3;
+  --nyx-green-400:    #12E08D;
+  --nyx-green-500:    #00DF81;   /* = base */
+  --nyx-green-600:    #00C271;   /* = deep */
+  --nyx-green-700:    #009C5B;
+  --nyx-green-800:    #0A6E45;
+  --nyx-green-900:    #0C3A28;
+
+  /* Verde translúcido (glow / wash) */
+  --nyx-green-a08:    rgba(0, 223, 129, .08);
+  --nyx-green-a16:    rgba(0, 223, 129, .16);
+  --nyx-green-a32:    rgba(0, 223, 129, .32);
+  --nyx-green-a56:    rgba(0, 223, 129, .56);
+
+
+  /* ───────────────────────────────────────────────────────────────────────
+     2 · SUPERFICIES OSCURAS — rich-black (canónico #050706)
+     ─────────────────────────────────────────────────────────────────────── */
+  --nyx-night-950:    #030403;   /* vacío / sunken          */
+  --nyx-night-900:    #050706;   /* fondo base (canónico)   */
+  --nyx-night-850:    #0B0F0D;   /* paneles / mockups       */
+  --nyx-night-800:    #0E1311;   /* tarjetas                */
+  --nyx-night-700:    #141917;   /* tarjeta elevada / hover */
+  --nyx-night-600:    #1B211E;   /* inputs / bordes fuertes */
+  --nyx-night-500:    #2A322D;   /* divisores marcados      */
+  --nyx-black-pure:   #000000;   /* negro puro — vacío total */
+
+
+  /* ───────────────────────────────────────────────────────────────────────
+     3 · SUPERFICIES CLARAS — crema + tinta (base editorial)
+     ─────────────────────────────────────────────────────────────────────── */
+  --nyx-cream:        #F3F1EC;   /* fondo base claro             */
+  --nyx-cream-2:      #FAF9F5;   /* variante cálida              */
+  --nyx-ink:          #131615;   /* texto sobre claro            */
+  --nyx-muted:        #6F6C66;   /* texto secundario sobre claro */
+  --nyx-line:         #DCD8CE;   /* hairline sobre claro         */
+
+  /* Texto sobre la noche — crema, NUNCA blanco puro */
+  --nyx-on-dark:         #F3F1EC;
+  --nyx-on-dark-muted:   rgba(243, 241, 236, .70);  /* secundario legible ≥4.5:1 */
+  --nyx-on-dark-faint:   rgba(243, 241, 236, .52);  /* labels / decorativo       */
+  --nyx-line-dark:       rgba(243, 241, 236, .12);  /* hairline sobre noche      */
+  --nyx-line-dark-2:     rgba(243, 241, 236, .22);  /* hairline marcada          */
+
+
+  /* ───────────────────────────────────────────────────────────────────────
+     4 · SEÑALES FUNCIONALES — SOLO utilidad, jamás decoración
+     Scarlet = error / agotado / última llamada · Ámbar = aviso
+     ─────────────────────────────────────────────────────────────────────── */
+  --nyx-scarlet:      #F5332C;
+  --nyx-scarlet-deep: #D51E18;
+  --nyx-amber:        #F5B23C;
+
+
+  /* ───────────────────────────────────────────────────────────────────────
+     5 · TIPOGRAFÍA — 3 familias por rol
+     Archivo póster · Outfit cuerpo · IBM Plex Mono operativa
+     ─────────────────────────────────────────────────────────────────────── */
+  --font-display: 'Archivo', 'Arial Narrow', system-ui, sans-serif;
+  --font-body:    'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono:    'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* Ajuste del póster Archivo: ancho + pesado */
+  --display-vsettings: 'wght' 810, 'wdth' 125;
+
+  /* Escala fluida (modular ≥1.25 · clamp en titulares) */
+  --fs-100: .6875rem;   /* 11px — mono micro            */
+  --fs-200: .75rem;     /* 12px — mono label            */
+  --fs-300: .8125rem;   /* 13px — small                 */
+  --fs-400: .9375rem;   /* 15px — cuerpo mínimo (móvil) */
+  --fs-500: 1.0625rem;  /* 17px — cuerpo                */
+  --fs-600: 1.25rem;    /* 20px — cuerpo grande         */
+  --fs-700: clamp(1.375rem, 1.05rem + 1.6vw, 2.375rem);     /* 22→38 lead     */
+  --fs-800: clamp(1.75rem, 1.10rem + 3.2vw, 3rem);          /* subtítulo      */
+  --fs-900: clamp(2.25rem, 1.00rem + 6.0vw, 4rem);          /* título grande  */
+  --fs-display:      clamp(3rem, 0.50rem + 11vw, 8.4rem);   /* póster sección */
+  --fs-display-hero: clamp(3.25rem, -0.5rem + 16vw, 11rem); /* póster hero    */
+
+  /* Pesos */
+  --fw-light: 300;  --fw-regular: 400;  --fw-medium: 500;
+  --fw-semibold: 600;  --fw-bold: 700;  --fw-poster: 810;
+
+  /* Interlineado */
+  --lh-poster:  .9;
+  --lh-tight:   1.08;
+  --lh-snug:    1.28;
+  --lh-body:    1.62;
+  --lh-relaxed: 1.75;
+
+  /* Tracking */
+  --ls-poster:     -.015em;
+  --ls-tight:      -.01em;
+  --ls-normal:      0;
+  --ls-label:       .16em;
+  --ls-label-wide:  .22em;
+
+  --measure: 68ch;      /* ancho máximo de párrafo (65–75ch) */
+
+
+  /* ───────────────────────────────────────────────────────────────────────
+     6 · ESPACIADO — base 4 / 8
+     ─────────────────────────────────────────────────────────────────────── */
+  --space-0:  0;
+  --space-1:  .25rem;   /*   4 */
+  --space-2:  .5rem;    /*   8 */
+  --space-3:  .75rem;   /*  12 */
+  --space-4:  1rem;     /*  16 */
+  --space-5:  1.5rem;   /*  24 */
+  --space-6:  2rem;     /*  32 */
+  --space-7:  3rem;     /*  48 */
+  --space-8:  4rem;     /*  64 */
+  --space-9:  6rem;     /*  96 */
+  --space-10: 8rem;     /* 128 */
+  --space-11: 12rem;    /* 192 */
+  --section-pad: clamp(3.5rem, 8vw, 8rem);
+
+
+  /* ───────────────────────────────────────────────────────────────────────
+     7 · RADIOS — editorial = filoso / técnico por defecto
+     ─────────────────────────────────────────────────────────────────────── */
+  --radius-0:     0;
+  --radius-xs:    2px;
+  --radius-sm:    4px;
+  --radius-md:    8px;
+  --radius-lg:    14px;
+  --radius-xl:    22px;
+  --radius-pill:  999px;
+  --radius-round: 50%;
+
+
+  /* ───────────────────────────────────────────────────────────────────────
+     8 · SOMBRAS Y BRILLO — preferir hairlines; glow verde escaso
+     ─────────────────────────────────────────────────────────────────────── */
+  --shadow-none:    none;
+  --shadow-1:       0 1px 0 rgba(0, 0, 0, .5);
+  --shadow-2:       0 8px 24px -12px rgba(0, 0, 0, .7);
+  --shadow-overlay: 0 32px 80px -24px rgba(0, 0, 0, .8);
+
+  /* "La señal en la oscuridad" — SOLO en 1 elemento clave por vista */
+  --glow-green:      0 0 0 1px rgba(0, 223, 129, .55), 0 0 28px -6px rgba(0, 223, 129, .5);
+  --glow-green-soft: 0 0 40px -8px rgba(0, 223, 129, .35);
+  --text-glow-green: 0 0 18px rgba(0, 223, 129, .45);
+
+
+  /* ───────────────────────────────────────────────────────────────────────
+     9 · MOVIMIENTO — ease-out exponenciales, sin bounce
+     ─────────────────────────────────────────────────────────────────────── */
+  --ease-out-quart: cubic-bezier(.25, 1, .5, 1);
+  --ease-out-expo:  cubic-bezier(.16, 1, .3, 1);
+  --ease-in-out:    cubic-bezier(.65, 0, .35, 1);
+  --dur-1: 120ms;
+  --dur-2: 240ms;
+  --dur-3: 420ms;
+  --dur-4: 720ms;
+
+
+  /* ───────────────────────────────────────────────────────────────────────
+     10 · LAYOUT + Z-INDEX (escala semántica, nunca 999/9999)
+     ─────────────────────────────────────────────────────────────────────── */
+  --container:      1200px;
+  --container-wide: 1400px;
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+
+  --z-base:     0;
+  --z-raised:   10;
+  --z-dropdown: 1000;
+  --z-sticky:   1100;
+  --z-backdrop: 1200;
+  --z-modal:    1300;
+  --z-toast:    1400;
+  --z-tooltip:  1500;
+
+  /* Breakpoints — referencia; las @media no leen custom props */
+  --bp-sm:  480px;
+  --bp-md:  768px;
+  --bp-lg:  1024px;
+  --bp-xl:  1280px;
+  --bp-2xl: 1536px;
+
+
+  /* ───────────────────────────────────────────────────────────────────────
+     11 · ALIAS DE COMPATIBILIDAD
+     Nombres de la v3 temprana. Se conservan para que documentación y
+     proyectos viejos no mientan. En código NUEVO usa los de arriba.
+     ─────────────────────────────────────────────────────────────────────── */
+  --nyx-black:            var(--nyx-night-900);
+  --nyx-black-2:          var(--nyx-night-850);
+  --nyx-black-card:       var(--nyx-night-800);
+  --nyx-font-display:     var(--font-display);
+  --nyx-font-body:        var(--font-body);
+  --nyx-font-mono:        var(--font-mono);
+  --nyx-display-vsettings: var(--display-vsettings);
+}
+
+
+/* ---------------------------------------------------------------------------
+   RECONCILIACIÓN (jul 2026) — qué cambió al unificar
+   · --nyx-on-dark-muted pasó de .52 → .70. La v3 temprana usaba .52, que no
+     alcanza 4.5:1 sobre #050706. El .52 sigue disponible como
+     --nyx-on-dark-faint, para labels y decorativo donde no aplica el mínimo.
+   · Los nombres --nyx-black* y --nyx-font-* eran los del doc pero NINGÚN
+     proyecto los usaba; el código real ya usaba --nyx-night-* y --font-*.
+     Ganó el código. Los viejos quedan como alias arriba.
+
+   MARCA RETIRADA — no usar en nada nuevo:
+     rich-black #030303 · teal-black #021B1A · anti-flash-white #F1F7F6
+     stone #707D7D · Space Grotesk / Inter / JetBrains Mono
+   --------------------------------------------------------------------------- */

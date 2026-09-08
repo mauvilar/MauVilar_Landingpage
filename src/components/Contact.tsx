@@ -22,7 +22,8 @@ export function Contact() {
       <div className="mx-auto max-w-[88rem] px-6 lg:px-10">
         <div className="grid lg:grid-cols-[1fr_28rem] gap-10 lg:gap-20">
           <div>
-            <h2 className="display-sm text-[clamp(1.875rem,4vw,3.25rem)] prose-measure">
+            <p className="label">Contacto</p>
+            <h2 className="display-sm mt-4 text-[clamp(2rem,4.6vw,3.5rem)] prose-measure">
               Si tienes datos y no sabes qué preguntarles, escríbeme
             </h2>
             <p className="mt-6 prose-measure text-ink-muted">
@@ -53,7 +54,7 @@ export function Contact() {
                         ? "noopener noreferrer"
                         : undefined
                     }
-                    className="font-mono text-[0.8125rem] text-ink hover:text-marine-ink transition-colors break-all"
+                    className="font-mono text-[0.8125rem] text-ink hover:text-accent-ink transition-colors break-all"
                   >
                     {c.value}
                   </a>

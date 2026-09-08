@@ -117,14 +117,18 @@ const groups: Group[] = [
 
 export function TechStack() {
   return (
-    <section id="stack" className="rule-section py-20 lg:py-28">
+    <section id="stack" className="surface-warm py-20 lg:py-28 border-t border-rule">
       <div className="mx-auto max-w-[88rem] px-6 lg:px-10">
-        <div className="grid lg:grid-cols-[22rem_1fr] gap-10 lg:gap-16">
+        <header>
+          <p className="label">Stack</p>
+          <h2 className="display mt-5 text-[clamp(2.75rem,9.5vw,8rem)]">
+            Herramientas
+          </h2>
+        </header>
+
+        <div className="mt-14 lg:mt-20 grid lg:grid-cols-[22rem_1fr] gap-10 lg:gap-16">
           <div className="lg:sticky lg:top-24 lg:self-start">
-            <h2 className="display-sm text-[clamp(1.875rem,3.5vw,2.75rem)]">
-              Herramientas
-            </h2>
-            <p className="mt-4 prose-measure text-ink-muted">
+            <p className="prose-measure text-ink-muted">
               Lo que de verdad tengo abierto en el día. El primer bloque es el
               que aparece en los notebooks de este sitio; el resto es lo que uso
               para llevar un análisis a producción.
@@ -138,7 +142,7 @@ export function TechStack() {
                 className="grid sm:grid-cols-[10rem_1fr] gap-x-8 gap-y-3 py-7 border-b border-rule"
               >
                 <div>
-                  <dt className="text-[0.9375rem] font-semibold text-ink">
+                  <dt className="title-row text-[1.0625rem] text-ink">
                     {group.label}
                   </dt>
                   <p className="mt-1.5 text-[0.8125rem] leading-snug text-ink-faint sm:pr-4">
@@ -162,7 +166,7 @@ export function TechStack() {
 
                   {group.extras && (
                     <details className="group/ex mt-4">
-                      <summary className="inline-flex items-center gap-2 text-[0.8125rem] text-ink-faint hover:text-ink transition-colors">
+                      <summary className="inline-flex items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-ink-faint hover:text-accent-ink transition-colors">
                         <span
                           aria-hidden
                           className="inline-block w-3 text-center transition-transform group-open/ex:rotate-90"

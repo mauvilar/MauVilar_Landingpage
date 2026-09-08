@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
-  <rect width="1600" height="900" fill="#0C324A"/>
-  <rect x="1080" y="0" width="520" height="900" fill="#C11720"/>
-  <g stroke="#FEF1D5" stroke-width="1.5" opacity="0.08">
+  <rect width="1600" height="900" fill="#050706"/>
+  <rect x="1080" y="0" width="520" height="900" fill="#00DF81"/>
+  <g stroke="#F3F1EC" stroke-width="1.5" opacity="0.08">
     <line x1="0" y1="225" x2="1080" y2="225"/>
     <line x1="0" y1="450" x2="1080" y2="450"/>
     <line x1="0" y1="675" x2="1080" y2="675"/>
@@ -9,14 +9,14 @@
     <line x1="540" y1="0" x2="540" y2="900"/>
     <line x1="810" y1="0" x2="810" y2="900"/>
   </g>
-  <g transform="translate(180 290)" stroke="#FEF1D5" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <g transform="translate(180 290)" stroke="#F3F1EC" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <rect x="0" y="0" width="720" height="320" rx="18"/>
     <line x1="0" y1="80" x2="720" y2="80"/>
     <line x1="240" y1="0" x2="240" y2="320"/>
     <line x1="480" y1="0" x2="480" y2="320"/>
-    <circle cx="120" cy="40" r="6" fill="#FEF1D5"/>
-    <circle cx="360" cy="40" r="6" fill="#FEF1D5"/>
-    <circle cx="600" cy="40" r="6" fill="#FEF1D5"/>
+    <circle cx="120" cy="40" r="6" fill="#F3F1EC"/>
+    <circle cx="360" cy="40" r="6" fill="#F3F1EC"/>
+    <circle cx="600" cy="40" r="6" fill="#F3F1EC"/>
     <line x1="40" y1="150" x2="180" y2="150"/>
     <line x1="280" y1="150" x2="420" y2="150"/>
     <line x1="520" y1="150" x2="680" y2="150"/>
@@ -27,12 +27,13 @@
     <line x1="280" y1="280" x2="420" y2="280"/>
     <line x1="520" y1="280" x2="600" y2="280"/>
   </g>
-  <g transform="translate(1340 360)" stroke="#FEF1D5" fill="none" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M0 -120 L0 120 M-120 0 L120 0" stroke-width="14"/>
-    <path d="M-80 -80 L80 80 M-80 80 L80 -80" stroke-width="8" opacity="0.55"/>
-    <circle cx="0" cy="0" r="22" fill="#FEF1D5" stroke="none"/>
+  <g transform="translate(1340 360)" stroke="#050706" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="-150" y="-170" width="300" height="70" stroke-width="10"/>
+    <rect x="-150" y="-60" width="300" height="70" stroke-width="10"/>
+    <line x1="-170" y1="-25" x2="170" y2="-25" stroke-width="14"/>
+    <rect x="-150" y="50" width="300" height="70" stroke-width="10" fill="#050706"/>
   </g>
-  <g transform="translate(1180 720)" stroke="#FEF1D5" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <g transform="translate(1180 720)" stroke="#050706" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round">
     <path d="M0 0 L24 24 L72 -28"/>
   </g>
 </svg>

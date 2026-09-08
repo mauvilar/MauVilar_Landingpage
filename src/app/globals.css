@@ -1,44 +1,102 @@
 @import "tailwindcss";
+@import "./tokens.css";
 
 /* ==========================================================================
-   Sistema "Informe"
-   Fondo navy, tinta crema, un solo rojo. La jerarquía la hacen los filetes,
-   la tipografía y el espacio, no las sombras,
-   los degradados ni el vidrio.
-   Contrastes verificados contra el fondo #0C324A (WCAG AA).
+   NyxAI — Editorial v3
+   -------------------------------------------------------------------------
+   `tokens.css` (importado arriba) es la copia del núcleo de la marca: los
+   HECHOS — verde #00DF81, rich-black #050706, crema #F3F1EC, Archivo /
+   Outfit / IBM Plex Mono. Este archivo es la capa SEMÁNTICA de este sitio:
+   las DECISIONES de qué primitivo pinta qué. La marca deja esa capa a cada
+   proyecto a propósito, así que aquí no se redefine ningún primitivo, sólo
+   se apunta a ellos.
+
+   La página es crema. Dos secciones caen a rich-black — proyectos y NyxAI —
+   y esa alternancia es la estructura: el cambio de superficie separa, no una
+   línea. La jerarquía la hacen el póster, los filetes y el espacio.
+   Nada de degradados, sombras difusas, vidrio ni glow.
    ========================================================================== */
 
 @theme {
-  /* Superficies. Tres valores sólidos, sin translúcidos. */
-  --color-paper: #0c324a;        /* página */
-  --color-paper-deep: #07253a;   /* pie, pozos de código */
-  --color-paper-raised: #10405d; /* cabeceras de tabla, hover */
+  /* --- Superficie clara (base) ------------------------------------------ */
+  --color-paper: var(--nyx-cream);          /* crema · fondo base            */
+  --color-paper-raised: var(--nyx-cream-2); /* crema cálida · lámina, alterna */
+  --color-paper-deep: var(--nyx-night-850); /* pozo: código sobre crema      */
 
-  /* Tintas. Todas derivadas de la crema sobre el navy: una sola familia. */
-  --color-ink: #fef1d5;          /* 11.9:1 */
-  --color-ink-muted: #bfbfb1;    /*  7.2:1 */
-  --color-ink-faint: #9da59d;    /*  5.3:1 */
+  /* Tintas sobre crema. ink y muted son primitivos de la marca; la tinta
+     intermedia es su punto medio, para tener tres niveles legibles y que
+     ninguna etiqueta baje de 4.5:1. */
+  --color-ink: var(--nyx-ink);   /* 16.1:1 */
+  --color-ink-muted: #41413e;    /*  9.1:1 — punto medio ink↔muted */
+  --color-ink-faint: var(--nyx-muted); /* 4.6:1 */
 
-  /* Filetes. */
-  --color-rule: #2c6183;         /* separación tranquila */
-  --color-rule-strong: #4e85a6;  /* estructura, 3.3:1 */
+  /* Filetes: separadores decorativos, no bordes de control. */
+  --color-rule: var(--nyx-line);
+  --color-rule-strong: #b5ae9d;  /* el mismo filete, un paso más firme */
 
-  /* Acentos. El rojo se usa como relleno o marca; nunca como texto pequeño
-     (2.2:1 sobre navy). Para texto acentuado existe su versión clara. */
-  --color-accent: #c11720;
-  --color-accent-ink: #e8737a;   /*  4.6:1 */
-  --color-marine: #679cbc;
-  --color-marine-ink: #7baecb;   /*  5.6:1 */
+  /* Verde. Es el único color del sistema.
+     Como relleno va el verde de marca; como TEXTO sobre crema da 1.6:1, así
+     que el rol de texto lo cubre el verde-800 de la misma escala (5.6:1). */
+  --color-accent: var(--nyx-green);
+  --color-accent-deep: var(--nyx-green-deep);
+  --color-accent-ink: var(--nyx-green-800);
 
-  --font-display: var(--font-fraunces), Georgia, "Times New Roman", serif;
-  --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-plex-mono), ui-monospace, "SF Mono", monospace;
+  --font-display: var(--nyx-font-display);
+  --font-sans: var(--nyx-font-body);
+  --font-mono: var(--nyx-font-mono);
 }
 
 :root {
-  color-scheme: dark;
-  --measure: 68ch;
+  color-scheme: light;
   --nav-h: 4rem;
+
+  /* Las tres familias las sirve next/font (self-hosted, sin FOUT), así que
+     el stack de la marca se antepone con la variable que inyecta el layout.
+     Va sin capa y después del núcleo, para ganarle a la definición de
+     `tokens.css`: es un remapeo deliberado, no una deriva. */
+  --font-display: var(--font-archivo), "Archivo", "Arial Narrow", sans-serif;
+  --font-body: var(--font-outfit), "Outfit", system-ui, sans-serif;
+  --font-mono: var(--font-plex-mono), "IBM Plex Mono", ui-monospace, monospace;
+}
+
+/* --- Superficies -----------------------------------------------------------
+   Cada sección declara su superficie remapeando los tokens semánticos. Así
+   `text-ink`, `border-rule` o `bg-paper-deep` significan lo correcto adentro
+   sin que ningún componente sepa en qué fondo cayó.
+
+   Van en la capa `components` a propósito: así una utilidad de Tailwind
+   (`bg-paper-deep`, por ejemplo) todavía puede pisar el fondo de la sección. */
+
+@layer components {
+
+.surface-warm {
+  --color-paper: var(--nyx-cream-2);
+  --color-paper-raised: var(--nyx-cream);
+  background: var(--color-paper);
+}
+
+.surface-night {
+  color-scheme: dark;
+
+  --color-paper: var(--nyx-night-900);   /* rich-black canónico */
+  --color-paper-raised: var(--nyx-night-700);
+  --color-paper-deep: var(--nyx-night-850);
+
+  /* Sobre la noche el texto es crema, nunca blanco puro. */
+  --color-ink: var(--nyx-on-dark);              /* 17.9:1 */
+  --color-ink-muted: var(--nyx-on-dark-muted);  /*  8.8:1 */
+  --color-ink-faint: var(--nyx-on-dark-faint);  /*  5.2:1 */
+
+  --color-rule: var(--nyx-line-dark);
+  --color-rule-strong: var(--nyx-line-dark-2);
+
+  /* Aquí el verde de marca sí es legible como texto: 11.4:1. */
+  --color-accent-ink: var(--nyx-green);
+
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
 }
 
 /* La barra es fija: las secciones ancladas se detienen debajo de ella. */
@@ -58,7 +116,7 @@ body {
   color: var(--color-ink);
   font-family: var(--font-sans);
   font-size: 1rem;
-  line-height: 1.65;
+  line-height: 1.62;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
@@ -70,7 +128,7 @@ body {
 
 ::selection {
   background: var(--color-accent);
-  color: var(--color-ink);
+  color: var(--nyx-night-900);
 }
 
 ::-webkit-scrollbar {
@@ -78,59 +136,69 @@ body {
   height: 12px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--color-paper-deep);
+  background: var(--color-paper-raised);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--color-rule);
-  border: 3px solid var(--color-paper-deep);
+  background: var(--color-rule-strong);
+  border: 3px solid var(--color-paper-raised);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--color-rule-strong);
+  background: var(--color-ink-faint);
 }
 * {
-  scrollbar-color: var(--color-rule) var(--color-paper-deep);
+  scrollbar-color: var(--color-rule-strong) var(--color-paper-raised);
 }
 
 :where(a, button, input, textarea, select, summary, [tabindex]):focus-visible {
-  outline: 2px solid var(--color-ink);
+  outline: 2px solid var(--color-accent);
   outline-offset: 3px;
   border-radius: 1px;
 }
 
 input,
 textarea {
-  caret-color: var(--color-accent-ink);
+  caret-color: var(--color-accent);
 }
 
 @layer components {
-/* --- Tipografía ---------------------------------------------------------- */
+/* --- Tipografía ----------------------------------------------------------
+   Tres familias, un rol cada una (TIPOGRAFIA.md §1):
+   Archivo = póster · Outfit = cuerpo · IBM Plex Mono = etiqueta y dato. */
 
-/* Fraunces es variable: opsz da el corte de titular, WONK las formas
-   inclinadas que le dan carácter. wght va explícito porque
-   font-variation-settings gana sobre font-weight. */
+/* El póster. Archivo variable, ancho y pesado, siempre en mayúsculas.
+   font-variation-settings gana sobre font-weight, así que wght va explícito. */
 .display {
   font-family: var(--font-display);
-  font-variation-settings: "opsz" 144, "SOFT" 0, "WONK" 1, "wght" 600;
-  letter-spacing: -0.024em;
-  line-height: 1.02;
+  font-variation-settings: "wght" 810, "wdth" 125;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  line-height: 0.9;
   text-wrap: balance;
 }
 
+/* Póster de sección: mismo gesto, un punto menos de ancho para que un
+   título de dos palabras no se coma la retícula. */
 .display-sm {
   font-family: var(--font-display);
-  font-variation-settings: "opsz" 48, "SOFT" 0, "WONK" 1, "wght" 600;
-  letter-spacing: -0.016em;
+  font-variation-settings: "wght" 800, "wdth" 118;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.012em;
+  line-height: 0.94;
+  text-wrap: balance;
+}
+
+/* Título de ficha o de fila: cuerpo, no póster (TIPOGRAFIA.md §3). */
+.title-row {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: -0.012em;
   line-height: 1.12;
   text-wrap: balance;
 }
 
-.display-quote {
-  font-family: var(--font-display);
-  font-variation-settings: "opsz" 20, "SOFT" 40, "WONK" 0, "wght" 400;
-  font-style: italic;
-}
-
-/* Etiqueta de ficha: mono, versalitas ópticas, muy espaciada. */
+/* Etiqueta de ficha: mono, mayúsculas, muy espaciada. */
 .label {
   font-family: var(--font-mono);
   font-size: 0.6875rem;
@@ -153,8 +221,8 @@ textarea {
 }
 
 /* --- Filete de sección ---------------------------------------------------
-   El separador estructural del informe: una barra de acento sobre la
-   hairline que cruza todo el ancho. */
+   Sólo entre dos secciones del mismo tono: cuando la superficie cambia de
+   crema a noche, el corte ya es el separador y esto sobra. */
 
 .rule-section {
   border-top: 1px solid var(--color-rule);
@@ -176,30 +244,36 @@ textarea {
   }
 }
 
-/* --- Controles ----------------------------------------------------------- */
+/* --- Controles ------------------------------------------------------------
+   Píldora mono en mayúsculas, como en nyxaistudio.com. Es la única forma
+   redondeada del sistema: todo lo demás va a escuadra, así que el radio aquí
+   se lee como decisión y no como el default del framework. */
 
 .btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.75rem 1.375rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  gap: 0.625rem;
+  padding: 0.9375rem 1.75rem;
+  border-radius: 999px;
   border: 1px solid transparent;
-  transition: background-color 0.16s ease, color 0.16s ease,
-    border-color 0.16s ease, transform 0.1s ease;
-}
-.btn:active {
-  transform: translateY(1px);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  line-height: 1;
+  transition: background-color 0.24s cubic-bezier(0.25, 1, 0.5, 1),
+    color 0.24s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.24s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+/* Sobre verde el texto va en rich-black, nunca en crema (DESIGN_SYSTEM §2). */
 .btn-solid {
   background: var(--color-accent);
-  color: var(--color-ink);
+  color: var(--nyx-night-900);
 }
 .btn-solid:hover {
-  background: #a5121a;
+  background: var(--color-accent-deep);
 }
 
 .btn-outline {
@@ -207,19 +281,20 @@ textarea {
   color: var(--color-ink);
 }
 .btn-outline:hover {
-  background: var(--color-paper-raised);
-  border-color: var(--color-ink-faint);
+  border-color: var(--color-accent);
+  color: var(--color-accent-ink);
 }
 
+/* El enlace de texto del sistema: sin píldora, con filete abajo. */
 .btn-quiet {
-  padding-left: 0;
-  padding-right: 0;
+  padding: 0.25rem 0;
+  border-radius: 0;
   color: var(--color-ink-muted);
   border-bottom: 1px solid var(--color-rule-strong);
 }
 .btn-quiet:hover {
-  color: var(--color-ink);
-  border-bottom-color: var(--color-ink);
+  color: var(--color-accent-ink);
+  border-bottom-color: var(--color-accent);
 }
 
 /* --- Etiqueta de categoría ----------------------------------------------
@@ -229,18 +304,18 @@ textarea {
 .tag {
   display: inline-flex;
   align-items: center;
-  padding: 0.25rem 0.5rem;
+  padding: 0.3125rem 0.5625rem;
   font-family: var(--font-mono);
   font-size: 0.6875rem;
-  letter-spacing: 0.06em;
-  color: var(--color-ink-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
   border: 1px solid var(--color-rule);
   white-space: nowrap;
 }
 .tag-lead {
   color: var(--color-ink);
-  border-color: var(--color-rule-strong);
-  background: var(--color-paper-raised);
+  border-color: var(--color-accent);
 }
 
 /* --- Salto a contenido --------------------------------------------------- */
@@ -251,17 +326,21 @@ textarea {
   top: -100%;
   z-index: 100;
   padding: 0.75rem 1.25rem;
-  background: var(--color-ink);
-  color: var(--color-paper);
-  font-weight: 600;
-  font-size: 0.875rem;
+  background: var(--color-accent);
+  color: var(--nyx-night-900);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 .skip-link:focus {
   top: 1rem;
 }
 }
 
-/* --- Cuerpo del notebook ------------------------------------------------- */
+/* --- Cuerpo del notebook -------------------------------------------------
+   El notebook se lee sobre crema, como un impreso; sólo el código baja a la
+   noche. Esa alternancia es la misma de la portada, a escala de página. */
 
 .markdown-body {
   color: var(--color-ink-muted);
@@ -274,9 +353,10 @@ textarea {
 .markdown-body h2,
 .markdown-body h3,
 .markdown-body h4 {
-  font-family: var(--font-display);
-  font-variation-settings: "opsz" 36, "SOFT" 0, "WONK" 1, "wght" 600;
-  letter-spacing: -0.015em;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: -0.012em;
+  line-height: 1.15;
   color: var(--color-ink);
   margin-top: 2.5rem;
   margin-bottom: 0.75rem;
@@ -284,6 +364,11 @@ textarea {
   text-wrap: balance;
 }
 .markdown-body h1 {
+  font-family: var(--font-display);
+  font-variation-settings: "wght" 800, "wdth" 118;
+  text-transform: uppercase;
+  letter-spacing: -0.012em;
+  line-height: 0.96;
   font-size: 1.875rem;
 }
 .markdown-body h2 {
@@ -311,7 +396,7 @@ textarea {
 .markdown-body code {
   font-family: var(--font-mono);
   font-size: 0.85em;
-  background: var(--color-paper-deep);
+  background: var(--color-paper-raised);
   color: var(--color-ink);
   padding: 0.1rem 0.35rem;
   border: 1px solid var(--color-rule);
@@ -332,27 +417,28 @@ textarea {
 }
 .markdown-body li::marker {
   color: var(--color-accent-ink);
+  font-family: var(--font-mono);
 }
 .markdown-body a {
-  color: var(--color-marine-ink);
+  color: var(--color-accent-ink);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
   text-decoration-color: var(--color-rule-strong);
-  transition: text-decoration-color 0.16s ease;
+  transition: text-decoration-color 0.24s ease;
 }
 .markdown-body a:hover {
   text-decoration-color: currentColor;
 }
+/* La cita se marca con un filete verde y una tinta más firme; no cambia de
+   familia, porque el sistema no tiene serif. */
 .markdown-body blockquote {
-  margin: 1.75rem 0 1.75rem 1.5rem;
-  padding: 0;
+  margin: 1.75rem 0;
+  padding: 0.125rem 0 0.125rem 1.5rem;
+  border-left: 2px solid var(--color-accent);
   color: var(--color-ink);
-  font-family: var(--font-display);
-  font-variation-settings: "opsz" 20, "SOFT" 40, "WONK" 0, "wght" 400;
-  font-style: italic;
   font-size: 1.125rem;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 .markdown-body blockquote p {
   margin: 0.35rem 0;
@@ -375,7 +461,9 @@ textarea {
   color: var(--color-ink);
   font-weight: 600;
   border-bottom-color: var(--color-rule-strong);
-  letter-spacing: 0.04em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.6875rem;
 }
 .markdown-body hr {
   border: none;
@@ -383,7 +471,9 @@ textarea {
   margin: 2.5rem 0;
 }
 
-/* --- Bloques de código --------------------------------------------------- */
+/* --- Bloques de código ---------------------------------------------------
+   Pozo de noche sobre la página crema. El tema de Shiki se construye con los
+   mismos tokens (src/lib/highlight.ts): crema en tres niveles y verde. */
 
 .code-block pre {
   font-family: var(--font-mono);
@@ -405,7 +495,8 @@ textarea {
 }
 
 /* --- Movimiento ----------------------------------------------------------
-   Un solo momento: la entrada del encabezado. Nada más se anima al aparecer. */
+   Un solo momento: la entrada del encabezado. Nada más se anima al aparecer.
+   Ease-out exponencial, sin rebote (tokens.css §9). */
 
 @keyframes rise {
   from {
@@ -419,7 +510,7 @@ textarea {
 }
 
 .rise {
-  animation: rise 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation: rise 0.72s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 @media (prefers-reduced-motion: reduce) {

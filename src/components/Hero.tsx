@@ -20,22 +20,26 @@ export function Hero() {
           <div className="rise">
             <p className="label">Portafolio de ciencia de datos</p>
 
-            <h1 className="display mt-5 text-[clamp(2.75rem,7.5vw,5.75rem)]">
-              Mauricio Vilar Giribet
+            {/* El póster de la marca: Archivo ancho y pesado, mayúsculas,
+                partido en tres líneas para que ocupe el bloque entero. */}
+            <h1 className="display mt-6 text-[clamp(2.75rem,10.5vw,7.5rem)]">
+              <span className="block">Mauricio</span>
+              <span className="block">Vilar</span>
+              <span className="block">Giribet</span>
             </h1>
 
             {/* El separador va pegado al término que sigue, para que un
                 punto suelto nunca termine una línea. */}
-            <ul className="mt-7 pt-5 border-t border-rule-strong flex flex-wrap text-[0.9375rem]">
+            <ul className="mt-8 pt-5 border-t border-rule-strong flex flex-wrap font-mono text-[0.8125rem] uppercase tracking-[0.14em]">
               <li className="text-ink">AI Engineer</li>
               <li className="text-ink">
-                <span aria-hidden className="text-ink-faint px-3">
+                <span aria-hidden className="text-accent px-3">
                   ·
                 </span>
                 Data Analyst
               </li>
-              <li className="text-ink-muted">
-                <span aria-hidden className="text-ink-faint px-3">
+              <li className="text-ink-faint">
+                <span aria-hidden className="text-accent px-3">
                   ·
                 </span>
                 Ciudad de México
@@ -68,7 +72,7 @@ export function Hero() {
                 href="/cv-en.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn btn-quiet text-sm"
+                className="btn btn-quiet"
               >
                 En inglés
               </a>
@@ -85,7 +89,7 @@ export function Hero() {
                         ? "noopener noreferrer"
                         : undefined
                     }
-                    className="text-ink-muted hover:text-ink transition-colors underline decoration-rule-strong underline-offset-[6px] hover:decoration-ink"
+                    className="text-ink-muted hover:text-accent-ink transition-colors underline decoration-rule-strong underline-offset-[6px] hover:decoration-accent"
                   >
                     {link.label}
                   </a>

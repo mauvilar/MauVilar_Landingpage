@@ -64,7 +64,7 @@ export default async function ProjectPage({
             {prev ? (
               <Link href={`/projects/${prev.slug}`} className="group block">
                 <span className="label text-[0.625rem]">← Anterior</span>
-                <span className="mt-2 block display-sm text-lg text-ink-muted group-hover:text-ink transition-colors">
+                <span className="mt-2 block title-row text-lg text-ink-muted group-hover:text-accent-ink transition-colors">
                   {prev.title}
                 </span>
               </Link>
@@ -77,7 +77,7 @@ export default async function ProjectPage({
                 className="group block sm:text-right"
               >
                 <span className="label text-[0.625rem]">Siguiente →</span>
-                <span className="mt-2 block display-sm text-lg text-ink-muted group-hover:text-ink transition-colors">
+                <span className="mt-2 block title-row text-lg text-ink-muted group-hover:text-accent-ink transition-colors">
                   {next.title}
                 </span>
               </Link>
@@ -103,13 +103,13 @@ function ProjectHeader({
       <div className="mx-auto max-w-[88rem] px-6 lg:px-10 pt-24 lg:pt-28 pb-10">
         <nav
           aria-label="Ruta"
-          className="flex flex-wrap items-center gap-2 text-[0.8125rem] text-ink-faint"
+          className="flex flex-wrap items-center gap-2 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-ink-faint"
         >
-          <Link href="/" className="hover:text-ink transition-colors">
+          <Link href="/" className="hover:text-accent-ink transition-colors">
             Inicio
           </Link>
           <span aria-hidden>/</span>
-          <Link href="/#proyectos" className="hover:text-ink transition-colors">
+          <Link href="/#proyectos" className="hover:text-accent-ink transition-colors">
             Proyectos
           </Link>
           <span aria-hidden>/</span>
@@ -120,7 +120,7 @@ function ProjectHeader({
 
         <div className="mt-8 grid lg:grid-cols-[1.25fr_1fr] gap-10 lg:gap-16 items-start">
           <div>
-            <h1 className="display text-[clamp(2rem,5vw,3.75rem)]">
+            <h1 className="display-sm text-[clamp(2rem,5.2vw,4.25rem)]">
               {project.title}
             </h1>
 
@@ -153,7 +153,7 @@ function ProjectHeader({
           </div>
 
           {project.coverImage && (
-            <div className="relative aspect-[16/10] border border-rule bg-paper-deep overflow-hidden">
+            <div className="relative aspect-[16/10] border border-rule bg-paper-raised overflow-hidden">
               <Image
                 src={project.coverImage}
                 alt=""
@@ -209,7 +209,7 @@ function Sidebar({
               href={project.repoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-mono text-[0.75rem] leading-relaxed text-marine-ink hover:text-ink transition-colors break-all"
+              className="font-mono text-[0.75rem] leading-relaxed text-accent-ink hover:text-ink transition-colors break-all"
             >
               {project.repoPath}
             </a>
@@ -217,10 +217,7 @@ function Sidebar({
         </div>
       </dl>
 
-      <Link
-        href="/#proyectos"
-        className="btn btn-quiet mt-6 text-[0.8125rem]"
-      >
+      <Link href="/#proyectos" className="btn btn-quiet mt-7">
         <span aria-hidden>←</span>
         Volver al índice
       </Link>

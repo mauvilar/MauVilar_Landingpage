@@ -11,7 +11,7 @@ export function ModelResults({ results }: { results: ResultsTable }) {
       aria-labelledby="resultados"
       className="mt-14 pt-8 border-t-2 border-accent"
     >
-      <h2 id="resultados" className="display-sm text-2xl">
+      <h2 id="resultados" className="display-sm text-[clamp(1.5rem,2.6vw,2.125rem)]">
         {results.heading}
       </h2>
 
@@ -58,7 +58,7 @@ export function ModelResults({ results }: { results: ResultsTable }) {
                   >
                     {row[col.key]}
                     {j === 0 && row.best && (
-                      <span className="label ml-2 text-[0.5625rem] text-accent-ink">
+                      <span className="label ml-2.5 text-[0.5625rem] text-accent-ink">
                         Elegido
                       </span>
                     )}

@@ -57,12 +57,16 @@ export function About() {
   return (
     <section id="sobre-mi" className="rule-section py-20 lg:py-28">
       <div className="mx-auto max-w-[88rem] px-6 lg:px-10">
-        <div className="grid lg:grid-cols-[22rem_1fr] gap-10 lg:gap-16">
+        <header>
+          <p className="label">Quién</p>
+          <h2 className="display mt-5 text-[clamp(2.75rem,9.5vw,8rem)]">
+            Trayectoria
+          </h2>
+        </header>
+
+        <div className="mt-14 lg:mt-20 grid lg:grid-cols-[22rem_1fr] gap-10 lg:gap-16">
           <div className="lg:sticky lg:top-24 lg:self-start">
-            <h2 className="display-sm text-[clamp(1.875rem,3.5vw,2.75rem)]">
-              Trayectoria
-            </h2>
-            <p className="mt-4 prose-measure text-ink-muted">
+            <p className="prose-measure text-ink-muted">
               Mexicano y australiano, formado en negocios y reentrenado en datos
               e IA. Español nativo, inglés C1. Lo que mejor hago es traducir un
               problema de negocio en una pregunta que los datos sí pueden
@@ -85,10 +89,10 @@ export function About() {
                     </span>
                   </p>
                   <div>
-                    <h4 className="text-lg font-semibold text-ink leading-snug">
+                    <h4 className="title-row text-[1.1875rem] text-ink">
                       {item.role}
                     </h4>
-                    <p className="mt-0.5 text-[0.9375rem] text-marine-ink">
+                    <p className="mt-1 font-mono text-[0.75rem] uppercase tracking-[0.12em] text-accent-ink">
                       {item.org}
                     </p>
                     <p className="mt-3 prose-measure text-[0.9375rem] leading-relaxed text-ink-muted">

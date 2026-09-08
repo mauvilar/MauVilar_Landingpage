@@ -40,19 +40,22 @@ export function Navbar() {
         className="mx-auto max-w-[88rem] px-6 lg:px-10 h-16 flex items-center justify-between gap-6"
       >
         <Link href="/" className="flex items-center gap-3 shrink-0">
+          {/* El isotipo va montado desde el kit de marca, nunca recreado. */}
           <Image
             src="/logo.png"
             alt=""
-            width={80}
-            height={80}
+            width={512}
+            height={512}
             priority
-            className="h-9 w-9 object-contain"
+            className="h-8 w-8 object-contain"
           />
           <span className="flex flex-col leading-none">
             <span className="text-[0.9375rem] font-semibold tracking-tight">
               Mauricio Vilar
             </span>
-            <span className="label mt-1 text-[0.625rem] hidden sm:block">Datos · IA</span>
+            <span className="label mt-1.5 text-[0.5625rem] hidden sm:block">
+              Datos · IA
+            </span>
           </span>
         </Link>
 
@@ -64,31 +67,29 @@ export function Navbar() {
                 key={l.href}
                 href={l.href}
                 aria-current={isActive ? "true" : undefined}
-                className={`relative h-full flex items-center px-4 text-sm transition-colors ${
-                  isActive
-                    ? "text-ink"
-                    : "text-ink-muted hover:text-ink"
+                className={`relative h-full flex items-center px-4 font-mono text-[0.75rem] uppercase tracking-[0.16em] transition-colors ${
+                  isActive ? "text-ink" : "text-ink-faint hover:text-ink"
                 }`}
               >
                 {l.label}
                 <span
                   aria-hidden
-                  className={`absolute inset-x-3 bottom-0 h-[2px] transition-opacity ${
-                    isActive ? "bg-accent opacity-100" : "opacity-0"
+                  className={`absolute inset-x-4 bottom-0 h-[2px] bg-accent transition-opacity ${
+                    isActive ? "opacity-100" : "opacity-0"
                   }`}
                 />
               </Link>
             );
           })}
-          <span aria-hidden className="mx-3 h-4 w-px bg-rule" />
+          <span aria-hidden className="mx-3 h-4 w-px bg-rule-strong" />
           <a
             href="https://nyxaistudio.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-sm text-ink-muted hover:text-ink transition-colors px-2"
+            className="font-mono text-[0.75rem] uppercase tracking-[0.16em] text-ink-faint hover:text-accent-ink transition-colors px-2"
           >
             NyxAI Studio
-            <span aria-hidden className="text-ink-faint ml-1">
+            <span aria-hidden className="ml-1.5">
               ↗
             </span>
           </a>
@@ -97,7 +98,7 @@ export function Navbar() {
         <div className="flex items-center gap-3">
           <a
             href="mailto:unicemau@gmail.com"
-            className="hidden md:inline-flex btn btn-solid text-[0.8125rem] py-2 px-4"
+            className="hidden md:inline-flex btn btn-solid py-3 px-6 text-[0.6875rem]"
           >
             Escríbeme
           </a>
@@ -138,7 +139,7 @@ export function Navbar() {
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className="py-3 text-sm text-ink border-b border-rule last:border-b-0"
+              className="py-3.5 font-mono text-[0.75rem] uppercase tracking-[0.16em] text-ink border-b border-rule last:border-b-0"
             >
               {l.label}
             </Link>
@@ -148,7 +149,7 @@ export function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}
-            className="py-3 text-sm text-ink-muted border-t border-rule"
+            className="py-3.5 font-mono text-[0.75rem] uppercase tracking-[0.16em] text-accent-ink border-t border-rule"
           >
             NyxAI Studio ↗
           </a>

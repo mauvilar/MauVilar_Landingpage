@@ -1,19 +1,23 @@
-import type { Metadata } from "next";
-import { Fraunces, IBM_Plex_Mono, Public_Sans } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Archivo, IBM_Plex_Mono, Outfit } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+/* Las tres familias de la marca, una por rol: Archivo para el póster, Outfit
+   para el cuerpo, IBM Plex Mono para etiquetas y datos.
+   Archivo se carga como variable con el eje wdth: el póster va a wdth 125. */
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin"],
-  axes: ["opsz", "SOFT", "WONK"],
+  axes: ["wdth"],
   display: "swap",
 });
 
-const publicSans = Public_Sans({
-  variable: "--font-public-sans",
+const outfit = Outfit({
+  variable: "--font-outfit",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -64,6 +68,12 @@ export const metadata: Metadata = {
   robots: { index: true, follow: true },
 };
 
+/* Crema, no blanco: la barra del navegador móvil también es superficie. */
+export const viewport: Viewport = {
+  themeColor: "#F3F1EC",
+  colorScheme: "light",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -76,7 +86,7 @@ export default function RootLayout({
     <html
       lang="es"
       suppressHydrationWarning
-      className={`${fraunces.variable} ${publicSans.variable} ${plexMono.variable}`}
+      className={`${archivo.variable} ${outfit.variable} ${plexMono.variable}`}
     >
       <body className="antialiased min-h-screen flex flex-col">
         <a href="#contenido" className="skip-link">

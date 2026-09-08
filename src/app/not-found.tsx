@@ -9,7 +9,7 @@ export default function NotFound() {
       <div className="grid lg:grid-cols-[1fr_28rem] gap-12 lg:gap-20">
         <div>
           <p className="label">Error 404</p>
-          <h1 className="display mt-5 text-[clamp(2.25rem,6vw,4.5rem)]">
+          <h1 className="display mt-6 text-[clamp(2.25rem,7vw,5.5rem)]">
             Esta página no existe
           </h1>
           <p className="mt-7 prose-measure text-ink-muted">
@@ -33,7 +33,7 @@ export default function NotFound() {
               <li key={p.slug} className="border-b border-rule">
                 <Link
                   href={`/projects/${p.slug}`}
-                  className="block py-3.5 text-[0.9375rem] text-ink-muted hover:text-ink transition-colors"
+                  className="block py-3.5 text-[0.9375rem] text-ink-muted hover:text-accent-ink transition-colors"
                 >
                   {p.title}
                 </Link>

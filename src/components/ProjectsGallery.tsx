@@ -48,11 +48,12 @@ export function ProjectsGallery({ projects }: Props) {
   );
 
   return (
-    <section id="proyectos" className="rule-section py-20 lg:py-28">
+    <section id="proyectos" className="surface-night py-24 lg:py-32">
       <div className="mx-auto max-w-[88rem] px-6 lg:px-10">
         <div className="grid lg:grid-cols-[1fr_auto] gap-8 lg:gap-16 lg:items-end">
           <div>
-            <h2 className="display-sm text-[clamp(1.875rem,3.5vw,2.75rem)]">
+            <p className="label">El trabajo</p>
+            <h2 className="display mt-4 text-[clamp(3rem,8vw,7rem)]">
               Proyectos
             </h2>
             <p className="mt-4 prose-measure text-ink-muted">
@@ -78,13 +79,13 @@ export function ProjectsGallery({ projects }: Props) {
                   type="button"
                   onClick={() => setFilter(f)}
                   aria-pressed={isActive}
-                  className={`relative px-3 py-3.5 text-[0.8125rem] transition-colors ${
-                    isActive ? "text-ink" : "text-ink-faint hover:text-ink"
+                  className={`relative px-3 py-4 font-mono text-[0.6875rem] uppercase tracking-[0.14em] transition-colors ${
+                    isActive ? "text-accent" : "text-ink-faint hover:text-ink"
                   }`}
                 >
                   {SHORT_NAMES[f] ?? f}
-                  <span className="num ml-1.5 text-[0.6875rem] text-ink-faint">
-                    {counts[f]}
+                  <span className="num ml-2 text-[0.6875rem] text-ink-faint">
+                    {String(counts[f]).padStart(2, "0")}
                   </span>
                   <span
                     aria-hidden
@@ -165,7 +166,7 @@ function ProjectCover({
         />
       ) : (
         <span className="absolute inset-0 grid place-items-center">
-          <span className="display text-[clamp(3rem,7vw,6rem)] text-rule-strong select-none px-6 text-center">
+          <span className="display text-[clamp(2.5rem,6vw,5rem)] text-ink-faint select-none px-6 text-center">
             {project.title.split(" ")[0]}
           </span>
         </span>
@@ -187,10 +188,10 @@ function ProjectDetails({
         <span className="num text-sm text-ink-faint shrink-0">
           {String(index + 1).padStart(2, "0")}
         </span>
-        <h3 className="display-sm text-[clamp(1.375rem,2.4vw,2rem)]">
+        <h3 className="title-row text-[clamp(1.375rem,2.4vw,2rem)]">
           <Link
             href={`/projects/${project.slug}`}
-            className="decoration-transparent underline underline-offset-[7px] decoration-2 transition-[text-decoration-color] duration-200 group-hover:decoration-accent"
+            className="decoration-transparent underline underline-offset-[8px] decoration-2 transition-[text-decoration-color] duration-200 group-hover:decoration-accent"
           >
             {project.title}
           </Link>
@@ -214,10 +215,7 @@ function ProjectDetails({
       </p>
 
       <div className="mt-6 sm:ml-9 flex flex-wrap items-center gap-6">
-        <Link
-          href={`/projects/${project.slug}`}
-          className="btn btn-quiet text-sm"
-        >
+        <Link href={`/projects/${project.slug}`} className="btn btn-quiet">
           Abrir el notebook
           <span aria-hidden>→</span>
         </Link>
@@ -238,7 +236,7 @@ function EmptyState({
 }) {
   return (
     <div className="border-b border-rule py-20 text-center">
-      <p className="display-sm text-2xl">Todavía no hay nada en {area}</p>
+      <p className="title-row text-2xl">Todavía no hay nada en {area}</p>
       <p className="mt-3 text-ink-muted">
         Es un área en la que sigo trabajando. Mientras tanto, el resto del
         portafolio está completo.

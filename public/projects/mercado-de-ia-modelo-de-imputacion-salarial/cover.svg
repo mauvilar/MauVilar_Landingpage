@@ -1,24 +1,24 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
-  <rect width="1600" height="900" fill="#0C324A"/>
-  <rect x="0" y="0" width="640" height="900" fill="#FEF1D5"/>
+  <rect width="1600" height="900" fill="#050706"/>
+  <rect x="0" y="0" width="640" height="900" fill="#F3F1EC"/>
   <g transform="translate(320 450)">
-    <rect x="-200" y="-200" width="400" height="400" fill="none" stroke="#0C324A" stroke-width="16"/>
-    <line x1="-200" y1="200" x2="200" y2="-200" stroke="#679CBC" stroke-width="16"/>
-    <g stroke="#C11720" stroke-width="34" stroke-linecap="round">
+    <rect x="-200" y="-200" width="400" height="400" fill="none" stroke="#050706" stroke-width="16"/>
+    <line x1="-200" y1="200" x2="200" y2="-200" stroke="#050706" stroke-width="16" opacity="0.35"/>
+    <g stroke="#0A6E45" stroke-width="34" stroke-linecap="round">
       <line x1="-140" y1="-140" x2="140" y2="140"/>
       <line x1="140" y1="-140" x2="-140" y2="140"/>
     </g>
   </g>
-  <line x1="760" y1="820" x2="1520" y2="820" stroke="#FEF1D5" stroke-width="6"/>
-  <line x1="780" y1="820" x2="780" y2="300" stroke="#FEF1D5" stroke-width="6"/>
-    <circle cx="820" cy="700" r="16" fill="#FEF1D5"/>
-    <circle cx="880" cy="640" r="16" fill="#FEF1D5"/>
-    <circle cx="940" cy="660" r="16" fill="#FEF1D5"/>
-    <circle cx="1000" cy="580" r="16" fill="#FEF1D5"/>
-    <circle cx="1060" cy="600" r="16" fill="#FEF1D5"/>
-    <circle cx="1120" cy="520" r="16" fill="#FEF1D5"/>
-    <circle cx="1180" cy="540" r="16" fill="#FEF1D5"/>
-    <circle cx="1240" cy="470" r="16" fill="#FEF1D5"/>
-  <path d="M800 720 L1280 440" stroke="#C11720" stroke-width="12" stroke-dasharray="30 24"/>
-  <circle cx="1400" cy="330" r="30" fill="none" stroke="#C11720" stroke-width="12"/>
+  <line x1="760" y1="820" x2="1520" y2="820" stroke="#F3F1EC" stroke-width="6"/>
+  <line x1="780" y1="820" x2="780" y2="300" stroke="#F3F1EC" stroke-width="6"/>
+    <circle cx="820" cy="700" r="16" fill="#F3F1EC"/>
+    <circle cx="880" cy="640" r="16" fill="#F3F1EC"/>
+    <circle cx="940" cy="660" r="16" fill="#F3F1EC"/>
+    <circle cx="1000" cy="580" r="16" fill="#F3F1EC"/>
+    <circle cx="1060" cy="600" r="16" fill="#F3F1EC"/>
+    <circle cx="1120" cy="520" r="16" fill="#F3F1EC"/>
+    <circle cx="1180" cy="540" r="16" fill="#F3F1EC"/>
+    <circle cx="1240" cy="470" r="16" fill="#F3F1EC"/>
+  <path d="M800 720 L1280 440" stroke="#00DF81" stroke-width="12" stroke-dasharray="30 24"/>
+  <circle cx="1400" cy="330" r="30" fill="none" stroke="#00DF81" stroke-width="12"/>
 </svg>

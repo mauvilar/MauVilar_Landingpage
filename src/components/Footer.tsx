@@ -19,18 +19,18 @@ const externos = [
 
 export function Footer() {
   return (
-    <footer className="mt-auto border-t border-rule-strong bg-paper-deep">
+    <footer className="surface-warm mt-auto border-t border-rule-strong">
       <div className="mx-auto max-w-[88rem] px-6 lg:px-10 py-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.5fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-3">
             <Image
               src="/logo.png"
               alt=""
-              width={80}
-              height={80}
-              className="h-9 w-9 object-contain"
+              width={512}
+              height={512}
+              className="h-8 w-8 object-contain"
             />
-            <span className="font-semibold tracking-tight">
+            <span className="title-row text-[1.0625rem]">
               Mauricio Vilar Giribet
             </span>
           </div>
@@ -47,7 +47,7 @@ export function Footer() {
               <li key={l.href}>
                 <Link
                   href={l.href}
-                  className="text-ink-muted hover:text-ink transition-colors"
+                  className="text-ink-muted hover:text-accent-ink transition-colors"
                 >
                   {l.label}
                 </Link>
@@ -65,7 +65,7 @@ export function Footer() {
                   href={l.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-ink-muted hover:text-ink transition-colors"
+                  className="text-ink-muted hover:text-accent-ink transition-colors"
                 >
                   {l.label}
                   <span aria-hidden className="text-ink-faint ml-1">
