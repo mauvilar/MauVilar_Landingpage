@@ -782,7 +782,6 @@
       "Python"
     ],
     "categories": [
-      "SQL & Analítica de Producto",
       "Análisis Exploratorio (EDA)"
     ],
     "cellCount": 120,
@@ -1444,7 +1443,6 @@
     ],
     "categories": [
       "Estadística & Pruebas de Hipótesis",
-      "SQL & Analítica de Producto",
       "Análisis Exploratorio (EDA)"
     ],
     "cellCount": 89,
@@ -2535,7 +2533,6 @@
     ],
     "categories": [
       "Estadística & Pruebas de Hipótesis",
-      "SQL & Analítica de Producto",
       "Análisis Exploratorio (EDA)"
     ],
     "cellCount": 25,
@@ -3853,7 +3850,6 @@
     ],
     "categories": [
       "Machine Learning",
-      "SQL & Analítica de Producto",
       "Análisis Exploratorio (EDA)"
     ],
     "cellCount": 46,
@@ -4157,7 +4153,6 @@
     ],
     "categories": [
       "Estadística & Pruebas de Hipótesis",
-      "SQL & Analítica de Producto",
       "Análisis Exploratorio (EDA)"
     ],
     "cellCount": 32,
@@ -4410,7 +4405,6 @@
     ],
     "categories": [
       "Estadística & Pruebas de Hipótesis",
-      "SQL & Analítica de Producto",
       "Análisis Exploratorio (EDA)"
     ],
     "cellCount": 38,
@@ -4688,7 +4682,6 @@
     ],
     "categories": [
       "Estadística & Pruebas de Hipótesis",
-      "SQL & Analítica de Producto",
       "Análisis Exploratorio (EDA)"
     ],
     "cellCount": 20,
@@ -4864,8 +4857,7 @@
     ],
     "categories": [
       "Machine Learning",
-      "Estadística & Pruebas de Hipótesis",
-      "SQL & Analítica de Producto"
+      "Estadística & Pruebas de Hipótesis"
     ],
     "cellCount": 29,
     "imageCount": 3,
@@ -5060,7 +5052,6 @@
     ],
     "categories": [
       "Estadística & Pruebas de Hipótesis",
-      "SQL & Analítica de Producto",
       "Visualización & Dashboards",
       "Análisis Exploratorio (EDA)"
     ],
@@ -6195,6 +6186,392 @@
       {
         "type": "markdown",
         "content": "## Key takeaways\n\n- **15 engineered features** capture utilization, payment coverage, and delinquency dynamics;\n  several have higher univariate AUC than any raw column.\n- The pipeline outputs **43 model-ready features** (35 numeric + 8 one-hot) with **zero NaNs**.\n- **Median imputation + standardisation** make the matrix safe for linear models; trees ignore\n  the scaling.\n- Encoders are chosen **by cardinality** (one-hot here; target encoding wired in for high-card).\n- **Leakage-free by construction**: stateless engineering + a pipeline fit on training folds only.\n  This same pipeline object is fit inside cross-validation in Phase 3."
+      }
+    ]
+  },
+  {
+    "slug": "nearshoring-en-cifras-la-api-de-datos-gob-mx-y-una-tabla-limpia",
+    "title": "Nearshoring en cifras — La API de datos.gob.mx y una tabla limpia",
+    "summary": "La inversión extranjera directa de México vive en datos.gob.mx, pero el CSV directo responde 403 y los Excel de la Secretaría de Economía están detrás de un challenge: la API del datastore es la única puerta abierta, y exige un User-Agent de navegador. Este notebook baja ocho tablas paginadas (2006 a 2025 en cifras actualizadas, hasta el primer trimestre de 2026 en originales), documenta seis mañas del formato con su evidencia (montos acumulados dentro del año, nulos que significan confidencial, un total que cambia de nombre, eñes rotas, tres niveles del SCIAN en una columna, originales contra actualizadas) y cierra con tres validaciones como aserciones: los estados suman el total nacional con diferencia cero y las cifras originales cuadran al millón con los boletines oficiales.",
+    "repoPath": "ied-nearshoring-mx/01_api_y_calidad.ipynb",
+    "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/ied-nearshoring-mx/01_api_y_calidad.ipynb",
+    "folder": "ied-nearshoring-mx",
+    "technologies": [
+      "Pandas",
+      "Python"
+    ],
+    "categories": [
+      "Análisis Exploratorio (EDA)"
+    ],
+    "cellCount": 34,
+    "imageCount": 0,
+    "coverImage": null,
+    "results": null,
+    "cells": [
+      {
+        "type": "markdown",
+        "content": "# Inversión extranjera directa en México: de la API de datos.gob.mx a una tabla limpia\n\nLa Secretaría de Economía publica cada trimestre la inversión extranjera directa (IED) por estado, país de origen, sector y tipo de inversión. Los datos están en datos.gob.mx y se pueden consultar por API sin token. Este notebook descarga veinte años de cifras, documenta seis mañas del formato y deja una tabla limpia con la que trabaja el notebook 02.\n\n**Fuente:** dataset `inversion_extranjera_directa` de la Secretaría de Economía en datos.gob.mx (licencia CC-BY 4.0). Cifras en millones de dólares corrientes."
+      },
+      {
+        "type": "markdown",
+        "content": "## 1. Preparación\n\nUna sola dependencia de red (`requests`) y una de datos (`pandas`). La API rechaza el `User-Agent` por defecto de `requests`, así que la sesión usa uno de navegador."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "import json\nimport re\nimport time\nfrom datetime import date\nfrom pathlib import Path\n\nimport pandas as pd\nimport requests\n\nAPI = \"https://www.datos.gob.mx/api/3/action\"\nDATASET = \"inversion_extranjera_directa\"\nUA = (\n    \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 \"\n    \"(KHTML, like Gecko) Chrome/128.0 Safari/537.36\"\n)\nSESION = requests.Session()\nSESION.headers[\"User-Agent\"] = UA\n\nRAIZ = Path.cwd() if (Path.cwd() / \"data\").exists() else Path.cwd().parent\nDATA = RAIZ / \"data\"\nDATA.mkdir(exist_ok=True)\n\npd.set_option(\"display.width\", 160)\npd.set_option(\"display.max_columns\", 20)\nprint(\"Carpeta de datos:\", DATA)",
+        "execution_count": 1
+      },
+      {
+        "type": "markdown",
+        "content": "## 2. Tres puertas, una abierta\n\nEl dataset ofrece los CSV para descarga directa y la Secretaría de Economía publica Excel en su sitio. Ninguna de las dos responde a un programa: la descarga directa devuelve 403 y los Excel están detrás de un *challenge* de JavaScript. La API del datastore sí contesta, siempre que la petición parezca venir de un navegador."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "paquete = SESION.get(f\"{API}/package_show\", params={\"id\": DATASET}, timeout=60)\npaquete.raise_for_status()\nmeta = paquete.json()[\"result\"]\nurl_csv_directo = meta[\"resources\"][0][\"url\"]\n\nprint(\"Dataset:\", meta[\"title\"], \"|\", meta[\"organization\"][\"title\"])\nprint(\"Última modificación:\", meta[\"metadata_modified\"][:10])\nprint(\"Recursos:\", len(meta[\"resources\"]))\nprint()\nprint(\"CSV directo              ->\", requests.get(url_csv_directo, timeout=60).status_code)\nprint(\"API, User-Agent requests ->\", requests.get(f\"{API}/package_show\", params={\"id\": DATASET}, timeout=60).status_code)\nprint(\"API, User-Agent navegador->\", paquete.status_code)",
+        "execution_count": 2
+      },
+      {
+        "type": "markdown",
+        "content": "Los veinte recursos siguen un patrón de nombre: un prefijo de lote (`b2026_01t`), `orig` o `act` según sean cifras originalmente publicadas o actualizadas, la dimensión principal (`ti` total, `po` país de origen, `ef` entidad federativa) y el cruce. El prefijo cambiará con cada lote, así que cada recurso se resuelve por su sufijo y nunca por su id."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "def resolver_recursos(meta: dict) -> dict[str, str]:\n    \"\"\"Mapa sufijo -> resource_id. El sufijo ignora el prefijo de lote b####_##t_.\"\"\"\n    recursos = {}\n    for r in meta[\"resources\"]:\n        nombre = r[\"url\"].rsplit(\"/\", 1)[-1].removesuffix(\".csv\")\n        sufijo = re.sub(r\"^b\\d{4}_\\d{2}t_\", \"\", nombre)\n        recursos[sufijo] = r[\"id\"]\n    return recursos\n\n\nRECURSOS = resolver_recursos(meta)\npd.DataFrame(\n    [(s, i, r[\"description\"][:70]) for (s, i), r in zip(RECURSOS.items(), meta[\"resources\"])],\n    columns=[\"sufijo\", \"resource_id\", \"descripción\"],\n)",
+        "execution_count": 3
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>sufijo</th>\n      <th>resource_id</th>\n      <th>descripción</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>orig_ti_tipodeinv</td>\n      <td>204b50c1-bc51-4a04-988c-b45e4deca161</td>\n      <td>Los datos incluyen los flujos de inversión ext...</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>orig_ti_destino</td>\n      <td>cf30cdeb-f5a4-4b6a-bd09-776ca1c71ccc</td>\n      <td>Los datos incluyen los flujos de inversión ext...</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>orig_ti_origen</td>\n      <td>9b53e7a7-12f3-4fde-9521-6586d7d436d2</td>\n      <td>Los datos incluyen los flujos de inversión ext...</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>orig_ti_sector</td>\n      <td>35fbafb9-d042-4698-9ced-345db4d4fca2</td>\n      <td>Los datos incluyen los flujos de inversión ext...</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>act_ti_tipodeinv</td>\n      <td>965c77a9-1807-4dd4-a6bf-4d32c12ad447</td>\n      <td>Los datos incluyen los flujos de inversión ext...</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>act_ti_destino</td>\n      <td>444d2c5f-84dc-4717-ae29-683f395dbf99</td>\n      <td>Los datos incluyen los flujos de inversión ext...</td>\n    </tr>\n    <tr>\n      <th>6</th>\n      <td>act_ti_origen</td>\n      <td>3fffc598-92a0-458e-b618-d20153401ed4</td>\n      <td>Los datos incluyen los flujos de inversión ext...</td>\n    </tr>\n    <tr>\n      <th>7</th>\n      <td>act_ti_sector</td>\n      <td>9a377082-27d9-4636-99ca-2cf6e28d72d6</td>\n      <td>Los datos incluyen los flujos de inversión ext...</td>\n    </tr>\n    <tr>\n      <th>8</th>\n      <td>orig_po_tipodeinv</td>\n      <td>43088d3d-3153-415c-9d1f-4acba4bd902f</td>\n      <td>Los datos incluyen los flujos de inversión ext...</td>\n    </tr>\n    <tr>\n      <th>9</th>\n      <td>orig_po_destino</td>\n      <td>13857bf0-24c0-435c-a762-805b3bf01100</td>\n      <td>Los datos incluyen los flujos de inversión ext...</td>\n    </tr>\n    <tr>\n      <th>10</th>\n      <td>orig_po_sector</td>\n      <td>2de39d6a-bb97-4ff8-857b-fa39fe756420</td>\n      <td>Los datos incluyen los flujos de inversión ext...</td>\n    </tr>\n    <tr>\n      <th>11</th>\n      <td>act_po_tipodeinv</td>\n      <td>2a9f6039-4590-41ba-9b0c-4e7ed572c27b</td>\n      <td>Los datos incluyen los flujos de inversión ext...</td>\n    </tr>\n    <tr>\n      <th>12</th>\n      <td>act_po_destino</td>\n      <td>b8557b3c-bd8d-48ad-ab51-4265fa8730a8</td>\n      <td>Los datos incluyen los flujos de inversión ext...</td>\n    </tr>\n    <tr>\n      <th>13</th>\n      <td>act_po_sector</td>\n      <td>4230a594-fc71-4e36-be2a-12151a3aaef5</td>\n      <td>Los datos incluyen los flujos de inversión ext...</td>\n    </tr>\n    <tr>\n      <th>14</th>\n      <td>orig_ef_tipodeinv</td>\n      <td>cb525985-eabd-4403-9a42-473d5ef5ac33</td>\n      <td>Los datos incluyen los flujos de inversión ext...</td>\n    </tr>\n    <tr>\n      <th>15</th>\n      <td>orig_ef_origen</td>\n      <td>9a98d520-e91e-4837-93e1-155e6b1b669a</td>\n      <td>Los datos incluyen los flujos de inversión ext...</td>\n    </tr>\n    <tr>\n      <th>16</th>\n      <td>orig_ef_sector</td>\n      <td>32366edb-f5b8-459a-ac44-cbd7dca8d345</td>\n      <td>Los datos incluyen los flujos de inversión ext...</td>\n    </tr>\n    <tr>\n      <th>17</th>\n      <td>act_ef_tipodeinv</td>\n      <td>15753256-540a-404a-a5db-6f1401cda44b</td>\n      <td>Los datos incluyen los flujos de inversión ext...</td>\n    </tr>\n    <tr>\n      <th>18</th>\n      <td>act_ef_origen</td>\n      <td>47fe3bd3-d401-40a0-9ea9-5f74213c3c49</td>\n      <td>Los datos incluyen los flujos de inversión ext...</td>\n    </tr>\n    <tr>\n      <th>19</th>\n      <td>act_ef_sector</td>\n      <td>ed8f888c-7d1a-4063-b18d-934bbe644025</td>\n      <td>Los datos incluyen los flujos de inversión ext...</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "## 3. Descarga paginada\n\nEl datastore devuelve como máximo 32,000 filas por llamada. La función pide páginas hasta cubrir `total`. Las cifras llegan como texto o número según la fila; se convierten a numérico y lo no convertible queda como nulo."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "def descargar_tabla(sufijo: str, tamano_pagina: int = 32000) -> pd.DataFrame:\n    \"\"\"Descarga completa de un recurso del datastore, paginando por offset.\"\"\"\n    filas: list[dict] = []\n    offset = 0\n    while True:\n        r = SESION.get(\n            f\"{API}/datastore_search\",\n            params={\n                \"resource_id\": RECURSOS[sufijo],\n                \"limit\": tamano_pagina,\n                \"offset\": offset,\n                \"include_total\": \"true\",\n            },\n            timeout=180,\n        )\n        r.raise_for_status()\n        res = r.json()[\"result\"]\n        filas.extend(res[\"records\"])\n        offset += tamano_pagina\n        if offset >= res[\"total\"]:\n            break\n    df = pd.DataFrame(filas).drop(columns=\"_id\")\n    df[\"ied_mdd\"] = pd.to_numeric(df[\"ied_mdd\"], errors=\"coerce\")\n    return df\n\n\nTABLAS = [\n    \"act_ti_tipodeinv\",\n    \"act_ti_destino\",\n    \"act_ti_origen\",\n    \"act_ti_sector\",\n    \"act_ef_tipodeinv\",\n    \"orig_ti_tipodeinv\",\n    \"orig_ti_destino\",\n    \"orig_ti_origen\",\n]\n\ncrudas: dict[str, pd.DataFrame] = {}\nfor t in TABLAS:\n    inicio = time.perf_counter()\n    crudas[t] = descargar_tabla(t)\n    print(f\"{t:20s} {len(crudas[t]):>7,} filas  {time.perf_counter() - inicio:5.1f} s\")",
+        "execution_count": 4
+      },
+      {
+        "type": "markdown",
+        "content": "## 4. Seis mañas del formato\n\nCada una con su evidencia. Ninguna es un error de la fuente: son decisiones de publicación que hay que conocer antes de sumar."
+      },
+      {
+        "type": "markdown",
+        "content": "**Maña 1 · Los montos vienen acumulados dentro del año.** El valor del segundo trimestre incluye al primero, el del cuarto es el total anual."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "ejemplo = crudas[\"act_ti_tipodeinv\"]\nejemplo[(ejemplo.tipo_inversion == \"Total general\") & ejemplo.anio_trim.str.startswith(\"2025\")]",
+        "execution_count": 5
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>tipo_inversion</th>\n      <th>anio_trim</th>\n      <th>ied_mdd</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>76</th>\n      <td>Total general</td>\n      <td>2025-1</td>\n      <td>24412.609925</td>\n    </tr>\n    <tr>\n      <th>77</th>\n      <td>Total general</td>\n      <td>2025-2</td>\n      <td>38172.026805</td>\n    </tr>\n    <tr>\n      <th>78</th>\n      <td>Total general</td>\n      <td>2025-3</td>\n      <td>45908.439950</td>\n    </tr>\n    <tr>\n      <th>79</th>\n      <td>Total general</td>\n      <td>2025-4</td>\n      <td>40812.057628</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "**Maña 2 · Los nulos son cifras confidenciales.** La Secretaría publica \"C\" cuando un cruce identificaría a una empresa. En el datastore llegan como nulo. Se conservan como tales: rellenarlos con cero sesgaría cualquier suma."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "pd.Series({t: int(df.ied_mdd.isna().sum()) for t, df in crudas.items()}, name=\"nulos (confidenciales)\")",
+        "execution_count": 6
+      },
+      {
+        "type": "text-output",
+        "content": "act_ti_tipodeinv        0\nact_ti_destino          0\nact_ti_origen        1856\nact_ti_sector        4715\nact_ef_tipodeinv        0\norig_ti_tipodeinv       0\norig_ti_destino         0\norig_ti_origen        818\nName: nulos (confidenciales), dtype: int64"
+      },
+      {
+        "type": "markdown",
+        "content": "**Maña 3 · El total cambia de nombre.** En casi todas las tablas es `Total general`; en `tipo_inversion` de la tabla por entidad es `Total`."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "print(\"act_ti_tipodeinv:\", sorted(crudas[\"act_ti_tipodeinv\"].tipo_inversion.unique()))\nprint(\"act_ef_tipodeinv:\", sorted(crudas[\"act_ef_tipodeinv\"].tipo_inversion.unique()))",
+        "execution_count": 7
+      },
+      {
+        "type": "markdown",
+        "content": "**Maña 4 · Hay eñes rotas.** Algunos países traen `ń` (n con acento agudo) donde va `ñ`."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "sorted(p for p in crudas[\"act_ti_origen\"].pais_origen.unique() if \"ń\" in p)",
+        "execution_count": 8
+      },
+      {
+        "type": "text-output",
+        "content": "['Espańa', 'Reino Unido de la Gran Bretańa e Irlanda del Norte']"
+      },
+      {
+        "type": "markdown",
+        "content": "**Maña 5 · Tres niveles del SCIAN en una columna.** `sector_subsector_rama` mezcla sectores (código de dos dígitos o rango como `31-33`), subsectores (tres) y ramas (cuatro). Sumar la columna completa cuenta cada peso tres veces."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "etiquetas = pd.Series(crudas[\"act_ti_sector\"].sector_subsector_rama.unique())\ncodigos = etiquetas.str.extract(r\"^(\\d{2}(?:-\\d{2})?|\\d{3,4})\\s\")[0]\nprint(\"Etiquetas:\", len(etiquetas), \"| sin código (totales):\", int(codigos.isna().sum()))\nprint(\"Sectores (nivel 2):\")\nprint(etiquetas[codigos.notna() & ~codigos.str.len().isin([3, 4])].to_string(index=False))",
+        "execution_count": 9
+      },
+      {
+        "type": "markdown",
+        "content": "**Maña 6 · Originales y actualizadas no coinciden.** La Secretaría revisa hacia atrás. El análisis de largo plazo usa las actualizadas; las originales sirven para conciliar con los boletines y para el primer trimestre de 2026, que todavía no tiene versión actualizada."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "o = crudas[\"orig_ti_tipodeinv\"]\na = crudas[\"act_ti_tipodeinv\"]\nprint(\"2025 original    :\", round(o[(o.tipo_inversion == \"Total general\") & (o.anio_trim == \"2025-4\")].ied_mdd.item(), 1))\nprint(\"2025 actualizada :\", round(a[(a.tipo_inversion == \"Total general\") & (a.anio_trim == \"2025-4\")].ied_mdd.item(), 1))",
+        "execution_count": 10
+      },
+      {
+        "type": "markdown",
+        "content": "## 5. Normalizar y desacumular\n\n`normalizar` unifica etiquetas, corrige eñes, separa año y trimestre, y descompone el SCIAN. `desacumular` convierte el acumulado en flujo trimestral: el primer trimestre es su propio flujo; los demás restan el trimestre anterior del mismo año. Si el anterior es confidencial, el flujo queda nulo en vez de inventarse."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "DIMENSIONES = [\"tipo_inversion\", \"entidad_federativa\", \"pais_origen\", \"sector_subsector_rama\"]\n\n\ndef normalizar(df: pd.DataFrame) -> pd.DataFrame:\n    df = df.copy()\n    for col in DIMENSIONES:\n        if col in df:\n            df[col] = df[col].str.strip().str.replace(\"ń\", \"ñ\", regex=False)\n            df.loc[df[col].isin([\"Total\", \"Total general\"]), col] = \"Total general\"\n    partes = df[\"anio_trim\"].str.split(\"-\", expand=True)\n    df[\"anio\"] = partes[0].astype(int)\n    df[\"trimestre\"] = partes[1].astype(int)\n    if \"sector_subsector_rama\" in df:\n        codigo = df[\"sector_subsector_rama\"].str.extract(r\"^(\\d{2}(?:-\\d{2})?|\\d{3,4})\\s\")[0]\n        df[\"scian_codigo\"] = codigo\n        df[\"scian_nivel\"] = codigo.map(\n            lambda c: None if pd.isna(c) else \"sector\" if (\"-\" in c or len(c) == 2) else \"subsector\" if len(c) == 3 else \"rama\"\n        )\n        df[\"sector\"] = df[\"sector_subsector_rama\"].str.replace(r\"^(\\d{2}(?:-\\d{2})?|\\d{3,4})\\s+\", \"\", regex=True)\n    df[\"confidencial\"] = df[\"ied_mdd\"].isna()\n    return df.drop(columns=\"anio_trim\")\n\n\ndef desacumular(df: pd.DataFrame) -> pd.DataFrame:\n    claves = [c for c in DIMENSIONES if c in df]\n    df = df.sort_values(claves + [\"anio\", \"trimestre\"]).reset_index(drop=True)\n    previo = df.groupby(claves + [\"anio\"])[\"ied_mdd\"].shift(1)\n    primero = df[\"trimestre\"].eq(1)\n    df[\"ied_acumulado_mdd\"] = df[\"ied_mdd\"]\n    df[\"flujo_mdd\"] = df[\"ied_mdd\"] - previo.where(~primero, 0.0)\n    return df.drop(columns=\"ied_mdd\")\n\n\nlimpias = {t: desacumular(normalizar(df)) for t, df in crudas.items()}\nlimpias[\"act_ti_tipodeinv\"].query(\"tipo_inversion == 'Total general' and anio == 2025\")",
+        "execution_count": 11
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>tipo_inversion</th>\n      <th>anio</th>\n      <th>trimestre</th>\n      <th>confidencial</th>\n      <th>ied_acumulado_mdd</th>\n      <th>flujo_mdd</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>316</th>\n      <td>Total general</td>\n      <td>2025</td>\n      <td>1</td>\n      <td>False</td>\n      <td>24412.609925</td>\n      <td>24412.609925</td>\n    </tr>\n    <tr>\n      <th>317</th>\n      <td>Total general</td>\n      <td>2025</td>\n      <td>2</td>\n      <td>False</td>\n      <td>38172.026805</td>\n      <td>13759.416880</td>\n    </tr>\n    <tr>\n      <th>318</th>\n      <td>Total general</td>\n      <td>2025</td>\n      <td>3</td>\n      <td>False</td>\n      <td>45908.439950</td>\n      <td>7736.413145</td>\n    </tr>\n    <tr>\n      <th>319</th>\n      <td>Total general</td>\n      <td>2025</td>\n      <td>4</td>\n      <td>False</td>\n      <td>40812.057628</td>\n      <td>-5096.382322</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "## 6. Validaciones\n\nTres comprobaciones que se ejecutan como aserciones: si alguna falla, el notebook se detiene y el snapshot no se escribe."
+      },
+      {
+        "type": "markdown",
+        "content": "**V1 · La suma de los estados es el total nacional**, trimestre a trimestre, en cifras actualizadas."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "d = limpias[\"act_ti_destino\"]\npor_estado = d[d.entidad_federativa != \"Total general\"].groupby([\"anio\", \"trimestre\"])[\"flujo_mdd\"].sum()\ntotal = d[d.entidad_federativa == \"Total general\"].set_index([\"anio\", \"trimestre\"])[\"flujo_mdd\"]\ndif = (por_estado - total).abs()\nanio_max, trim_max = (int(x) for x in dif.idxmax())\nprint(f\"Diferencia máxima estados vs total: {dif.max():.4f} mdd, en {anio_max}-{trim_max}\")\nassert dif.max() < 1.0, \"Los estados no suman el total nacional\"",
+        "execution_count": 12
+      },
+      {
+        "type": "markdown",
+        "content": "**V2 · Países: cuánto queda en confidencial.** La suma de países publicados no tiene por qué cerrar contra el total, porque los confidenciales no se publican. Se cuantifica la brecha por año en vez de forzarla."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "p = limpias[\"act_ti_origen\"]\nbrecha = (\n    p[p.pais_origen == \"Total general\"].groupby(\"anio\")[\"flujo_mdd\"].sum()\n    - p[p.pais_origen != \"Total general\"].groupby(\"anio\")[\"flujo_mdd\"].sum()\n)\nconfidenciales = p[p.pais_origen != \"Total general\"].groupby(\"anio\")[\"confidencial\"].sum()\npd.DataFrame({\"brecha_mdd\": brecha.round(1), \"celdas_confidenciales\": confidenciales})",
+        "execution_count": 13
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>brecha_mdd</th>\n      <th>celdas_confidenciales</th>\n    </tr>\n    <tr>\n      <th>anio</th>\n      <th></th>\n      <th></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>2006</th>\n      <td>11.8</td>\n      <td>88</td>\n    </tr>\n    <tr>\n      <th>2007</th>\n      <td>664.8</td>\n      <td>99</td>\n    </tr>\n    <tr>\n      <th>2008</th>\n      <td>72.7</td>\n      <td>84</td>\n    </tr>\n    <tr>\n      <th>2009</th>\n      <td>-67.0</td>\n      <td>66</td>\n    </tr>\n    <tr>\n      <th>2010</th>\n      <td>-109.3</td>\n      <td>88</td>\n    </tr>\n    <tr>\n      <th>2011</th>\n      <td>133.8</td>\n      <td>86</td>\n    </tr>\n    <tr>\n      <th>2012</th>\n      <td>10.4</td>\n      <td>83</td>\n    </tr>\n    <tr>\n      <th>2013</th>\n      <td>51.6</td>\n      <td>79</td>\n    </tr>\n    <tr>\n      <th>2014</th>\n      <td>41.8</td>\n      <td>99</td>\n    </tr>\n    <tr>\n      <th>2015</th>\n      <td>11.3</td>\n      <td>76</td>\n    </tr>\n    <tr>\n      <th>2016</th>\n      <td>-297.9</td>\n      <td>75</td>\n    </tr>\n    <tr>\n      <th>2017</th>\n      <td>253.5</td>\n      <td>89</td>\n    </tr>\n    <tr>\n      <th>2018</th>\n      <td>146.0</td>\n      <td>105</td>\n    </tr>\n    <tr>\n      <th>2019</th>\n      <td>87.0</td>\n      <td>80</td>\n    </tr>\n    <tr>\n      <th>2020</th>\n      <td>147.0</td>\n      <td>111</td>\n    </tr>\n    <tr>\n      <th>2021</th>\n      <td>569.8</td>\n      <td>111</td>\n    </tr>\n    <tr>\n      <th>2022</th>\n      <td>430.4</td>\n      <td>112</td>\n    </tr>\n    <tr>\n      <th>2023</th>\n      <td>274.5</td>\n      <td>116</td>\n    </tr>\n    <tr>\n      <th>2024</th>\n      <td>127.4</td>\n      <td>96</td>\n    </tr>\n    <tr>\n      <th>2025</th>\n      <td>293.1</td>\n      <td>113</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "**V3 · Las cifras originales cuadran con los boletines de la Secretaría de Economía** (24 de febrero de 2026 para 2025; 25 de mayo de 2026 para el primer trimestre de 2026)."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "o = limpias[\"orig_ti_tipodeinv\"].set_index([\"tipo_inversion\", \"anio\", \"trimestre\"])[\"ied_acumulado_mdd\"]\nboletines = {\n    (\"Total general\", 2025, 4): 40_871,\n    (\"Total general\", 2026, 1): 23_591,\n    (\"Nuevas inversiones\", 2026, 1): 1_705,\n    (\"Reinversión de utilidades\", 2026, 1): 22_222,\n}\nfor clave, publicado in boletines.items():\n    calculado = o[clave]\n    print(f\"{clave[0]:26s} {clave[1]}-{clave[2]}  datastore {calculado:10,.1f}  boletín {publicado:7,}\")\n    assert abs(round(calculado) - publicado) <= 1, f\"No cuadra: {clave}\"",
+        "execution_count": 14
+      },
+      {
+        "type": "markdown",
+        "content": "## 7. Snapshot\n\nCada tabla limpia se guarda como CSV con la fecha de consulta en el manifiesto. El notebook 02 lee estos archivos y no depende de la API, salvo en su primera sección."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "manifiesto = {\n    \"fecha_consulta\": date.today().isoformat(),\n    \"dataset\": DATASET,\n    \"metadata_modified\": meta[\"metadata_modified\"],\n    \"licencia\": meta[\"license_title\"],\n    \"user_agent\": UA,\n    \"tablas\": {},\n}\nfor t, df in limpias.items():\n    ruta = DATA / f\"{t}.csv\"\n    df.to_csv(ruta, index=False)\n    manifiesto[\"tablas\"][t] = {\n        \"resource_id\": RECURSOS[t],\n        \"filas\": int(len(df)),\n        \"confidenciales\": int(df.confidencial.sum()),\n        \"anio_min\": int(df.anio.min()),\n        \"anio_max\": int(df.anio.max()),\n    }\n(DATA / \"manifest.json\").write_text(json.dumps(manifiesto, ensure_ascii=False, indent=2))\npd.DataFrame(manifiesto[\"tablas\"]).T",
+        "execution_count": 15
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>resource_id</th>\n      <th>filas</th>\n      <th>confidenciales</th>\n      <th>anio_min</th>\n      <th>anio_max</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>act_ti_tipodeinv</th>\n      <td>965c77a9-1807-4dd4-a6bf-4d32c12ad447</td>\n      <td>320</td>\n      <td>0</td>\n      <td>2006</td>\n      <td>2025</td>\n    </tr>\n    <tr>\n      <th>act_ti_destino</th>\n      <td>444d2c5f-84dc-4717-ae29-683f395dbf99</td>\n      <td>2640</td>\n      <td>0</td>\n      <td>2006</td>\n      <td>2025</td>\n    </tr>\n    <tr>\n      <th>act_ti_origen</th>\n      <td>3fffc598-92a0-458e-b618-d20153401ed4</td>\n      <td>12240</td>\n      <td>1856</td>\n      <td>2006</td>\n      <td>2025</td>\n    </tr>\n    <tr>\n      <th>act_ti_sector</th>\n      <td>9a377082-27d9-4636-99ca-2cf6e28d72d6</td>\n      <td>31680</td>\n      <td>4715</td>\n      <td>2006</td>\n      <td>2025</td>\n    </tr>\n    <tr>\n      <th>act_ef_tipodeinv</th>\n      <td>15753256-540a-404a-a5db-6f1401cda44b</td>\n      <td>10320</td>\n      <td>0</td>\n      <td>2006</td>\n      <td>2025</td>\n    </tr>\n    <tr>\n      <th>orig_ti_tipodeinv</th>\n      <td>204b50c1-bc51-4a04-988c-b45e4deca161</td>\n      <td>132</td>\n      <td>0</td>\n      <td>2018</td>\n      <td>2026</td>\n    </tr>\n    <tr>\n      <th>orig_ti_destino</th>\n      <td>cf30cdeb-f5a4-4b6a-bd09-776ca1c71ccc</td>\n      <td>1089</td>\n      <td>0</td>\n      <td>2018</td>\n      <td>2026</td>\n    </tr>\n    <tr>\n      <th>orig_ti_origen</th>\n      <td>9b53e7a7-12f3-4fde-9521-6586d7d436d2</td>\n      <td>5049</td>\n      <td>818</td>\n      <td>2018</td>\n      <td>2026</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "## 8. Qué se puede afirmar con estos datos, y qué no\n\n- **Sí:** flujos anuales y trimestrales por estado, país, sector y tipo de inversión, de 2006 a 2025 en cifras actualizadas y hasta el primer trimestre de 2026 en originales.\n- **Con cuidado:** la Secretaría asigna la IED al domicilio fiscal de la empresa receptora, no a la planta. La Ciudad de México concentra corporativos, y eso infla su participación.\n- **No:** sumar `sector_subsector_rama` sin filtrar nivel, rellenar confidenciales con cero, o comparar cifras originales con actualizadas como si fueran la misma serie."
+      }
+    ]
+  },
+  {
+    "slug": "nearshoring-en-cifras-a-donde-llega-la-inversion-extranjera-en-mexico-2006-a-202",
+    "title": "Nearshoring en cifras — A dónde llega la inversión extranjera en México, 2006 a 2025",
+    "summary": "Cuatro hallazgos sobre veinte años de IED: el récord de 2025 está hecho de reinversión de utilidades (68 %, contra 37 % de promedio entre 2006 y 2018) y las nuevas inversiones de 2024 son las más bajas de la serie; la Ciudad de México pasó de 20 % a 53 % de la inversión; los estados que suman el 80 % bajaron de 13 a 6; Estados Unidos aporta 39 % y China nunca ha pasado de 2.4 %. Empieza con una consulta en vivo a la API y la gráfica principal en cinco celdas, y cierra con la advertencia que cambia la lectura: la Secretaría asigna la inversión al domicilio fiscal de la empresa, no a la planta.",
+    "repoPath": "ied-nearshoring-mx/02_nearshoring_en_cifras.ipynb",
+    "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/ied-nearshoring-mx/02_nearshoring_en_cifras.ipynb",
+    "folder": "ied-nearshoring-mx",
+    "technologies": [
+      "Pandas",
+      "Matplotlib",
+      "Python"
+    ],
+    "categories": [
+      "Análisis Exploratorio (EDA)"
+    ],
+    "cellCount": 19,
+    "imageCount": 5,
+    "coverImage": "/projects/nearshoring-en-cifras-a-donde-llega-la-inversion-extranjera-en-mexico-2006-a-202/cell-5-0.png",
+    "results": null,
+    "cells": [
+      {
+        "type": "markdown",
+        "content": "# Nearshoring en cifras: a dónde llega la inversión extranjera en México, 2006 a 2025\n\nMéxico encadena récords de inversión extranjera directa y el nearshoring se discute con titulares. Aquí se mira la serie completa de la Secretaría de Economía, veinte años por estado, país y tipo de inversión, para responder tres cosas: cuánto del récord es dinero nuevo, a qué estados llega y de qué países viene.\n\n**Fuente:** Secretaría de Economía vía la API de datos.gob.mx, cifras actualizadas, consulta del 21 de septiembre de 2026 (ver `data/manifest.json`). El notebook 01 explica la descarga y la limpieza."
+      },
+      {
+        "type": "markdown",
+        "content": "## 0. Una consulta, una gráfica\n\nUna llamada a la API trae la IED por estado. El acumulado del cuarto trimestre es el flujo anual, así que no hace falta desacumular para comparar años."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "from pathlib import Path\n\nimport matplotlib.pyplot as plt\nimport matplotlib_inline\nimport pandas as pd\nimport requests\n\nmatplotlib_inline.backend_inline.set_matplotlib_formats(\"retina\")\n\nRAIZ = Path.cwd() if (Path.cwd() / \"data\").exists() else Path.cwd().parent\nDATA = RAIZ / \"data\"\nAPI = \"https://www.datos.gob.mx/api/3/action\"\nSESION = requests.Session()\nSESION.headers[\"User-Agent\"] = \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36\"\n\nPALETA = {\n    \"papel\": \"#0C324A\", \"hondo\": \"#07253A\", \"tinta\": \"#FEF1D5\", \"tenue\": \"#BFBFB1\", \"leve\": \"#9DA59D\",\n    \"filete\": \"#2C6183\", \"filete_fuerte\": \"#4E85A6\", \"rojo\": \"#C11720\", \"marino\": \"#679CBC\",\n}\nplt.rcParams.update({\n    \"figure.facecolor\": PALETA[\"papel\"], \"axes.facecolor\": PALETA[\"papel\"], \"savefig.facecolor\": PALETA[\"papel\"],\n    \"text.color\": PALETA[\"tinta\"], \"axes.labelcolor\": PALETA[\"tenue\"],\n    \"xtick.color\": PALETA[\"tenue\"], \"ytick.color\": PALETA[\"tenue\"],\n    \"axes.edgecolor\": PALETA[\"filete\"], \"axes.spines.top\": False, \"axes.spines.right\": False,\n    \"axes.grid\": False, \"font.size\": 12, \"axes.titlesize\": 16, \"axes.titleweight\": \"bold\",\n    \"axes.titlelocation\": \"left\", \"axes.titlepad\": 28,\n    \"figure.figsize\": (12, 6.75), \"figure.dpi\": 100, \"savefig.dpi\": 150, \"legend.frameon\": False,\n})\n\n\ndef leer(tabla: str) -> pd.DataFrame:\n    \"\"\"Lee una tabla del snapshot que dejó el notebook 01.\"\"\"\n    return pd.read_csv(DATA / f\"{tabla}.csv\")\n\n\ndef pie(fig, texto=\"Fuente: Secretaría de Economía vía datos.gob.mx · cifras actualizadas · consulta 21 sep 2026\"):\n    fig.text(0.01, 0.005, texto, ha=\"left\", va=\"bottom\", fontsize=9.5, color=PALETA[\"leve\"])",
+        "execution_count": 1
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "def ied_por_estado() -> pd.DataFrame:\n    \"\"\"IED anual por estado, en vivo desde la API; si falla, desde el snapshot.\"\"\"\n    try:\n        recursos = SESION.get(f\"{API}/package_show\", params={\"id\": \"inversion_extranjera_directa\"}, timeout=30).json()[\"result\"][\"resources\"]\n        rid = next(r[\"id\"] for r in recursos if r[\"url\"].endswith(\"_act_ti_destino.csv\"))\n        res = SESION.get(f\"{API}/datastore_search\", params={\"resource_id\": rid, \"limit\": 32000}, timeout=60).json()[\"result\"]\n        df = pd.DataFrame(res[\"records\"])\n        df[[\"anio\", \"trimestre\"]] = df[\"anio_trim\"].str.split(\"-\", expand=True).astype(int)\n        df[\"ied_acumulado_mdd\"] = pd.to_numeric(df[\"ied_mdd\"], errors=\"coerce\")\n        origen = f\"API en vivo · {res['total']:,} filas\"\n    except Exception as e:  # noqa: BLE001\n        df = leer(\"act_ti_destino\")\n        origen = f\"snapshot ({type(e).__name__})\"\n    anual = df[df.trimestre == 4][[\"entidad_federativa\", \"anio\", \"ied_acumulado_mdd\"]]\n    print(origen)\n    return anual\n\n\nanual = ied_por_estado()\nanual.tail(3)",
+        "execution_count": 2
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>entidad_federativa</th>\n      <th>anio</th>\n      <th>ied_acumulado_mdd</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>2631</th>\n      <td>Zacatecas</td>\n      <td>2023</td>\n      <td>620.046467</td>\n    </tr>\n    <tr>\n      <th>2635</th>\n      <td>Zacatecas</td>\n      <td>2024</td>\n      <td>134.428657</td>\n    </tr>\n    <tr>\n      <th>2639</th>\n      <td>Zacatecas</td>\n      <td>2025</td>\n      <td>97.539061</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "estados = anual[anual.entidad_federativa != \"Total general\"].pivot(index=\"entidad_federativa\", columns=\"anio\", values=\"ied_acumulado_mdd\")\ntotal = anual[anual.entidad_federativa == \"Total general\"].set_index(\"anio\")[\"ied_acumulado_mdd\"]\nparticipacion = 100 * estados / total\n\nULTIMO = int(participacion.columns.max())\nbase = participacion.loc[:, 2015:2019].mean(axis=1).rename(\"2015-2019\")\nultimo = participacion[ULTIMO].rename(str(ULTIMO))\ncomparacion = pd.concat([base, ultimo], axis=1).sort_values(str(ULTIMO), ascending=False)\n\ndef estados_para_80(col: pd.Series) -> int:\n    acumulado = col.sort_values(ascending=False).cumsum()\n    return int((acumulado < 80).sum() + 1)\n\nn80 = participacion.apply(estados_para_80)\nprint(f\"Estados que concentran el 80 % de la IED: {n80[ULTIMO]} en {ULTIMO}, \"\n      f\"{n80.loc[2015:2019].mean():.0f} en promedio 2015-2019\")\ncomparacion.head(10).round(1)",
+        "execution_count": 3
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>2015-2019</th>\n      <th>2025</th>\n    </tr>\n    <tr>\n      <th>entidad_federativa</th>\n      <th></th>\n      <th></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Ciudad de México</th>\n      <td>19.1</td>\n      <td>52.9</td>\n    </tr>\n    <tr>\n      <th>Nuevo León</th>\n      <td>9.2</td>\n      <td>8.9</td>\n    </tr>\n    <tr>\n      <th>Estado de México</th>\n      <td>8.5</td>\n      <td>7.6</td>\n    </tr>\n    <tr>\n      <th>Baja California</th>\n      <td>4.3</td>\n      <td>4.6</td>\n    </tr>\n    <tr>\n      <th>Baja California Sur</th>\n      <td>1.4</td>\n      <td>4.1</td>\n    </tr>\n    <tr>\n      <th>Jalisco</th>\n      <td>5.5</td>\n      <td>3.4</td>\n    </tr>\n    <tr>\n      <th>Coahuila</th>\n      <td>5.9</td>\n      <td>3.2</td>\n    </tr>\n    <tr>\n      <th>Quintana Roo</th>\n      <td>1.4</td>\n      <td>2.7</td>\n    </tr>\n    <tr>\n      <th>Chihuahua</th>\n      <td>5.3</td>\n      <td>2.6</td>\n    </tr>\n    <tr>\n      <th>Guanajuato</th>\n      <td>4.7</td>\n      <td>1.9</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "top = comparacion.head(10).iloc[::-1]\nfig, ax = plt.subplots()\ny = range(len(top))\nax.barh([i + 0.2 for i in y], top[\"2015-2019\"], height=0.38, color=PALETA[\"filete_fuerte\"], label=\"Promedio 2015 a 2019\")\ncolores = [PALETA[\"rojo\"] if e == \"Ciudad de México\" else PALETA[\"marino\"] for e in top.index]\nax.barh([i - 0.2 for i in y], top[str(ULTIMO)], height=0.38, color=colores, label=str(ULTIMO))\nfor i, (b, u) in enumerate(zip(top[\"2015-2019\"], top[str(ULTIMO)])):\n    ax.text(u + 0.6, i - 0.2, f\"{u:.1f} %\", va=\"center\", fontsize=11, color=PALETA[\"tinta\"])\n    ax.text(b + 0.6, i + 0.2, f\"{b:.1f} %\", va=\"center\", fontsize=9.5, color=PALETA[\"tenue\"])\nax.set_yticks(list(y), top.index)\nax.set_xlim(0, top[str(ULTIMO)].max() * 1.18)\nax.set_xlabel(\"Participación en la IED total (%)\")\nax.set_title(f\"En {ULTIMO}, {n80[ULTIMO]} estados concentraron el 80 % de la IED que llegó a México\")\nax.text(0, 1.01, f\"Antes hacían falta {n80.loc[2015:2019].mean():.0f}. Los diez estados con mayor participación en {ULTIMO}\",\n        transform=ax.transAxes, fontsize=11.5, color=PALETA[\"tenue\"])\nax.legend(loc=\"lower right\")\npie(fig)\nplt.tight_layout(rect=(0, 0.03, 1, 1))\nplt.show()",
+        "execution_count": 4
+      },
+      {
+        "type": "image",
+        "src": "/projects/nearshoring-en-cifras-a-donde-llega-la-inversion-extranjera-en-mexico-2006-a-202/cell-5-0.png",
+        "alt": "Output 0 de la celda 5"
+      },
+      {
+        "type": "markdown",
+        "content": "## 1. Récord, pero reinversión\n\nLa IED tiene tres componentes: nuevas inversiones (dinero que entra por primera vez), reinversión de utilidades (ganancias de empresas ya instaladas que no se repatrían) y cuentas entre compañías (préstamos entre matriz y filial). El récord reciente está hecho sobre todo del segundo."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "tipo = leer(\"act_ti_tipodeinv\")\nanual_tipo = tipo.groupby([\"anio\", \"tipo_inversion\"])[\"flujo_mdd\"].sum().unstack()\npartes = anual_tipo.drop(columns=\"Total general\")\npct = 100 * partes.div(anual_tipo[\"Total general\"], axis=0)\n\nprint(f\"Reinversión de utilidades, % de la IED: promedio 2006-2018 = {pct.loc[2006:2018, 'Reinversión de utilidades'].mean():.1f} %, \"\n      f\"2023 = {pct.loc[2023, 'Reinversión de utilidades']:.1f} %, 2024 = {pct.loc[2024, 'Reinversión de utilidades']:.1f} %, \"\n      f\"{ULTIMO} = {pct.loc[ULTIMO, 'Reinversión de utilidades']:.1f} %\")\nminimo = partes[\"Nuevas inversiones\"].idxmin()\nprint(f\"Nuevas inversiones más bajas de la serie: {minimo}, {partes.loc[minimo, 'Nuevas inversiones']:,.0f} mdd \"\n      f\"(promedio 2006-2018: {partes.loc[2006:2018, 'Nuevas inversiones'].mean():,.0f} mdd)\")\nprint(f\"Total {ULTIMO} (actualizado): {anual_tipo.loc[ULTIMO, 'Total general']:,.0f} mdd\")\npd.concat([partes.round(0), pct[\"Reinversión de utilidades\"].round(1).rename(\"% reinversión\")], axis=1).loc[2019:]",
+        "execution_count": 5
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Cuentas entre compañías</th>\n      <th>Nuevas inversiones</th>\n      <th>Reinversión de utilidades</th>\n      <th>% reinversión</th>\n    </tr>\n    <tr>\n      <th>anio</th>\n      <th></th>\n      <th></th>\n      <th></th>\n      <th></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>2019</th>\n      <td>2869.0</td>\n      <td>13574.0</td>\n      <td>18179.0</td>\n      <td>52.5</td>\n    </tr>\n    <tr>\n      <th>2020</th>\n      <td>5319.0</td>\n      <td>6826.0</td>\n      <td>16135.0</td>\n      <td>57.1</td>\n    </tr>\n    <tr>\n      <th>2021</th>\n      <td>5455.0</td>\n      <td>15480.0</td>\n      <td>12913.0</td>\n      <td>38.2</td>\n    </tr>\n    <tr>\n      <th>2022</th>\n      <td>2028.0</td>\n      <td>18191.0</td>\n      <td>16202.0</td>\n      <td>44.5</td>\n    </tr>\n    <tr>\n      <th>2023</th>\n      <td>4552.0</td>\n      <td>5286.0</td>\n      <td>26639.0</td>\n      <td>73.0</td>\n    </tr>\n    <tr>\n      <th>2024</th>\n      <td>5115.0</td>\n      <td>4114.0</td>\n      <td>28710.0</td>\n      <td>75.7</td>\n    </tr>\n    <tr>\n      <th>2025</th>\n      <td>5844.0</td>\n      <td>7319.0</td>\n      <td>27649.0</td>\n      <td>67.7</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "orden = [\"Nuevas inversiones\", \"Reinversión de utilidades\", \"Cuentas entre compañías\"]\ncol = {\"Nuevas inversiones\": PALETA[\"marino\"], \"Reinversión de utilidades\": PALETA[\"rojo\"], \"Cuentas entre compañías\": PALETA[\"filete_fuerte\"]}\nfig, ax = plt.subplots()\nabajo = pd.Series(0.0, index=partes.index)\nfor c in orden:\n    ax.bar(partes.index, partes[c], bottom=abajo, color=col[c], label=c, width=0.72)\n    abajo = abajo + partes[c].fillna(0)\nfor anio, valor in anual_tipo[\"Total general\"].items():\n    ax.text(anio, valor + 600, f\"{pct.loc[anio, 'Reinversión de utilidades']:.0f} %\", ha=\"center\", fontsize=9, color=PALETA[\"tenue\"])\nax.set_ylabel(\"Millones de dólares\")\nax.set_xticks(list(partes.index))\nax.tick_params(axis=\"x\", labelsize=10, rotation=45)\nax.set_title(\"El récord de IED está hecho de utilidades que no se van, no de dinero nuevo\")\nax.text(0, 1.01, \"IED anual por tipo de inversión, 2006 a 2025. Arriba de cada barra, el porcentaje que es reinversión de utilidades\",\n        transform=ax.transAxes, fontsize=11.5, color=PALETA[\"tenue\"])\nax.legend(loc=\"upper left\")\npie(fig)\nplt.tight_layout(rect=(0, 0.03, 1, 1))\nplt.show()",
+        "execution_count": 6
+      },
+      {
+        "type": "image",
+        "src": "/projects/nearshoring-en-cifras-a-donde-llega-la-inversion-extranjera-en-mexico-2006-a-202/cell-8-1.png",
+        "alt": "Output 1 de la celda 8"
+      },
+      {
+        "type": "markdown",
+        "content": "## 2. La capital absorbe y el mapa se encoge\n\nDos lecturas de la misma tabla por estado: cuánto se lleva la Ciudad de México y cuántos estados hacen falta para sumar el 80 % de la inversión."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "cdmx = participacion.loc[\"Ciudad de México\"]\nprint(f\"CDMX: promedio 2006-2018 = {cdmx.loc[2006:2018].mean():.1f} %, 2024 = {cdmx[2024]:.1f} %, {ULTIMO} = {cdmx[ULTIMO]:.1f} %\")\nprint(f\"Estados para el 80 %: promedio 2006-2018 = {n80.loc[2006:2018].mean():.1f}, 2019 = {n80[2019]}, 2024 = {n80[2024]}, {ULTIMO} = {n80[ULTIMO]}\")\npd.DataFrame({\"CDMX %\": cdmx.round(1), \"estados para 80 %\": n80}).T",
+        "execution_count": 7
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>anio</th>\n      <th>2006</th>\n      <th>2007</th>\n      <th>2008</th>\n      <th>2009</th>\n      <th>2010</th>\n      <th>2011</th>\n      <th>2012</th>\n      <th>2013</th>\n      <th>2014</th>\n      <th>2015</th>\n      <th>2016</th>\n      <th>2017</th>\n      <th>2018</th>\n      <th>2019</th>\n      <th>2020</th>\n      <th>2021</th>\n      <th>2022</th>\n      <th>2023</th>\n      <th>2024</th>\n      <th>2025</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>CDMX %</th>\n      <td>26.7</td>\n      <td>21.4</td>\n      <td>26.2</td>\n      <td>29.4</td>\n      <td>14.9</td>\n      <td>29.3</td>\n      <td>6.1</td>\n      <td>12.1</td>\n      <td>20.2</td>\n      <td>16.4</td>\n      <td>21.6</td>\n      <td>15.1</td>\n      <td>17.1</td>\n      <td>25.4</td>\n      <td>25.0</td>\n      <td>21.2</td>\n      <td>30.4</td>\n      <td>31.2</td>\n      <td>40.9</td>\n      <td>52.9</td>\n    </tr>\n    <tr>\n      <th>estados para 80 %</th>\n      <td>11.0</td>\n      <td>13.0</td>\n      <td>12.0</td>\n      <td>12.0</td>\n      <td>12.0</td>\n      <td>12.0</td>\n      <td>15.0</td>\n      <td>15.0</td>\n      <td>13.0</td>\n      <td>13.0</td>\n      <td>12.0</td>\n      <td>14.0</td>\n      <td>13.0</td>\n      <td>13.0</td>\n      <td>14.0</td>\n      <td>14.0</td>\n      <td>11.0</td>\n      <td>11.0</td>\n      <td>10.0</td>\n      <td>6.0</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "fig, (a1, a2) = plt.subplots(1, 2, figsize=(12, 6.75))\na1.plot(cdmx.index, cdmx.values, color=PALETA[\"rojo\"], linewidth=2.5)\na1.axhline(cdmx.loc[2006:2018].mean(), color=PALETA[\"tenue\"], linestyle=\"--\", linewidth=1)\na1.text(ULTIMO, cdmx.loc[2006:2018].mean() - 2.6, f\"promedio 2006 a 2018: {cdmx.loc[2006:2018].mean():.0f} %\", ha=\"right\", fontsize=10, color=PALETA[\"tenue\"])\na1.text(ULTIMO, cdmx[ULTIMO] + 1.5, f\"{cdmx[ULTIMO]:.0f} %\", ha=\"right\", fontsize=12, color=PALETA[\"rojo\"], fontweight=\"bold\")\na1.set_ylim(0, max(60, cdmx.max() + 8))\na1.set_ylabel(\"Participación de la Ciudad de México (%)\")\na1.set_title(\"La CDMX pasó de una quinta parte a más de la mitad\", fontsize=13)\ncolores = [PALETA[\"rojo\"] if a == ULTIMO else PALETA[\"marino\"] for a in n80.index]\na2.bar(n80.index, n80.values, color=colores, width=0.72)\nfor a, v in n80.items():\n    a2.text(a, v + 0.3, str(v), ha=\"center\", fontsize=9.5, color=PALETA[\"tenue\"])\na2.set_ylabel(\"Estados que suman el 80 % de la IED\")\na2.set_ylim(0, n80.max() + 3)\na2.set_title(\"Cada vez menos estados suman el 80 %\", fontsize=13)\nfor a in (a1, a2):\n    a.set_xticks(list(range(2006, ULTIMO + 1, 3)))\n    a.tick_params(axis=\"x\", labelsize=10)\npie(fig)\nplt.tight_layout(rect=(0, 0.03, 1, 1), w_pad=4)\nplt.show()",
+        "execution_count": 8
+      },
+      {
+        "type": "image",
+        "src": "/projects/nearshoring-en-cifras-a-donde-llega-la-inversion-extranjera-en-mexico-2006-a-202/cell-11-2.png",
+        "alt": "Output 2 de la celda 11"
+      },
+      {
+        "type": "markdown",
+        "content": "## 3. De dónde viene: Estados Unidos manda, China casi no aparece\n\nPaís de origen según el inversionista final (criterio OCDE), no según el vehículo por el que entra el dinero. Las celdas confidenciales quedan fuera de la suma de países, no del total."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "origen = leer(\"act_ti_origen\")\nanual_pais = origen[origen.trimestre == 4].pivot(index=\"pais_origen\", columns=\"anio\", values=\"ied_acumulado_mdd\")\ntotal_pais = anual_pais.loc[\"Total general\"]\nshare = 100 * anual_pais.drop(index=\"Total general\") / total_pais\neeuu = share.loc[\"Estados Unidos de América\"]\nchina = share.loc[\"China, República Popular de\"]\nprint(f\"Estados Unidos: {ULTIMO} = {eeuu[ULTIMO]:.1f} %, mínimo {eeuu.min():.1f} % ({eeuu.idxmin()}), máximo {eeuu.max():.1f} % ({eeuu.idxmax()})\")\nprint(f\"China: máximo {china.max():.1f} % en {china.idxmax()}, {ULTIMO} = {china[ULTIMO]:.1f} %\")\ntop5 = share[ULTIMO].dropna().sort_values(ascending=False).head(5)\ntop5.round(1)",
+        "execution_count": 9
+      },
+      {
+        "type": "text-output",
+        "content": "pais_origen\nEstados Unidos de América    39.1\nEspaña                        8.6\nCanadá                        8.5\nJapón                         5.7\nSuiza                         4.9\nName: 2025, dtype: float64"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "fig, (a1, a2) = plt.subplots(1, 2, figsize=(12, 6.75), gridspec_kw={\"width_ratios\": [1.3, 1]})\na1.plot(eeuu.index, eeuu.values, color=PALETA[\"rojo\"], linewidth=2.5, label=\"Estados Unidos\")\na1.plot(china.index, china.values, color=PALETA[\"marino\"], linewidth=2, label=\"China\")\na1.text(ULTIMO + 0.4, eeuu[ULTIMO], f\"{eeuu[ULTIMO]:.0f} %\", va=\"center\", fontsize=12, color=PALETA[\"rojo\"], fontweight=\"bold\")\na1.text(ULTIMO + 0.4, china[ULTIMO], f\"{china[ULTIMO]:.1f} %\", va=\"center\", fontsize=11, color=PALETA[\"marino\"])\na1.set_ylim(0, 70)\na1.set_xlim(2005.5, ULTIMO + 3)\na1.set_xticks(list(range(2006, ULTIMO + 1, 3)))\na1.set_ylabel(\"Participación en la IED total (%)\")\na1.set_title(\"Estados Unidos manda; China casi no aparece\", fontsize=13)\na1.legend(loc=\"upper right\")\nt5 = top5.iloc[::-1]\na2.barh(t5.index.str.replace(\"Estados Unidos de América\", \"Estados Unidos\"), t5.values,\n        color=[PALETA[\"rojo\"] if \"Estados Unidos\" in p else PALETA[\"marino\"] for p in t5.index])\nfor i, v in enumerate(t5.values):\n    a2.text(v + 0.8, i, f\"{v:.1f} %\", va=\"center\", fontsize=11)\na2.set_xlim(0, t5.max() * 1.25)\na2.set_title(f\"Los cinco mayores inversionistas en {ULTIMO}\", fontsize=13)\npie(fig)\nplt.tight_layout(rect=(0, 0.03, 1, 1), w_pad=4)\nplt.show()",
+        "execution_count": 10
+      },
+      {
+        "type": "image",
+        "src": "/projects/nearshoring-en-cifras-a-donde-llega-la-inversion-extranjera-en-mexico-2006-a-202/cell-14-3.png",
+        "alt": "Output 3 de la celda 14"
+      },
+      {
+        "type": "markdown",
+        "content": "## 4. A dónde va el dinero nuevo\n\nSi se aparta la reinversión y se mira solo la inversión nueva de los últimos cinco años, el mapa cambia de forma: aparecen destinos turísticos y el norte industrial pesa menos de lo que sugiere el discurso."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "ef = leer(\"act_ef_tipodeinv\")\nnuevas = ef[(ef.tipo_inversion == \"Nuevas inversiones\") & (ef.entidad_federativa != \"Total general\") & ef.anio.between(ULTIMO - 4, ULTIMO)]\nnuevas_estado = nuevas.groupby(\"entidad_federativa\")[\"flujo_mdd\"].sum().sort_values(ascending=False)\nnuevas_pct = 100 * nuevas_estado / nuevas_estado.sum()\nprint(f\"Nuevas inversiones {ULTIMO - 4}-{ULTIMO}: {nuevas_estado.sum():,.0f} mdd en total\")\npd.DataFrame({\"mdd\": nuevas_estado.round(0), \"%\": nuevas_pct.round(1)}).head(10)",
+        "execution_count": 11
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>mdd</th>\n      <th>%</th>\n    </tr>\n    <tr>\n      <th>entidad_federativa</th>\n      <th></th>\n      <th></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Ciudad de México</th>\n      <td>15881.0</td>\n      <td>31.5</td>\n    </tr>\n    <tr>\n      <th>Baja California Sur</th>\n      <td>5185.0</td>\n      <td>10.3</td>\n    </tr>\n    <tr>\n      <th>Nuevo León</th>\n      <td>4260.0</td>\n      <td>8.5</td>\n    </tr>\n    <tr>\n      <th>Jalisco</th>\n      <td>2828.0</td>\n      <td>5.6</td>\n    </tr>\n    <tr>\n      <th>Quintana Roo</th>\n      <td>2633.0</td>\n      <td>5.2</td>\n    </tr>\n    <tr>\n      <th>Baja California</th>\n      <td>2207.0</td>\n      <td>4.4</td>\n    </tr>\n    <tr>\n      <th>Guanajuato</th>\n      <td>1828.0</td>\n      <td>3.6</td>\n    </tr>\n    <tr>\n      <th>Coahuila</th>\n      <td>1413.0</td>\n      <td>2.8</td>\n    </tr>\n    <tr>\n      <th>Tamaulipas</th>\n      <td>1412.0</td>\n      <td>2.8</td>\n    </tr>\n    <tr>\n      <th>Estado de México</th>\n      <td>1282.0</td>\n      <td>2.5</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "t10 = nuevas_pct.head(10).iloc[::-1]\nfig, ax = plt.subplots()\nax.barh(t10.index, t10.values, color=[PALETA[\"rojo\"] if e == \"Ciudad de México\" else PALETA[\"marino\"] for e in t10.index])\nfor i, v in enumerate(t10.values):\n    ax.text(v + 0.4, i, f\"{v:.1f} %\", va=\"center\", fontsize=11)\nax.set_xlim(0, t10.max() * 1.2)\nax.set_xlabel(f\"Participación en las nuevas inversiones {ULTIMO - 4} a {ULTIMO} (%)\")\nax.set_title(\"El dinero nuevo también se concentra, y el turismo aparece en el mapa\")\nax.text(0, 1.01, f\"Nuevas inversiones acumuladas {ULTIMO - 4} a {ULTIMO}, diez estados con mayor participación\",\n        transform=ax.transAxes, fontsize=11.5, color=PALETA[\"tenue\"])\npie(fig)\nplt.tight_layout(rect=(0, 0.03, 1, 1))\nplt.show()",
+        "execution_count": 12
+      },
+      {
+        "type": "image",
+        "src": "/projects/nearshoring-en-cifras-a-donde-llega-la-inversion-extranjera-en-mexico-2006-a-202/cell-17-4.png",
+        "alt": "Output 4 de la celda 17"
+      },
+      {
+        "type": "markdown",
+        "content": "## 5. Advertencias antes de citar estas cifras\n\n- **Domicilio fiscal, no planta.** La Secretaría de Economía asigna cada flujo al estado donde la empresa receptora tiene su domicilio fiscal. Una armadora en Coahuila con corporativo en la Ciudad de México cuenta para la capital. Parte de la concentración de la sección 2 es eso.\n- **Inversionista final.** El país de origen sigue el criterio del inversionista final de la OCDE. Una filial holandesa de un grupo estadounidense cuenta como Estados Unidos, no como Países Bajos.\n- **Confidenciales y revisiones.** Las celdas que identificarían a una empresa no se publican, y la Secretaría revisa cifras hacia atrás. Todo lo anterior usa cifras actualizadas al 28 de agosto de 2026; el notebook 01 concilia las originales con los boletines.\n- **2026 sigue igual.** El datastore cierra en el primer trimestre de 2026. El boletín de la Secretaría del 24 de agosto de 2026 reporta 34,968 millones de dólares en el primer semestre, 88.5 % de ellos reinversión de utilidades; Ciudad de México con 48.2 % y Estados Unidos con 48.2 %. Esas cuatro cifras vienen del boletín, no de estas tablas."
       }
     ]
   }

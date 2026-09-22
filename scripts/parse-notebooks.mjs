@@ -125,6 +125,16 @@ const PROJECT_OVERRIDES = {
     summary:
       "Primas salariales por habilidad: dominar prompt engineering o LangChain se paga ~30% por debajo de la mediana nacional, mientras que trabajar con agentes de IA se paga justo en ella — una brecha de $61,050 entre habilidades del mismo mercado. Un hallazgo contraintuitivo: en Estados Unidos, las multinacionales publican el salario 3.4 veces menos que las empresas locales.",
   },
+  "ied-nearshoring-mx/01_api_y_calidad": {
+    title: "Nearshoring en cifras — La API de datos.gob.mx y una tabla limpia",
+    summary:
+      "La inversión extranjera directa de México vive en datos.gob.mx, pero el CSV directo responde 403 y los Excel de la Secretaría de Economía están detrás de un challenge: la API del datastore es la única puerta abierta, y exige un User-Agent de navegador. Este notebook baja ocho tablas paginadas (2006 a 2025 en cifras actualizadas, hasta el primer trimestre de 2026 en originales), documenta seis mañas del formato con su evidencia (montos acumulados dentro del año, nulos que significan confidencial, un total que cambia de nombre, eñes rotas, tres niveles del SCIAN en una columna, originales contra actualizadas) y cierra con tres validaciones como aserciones: los estados suman el total nacional con diferencia cero y las cifras originales cuadran al millón con los boletines oficiales.",
+  },
+  "ied-nearshoring-mx/02_nearshoring_en_cifras": {
+    title: "Nearshoring en cifras — A dónde llega la inversión extranjera en México, 2006 a 2025",
+    summary:
+      "Cuatro hallazgos sobre veinte años de IED: el récord de 2025 está hecho de reinversión de utilidades (68 %, contra 37 % de promedio entre 2006 y 2018) y las nuevas inversiones de 2024 son las más bajas de la serie; la Ciudad de México pasó de 20 % a 53 % de la inversión; los estados que suman el 80 % bajaron de 13 a 6; Estados Unidos aporta 39 % y China nunca ha pasado de 2.4 %. Empieza con una consulta en vivo a la API y la gráfica principal en cinco celdas, y cierra con la advertencia que cambia la lectura: la Secretaría asigna la inversión al domicilio fiscal de la empresa, no a la planta.",
+  },
   "mercado-ia-mx-us/04_modelo_imputacion": {
     title: "Mercado de IA — Modelo de imputación salarial",
     summary:
@@ -290,7 +300,7 @@ function classify(notebook, techs, srcAll) {
   if (/scipy\.stats|ttest_ind|ttest_rel|chi2_contingency|mannwhitneyu|levene|shapiro|st\.t\b|welch/i.test(srcAll)) {
     cats.add("Estadística & Pruebas de Hipótesis");
   }
-  if (/SELECT\s+[\s\S]+?FROM/i.test(srcAll) || /cohort|funnel|test\s*a\/?b|a\/a\/b|retention|ltv|cac|roi/i.test(lower)) {
+  if (/SELECT\s+[\s\S]+?FROM/i.test(srcAll) || /\b(?:cohort|funnel|test\s*a\/?b|a\/a\/b|retention|ltv|cac|roi)\b/i.test(lower)) {
     cats.add("SQL & Analítica de Producto");
   }
   if (techs.includes("Plotly") || /interactive|dashboard|fig\.show\(\)|plotly\.express/i.test(srcAll)) {
@@ -451,7 +461,13 @@ async function main() {
   ];
   // Bloques del portafolio, del más viejo al más reciente.
   const blockRank = (folder) =>
-    folder.startsWith("credit-risk") ? 2 : folder.startsWith("Telecom") ? 1 : 0;
+    folder.startsWith("ied-nearshoring")
+      ? 3
+      : folder.startsWith("credit-risk")
+        ? 2
+        : folder.startsWith("Telecom")
+          ? 1
+          : 0;
 
   projects.sort((a, b) => {
     const aBlock = blockRank(a.folder);
