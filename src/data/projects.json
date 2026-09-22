@@ -6435,7 +6435,7 @@
       {
         "type": "code",
         "language": "python",
-        "content": "from pathlib import Path\n\nimport matplotlib.pyplot as plt\nimport matplotlib_inline\nimport pandas as pd\nimport requests\n\nmatplotlib_inline.backend_inline.set_matplotlib_formats(\"retina\")\n\nRAIZ = Path.cwd() if (Path.cwd() / \"data\").exists() else Path.cwd().parent\nDATA = RAIZ / \"data\"\nAPI = \"https://www.datos.gob.mx/api/3/action\"\nSESION = requests.Session()\nSESION.headers[\"User-Agent\"] = \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36\"\n\nPALETA = {\n    \"papel\": \"#0C324A\", \"hondo\": \"#07253A\", \"tinta\": \"#FEF1D5\", \"tenue\": \"#BFBFB1\", \"leve\": \"#9DA59D\",\n    \"filete\": \"#2C6183\", \"filete_fuerte\": \"#4E85A6\", \"rojo\": \"#C11720\", \"marino\": \"#679CBC\",\n}\nplt.rcParams.update({\n    \"figure.facecolor\": PALETA[\"papel\"], \"axes.facecolor\": PALETA[\"papel\"], \"savefig.facecolor\": PALETA[\"papel\"],\n    \"text.color\": PALETA[\"tinta\"], \"axes.labelcolor\": PALETA[\"tenue\"],\n    \"xtick.color\": PALETA[\"tenue\"], \"ytick.color\": PALETA[\"tenue\"],\n    \"axes.edgecolor\": PALETA[\"filete\"], \"axes.spines.top\": False, \"axes.spines.right\": False,\n    \"axes.grid\": False, \"font.size\": 12, \"axes.titlesize\": 16, \"axes.titleweight\": \"bold\",\n    \"axes.titlelocation\": \"left\", \"axes.titlepad\": 28,\n    \"figure.figsize\": (12, 6.75), \"figure.dpi\": 100, \"savefig.dpi\": 150, \"legend.frameon\": False,\n})\n\n\ndef leer(tabla: str) -> pd.DataFrame:\n    \"\"\"Lee una tabla del snapshot que dejó el notebook 01.\"\"\"\n    return pd.read_csv(DATA / f\"{tabla}.csv\")\n\n\ndef pie(fig, texto=\"Fuente: Secretaría de Economía vía datos.gob.mx · cifras actualizadas · consulta 21 sep 2026\"):\n    fig.text(0.01, 0.005, texto, ha=\"left\", va=\"bottom\", fontsize=9.5, color=PALETA[\"leve\"])",
+        "content": "import logging\nfrom pathlib import Path\n\nimport matplotlib.pyplot as plt\nimport matplotlib_inline\nimport pandas as pd\nimport requests\nfrom matplotlib import font_manager as fm\n\nmatplotlib_inline.backend_inline.set_matplotlib_formats(\"retina\")\nlogging.getLogger(\"matplotlib.font_manager\").setLevel(logging.ERROR)\n\nRAIZ = Path.cwd() if (Path.cwd() / \"data\").exists() else Path.cwd().parent\nDATA = RAIZ / \"data\"\nAPI = \"https://www.datos.gob.mx/api/3/action\"\nSESION = requests.Session()\nSESION.headers[\"User-Agent\"] = \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36\"\n\nPALETA = {\n    \"papel\": \"#050706\", \"panel\": \"#0B0F0D\", \"tinta\": \"#F3F1EC\", \"tenue\": \"#ACABA7\", \"leve\": \"#81817E\",\n    \"filete\": \"#222321\", \"filete_fuerte\": \"#393A38\", \"acento\": \"#00DF81\", \"acento_hondo\": \"#00C271\",\n    \"neutro\": \"#646561\", \"neutro_claro\": \"#9A9A96\",\n}\n# Archivo (póster) para los títulos y IBM Plex Mono para el pie, si están instaladas; el cuerpo va en DejaVu Sans.\nfor archivo in [\"NyxArchivo-VF.ttf\", \"NyxIBMPlexMono-Regular.ttf\"]:\n    ruta = Path.home() / \"Library\" / \"Fonts\" / archivo\n    if ruta.exists():\n        fm.fontManager.addfont(str(ruta))\nINSTALADAS = {f.name for f in fm.fontManager.ttflist}\nARCHIVO = \"Archivo\" if \"Archivo\" in INSTALADAS else \"DejaVu Sans\"\nMONO = \"IBM Plex Mono\" if \"IBM Plex Mono\" in INSTALADAS else \"DejaVu Sans Mono\"\nplt.rcParams.update({\n    \"figure.facecolor\": PALETA[\"papel\"], \"axes.facecolor\": PALETA[\"papel\"], \"savefig.facecolor\": PALETA[\"papel\"],\n    \"text.color\": PALETA[\"tinta\"], \"axes.labelcolor\": PALETA[\"tenue\"],\n    \"xtick.color\": PALETA[\"tenue\"], \"ytick.color\": PALETA[\"tenue\"],\n    \"axes.edgecolor\": PALETA[\"filete_fuerte\"], \"axes.spines.top\": False, \"axes.spines.right\": False,\n    \"axes.grid\": False, \"font.family\": \"DejaVu Sans\", \"font.size\": 12, \"axes.titlesize\": 16, \"axes.titleweight\": \"bold\",\n    \"axes.titlelocation\": \"left\", \"axes.titlepad\": 28,\n    \"figure.figsize\": (12, 6.75), \"figure.dpi\": 100, \"savefig.dpi\": 150, \"legend.frameon\": False,\n})\n\n\ndef leer(tabla: str) -> pd.DataFrame:\n    \"\"\"Lee una tabla del snapshot que dejó el notebook 01.\"\"\"\n    return pd.read_csv(DATA / f\"{tabla}.csv\")\n\n\ndef titulo(ax, texto, size=16):\n    ax.set_title(texto, fontsize=size, fontfamily=ARCHIVO, fontweight=\"bold\")\n\n\ndef pie(fig, texto=\"Fuente: Secretaría de Economía vía datos.gob.mx · cifras actualizadas · consulta 21 sep 2026\"):\n    fig.text(0.01, 0.005, texto, ha=\"left\", va=\"bottom\", fontsize=9, color=PALETA[\"leve\"], fontfamily=MONO)",
         "execution_count": 1
       },
       {
@@ -6461,7 +6461,7 @@
       {
         "type": "code",
         "language": "python",
-        "content": "top = comparacion.head(10).iloc[::-1]\nfig, ax = plt.subplots()\ny = range(len(top))\nax.barh([i + 0.2 for i in y], top[\"2015-2019\"], height=0.38, color=PALETA[\"filete_fuerte\"], label=\"Promedio 2015 a 2019\")\ncolores = [PALETA[\"rojo\"] if e == \"Ciudad de México\" else PALETA[\"marino\"] for e in top.index]\nax.barh([i - 0.2 for i in y], top[str(ULTIMO)], height=0.38, color=colores, label=str(ULTIMO))\nfor i, (b, u) in enumerate(zip(top[\"2015-2019\"], top[str(ULTIMO)])):\n    ax.text(u + 0.6, i - 0.2, f\"{u:.1f} %\", va=\"center\", fontsize=11, color=PALETA[\"tinta\"])\n    ax.text(b + 0.6, i + 0.2, f\"{b:.1f} %\", va=\"center\", fontsize=9.5, color=PALETA[\"tenue\"])\nax.set_yticks(list(y), top.index)\nax.set_xlim(0, top[str(ULTIMO)].max() * 1.18)\nax.set_xlabel(\"Participación en la IED total (%)\")\nax.set_title(f\"En {ULTIMO}, {n80[ULTIMO]} estados concentraron el 80 % de la IED que llegó a México\")\nax.text(0, 1.01, f\"Antes hacían falta {n80.loc[2015:2019].mean():.0f}. Los diez estados con mayor participación en {ULTIMO}\",\n        transform=ax.transAxes, fontsize=11.5, color=PALETA[\"tenue\"])\nax.legend(loc=\"lower right\")\npie(fig)\nplt.tight_layout(rect=(0, 0.03, 1, 1))\nplt.show()",
+        "content": "top = comparacion.head(10).iloc[::-1]\nfig, ax = plt.subplots()\ny = range(len(top))\nax.barh([i + 0.2 for i in y], top[\"2015-2019\"], height=0.38, color=PALETA[\"neutro\"], label=\"Promedio 2015 a 2019\")\ncolores = [PALETA[\"acento\"] if e == \"Ciudad de México\" else PALETA[\"neutro_claro\"] for e in top.index]\nax.barh([i - 0.2 for i in y], top[str(ULTIMO)], height=0.38, color=colores, label=str(ULTIMO))\nfor i, (b, u) in enumerate(zip(top[\"2015-2019\"], top[str(ULTIMO)])):\n    ax.text(u + 0.6, i - 0.2, f\"{u:.1f} %\", va=\"center\", fontsize=11, color=PALETA[\"tinta\"])\n    ax.text(b + 0.6, i + 0.2, f\"{b:.1f} %\", va=\"center\", fontsize=9.5, color=PALETA[\"tenue\"])\nax.set_yticks(list(y), top.index)\nax.set_xlim(0, top[str(ULTIMO)].max() * 1.18)\nax.set_xlabel(\"Participación en la IED total (%)\")\ntitulo(ax, f\"En {ULTIMO}, {n80[ULTIMO]} estados concentraron el 80 % de la IED que llegó a México\")\nax.text(0, 1.01, f\"Antes hacían falta {n80.loc[2015:2019].mean():.0f}. Los diez estados con mayor participación en {ULTIMO}\",\n        transform=ax.transAxes, fontsize=11.5, color=PALETA[\"tenue\"])\nax.legend(loc=\"lower right\")\npie(fig)\nplt.tight_layout(rect=(0, 0.03, 1, 1))\nplt.show()",
         "execution_count": 4
       },
       {
@@ -6486,7 +6486,7 @@
       {
         "type": "code",
         "language": "python",
-        "content": "orden = [\"Nuevas inversiones\", \"Reinversión de utilidades\", \"Cuentas entre compañías\"]\ncol = {\"Nuevas inversiones\": PALETA[\"marino\"], \"Reinversión de utilidades\": PALETA[\"rojo\"], \"Cuentas entre compañías\": PALETA[\"filete_fuerte\"]}\nfig, ax = plt.subplots()\nabajo = pd.Series(0.0, index=partes.index)\nfor c in orden:\n    ax.bar(partes.index, partes[c], bottom=abajo, color=col[c], label=c, width=0.72)\n    abajo = abajo + partes[c].fillna(0)\nfor anio, valor in anual_tipo[\"Total general\"].items():\n    ax.text(anio, valor + 600, f\"{pct.loc[anio, 'Reinversión de utilidades']:.0f} %\", ha=\"center\", fontsize=9, color=PALETA[\"tenue\"])\nax.set_ylabel(\"Millones de dólares\")\nax.set_xticks(list(partes.index))\nax.tick_params(axis=\"x\", labelsize=10, rotation=45)\nax.set_title(\"El récord de IED está hecho de utilidades que no se van, no de dinero nuevo\")\nax.text(0, 1.01, \"IED anual por tipo de inversión, 2006 a 2025. Arriba de cada barra, el porcentaje que es reinversión de utilidades\",\n        transform=ax.transAxes, fontsize=11.5, color=PALETA[\"tenue\"])\nax.legend(loc=\"upper left\")\npie(fig)\nplt.tight_layout(rect=(0, 0.03, 1, 1))\nplt.show()",
+        "content": "orden = [\"Nuevas inversiones\", \"Reinversión de utilidades\", \"Cuentas entre compañías\"]\ncol = {\"Nuevas inversiones\": PALETA[\"neutro_claro\"], \"Reinversión de utilidades\": PALETA[\"acento\"], \"Cuentas entre compañías\": PALETA[\"neutro\"]}\nfig, ax = plt.subplots()\nabajo = pd.Series(0.0, index=partes.index)\nfor c in orden:\n    ax.bar(partes.index, partes[c], bottom=abajo, color=col[c], label=c, width=0.72)\n    abajo = abajo + partes[c].fillna(0)\nfor anio, valor in anual_tipo[\"Total general\"].items():\n    ax.text(anio, valor + 600, f\"{pct.loc[anio, 'Reinversión de utilidades']:.0f} %\", ha=\"center\", fontsize=9, color=PALETA[\"tenue\"])\nax.set_ylabel(\"Millones de dólares\")\nax.set_xticks(list(partes.index))\nax.tick_params(axis=\"x\", labelsize=10, rotation=45)\ntitulo(ax, \"El récord de IED está hecho de utilidades que no se van, no de dinero nuevo\")\nax.text(0, 1.01, \"IED anual por tipo de inversión, 2006 a 2025. Arriba de cada barra, el porcentaje que es reinversión de utilidades\",\n        transform=ax.transAxes, fontsize=11.5, color=PALETA[\"tenue\"])\nax.legend(loc=\"upper left\")\npie(fig)\nplt.tight_layout(rect=(0, 0.03, 1, 1))\nplt.show()",
         "execution_count": 6
       },
       {
@@ -6511,7 +6511,7 @@
       {
         "type": "code",
         "language": "python",
-        "content": "fig, (a1, a2) = plt.subplots(1, 2, figsize=(12, 6.75))\na1.plot(cdmx.index, cdmx.values, color=PALETA[\"rojo\"], linewidth=2.5)\na1.axhline(cdmx.loc[2006:2018].mean(), color=PALETA[\"tenue\"], linestyle=\"--\", linewidth=1)\na1.text(ULTIMO, cdmx.loc[2006:2018].mean() - 2.6, f\"promedio 2006 a 2018: {cdmx.loc[2006:2018].mean():.0f} %\", ha=\"right\", fontsize=10, color=PALETA[\"tenue\"])\na1.text(ULTIMO, cdmx[ULTIMO] + 1.5, f\"{cdmx[ULTIMO]:.0f} %\", ha=\"right\", fontsize=12, color=PALETA[\"rojo\"], fontweight=\"bold\")\na1.set_ylim(0, max(60, cdmx.max() + 8))\na1.set_ylabel(\"Participación de la Ciudad de México (%)\")\na1.set_title(\"La CDMX pasó de una quinta parte a más de la mitad\", fontsize=13)\ncolores = [PALETA[\"rojo\"] if a == ULTIMO else PALETA[\"marino\"] for a in n80.index]\na2.bar(n80.index, n80.values, color=colores, width=0.72)\nfor a, v in n80.items():\n    a2.text(a, v + 0.3, str(v), ha=\"center\", fontsize=9.5, color=PALETA[\"tenue\"])\na2.set_ylabel(\"Estados que suman el 80 % de la IED\")\na2.set_ylim(0, n80.max() + 3)\na2.set_title(\"Cada vez menos estados suman el 80 %\", fontsize=13)\nfor a in (a1, a2):\n    a.set_xticks(list(range(2006, ULTIMO + 1, 3)))\n    a.tick_params(axis=\"x\", labelsize=10)\npie(fig)\nplt.tight_layout(rect=(0, 0.03, 1, 1), w_pad=4)\nplt.show()",
+        "content": "fig, (a1, a2) = plt.subplots(1, 2, figsize=(12, 6.75))\na1.plot(cdmx.index, cdmx.values, color=PALETA[\"acento\"], linewidth=2.5)\na1.axhline(cdmx.loc[2006:2018].mean(), color=PALETA[\"tenue\"], linestyle=\"--\", linewidth=1)\na1.text(ULTIMO, cdmx.loc[2006:2018].mean() - 2.6, f\"promedio 2006 a 2018: {cdmx.loc[2006:2018].mean():.0f} %\", ha=\"right\", fontsize=10, color=PALETA[\"tenue\"])\na1.text(ULTIMO, cdmx[ULTIMO] + 1.5, f\"{cdmx[ULTIMO]:.0f} %\", ha=\"right\", fontsize=12, color=PALETA[\"acento\"], fontweight=\"bold\")\na1.set_ylim(0, max(60, cdmx.max() + 8))\na1.set_ylabel(\"Participación de la Ciudad de México (%)\")\ntitulo(a1, \"La CDMX pasó de una quinta parte a más de la mitad\", 13)\ncolores = [PALETA[\"acento\"] if a == ULTIMO else PALETA[\"neutro\"] for a in n80.index]\na2.bar(n80.index, n80.values, color=colores, width=0.72)\nfor a, v in n80.items():\n    a2.text(a, v + 0.3, str(v), ha=\"center\", fontsize=9.5, color=PALETA[\"tenue\"])\na2.set_ylabel(\"Estados que suman el 80 % de la IED\")\na2.set_ylim(0, n80.max() + 3)\ntitulo(a2, \"Cada vez menos estados suman el 80 %\", 13)\nfor a in (a1, a2):\n    a.set_xticks(list(range(2006, ULTIMO + 1, 3)))\n    a.tick_params(axis=\"x\", labelsize=10)\npie(fig)\nplt.tight_layout(rect=(0, 0.03, 1, 1), w_pad=4)\nplt.show()",
         "execution_count": 8
       },
       {
@@ -6536,7 +6536,7 @@
       {
         "type": "code",
         "language": "python",
-        "content": "fig, (a1, a2) = plt.subplots(1, 2, figsize=(12, 6.75), gridspec_kw={\"width_ratios\": [1.3, 1]})\na1.plot(eeuu.index, eeuu.values, color=PALETA[\"rojo\"], linewidth=2.5, label=\"Estados Unidos\")\na1.plot(china.index, china.values, color=PALETA[\"marino\"], linewidth=2, label=\"China\")\na1.text(ULTIMO + 0.4, eeuu[ULTIMO], f\"{eeuu[ULTIMO]:.0f} %\", va=\"center\", fontsize=12, color=PALETA[\"rojo\"], fontweight=\"bold\")\na1.text(ULTIMO + 0.4, china[ULTIMO], f\"{china[ULTIMO]:.1f} %\", va=\"center\", fontsize=11, color=PALETA[\"marino\"])\na1.set_ylim(0, 70)\na1.set_xlim(2005.5, ULTIMO + 3)\na1.set_xticks(list(range(2006, ULTIMO + 1, 3)))\na1.set_ylabel(\"Participación en la IED total (%)\")\na1.set_title(\"Estados Unidos manda; China casi no aparece\", fontsize=13)\na1.legend(loc=\"upper right\")\nt5 = top5.iloc[::-1]\na2.barh(t5.index.str.replace(\"Estados Unidos de América\", \"Estados Unidos\"), t5.values,\n        color=[PALETA[\"rojo\"] if \"Estados Unidos\" in p else PALETA[\"marino\"] for p in t5.index])\nfor i, v in enumerate(t5.values):\n    a2.text(v + 0.8, i, f\"{v:.1f} %\", va=\"center\", fontsize=11)\na2.set_xlim(0, t5.max() * 1.25)\na2.set_title(f\"Los cinco mayores inversionistas en {ULTIMO}\", fontsize=13)\npie(fig)\nplt.tight_layout(rect=(0, 0.03, 1, 1), w_pad=4)\nplt.show()",
+        "content": "fig, (a1, a2) = plt.subplots(1, 2, figsize=(12, 6.75), gridspec_kw={\"width_ratios\": [1.3, 1]})\na1.plot(eeuu.index, eeuu.values, color=PALETA[\"acento\"], linewidth=2.5, label=\"Estados Unidos\")\na1.plot(china.index, china.values, color=PALETA[\"neutro_claro\"], linewidth=2, label=\"China\")\na1.text(ULTIMO + 0.4, eeuu[ULTIMO], f\"{eeuu[ULTIMO]:.0f} %\", va=\"center\", fontsize=12, color=PALETA[\"acento\"], fontweight=\"bold\")\na1.text(ULTIMO + 0.4, china[ULTIMO], f\"{china[ULTIMO]:.1f} %\", va=\"center\", fontsize=11, color=PALETA[\"neutro_claro\"])\na1.set_ylim(0, 70)\na1.set_xlim(2005.5, ULTIMO + 3)\na1.set_xticks(list(range(2006, ULTIMO + 1, 3)))\na1.set_ylabel(\"Participación en la IED total (%)\")\ntitulo(a1, \"Estados Unidos manda; China casi no aparece\", 13)\na1.legend(loc=\"upper right\")\nt5 = top5.iloc[::-1]\na2.barh(t5.index.str.replace(\"Estados Unidos de América\", \"Estados Unidos\"), t5.values,\n        color=[PALETA[\"acento\"] if \"Estados Unidos\" in p else PALETA[\"neutro\"] for p in t5.index])\nfor i, v in enumerate(t5.values):\n    a2.text(v + 0.8, i, f\"{v:.1f} %\", va=\"center\", fontsize=11)\na2.set_xlim(0, t5.max() * 1.25)\ntitulo(a2, f\"Los cinco mayores inversionistas en {ULTIMO}\", 13)\npie(fig)\nplt.tight_layout(rect=(0, 0.03, 1, 1), w_pad=4)\nplt.show()",
         "execution_count": 10
       },
       {
@@ -6561,7 +6561,7 @@
       {
         "type": "code",
         "language": "python",
-        "content": "t10 = nuevas_pct.head(10).iloc[::-1]\nfig, ax = plt.subplots()\nax.barh(t10.index, t10.values, color=[PALETA[\"rojo\"] if e == \"Ciudad de México\" else PALETA[\"marino\"] for e in t10.index])\nfor i, v in enumerate(t10.values):\n    ax.text(v + 0.4, i, f\"{v:.1f} %\", va=\"center\", fontsize=11)\nax.set_xlim(0, t10.max() * 1.2)\nax.set_xlabel(f\"Participación en las nuevas inversiones {ULTIMO - 4} a {ULTIMO} (%)\")\nax.set_title(\"El dinero nuevo también se concentra, y el turismo aparece en el mapa\")\nax.text(0, 1.01, f\"Nuevas inversiones acumuladas {ULTIMO - 4} a {ULTIMO}, diez estados con mayor participación\",\n        transform=ax.transAxes, fontsize=11.5, color=PALETA[\"tenue\"])\npie(fig)\nplt.tight_layout(rect=(0, 0.03, 1, 1))\nplt.show()",
+        "content": "t10 = nuevas_pct.head(10).iloc[::-1]\nfig, ax = plt.subplots()\nax.barh(t10.index, t10.values, color=[PALETA[\"acento\"] if e == \"Ciudad de México\" else PALETA[\"neutro\"] for e in t10.index])\nfor i, v in enumerate(t10.values):\n    ax.text(v + 0.4, i, f\"{v:.1f} %\", va=\"center\", fontsize=11)\nax.set_xlim(0, t10.max() * 1.2)\nax.set_xlabel(f\"Participación en las nuevas inversiones {ULTIMO - 4} a {ULTIMO} (%)\")\ntitulo(ax, \"El dinero nuevo también se concentra, y el turismo aparece en el mapa\")\nax.text(0, 1.01, f\"Nuevas inversiones acumuladas {ULTIMO - 4} a {ULTIMO}, diez estados con mayor participación\",\n        transform=ax.transAxes, fontsize=11.5, color=PALETA[\"tenue\"])\npie(fig)\nplt.tight_layout(rect=(0, 0.03, 1, 1))\nplt.show()",
         "execution_count": 12
       },
       {
@@ -6572,6 +6572,371 @@
       {
         "type": "markdown",
         "content": "## 5. Advertencias antes de citar estas cifras\n\n- **Domicilio fiscal, no planta.** La Secretaría de Economía asigna cada flujo al estado donde la empresa receptora tiene su domicilio fiscal. Una armadora en Coahuila con corporativo en la Ciudad de México cuenta para la capital. Parte de la concentración de la sección 2 es eso.\n- **Inversionista final.** El país de origen sigue el criterio del inversionista final de la OCDE. Una filial holandesa de un grupo estadounidense cuenta como Estados Unidos, no como Países Bajos.\n- **Confidenciales y revisiones.** Las celdas que identificarían a una empresa no se publican, y la Secretaría revisa cifras hacia atrás. Todo lo anterior usa cifras actualizadas al 28 de agosto de 2026; el notebook 01 concilia las originales con los boletines.\n- **2026 sigue igual.** El datastore cierra en el primer trimestre de 2026. El boletín de la Secretaría del 24 de agosto de 2026 reporta 34,968 millones de dólares en el primer semestre, 88.5 % de ellos reinversión de utilidades; Ciudad de México con 48.2 % y Estados Unidos con 48.2 %. Esas cuatro cifras vienen del boletín, no de estas tablas."
+      }
+    ]
+  },
+  {
+    "slug": "salarios-del-imss-cinco-archivos-abiertos-23-millones-de-filas",
+    "title": "Salarios del IMSS — Cinco archivos abiertos, 23 millones de filas",
+    "summary": "El IMSS publica cada mes el salario base de cotización de cada puesto de trabajo afiliado, agregado por estado, municipio, sector, sexo, edad, rango salarial y tamaño del patrón, en archivos de 300 a 400 MB. Este notebook descarga cinco cortes de agosto (2018 a 2026) con caché, los lee con Polars sin cargarlos completos, documenta cinco mañas del formato (dos poblaciones en una tabla, salario topado a 25 UMA, catálogos propios, esquemas que cambian con los años) y valida el corte de 2026 contra el boletín oficial: 22,798,473 puestos y 673.1 pesos diarios, exactos. Deja siete agregados compactos para el análisis.",
+    "repoPath": "salarios-imss-mx/01_imss_datos_abiertos.ipynb",
+    "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/salarios-imss-mx/01_imss_datos_abiertos.ipynb",
+    "folder": "salarios-imss-mx",
+    "technologies": [
+      "Pandas",
+      "Python"
+    ],
+    "categories": [
+      "Análisis Exploratorio (EDA)"
+    ],
+    "cellCount": 31,
+    "imageCount": 0,
+    "coverImage": null,
+    "results": null,
+    "cells": [
+      {
+        "type": "markdown",
+        "content": "# Salarios del IMSS: 22.8 millones de puestos de trabajo en cinco archivos abiertos\n\nLas vacantes en México casi nunca publican el sueldo. El IMSS sí lo registra: cada mes publica el salario base de cotización de cada puesto de trabajo afiliado, agregado por estado, municipio, sector, sexo, edad, rango salarial y tamaño del patrón. Este notebook descarga cinco cortes de agosto, de 2018 a 2026, documenta el formato y deja agregados compactos con los que trabaja el notebook 02.\n\n**Fuente:** Datos Abiertos IMSS, conjuntos `asg-<año>` (licencia Libre Uso MX). Archivos mensuales de 300 a 400 MB y cerca de cinco millones de filas cada uno. Diccionario, glosario y preguntas frecuentes oficiales en `docs/fuente/`."
+      },
+      {
+        "type": "markdown",
+        "content": "## 1. Preparación\n\nCinco cortes de agosto, cada dos años. Agosto es el mes del último boletín publicado y evita la estacionalidad de diciembre. Polars lee los archivos sin cargarlos completos en memoria."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "import json\nimport time\nfrom datetime import date\nfrom pathlib import Path\n\nimport pandas as pd\nimport polars as pl\nimport requests\n\nRAIZ = Path.cwd() if (Path.cwd() / \"data\").exists() else Path.cwd().parent\nDATA = RAIZ / \"data\"\nRAW = DATA / \"raw\"\nRAW.mkdir(parents=True, exist_ok=True)\nDICCIONARIO = RAIZ / \"docs\" / \"fuente\" / \"diccionario_de_datos_asegurados.xlsx\"\n\nANIOS = [2018, 2020, 2022, 2024, 2026]\nCORTE = \"08-31\"\nBASE = \"http://datos.imss.gob.mx/sites/default/files\"\nAPI = \"http://datos.imss.gob.mx/api/3/action/package_show\"\nUA = (\n    \"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 \"\n    \"(KHTML, like Gecko) Chrome/128.0 Safari/537.36\"\n)\nSESION = requests.Session()\nSESION.headers[\"User-Agent\"] = UA\npl.Config.set_tbl_rows(40)\npl.Config.set_fmt_str_lengths(60)\nprint(\"Crudos en:\", RAW)",
+        "execution_count": 1
+      },
+      {
+        "type": "markdown",
+        "content": "## 2. El catálogo y la descarga\n\nEl portal corre DKAN y expone la misma API que CKAN: `package_show` lista los archivos de cada año con su tamaño. Solo responde por `http` y con un `User-Agent` de navegador. La descarga guarda en `data/raw/` y no repite lo que ya está."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "catalogo = SESION.get(API, params={\"id\": \"asg-2026\"}, timeout=60).json()[\"result\"]\ncatalogo = catalogo[0] if isinstance(catalogo, list) else catalogo\npd.DataFrame([(r[\"name\"], r[\"format\"], r[\"size\"], r[\"url\"]) for r in catalogo[\"resources\"]], columns=[\"archivo\", \"formato\", \"tamaño\", \"url\"])",
+        "execution_count": 2
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>archivo</th>\n      <th>formato</th>\n      <th>tamaño</th>\n      <th>url</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>asg-2026-01-31</td>\n      <td>csv</td>\n      <td>374.86 MB</td>\n      <td>http://datos.imss.gob.mx/sites/default/files/a...</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>asg-2026-02-28</td>\n      <td>csv</td>\n      <td>372.56 MB</td>\n      <td>http://datos.imss.gob.mx/sites/default/files/a...</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>asg-2026-03-31</td>\n      <td>csv</td>\n      <td>371.74 MB</td>\n      <td>http://datos.imss.gob.mx/sites/default/files/a...</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>asg-2026-04-30</td>\n      <td>csv</td>\n      <td>372.57 MB</td>\n      <td>http://datos.imss.gob.mx/sites/default/files/a...</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>asg-2026-05-31</td>\n      <td>csv</td>\n      <td>381.62 MB</td>\n      <td>http://datos.imss.gob.mx/sites/default/files/a...</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>asg-2026-06-30</td>\n      <td>csv</td>\n      <td>381.97 MB</td>\n      <td>http://datos.imss.gob.mx/sites/default/files/a...</td>\n    </tr>\n    <tr>\n      <th>6</th>\n      <td>asg-2026-07-31</td>\n      <td>csv</td>\n      <td>383.65 MB</td>\n      <td>http://datos.imss.gob.mx/sites/default/files/a...</td>\n    </tr>\n    <tr>\n      <th>7</th>\n      <td>asg-2026-08-31</td>\n      <td>csv</td>\n      <td>384 MB</td>\n      <td>http://datos.imss.gob.mx/sites/default/files/a...</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "def descargar(anio: int) -> Path:\n    \"\"\"Descarga el corte de agosto de un año a data/raw/, si no está ya.\"\"\"\n    destino = RAW / f\"asg-{anio}-{CORTE}.csv\"\n    if destino.exists() and destino.stat().st_size > 100_000_000:\n        return destino\n    parcial = destino.with_suffix(\".parcial\")\n    with SESION.get(f\"{BASE}/asg-{anio}-{CORTE}.csv\", stream=True, timeout=900) as r:\n        r.raise_for_status()\n        with open(parcial, \"wb\") as f:\n            for trozo in r.iter_content(chunk_size=1 << 20):\n                f.write(trozo)\n    parcial.rename(destino)\n    return destino\n\n\narchivos: dict[int, Path] = {}\nfor anio in ANIOS:\n    inicio = time.perf_counter()\n    archivos[anio] = descargar(anio)\n    print(f\"{archivos[anio].name}  {archivos[anio].stat().st_size / 1e6:6.0f} MB  {time.perf_counter() - inicio:5.1f} s\")",
+        "execution_count": 3
+      },
+      {
+        "type": "markdown",
+        "content": "## 3. Esquema por año\n\nSeparador `|`, codificación latin-1 y la palabra `NA` donde no aplica. Las columnas cambian con los años: `ptpd` (trabajador de plataforma digital) aparece en los archivos recientes."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "def abrir(anio: int) -> pl.LazyFrame:\n    \"\"\"Lectura perezosa de un corte. Renombra la columna con la ñ rota.\"\"\"\n    lf = pl.scan_csv(\n        archivos[anio], separator=\"|\", encoding=\"utf8-lossy\", null_values=[\"NA\"], infer_schema_length=10_000\n    )\n    columnas = lf.collect_schema().names()\n    rota = next((c for c in columnas if c.startswith(\"tama\")), None)\n    return lf.rename({rota: \"tamano_patron\"}) if rota and rota != \"tamano_patron\" else lf\n\n\nesquemas = {anio: abrir(anio).collect_schema().names() for anio in ANIOS}\ntodas = sorted({c for cols in esquemas.values() for c in cols}, key=lambda c: esquemas[2026].index(c) if c in esquemas[2026] else 99)\npd.DataFrame({anio: [c in cols for c in todas] for anio, cols in esquemas.items()}, index=todas).replace({True: \"sí\", False: \"\"})",
+        "execution_count": 4
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>2018</th>\n      <th>2020</th>\n      <th>2022</th>\n      <th>2024</th>\n      <th>2026</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>cve_delegacion</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>cve_subdelegacion</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>cve_entidad</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>cve_municipio</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>ptpd</th>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td></td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>sector_economico_1</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>sector_economico_2</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>sector_economico_4</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>tamano_patron</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>sexo</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>rango_edad</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>rango_salarial</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>rango_uma</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>asegurados</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>no_trabajadores</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>ta</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>teu</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>tec</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>tpu</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>tpc</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>ta_sal</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>teu_sal</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>tec_sal</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>tpu_sal</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>tpc_sal</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>masa_sal_ta</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>masa_sal_teu</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>masa_sal_tec</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>masa_sal_tpu</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n    <tr>\n      <th>masa_sal_tpc</th>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n      <td>sí</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "## 4. Cinco mañas del formato"
+      },
+      {
+        "type": "markdown",
+        "content": "**Maña 1 · Dos poblaciones en una tabla.** `asegurados` incluye a los `no_trabajadores`, asegurados sin un empleo asociado (estudiantes, seguro facultativo, continuación voluntaria). Los puestos de trabajo son `ta`; el salario solo existe para `ta_sal`. Sumar `asegurados` como si fueran empleos infla el empleo formal en millones."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "totales_2026 = (\n    abrir(2026)\n    .select(\n        pl.col(\"asegurados\").sum(),\n        pl.col(\"no_trabajadores\").sum(),\n        pl.col(\"ta\").sum(),\n        pl.col(\"ta_sal\").sum(),\n        pl.col(\"masa_sal_ta\").sum(),\n    )\n    .collect()\n)\ntotales_2026",
+        "execution_count": 5
+      },
+      {
+        "type": "html",
+        "content": "<div><style>\n.dataframe > thead > tr,\n.dataframe > tbody > tr {\n  text-align: right;\n  white-space: pre-wrap;\n}\n</style>\n<small>shape: (1, 5)</small><table border=\"1\" class=\"dataframe\"><thead><tr><th>asegurados</th><th>no_trabajadores</th><th>ta</th><th>ta_sal</th><th>masa_sal_ta</th></tr><tr><td>i64</td><td>i64</td><td>i64</td><td>i64</td><td>f64</td></tr></thead><tbody><tr><td>30905819</td><td>8097989</td><td>22798473</td><td>22739009</td><td>1.5305e10</td></tr></tbody></table></div>"
+      },
+      {
+        "type": "markdown",
+        "content": "**Maña 2 · El salario promedio es masa salarial entre puestos con salario.** `masa_sal_ta / ta_sal`, en pesos diarios. Dividir entre `ta` lo subestima porque hay puestos sin salario asociado."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "t = totales_2026.row(0, named=True)\nprint(f\"masa / ta_sal = {t['masa_sal_ta'] / t['ta_sal']:.2f} pesos diarios   |   masa / ta = {t['masa_sal_ta'] / t['ta']:.2f}\")",
+        "execution_count": 6
+      },
+      {
+        "type": "markdown",
+        "content": "**Maña 3 · El salario está topado.** El salario base de cotización máximo es 25 UMA. Todo lo que gana más cae en el rango `W25`, así que los promedios subestiman los sueldos altos."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "w = abrir(2026).group_by(\"rango_salarial\").agg(pl.col(\"ta_sal\").sum()).collect().sort(\"rango_salarial\")\nw = w.with_columns((100 * pl.col(\"ta_sal\") / pl.col(\"ta_sal\").sum()).round(2).alias(\"pct\"))\nw.filter(pl.col(\"rango_salarial\").is_in([\"W1\", \"W2\", \"W3\", \"W24\", \"W25\"]) | pl.col(\"rango_salarial\").is_null())",
+        "execution_count": 7
+      },
+      {
+        "type": "html",
+        "content": "<div><style>\n.dataframe > thead > tr,\n.dataframe > tbody > tr {\n  text-align: right;\n  white-space: pre-wrap;\n}\n</style>\n<small>shape: (4, 3)</small><table border=\"1\" class=\"dataframe\"><thead><tr><th>rango_salarial</th><th>ta_sal</th><th>pct</th></tr><tr><td>str</td><td>i64</td><td>f64</td></tr></thead><tbody><tr><td>null</td><td>0</td><td>0.0</td></tr><tr><td>&quot;W1&quot;</td><td>379307</td><td>1.67</td></tr><tr><td>&quot;W2&quot;</td><td>15254596</td><td>67.09</td></tr><tr><td>&quot;W3&quot;</td><td>3296754</td><td>14.5</td></tr></tbody></table></div>"
+      },
+      {
+        "type": "markdown",
+        "content": "**Maña 4 · Catálogos propios.** Las claves de entidad son del IMSS y los sectores usan una división de 1990 con \"2 - 3\" para una sola división (industrias de la transformación). Los nombres se leen del diccionario oficial, no se escriben a mano."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "entidades = (\n    pd.read_excel(DICCIONARIO, sheet_name=\"entidad-municipio\", header=1)\n    .rename(columns=lambda c: str(c).strip())\n    .loc[:, [\"cve_entidad\", \"descripción entidad\"]]\n    .drop_duplicates()\n    .assign(cve_entidad=lambda d: d[\"cve_entidad\"].astype(int))\n    .rename(columns={\"descripción entidad\": \"entidad\"})\n    .sort_values(\"cve_entidad\")\n)\nsectores = pd.read_excel(DICCIONARIO, sheet_name=\"sector 1\", header=1)\nsectores.columns = [\"sector_economico_1\", \"sector\"]\nsectores = sectores.dropna()\nsectores[\"sector\"] = sectores[\"sector\"].str.replace(\"Div-\", \"\", regex=False).str.strip()\nfilas = []\nfor _, r in sectores.iterrows():\n    for codigo in str(r[\"sector_economico_1\"]).split(\"-\"):\n        filas.append((int(codigo), r[\"sector\"]))\nsectores = pd.DataFrame(filas, columns=[\"sector_economico_1\", \"sector\"])\nprint(len(entidades), \"entidades ·\", len(sectores), \"códigos de sector\")\nsectores",
+        "execution_count": 8
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>sector_economico_1</th>\n      <th>sector</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>0</th>\n      <td>0</td>\n      <td>Agricultura, Ganadería, Silvicultura, Pesca y ...</td>\n    </tr>\n    <tr>\n      <th>1</th>\n      <td>1</td>\n      <td>Industrias Extractivas</td>\n    </tr>\n    <tr>\n      <th>2</th>\n      <td>2</td>\n      <td>Industrias de la Transformación</td>\n    </tr>\n    <tr>\n      <th>3</th>\n      <td>3</td>\n      <td>Industrias de la Transformación</td>\n    </tr>\n    <tr>\n      <th>4</th>\n      <td>4</td>\n      <td>Industria de la Construcción</td>\n    </tr>\n    <tr>\n      <th>5</th>\n      <td>5</td>\n      <td>Ind Eléctrica y Captación y Suministro de Agua...</td>\n    </tr>\n    <tr>\n      <th>6</th>\n      <td>6</td>\n      <td>Comercio</td>\n    </tr>\n    <tr>\n      <th>7</th>\n      <td>7</td>\n      <td>Transportes y Comunicaciones</td>\n    </tr>\n    <tr>\n      <th>8</th>\n      <td>8</td>\n      <td>Servicios para Empresas, Personas y el Hogar</td>\n    </tr>\n    <tr>\n      <th>9</th>\n      <td>9</td>\n      <td>Servicios Sociales y Comunales</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "**Maña 5 · Sexo con tres valores y edad en rangos.** El catálogo trae 1 hombre, 2 mujer y 3 no binario; el 3 tiene tan pocos puestos que no se grafica, pero sí se cuenta. La edad viene en rangos de cinco años (`E1` a `E14`)."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "abrir(2026).group_by(\"sexo\").agg(pl.col(\"ta\").sum(), pl.col(\"ta_sal\").sum(), pl.col(\"masa_sal_ta\").sum()).collect().sort(\"sexo\")",
+        "execution_count": 9
+      },
+      {
+        "type": "html",
+        "content": "<div><style>\n.dataframe > thead > tr,\n.dataframe > tbody > tr {\n  text-align: right;\n  white-space: pre-wrap;\n}\n</style>\n<small>shape: (3, 4)</small><table border=\"1\" class=\"dataframe\"><thead><tr><th>sexo</th><th>ta</th><th>ta_sal</th><th>masa_sal_ta</th></tr><tr><td>i64</td><td>i64</td><td>i64</td><td>f64</td></tr></thead><tbody><tr><td>1</td><td>13585251</td><td>13547308</td><td>9.5312e9</td></tr><tr><td>2</td><td>9213146</td><td>9191625</td><td>5.7733e9</td></tr><tr><td>3</td><td>76</td><td>76</td><td>50137.35</td></tr></tbody></table></div>"
+      },
+      {
+        "type": "markdown",
+        "content": "## 5. Agregar\n\nSiete agregados por año. Cada uno conserva `ta`, `ta_sal`, `masa_sal_ta` y `permanentes` para que el notebook 02 calcule promedios y participaciones sin volver a los crudos. Si una dimensión no existe en un año, la columna va vacía y se reporta."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "AGREGADOS = {\n    \"nacional\": [],\n    \"entidad_sexo\": [\"cve_entidad\", \"sexo\"],\n    \"sector_sexo\": [\"sector_economico_1\", \"sexo\"],\n    \"rango_salarial\": [\"rango_salarial\"],\n    \"tamano_patron\": [\"tamano_patron\"],\n    \"edad_sexo\": [\"rango_edad\", \"sexo\"],\n    \"plataforma\": [\"ptpd\"],\n}\nMETRICAS = [\n    pl.col(\"ta\").sum(),\n    pl.col(\"ta_sal\").sum(),\n    pl.col(\"masa_sal_ta\").sum(),\n    (pl.col(\"tpu\") + pl.col(\"tpc\")).sum().alias(\"permanentes\"),\n    pl.col(\"no_trabajadores\").sum(),\n]\n\n\ndef agregar(anio: int, dims: list[str]) -> pl.DataFrame:\n    lf = abrir(anio)\n    presentes = [d for d in dims if d in lf.collect_schema().names()]\n    if presentes:\n        df = lf.group_by(presentes).agg(METRICAS).collect()\n    else:\n        df = lf.select(METRICAS).collect()\n    for d in dims:\n        if d not in presentes:\n            df = df.with_columns(pl.lit(None, dtype=pl.Int64).alias(d))\n    return df.with_columns(pl.lit(anio).alias(\"anio\")).select([\"anio\", *dims, \"ta\", \"ta_sal\", \"masa_sal_ta\", \"permanentes\", \"no_trabajadores\"])\n\n\nagregados: dict[str, pl.DataFrame] = {}\ninicio = time.perf_counter()\nfor nombre, dims in AGREGADOS.items():\n    agregados[nombre] = pl.concat([agregar(anio, dims) for anio in ANIOS])\nprint(f\"{sum(len(v) for v in agregados.values()):,} filas agregadas en {time.perf_counter() - inicio:.1f} s\")\nfaltantes = {nombre: [a for a in ANIOS if agregados[nombre].filter(pl.col(\"anio\") == a)[dims[0]].null_count() == agregados[nombre].filter(pl.col(\"anio\") == a).height] for nombre, dims in AGREGADOS.items() if dims}\nprint(\"dimensiones ausentes por año:\", {k: v for k, v in faltantes.items() if v})\nagregados[\"nacional\"]",
+        "execution_count": 10
+      },
+      {
+        "type": "html",
+        "content": "<div><style>\n.dataframe > thead > tr,\n.dataframe > tbody > tr {\n  text-align: right;\n  white-space: pre-wrap;\n}\n</style>\n<small>shape: (5, 6)</small><table border=\"1\" class=\"dataframe\"><thead><tr><th>anio</th><th>ta</th><th>ta_sal</th><th>masa_sal_ta</th><th>permanentes</th><th>no_trabajadores</th></tr><tr><td>i32</td><td>i64</td><td>i64</td><td>f64</td><td>i64</td><td>i64</td></tr></thead><tbody><tr><td>2018</td><td>20063433</td><td>19927946</td><td>7.0973e9</td><td>17182201</td><td>7101201</td></tr><tr><td>2020</td><td>19588342</td><td>19464360</td><td>7.8661e9</td><td>16909339</td><td>7733219</td></tr><tr><td>2022</td><td>21236866</td><td>21124599</td><td>1.0232e10</td><td>18414515</td><td>7851341</td></tr><tr><td>2024</td><td>22389835</td><td>22299547</td><td>1.3100e10</td><td>19383168</td><td>8090500</td></tr><tr><td>2026</td><td>22798473</td><td>22739009</td><td>1.5305e10</td><td>19860128</td><td>8097989</td></tr></tbody></table></div>"
+      },
+      {
+        "type": "markdown",
+        "content": "## 6. Validaciones\n\nTres aserciones. Si alguna falla, el snapshot no se escribe."
+      },
+      {
+        "type": "markdown",
+        "content": "**V1 · Identidad interna en los cinco años:** los puestos afiliados son la suma de permanentes y eventuales, urbanos y del campo."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "identidad = pl.concat(\n    [abrir(a).select(pl.lit(a).alias(\"anio\"), pl.col(\"ta\").sum(), (pl.col(\"tpu\") + pl.col(\"tpc\") + pl.col(\"teu\") + pl.col(\"tec\")).sum().alias(\"suma\")).collect() for a in ANIOS]\n)\nprint(identidad)\nassert (identidad[\"ta\"] == identidad[\"suma\"]).all(), \"ta no coincide con la suma de sus componentes\"",
+        "execution_count": 11
+      },
+      {
+        "type": "markdown",
+        "content": "**V2 · Agosto de 2026 contra el boletín del IMSS** (comunicado del 8 de septiembre de 2026): 22,798,473 puestos, salario base de cotización promedio de 673.1 pesos diarios, 87.1 % permanentes."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "n = agregados[\"nacional\"].filter(pl.col(\"anio\") == 2026).row(0, named=True)\nsbc = n[\"masa_sal_ta\"] / n[\"ta_sal\"]\npermanentes = 100 * n[\"permanentes\"] / n[\"ta\"]\nprint(f\"puestos {n['ta']:,}  ·  SBC {sbc:.2f}  ·  permanentes {permanentes:.1f} %\")\nassert n[\"ta\"] == 22_798_473, \"los puestos no coinciden con el boletín\"\nassert abs(sbc - 673.1) < 0.1, \"el SBC no coincide con el boletín\"\nassert abs(permanentes - 87.1) < 0.1, \"la proporción de permanentes no coincide con el boletín\"",
+        "execution_count": 12
+      },
+      {
+        "type": "markdown",
+        "content": "**V3 · Los agregados suman lo mismo que el nacional**, año por año, para cada dimensión."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "for nombre, df in agregados.items():\n    if nombre == \"nacional\":\n        continue\n    por_anio = df.group_by(\"anio\").agg(pl.col(\"ta\").sum(), pl.col(\"masa_sal_ta\").sum()).sort(\"anio\")\n    nacional = agregados[\"nacional\"].select(\"anio\", \"ta\", \"masa_sal_ta\").sort(\"anio\")\n    assert (por_anio[\"ta\"] == nacional[\"ta\"]).all(), f\"{nombre}: ta no cierra\"\n    assert ((por_anio[\"masa_sal_ta\"] - nacional[\"masa_sal_ta\"]).abs() < 1).all(), f\"{nombre}: masa no cierra\"\n    print(f\"{nombre:16s} cierra en los {len(por_anio)} años\")",
+        "execution_count": 13
+      },
+      {
+        "type": "markdown",
+        "content": "## 7. Snapshot\n\nLos agregados se guardan como CSV en `data/` con los nombres de entidad y sector ya pegados, y un manifiesto con la fecha, los archivos crudos y sus tamaños. Los crudos no se versionan."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "ent = pl.from_pandas(entidades)\nsec = pl.from_pandas(sectores)\nsalidas = dict(agregados)\nsalidas[\"entidad_sexo\"] = salidas[\"entidad_sexo\"].join(ent, on=\"cve_entidad\", how=\"left\")\nsalidas[\"sector_sexo\"] = salidas[\"sector_sexo\"].join(sec, on=\"sector_economico_1\", how=\"left\")\nmanifiesto = {\n    \"fecha_consulta\": date.today().isoformat(),\n    \"fuente\": \"Datos Abiertos IMSS · conjuntos asg-<año> · corte del 31 de agosto\",\n    \"licencia\": \"Libre Uso MX\",\n    \"user_agent\": UA,\n    \"crudos\": {a: {\"archivo\": p.name, \"bytes\": p.stat().st_size} for a, p in archivos.items()},\n    \"agregados\": {},\n}\nfor nombre, df in salidas.items():\n    ruta = DATA / f\"{nombre}.csv\"\n    df.write_csv(ruta)\n    manifiesto[\"agregados\"][nombre] = {\"filas\": df.height, \"columnas\": df.columns}\n(DATA / \"manifest.json\").write_text(json.dumps(manifiesto, ensure_ascii=False, indent=2))\npd.DataFrame({k: v[\"filas\"] for k, v in manifiesto[\"agregados\"].items()}, index=[\"filas\"]).T",
+        "execution_count": 14
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>filas</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>nacional</th>\n      <td>5</td>\n    </tr>\n    <tr>\n      <th>entidad_sexo</th>\n      <td>339</td>\n    </tr>\n    <tr>\n      <th>sector_sexo</th>\n      <td>107</td>\n    </tr>\n    <tr>\n      <th>rango_salarial</th>\n      <td>81</td>\n    </tr>\n    <tr>\n      <th>tamano_patron</th>\n      <td>40</td>\n    </tr>\n    <tr>\n      <th>edad_sexo</th>\n      <td>148</td>\n    </tr>\n    <tr>\n      <th>plataforma</th>\n      <td>6</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "## 8. Qué se puede afirmar con estos datos, y qué no\n\n- **Sí:** salario base de cotización promedio y distribución por rangos, por estado, sector, sexo, edad y tamaño de patrón, para el empleo formal afiliado al IMSS.\n- **Con cuidado:** el salario está topado a 25 UMA; el estado es el del registro patronal, no necesariamente donde trabaja la persona; las cifras son nominales.\n- **No:** hablar de \"los salarios en México\" sin decir que esto cubre solo al empleo formal privado afiliado al IMSS, ni sumar `asegurados` como si fueran empleos."
+      }
+    ]
+  },
+  {
+    "slug": "salarios-del-imss-cuanto-se-gana-en-mexico-2018-a-2026",
+    "title": "Salarios del IMSS — ¿Cuánto se gana en México?, 2018 a 2026",
+    "summary": "Cinco hallazgos sobre el salario que registra el IMSS: el promedio de cotización llegó a 673 pesos diarios en agosto de 2026, pero el salario mínimo subió 257 % desde 2018 contra 89 % del promedio, y pasó de ser una cuarta parte a casi la mitad; los puestos que cotizan a dos mínimos o menos pasaron de 40 % a 69 %; la Ciudad de México paga 1.5 veces lo que Nayarit y solo 9 de 32 estados superan el promedio; las mujeres cotizan 89 pesos por cada 100 de los hombres; y los 199 mil trabajadores de plataformas digitales cotizan 63 % de lo que cotiza el resto.",
+    "repoPath": "salarios-imss-mx/02_cuanto_se_gana.ipynb",
+    "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/salarios-imss-mx/02_cuanto_se_gana.ipynb",
+    "folder": "salarios-imss-mx",
+    "technologies": [
+      "Pandas",
+      "Matplotlib",
+      "Python"
+    ],
+    "categories": [
+      "Análisis Exploratorio (EDA)"
+    ],
+    "cellCount": 18,
+    "imageCount": 4,
+    "coverImage": "/projects/salarios-del-imss-cuanto-se-gana-en-mexico-2018-a-2026/cell-5-0.png",
+    "results": null,
+    "cells": [
+      {
+        "type": "markdown",
+        "content": "# ¿Cuánto se gana en México? El salario que registra el IMSS, 2018 a 2026\n\nLas vacantes no dicen cuánto pagan, pero el IMSS registra el salario base de cotización de 22.8 millones de puestos de trabajo. Aquí se comparan cinco cortes de agosto, de 2018 a 2026, para responder cuánto se gana, cómo se reparte, en qué estados y sectores, y qué tan lejos quedó el salario mínimo del promedio.\n\n**Fuente:** Datos Abiertos IMSS, cortes del 31 de agosto, agregados por el notebook 01 (`data/manifest.json`). Salario mínimo general diario de la CONASAMI. Pesos corrientes."
+      },
+      {
+        "type": "markdown",
+        "content": "## 0. El salario mínimo alcanzó al promedio"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "import logging\nfrom pathlib import Path\n\nimport matplotlib.pyplot as plt\nimport matplotlib_inline\nimport pandas as pd\nfrom matplotlib import font_manager as fm\n\nmatplotlib_inline.backend_inline.set_matplotlib_formats(\"retina\")\nlogging.getLogger(\"matplotlib.font_manager\").setLevel(logging.ERROR)\n\nRAIZ = Path.cwd() if (Path.cwd() / \"data\").exists() else Path.cwd().parent\nDATA = RAIZ / \"data\"\nSALARIO_MINIMO = {2018: 88.36, 2020: 123.22, 2022: 172.87, 2024: 248.93, 2026: 315.04}\nDIAS_MES = 30.4\n\nPALETA = {\n    \"papel\": \"#050706\", \"panel\": \"#0B0F0D\", \"tinta\": \"#F3F1EC\", \"tenue\": \"#ACABA7\", \"leve\": \"#81817E\",\n    \"filete\": \"#222321\", \"filete_fuerte\": \"#393A38\", \"verde\": \"#00DF81\", \"verde_hondo\": \"#00C271\",\n    \"neutro\": \"#646561\", \"neutro_claro\": \"#9A9A96\",\n}\n# Archivo (póster) para los títulos y IBM Plex Mono para el pie, si están instaladas; el cuerpo va en DejaVu Sans\n# porque la variable Outfit se dibuja en peso 100 en matplotlib.\nfor archivo in [\"NyxArchivo-VF.ttf\", \"NyxIBMPlexMono-Regular.ttf\"]:\n    ruta = Path.home() / \"Library\" / \"Fonts\" / archivo\n    if ruta.exists():\n        fm.fontManager.addfont(str(ruta))\nINSTALADAS = {f.name for f in fm.fontManager.ttflist}\nARCHIVO = \"Archivo\" if \"Archivo\" in INSTALADAS else \"DejaVu Sans\"\nMONO = \"IBM Plex Mono\" if \"IBM Plex Mono\" in INSTALADAS else \"DejaVu Sans Mono\"\nplt.rcParams.update({\n    \"font.family\": \"DejaVu Sans\", \"font.size\": 12,\n    \"figure.facecolor\": PALETA[\"papel\"], \"axes.facecolor\": PALETA[\"papel\"], \"savefig.facecolor\": PALETA[\"papel\"],\n    \"text.color\": PALETA[\"tinta\"], \"axes.labelcolor\": PALETA[\"tenue\"],\n    \"xtick.color\": PALETA[\"tenue\"], \"ytick.color\": PALETA[\"tenue\"],\n    \"axes.edgecolor\": PALETA[\"filete_fuerte\"], \"axes.spines.top\": False, \"axes.spines.right\": False,\n    \"axes.grid\": False, \"axes.titlesize\": 16, \"axes.titleweight\": \"bold\",\n    \"axes.titlelocation\": \"left\", \"axes.titlepad\": 28,\n    \"figure.figsize\": (12, 6.75), \"figure.dpi\": 100, \"savefig.dpi\": 150, \"legend.frameon\": False,\n})\n\n\ndef leer(nombre: str) -> pd.DataFrame:\n    return pd.read_csv(DATA / f\"{nombre}.csv\")\n\n\ndef titulo(ax, texto, size=16):\n    ax.set_title(texto, fontsize=size, fontfamily=ARCHIVO, fontweight=\"bold\")\n\n\ndef subtitulo(ax, texto):\n    ax.text(0, 1.01, texto, transform=ax.transAxes, fontsize=11.5, color=PALETA[\"tenue\"])\n\n\ndef pie(fig, texto=\"Fuente: Datos Abiertos IMSS, cortes del 31 de agosto · salario mínimo: CONASAMI · pesos corrientes · consulta 21 sep 2026\"):\n    fig.text(0.01, 0.005, texto, ha=\"left\", va=\"bottom\", fontsize=9, color=PALETA[\"leve\"], fontfamily=MONO)",
+        "execution_count": 1
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "nacional = leer(\"nacional\").set_index(\"anio\")\nnacional[\"sbc\"] = nacional[\"masa_sal_ta\"] / nacional[\"ta_sal\"]\nnacional[\"salario_minimo\"] = pd.Series(SALARIO_MINIMO)\nnacional[\"sbc_entre_minimo\"] = nacional[\"sbc\"] / nacional[\"salario_minimo\"]\nULTIMO = int(nacional.index.max())\nprint(f\"SBC promedio {ULTIMO}: {nacional.loc[ULTIMO, 'sbc']:.1f} pesos diarios, {nacional.loc[ULTIMO, 'sbc'] * DIAS_MES:,.0f} al mes\")\nprint(f\"Crecimiento nominal 2018-{ULTIMO}: SBC +{100 * (nacional.loc[ULTIMO, 'sbc'] / nacional.loc[2018, 'sbc'] - 1):.0f} %, salario mínimo +{100 * (SALARIO_MINIMO[ULTIMO] / SALARIO_MINIMO[2018] - 1):.0f} %\")\nprint(\"SBC entre salario mínimo:\", \", \".join(f\"{a}: {v:.2f}x\" for a, v in nacional[\"sbc_entre_minimo\"].items()))\nnacional[[\"ta\", \"sbc\", \"salario_minimo\", \"sbc_entre_minimo\"]].round(2)",
+        "execution_count": 2
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>ta</th>\n      <th>sbc</th>\n      <th>salario_minimo</th>\n      <th>sbc_entre_minimo</th>\n    </tr>\n    <tr>\n      <th>anio</th>\n      <th></th>\n      <th></th>\n      <th></th>\n      <th></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>2018</th>\n      <td>20063433</td>\n      <td>356.15</td>\n      <td>88.36</td>\n      <td>4.03</td>\n    </tr>\n    <tr>\n      <th>2020</th>\n      <td>19588342</td>\n      <td>404.13</td>\n      <td>123.22</td>\n      <td>3.28</td>\n    </tr>\n    <tr>\n      <th>2022</th>\n      <td>21236866</td>\n      <td>484.34</td>\n      <td>172.87</td>\n      <td>2.80</td>\n    </tr>\n    <tr>\n      <th>2024</th>\n      <td>22389835</td>\n      <td>587.46</td>\n      <td>248.93</td>\n      <td>2.36</td>\n    </tr>\n    <tr>\n      <th>2026</th>\n      <td>22798473</td>\n      <td>673.05</td>\n      <td>315.04</td>\n      <td>2.14</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "rangos = leer(\"rango_salarial\").dropna(subset=[\"rango_salarial\"])\nrangos[\"w\"] = rangos[\"rango_salarial\"].str[1:].astype(int)\nGRUPOS = [(\"Hasta 1 salario mínimo\", 1, 1), (\"Más de 1 y hasta 2\", 2, 2), (\"Más de 2 y hasta 3\", 3, 3), (\"Más de 3 y hasta 5\", 4, 5), (\"Más de 5\", 6, 25)]\ndef grupo(w):\n    for nombre, lo, hi in GRUPOS:\n        if lo <= w <= hi:\n            return nombre\nrangos[\"grupo\"] = rangos[\"w\"].map(grupo)\ndistribucion = rangos.groupby([\"anio\", \"grupo\"])[\"ta_sal\"].sum().unstack()[[g[0] for g in GRUPOS]]\ndistribucion = 100 * distribucion.div(distribucion.sum(axis=1), axis=0)\nprint(f\"Puestos que ganan hasta 2 salarios mínimos: 2018 = {distribucion.loc[2018].iloc[:2].sum():.1f} %, {ULTIMO} = {distribucion.loc[ULTIMO].iloc[:2].sum():.1f} %\")\nprint(f\"Puestos que ganan más de 5 salarios mínimos: 2018 = {distribucion.loc[2018, 'Más de 5']:.1f} %, {ULTIMO} = {distribucion.loc[ULTIMO, 'Más de 5']:.1f} %\")\ndistribucion.round(1)",
+        "execution_count": 3
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>grupo</th>\n      <th>Hasta 1 salario mínimo</th>\n      <th>Más de 1 y hasta 2</th>\n      <th>Más de 2 y hasta 3</th>\n      <th>Más de 3 y hasta 5</th>\n      <th>Más de 5</th>\n    </tr>\n    <tr>\n      <th>anio</th>\n      <th></th>\n      <th></th>\n      <th></th>\n      <th></th>\n      <th></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>2018</th>\n      <td>0.1</td>\n      <td>40.3</td>\n      <td>19.0</td>\n      <td>17.6</td>\n      <td>23.0</td>\n    </tr>\n    <tr>\n      <th>2020</th>\n      <td>0.1</td>\n      <td>49.4</td>\n      <td>17.9</td>\n      <td>15.7</td>\n      <td>16.8</td>\n    </tr>\n    <tr>\n      <th>2022</th>\n      <td>0.2</td>\n      <td>55.7</td>\n      <td>17.1</td>\n      <td>14.4</td>\n      <td>12.6</td>\n    </tr>\n    <tr>\n      <th>2024</th>\n      <td>0.9</td>\n      <td>62.4</td>\n      <td>16.5</td>\n      <td>11.4</td>\n      <td>8.8</td>\n    </tr>\n    <tr>\n      <th>2026</th>\n      <td>1.7</td>\n      <td>67.1</td>\n      <td>14.5</td>\n      <td>9.6</td>\n      <td>7.1</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "fig, (a1, a2) = plt.subplots(1, 2, figsize=(12, 6.75), gridspec_kw={\"width_ratios\": [1.15, 1]})\nanios = list(nacional.index)\na1.plot(anios, nacional[\"sbc\"], color=PALETA[\"tinta\"], linewidth=2.5, marker=\"o\", label=\"Salario promedio de cotización\")\na1.plot(anios, nacional[\"salario_minimo\"], color=PALETA[\"verde\"], linewidth=2.5, marker=\"o\", label=\"Salario mínimo general\")\nfor a in anios:\n    a1.text(a, nacional.loc[a, \"sbc\"] + 18, f\"${nacional.loc[a, 'sbc']:.0f}\", ha=\"center\", fontsize=10.5, color=PALETA[\"tinta\"])\n    a1.text(a, nacional.loc[a, \"salario_minimo\"] - 34, f\"${nacional.loc[a, 'salario_minimo']:.0f}\", ha=\"center\", fontsize=10.5, color=PALETA[\"verde\"])\n    a1.text(a, 20, f\"{nacional.loc[a, 'sbc_entre_minimo']:.1f}x\", ha=\"center\", fontsize=10, color=PALETA[\"tenue\"])\na1.set_ylim(0, nacional[\"sbc\"].max() * 1.18)\na1.set_xticks(anios)\na1.set_ylabel(\"Pesos diarios\")\ntitulo(a1, \"El salario mínimo pasó de ser una cuarta parte del promedio a casi la mitad\", 12.5)\na1.legend(loc=\"upper left\")\ncolores = [PALETA[\"verde\"], PALETA[\"verde_hondo\"], PALETA[\"neutro_claro\"], PALETA[\"neutro\"], PALETA[\"filete_fuerte\"]]\nabajo = pd.Series(0.0, index=distribucion.index)\nfor (nombre, _, _), color in zip(GRUPOS, colores):\n    a2.bar(distribucion.index.astype(str), distribucion[nombre], bottom=abajo.values, color=color, label=nombre, width=0.7)\n    abajo = abajo + distribucion[nombre]\nfor a in distribucion.index:\n    hasta2 = distribucion.loc[a].iloc[:2].sum()\n    a2.text(str(a), hasta2 + 1.5, f\"{hasta2:.0f} %\", ha=\"center\", fontsize=10.5, color=PALETA[\"tinta\"], fontweight=\"bold\")\na2.set_ylim(0, 130)\na2.set_ylabel(\"Puestos de trabajo con salario (%)\")\ntitulo(a2, \"Y cada vez más puestos cotizan a dos mínimos o menos\", 12.5)\na2.legend(loc=\"upper center\", ncol=2, fontsize=9.5, bbox_to_anchor=(0.5, 1.02))\npie(fig)\nplt.tight_layout(rect=(0, 0.03, 1, 1), w_pad=4)\nplt.show()",
+        "execution_count": 4
+      },
+      {
+        "type": "image",
+        "src": "/projects/salarios-del-imss-cuanto-se-gana-en-mexico-2018-a-2026/cell-5-0.png",
+        "alt": "Output 0 de la celda 5"
+      },
+      {
+        "type": "markdown",
+        "content": "## 1. Por estado: dónde se paga más y quién subió más\n\nSalario promedio de cotización por entidad del registro patronal, agosto de 2026, y su cambio nominal desde 2018."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "ent = leer(\"entidad_sexo\")\npor_entidad = ent.groupby([\"anio\", \"entidad\"])[[\"ta_sal\", \"masa_sal_ta\"]].sum()\npor_entidad[\"sbc\"] = por_entidad[\"masa_sal_ta\"] / por_entidad[\"ta_sal\"]\nsbc_ent = por_entidad[\"sbc\"].unstack(0)\nsbc_ent[\"cambio_%\"] = 100 * (sbc_ent[ULTIMO] / sbc_ent[2018] - 1)\nsbc_ent = sbc_ent.sort_values(ULTIMO, ascending=False)\nnac = nacional.loc[ULTIMO, \"sbc\"]\nprint(f\"Mayor SBC {ULTIMO}: {sbc_ent.index[0]} ${sbc_ent[ULTIMO].iloc[0]:.0f} · menor: {sbc_ent.index[-1]} ${sbc_ent[ULTIMO].iloc[-1]:.0f} · cociente {sbc_ent[ULTIMO].iloc[0] / sbc_ent[ULTIMO].iloc[-1]:.2f}x\")\nprint(f\"Estados por arriba del promedio nacional (${nac:.0f}): {(sbc_ent[ULTIMO] > nac).sum()} de {len(sbc_ent)}\")\nmas = sbc_ent[\"cambio_%\"].idxmax()\nmenos = sbc_ent[\"cambio_%\"].idxmin()\nprint(f\"Mayor crecimiento 2018-{ULTIMO}: {mas} +{sbc_ent.loc[mas, 'cambio_%']:.0f} % · menor: {menos} +{sbc_ent.loc[menos, 'cambio_%']:.0f} %\")\nsbc_ent.round(1)",
+        "execution_count": 5
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th>anio</th>\n      <th>2018</th>\n      <th>2020</th>\n      <th>2022</th>\n      <th>2024</th>\n      <th>2026</th>\n      <th>cambio_%</th>\n    </tr>\n    <tr>\n      <th>entidad</th>\n      <th></th>\n      <th></th>\n      <th></th>\n      <th></th>\n      <th></th>\n      <th></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Ciudad de México</th>\n      <td>445.5</td>\n      <td>503.8</td>\n      <td>612.6</td>\n      <td>724.4</td>\n      <td>800.9</td>\n      <td>79.8</td>\n    </tr>\n    <tr>\n      <th>Baja California</th>\n      <td>348.5</td>\n      <td>418.2</td>\n      <td>522.7</td>\n      <td>666.3</td>\n      <td>739.9</td>\n      <td>112.3</td>\n    </tr>\n    <tr>\n      <th>Nuevo León</th>\n      <td>394.1</td>\n      <td>439.7</td>\n      <td>530.7</td>\n      <td>638.6</td>\n      <td>737.3</td>\n      <td>87.1</td>\n    </tr>\n    <tr>\n      <th>Querétaro</th>\n      <td>400.2</td>\n      <td>441.4</td>\n      <td>525.5</td>\n      <td>637.4</td>\n      <td>732.0</td>\n      <td>82.9</td>\n    </tr>\n    <tr>\n      <th>Campeche</th>\n      <td>394.7</td>\n      <td>450.8</td>\n      <td>544.0</td>\n      <td>644.7</td>\n      <td>707.0</td>\n      <td>79.1</td>\n    </tr>\n    <tr>\n      <th>Tamaulipas</th>\n      <td>333.8</td>\n      <td>391.2</td>\n      <td>480.0</td>\n      <td>609.0</td>\n      <td>703.9</td>\n      <td>110.8</td>\n    </tr>\n    <tr>\n      <th>Chihuahua</th>\n      <td>340.0</td>\n      <td>394.8</td>\n      <td>481.7</td>\n      <td>605.1</td>\n      <td>696.9</td>\n      <td>105.0</td>\n    </tr>\n    <tr>\n      <th>San Luis Potosí</th>\n      <td>361.3</td>\n      <td>424.0</td>\n      <td>495.9</td>\n      <td>600.0</td>\n      <td>686.0</td>\n      <td>89.9</td>\n    </tr>\n    <tr>\n      <th>Coahuila de Zaragoza</th>\n      <td>355.2</td>\n      <td>404.2</td>\n      <td>479.7</td>\n      <td>591.6</td>\n      <td>678.6</td>\n      <td>91.0</td>\n    </tr>\n    <tr>\n      <th>Zacatecas</th>\n      <td>355.6</td>\n      <td>375.9</td>\n      <td>446.5</td>\n      <td>567.5</td>\n      <td>659.4</td>\n      <td>85.5</td>\n    </tr>\n    <tr>\n      <th>Jalisco</th>\n      <td>349.5</td>\n      <td>396.9</td>\n      <td>472.6</td>\n      <td>568.5</td>\n      <td>659.1</td>\n      <td>88.6</td>\n    </tr>\n    <tr>\n      <th>Aguascalientes</th>\n      <td>337.7</td>\n      <td>400.3</td>\n      <td>476.6</td>\n      <td>548.4</td>\n      <td>650.6</td>\n      <td>92.7</td>\n    </tr>\n    <tr>\n      <th>Sonora</th>\n      <td>311.0</td>\n      <td>361.2</td>\n      <td>452.3</td>\n      <td>546.2</td>\n      <td>649.1</td>\n      <td>108.7</td>\n    </tr>\n    <tr>\n      <th>Veracruz de Ignacio de la Llave</th>\n      <td>365.7</td>\n      <td>404.1</td>\n      <td>464.4</td>\n      <td>556.4</td>\n      <td>648.8</td>\n      <td>77.4</td>\n    </tr>\n    <tr>\n      <th>Baja California Sur</th>\n      <td>319.1</td>\n      <td>369.4</td>\n      <td>460.6</td>\n      <td>559.1</td>\n      <td>645.8</td>\n      <td>102.4</td>\n    </tr>\n    <tr>\n      <th>Estado México</th>\n      <td>343.2</td>\n      <td>382.0</td>\n      <td>447.8</td>\n      <td>535.6</td>\n      <td>608.6</td>\n      <td>77.3</td>\n    </tr>\n    <tr>\n      <th>Colima</th>\n      <td>304.8</td>\n      <td>355.7</td>\n      <td>430.6</td>\n      <td>522.2</td>\n      <td>603.5</td>\n      <td>98.0</td>\n    </tr>\n    <tr>\n      <th>Guanajuato</th>\n      <td>309.7</td>\n      <td>347.4</td>\n      <td>414.1</td>\n      <td>514.0</td>\n      <td>599.2</td>\n      <td>93.5</td>\n    </tr>\n    <tr>\n      <th>Quintana Roo</th>\n      <td>260.8</td>\n      <td>314.2</td>\n      <td>410.5</td>\n      <td>518.6</td>\n      <td>597.7</td>\n      <td>129.2</td>\n    </tr>\n    <tr>\n      <th>Morelos</th>\n      <td>345.6</td>\n      <td>384.4</td>\n      <td>432.1</td>\n      <td>520.8</td>\n      <td>597.1</td>\n      <td>72.8</td>\n    </tr>\n    <tr>\n      <th>Puebla</th>\n      <td>321.3</td>\n      <td>363.3</td>\n      <td>418.3</td>\n      <td>511.1</td>\n      <td>593.4</td>\n      <td>84.7</td>\n    </tr>\n    <tr>\n      <th>Tabasco</th>\n      <td>299.9</td>\n      <td>356.5</td>\n      <td>459.3</td>\n      <td>532.2</td>\n      <td>591.6</td>\n      <td>97.2</td>\n    </tr>\n    <tr>\n      <th>Chiapas</th>\n      <td>303.8</td>\n      <td>346.3</td>\n      <td>401.2</td>\n      <td>494.2</td>\n      <td>576.9</td>\n      <td>89.9</td>\n    </tr>\n    <tr>\n      <th>Hidalgo</th>\n      <td>306.2</td>\n      <td>340.7</td>\n      <td>401.5</td>\n      <td>495.9</td>\n      <td>569.5</td>\n      <td>86.0</td>\n    </tr>\n    <tr>\n      <th>Tlaxcala</th>\n      <td>305.0</td>\n      <td>333.3</td>\n      <td>386.4</td>\n      <td>478.0</td>\n      <td>565.0</td>\n      <td>85.3</td>\n    </tr>\n    <tr>\n      <th>Michoacán de Ocampo</th>\n      <td>306.7</td>\n      <td>333.7</td>\n      <td>392.5</td>\n      <td>473.3</td>\n      <td>562.4</td>\n      <td>83.4</td>\n    </tr>\n    <tr>\n      <th>Yucatán</th>\n      <td>303.2</td>\n      <td>342.0</td>\n      <td>398.4</td>\n      <td>489.0</td>\n      <td>561.6</td>\n      <td>85.2</td>\n    </tr>\n    <tr>\n      <th>Guerrero</th>\n      <td>295.7</td>\n      <td>330.9</td>\n      <td>392.2</td>\n      <td>470.2</td>\n      <td>555.9</td>\n      <td>88.0</td>\n    </tr>\n    <tr>\n      <th>Oaxaca</th>\n      <td>287.6</td>\n      <td>321.9</td>\n      <td>378.2</td>\n      <td>472.4</td>\n      <td>552.7</td>\n      <td>92.2</td>\n    </tr>\n    <tr>\n      <th>Durango</th>\n      <td>280.2</td>\n      <td>318.8</td>\n      <td>380.3</td>\n      <td>470.0</td>\n      <td>551.4</td>\n      <td>96.8</td>\n    </tr>\n    <tr>\n      <th>Sinaloa</th>\n      <td>265.0</td>\n      <td>305.1</td>\n      <td>365.6</td>\n      <td>457.5</td>\n      <td>544.8</td>\n      <td>105.6</td>\n    </tr>\n    <tr>\n      <th>Nayarit</th>\n      <td>278.7</td>\n      <td>320.3</td>\n      <td>382.3</td>\n      <td>463.5</td>\n      <td>536.6</td>\n      <td>92.5</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "orden = sbc_ent.index[::-1]\nfig, ax = plt.subplots(figsize=(12, 10.5))\ny = range(len(orden))\nax.hlines(list(y), sbc_ent.loc[orden, 2018], sbc_ent.loc[orden, ULTIMO], color=PALETA[\"filete_fuerte\"], linewidth=2)\nax.scatter(sbc_ent.loc[orden, 2018], list(y), color=PALETA[\"neutro_claro\"], s=45, zorder=3, label=\"2018\")\nax.scatter(sbc_ent.loc[orden, ULTIMO], list(y), color=PALETA[\"verde\"], s=60, zorder=4, label=str(ULTIMO))\nfor i, e in enumerate(orden):\n    ax.text(sbc_ent.loc[e, ULTIMO] + 8, i, f\"${sbc_ent.loc[e, ULTIMO]:.0f}\", va=\"center\", fontsize=9.5, color=PALETA[\"tinta\"])\nax.axvline(nac, color=PALETA[\"tenue\"], linestyle=\"--\", linewidth=1)\nax.text(nac + 6, len(orden) - 0.4, f\"promedio nacional ${nac:.0f}\", fontsize=10, color=PALETA[\"tenue\"])\nax.set_yticks(list(y), orden)\nax.tick_params(axis=\"y\", labelsize=10)\nax.set_xlim(0, sbc_ent[ULTIMO].max() * 1.12)\nax.set_xlabel(\"Salario promedio de cotización, pesos diarios\")\ntitulo(ax, f\"{sbc_ent.index[0]} paga {sbc_ent[ULTIMO].iloc[0] / sbc_ent[ULTIMO].iloc[-1]:.1f} veces lo que {sbc_ent.index[-1]}\")\nsubtitulo(ax, f\"Salario promedio de cotización por estado, agosto de 2018 y de {ULTIMO}\")\nax.legend(loc=\"lower right\")\npie(fig)\nplt.tight_layout(rect=(0, 0.02, 1, 1))\nplt.show()",
+        "execution_count": 6
+      },
+      {
+        "type": "image",
+        "src": "/projects/salarios-del-imss-cuanto-se-gana-en-mexico-2018-a-2026/cell-8-1.png",
+        "alt": "Output 1 de la celda 8"
+      },
+      {
+        "type": "markdown",
+        "content": "## 2. La brecha entre mujeres y hombres\n\nCociente del salario promedio de las mujeres entre el de los hombres. Nacional por año y por estado en el último corte."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "sexo = ent.groupby([\"anio\", \"sexo\"])[[\"ta_sal\", \"masa_sal_ta\"]].sum()\nsexo[\"sbc\"] = sexo[\"masa_sal_ta\"] / sexo[\"ta_sal\"]\nbrecha = (sexo[\"sbc\"].unstack()[2] / sexo[\"sbc\"].unstack()[1]).rename(\"mujer_entre_hombre\")\npor_ent_sexo = ent[ent.anio == ULTIMO].groupby([\"entidad\", \"sexo\"])[[\"ta_sal\", \"masa_sal_ta\"]].sum()\npor_ent_sexo[\"sbc\"] = por_ent_sexo[\"masa_sal_ta\"] / por_ent_sexo[\"ta_sal\"]\nbrecha_ent = (por_ent_sexo[\"sbc\"].unstack()[2] / por_ent_sexo[\"sbc\"].unstack()[1]).sort_values()\nparticipacion_mujeres = 100 * sexo[\"ta_sal\"].unstack()[2] / sexo[\"ta_sal\"].unstack().sum(axis=1)\nprint(\"Mujer / hombre nacional:\", \", \".join(f\"{a}: {v:.3f}\" for a, v in brecha.items()))\nprint(f\"Mujeres en los puestos con salario: 2018 = {participacion_mujeres[2018]:.1f} %, {ULTIMO} = {participacion_mujeres[ULTIMO]:.1f} %\")\nprint(f\"Brecha más amplia {ULTIMO}: {brecha_ent.index[0]} ({brecha_ent.iloc[0]:.2f}) · más corta: {brecha_ent.index[-1]} ({brecha_ent.iloc[-1]:.2f})\")\nbrecha_ent.round(3)",
+        "execution_count": 7
+      },
+      {
+        "type": "text-output",
+        "content": "entidad\nCampeche                           0.785\nCoahuila de Zaragoza               0.816\nZacatecas                          0.817\nSonora                             0.840\nAguascalientes                     0.844\nSan Luis Potosí                    0.847\nGuanajuato                         0.850\nQuerétaro                          0.852\nChihuahua                          0.863\nDurango                            0.864\nPuebla                             0.868\nColima                             0.870\nJalisco                            0.871\nHidalgo                            0.873\nNuevo León                         0.873\nEstado México                      0.883\nBaja California                    0.884\nMichoacán de Ocampo                0.892\nGuerrero                           0.895\nTamaulipas                         0.896\nTlaxcala                           0.907\nTabasco                            0.907\nOaxaca                             0.912\nSinaloa                            0.915\nMorelos                            0.917\nYucatán                            0.923\nCiudad de México                   0.935\nChiapas                            0.939\nBaja California Sur                0.940\nNayarit                            0.957\nVeracruz de Ignacio de la Llave    0.960\nQuintana Roo                       0.972\ndtype: float64"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "fig, (a1, a2) = plt.subplots(1, 2, figsize=(12, 7.5), gridspec_kw={\"width_ratios\": [0.9, 1.3]})\na1.plot(list(brecha.index), 100 * brecha.values, color=PALETA[\"verde\"], linewidth=2.5, marker=\"o\")\nfor a, v in brecha.items():\n    a1.text(a, 100 * v + 0.4, f\"{100 * v:.1f}\", ha=\"center\", fontsize=10.5, color=PALETA[\"tinta\"])\na1.axhline(100, color=PALETA[\"tenue\"], linestyle=\"--\", linewidth=1)\na1.set_ylim(min(100 * brecha.min() - 4, 80), 103)\na1.set_xticks(list(brecha.index))\na1.set_ylabel(\"Salario de las mujeres por cada 100 pesos de los hombres\")\ntitulo(a1, \"La brecha nacional apenas se mueve\", 12.5)\nb = brecha_ent\na2.barh(b.index, 100 * b.values, color=[PALETA[\"verde\"] if v >= 1 else PALETA[\"neutro\"] for v in b.values])\nfor i, v in enumerate(b.values):\n    a2.text(100 * v + 0.4, i, f\"{100 * v:.0f}\", va=\"center\", fontsize=9, color=PALETA[\"tinta\"])\na2.axvline(100, color=PALETA[\"tenue\"], linestyle=\"--\", linewidth=1)\na2.set_xlim(min(100 * b.min() - 8, 70), 112)\na2.tick_params(axis=\"y\", labelsize=9)\ntitulo(a2, f\"Por estado en {ULTIMO}: de {b.index[0]} a {b.index[-1]}\", 12.5)\npie(fig)\nplt.tight_layout(rect=(0, 0.02, 1, 1), w_pad=3)\nplt.show()",
+        "execution_count": 8
+      },
+      {
+        "type": "image",
+        "src": "/projects/salarios-del-imss-cuanto-se-gana-en-mexico-2018-a-2026/cell-11-2.png",
+        "alt": "Output 2 de la celda 11"
+      },
+      {
+        "type": "markdown",
+        "content": "## 3. Sector y tamaño del patrón\n\nNueve divisiones de actividad y siete rangos de tamaño del registro patronal, agosto del último corte."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "sec = leer(\"sector_sexo\")\npor_sector = sec[sec.anio == ULTIMO].groupby(\"sector\")[[\"ta_sal\", \"masa_sal_ta\"]].sum()\npor_sector[\"sbc\"] = por_sector[\"masa_sal_ta\"] / por_sector[\"ta_sal\"]\npor_sector[\"puestos_%\"] = 100 * por_sector[\"ta_sal\"] / por_sector[\"ta_sal\"].sum()\npor_sector = por_sector.sort_values(\"sbc\", ascending=False)\ntam = leer(\"tamano_patron\")\ntam[\"tamano_patron\"] = tam[\"tamano_patron\"].str.strip().str.lower()\npor_tam = tam[(tam.anio == ULTIMO) & tam.tamano_patron.notna()].groupby(\"tamano_patron\")[[\"ta_sal\", \"masa_sal_ta\"]].sum()\npor_tam[\"sbc\"] = por_tam[\"masa_sal_ta\"] / por_tam[\"ta_sal\"]\npor_tam[\"puestos_%\"] = 100 * por_tam[\"ta_sal\"] / por_tam[\"ta_sal\"].sum()\nTAMANOS = {\"s1\": \"1 puesto\", \"s2\": \"2 a 5\", \"s3\": \"6 a 50\", \"s4\": \"51 a 250\", \"s5\": \"251 a 500\", \"s6\": \"501 a 1,000\", \"s7\": \"más de 1,000\"}\npor_tam = por_tam.loc[[k for k in TAMANOS if k in por_tam.index]]\nprint(f\"Sector mejor pagado: {por_sector.index[0]} ${por_sector['sbc'].iloc[0]:.0f} · peor: {por_sector.index[-1]} ${por_sector['sbc'].iloc[-1]:.0f}\")\nprint(f\"Patrones de más de 1,000 puestos: ${por_tam.loc['s7', 'sbc']:.0f} · de 2 a 5 puestos: ${por_tam.loc['s2', 'sbc']:.0f} · cociente {por_tam.loc['s7', 'sbc'] / por_tam.loc['s2', 'sbc']:.2f}x\")\npd.concat([por_sector.round(1), por_tam.rename(index=TAMANOS).round(1)])",
+        "execution_count": 9
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>ta_sal</th>\n      <th>masa_sal_ta</th>\n      <th>sbc</th>\n      <th>puestos_%</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Ind Eléctrica y Captación y Suministro de Agua Potable</th>\n      <td>161408</td>\n      <td>2.105894e+08</td>\n      <td>1304.7</td>\n      <td>0.7</td>\n    </tr>\n    <tr>\n      <th>Industrias Extractivas</th>\n      <td>130166</td>\n      <td>1.449473e+08</td>\n      <td>1113.6</td>\n      <td>0.6</td>\n    </tr>\n    <tr>\n      <th>Servicios Sociales y Comunales</th>\n      <td>2474437</td>\n      <td>1.910663e+09</td>\n      <td>772.2</td>\n      <td>10.9</td>\n    </tr>\n    <tr>\n      <th>Industrias de la Transformación</th>\n      <td>5960566</td>\n      <td>4.338221e+09</td>\n      <td>727.8</td>\n      <td>26.2</td>\n    </tr>\n    <tr>\n      <th>Servicios para Empresas, Personas y el Hogar</th>\n      <td>4927504</td>\n      <td>3.352128e+09</td>\n      <td>680.3</td>\n      <td>21.7</td>\n    </tr>\n    <tr>\n      <th>Transportes y Comunicaciones</th>\n      <td>1812515</td>\n      <td>1.217981e+09</td>\n      <td>672.0</td>\n      <td>8.0</td>\n    </tr>\n    <tr>\n      <th>Comercio</th>\n      <td>4904842</td>\n      <td>2.945557e+09</td>\n      <td>600.5</td>\n      <td>21.6</td>\n    </tr>\n    <tr>\n      <th>Industria de la Construcción</th>\n      <td>1785816</td>\n      <td>9.021557e+08</td>\n      <td>505.2</td>\n      <td>7.9</td>\n    </tr>\n    <tr>\n      <th>Agricultura, Ganadería, Silvicultura, Pesca y Caza</th>\n      <td>581755</td>\n      <td>2.822812e+08</td>\n      <td>485.2</td>\n      <td>2.6</td>\n    </tr>\n    <tr>\n      <th>1 puesto</th>\n      <td>274018</td>\n      <td>1.082611e+08</td>\n      <td>395.1</td>\n      <td>1.2</td>\n    </tr>\n    <tr>\n      <th>2 a 5</th>\n      <td>1131312</td>\n      <td>4.783864e+08</td>\n      <td>422.9</td>\n      <td>5.1</td>\n    </tr>\n    <tr>\n      <th>6 a 50</th>\n      <td>4740787</td>\n      <td>2.458404e+09</td>\n      <td>518.6</td>\n      <td>21.3</td>\n    </tr>\n    <tr>\n      <th>51 a 250</th>\n      <td>5097682</td>\n      <td>3.331639e+09</td>\n      <td>653.6</td>\n      <td>22.9</td>\n    </tr>\n    <tr>\n      <th>251 a 500</th>\n      <td>2399923</td>\n      <td>1.806014e+09</td>\n      <td>752.5</td>\n      <td>10.8</td>\n    </tr>\n    <tr>\n      <th>501 a 1,000</th>\n      <td>2230197</td>\n      <td>1.728864e+09</td>\n      <td>775.2</td>\n      <td>10.0</td>\n    </tr>\n    <tr>\n      <th>más de 1,000</th>\n      <td>6381578</td>\n      <td>5.213801e+09</td>\n      <td>817.0</td>\n      <td>28.7</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "fig, (a1, a2) = plt.subplots(1, 2, figsize=(12, 6.75), gridspec_kw={\"width_ratios\": [1.4, 1]})\ns = por_sector.iloc[::-1]\na1.barh(s.index, s[\"sbc\"], color=[PALETA[\"verde\"] if v == s[\"sbc\"].max() else PALETA[\"neutro\"] for v in s[\"sbc\"]])\nfor i, (v, p) in enumerate(zip(s[\"sbc\"], s[\"puestos_%\"])):\n    a1.text(v + 8, i, f\"${v:.0f}  ·  {p:.0f} % de los puestos\", va=\"center\", fontsize=9.5, color=PALETA[\"tinta\"])\na1.set_xlim(0, s[\"sbc\"].max() * 1.55)\na1.tick_params(axis=\"y\", labelsize=9.5)\ntitulo(a1, f\"Por sector, agosto de {ULTIMO}\", 12.5)\ntt = por_tam.rename(index=TAMANOS)\na2.bar(tt.index, tt[\"sbc\"], color=[PALETA[\"verde\"] if v == tt[\"sbc\"].max() else PALETA[\"neutro\"] for v in tt[\"sbc\"]], width=0.7)\nfor i, v in enumerate(tt[\"sbc\"]):\n    a2.text(i, v + 8, f\"${v:.0f}\", ha=\"center\", fontsize=10, color=PALETA[\"tinta\"])\na2.set_ylim(0, tt[\"sbc\"].max() * 1.15)\na2.tick_params(axis=\"x\", labelsize=9.5, rotation=35)\na2.set_xlabel(\"Puestos de trabajo del registro patronal\")\ntitulo(a2, \"Y por tamaño del patrón\", 12.5)\npie(fig)\nplt.tight_layout(rect=(0, 0.03, 1, 1), w_pad=3)\nplt.show()",
+        "execution_count": 10
+      },
+      {
+        "type": "image",
+        "src": "/projects/salarios-del-imss-cuanto-se-gana-en-mexico-2018-a-2026/cell-14-3.png",
+        "alt": "Output 3 de la celda 14"
+      },
+      {
+        "type": "markdown",
+        "content": "## 4. Los trabajadores de plataformas digitales\n\nDesde la reforma de 2025 las plataformas registran a sus repartidores y conductores en el IMSS. La columna `ptpd` los identifica en el corte de 2026."
+      },
+      {
+        "type": "code",
+        "language": "python",
+        "content": "plat = leer(\"plataforma\")\np = plat[plat.anio == ULTIMO].dropna(subset=[\"ptpd\"]).set_index(\"ptpd\")\np[\"sbc\"] = p[\"masa_sal_ta\"] / p[\"ta_sal\"]\nif 1 in p.index:\n    print(f\"Plataformas digitales {ULTIMO}: {p.loc[1, 'ta']:,} puestos, SBC ${p.loc[1, 'sbc']:.0f} · resto: ${p.loc[0, 'sbc']:.0f} · cociente {p.loc[1, 'sbc'] / p.loc[0, 'sbc']:.2f}\")\np[[\"ta\", \"ta_sal\", \"sbc\"]].round(1)",
+        "execution_count": 11
+      },
+      {
+        "type": "html",
+        "content": "<div>\n<style scoped>\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n</style>\n<table border=\"1\" class=\"dataframe\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>ta</th>\n      <th>ta_sal</th>\n      <th>sbc</th>\n    </tr>\n    <tr>\n      <th>ptpd</th>\n      <th></th>\n      <th></th>\n      <th></th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>1.0</th>\n      <td>199454</td>\n      <td>199454</td>\n      <td>428.6</td>\n    </tr>\n    <tr>\n      <th>0.0</th>\n      <td>22599019</td>\n      <td>22539555</td>\n      <td>675.2</td>\n    </tr>\n  </tbody>\n</table>\n</div>"
+      },
+      {
+        "type": "markdown",
+        "content": "## 5. Advertencias antes de citar estas cifras\n\n- **Solo empleo formal afiliado al IMSS.** No están los trabajadores del Estado (ISSSTE), ni los informales, que son más de la mitad de la población ocupada según la ENOE del INEGI.\n- **Salario topado.** El salario base de cotización se registra hasta 25 UMA. Los sueldos altos están subestimados; el promedio también.\n- **Cifras nominales.** No se deflactan. La comparación relevante es contra el salario mínimo del mismo año, que sí se hace.\n- **Estado del registro patronal.** Un puesto cuenta donde el patrón está registrado, no donde trabaja la persona.\n- **Salario base de cotización, no neto.** Incluye prestaciones que integran salario y excluye lo que la ley excluye; no es lo que llega a la cuenta."
       }
     ]
   }

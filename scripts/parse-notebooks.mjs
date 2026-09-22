@@ -125,6 +125,16 @@ const PROJECT_OVERRIDES = {
     summary:
       "Primas salariales por habilidad: dominar prompt engineering o LangChain se paga ~30% por debajo de la mediana nacional, mientras que trabajar con agentes de IA se paga justo en ella — una brecha de $61,050 entre habilidades del mismo mercado. Un hallazgo contraintuitivo: en Estados Unidos, las multinacionales publican el salario 3.4 veces menos que las empresas locales.",
   },
+  "salarios-imss-mx/01_imss_datos_abiertos": {
+    title: "Salarios del IMSS — Cinco archivos abiertos, 23 millones de filas",
+    summary:
+      "El IMSS publica cada mes el salario base de cotización de cada puesto de trabajo afiliado, agregado por estado, municipio, sector, sexo, edad, rango salarial y tamaño del patrón, en archivos de 300 a 400 MB. Este notebook descarga cinco cortes de agosto (2018 a 2026) con caché, los lee con Polars sin cargarlos completos, documenta cinco mañas del formato (dos poblaciones en una tabla, salario topado a 25 UMA, catálogos propios, esquemas que cambian con los años) y valida el corte de 2026 contra el boletín oficial: 22,798,473 puestos y 673.1 pesos diarios, exactos. Deja siete agregados compactos para el análisis.",
+  },
+  "salarios-imss-mx/02_cuanto_se_gana": {
+    title: "Salarios del IMSS — ¿Cuánto se gana en México?, 2018 a 2026",
+    summary:
+      "Cinco hallazgos sobre el salario que registra el IMSS: el promedio de cotización llegó a 673 pesos diarios en agosto de 2026, pero el salario mínimo subió 257 % desde 2018 contra 89 % del promedio, y pasó de ser una cuarta parte a casi la mitad; los puestos que cotizan a dos mínimos o menos pasaron de 40 % a 69 %; la Ciudad de México paga 1.5 veces lo que Nayarit y solo 9 de 32 estados superan el promedio; las mujeres cotizan 89 pesos por cada 100 de los hombres; y los 199 mil trabajadores de plataformas digitales cotizan 63 % de lo que cotiza el resto.",
+  },
   "ied-nearshoring-mx/01_api_y_calidad": {
     title: "Nearshoring en cifras — La API de datos.gob.mx y una tabla limpia",
     summary:
@@ -461,8 +471,10 @@ async function main() {
   ];
   // Bloques del portafolio, del más viejo al más reciente.
   const blockRank = (folder) =>
-    folder.startsWith("ied-nearshoring")
-      ? 3
+    folder.startsWith("salarios-imss")
+      ? 4
+      : folder.startsWith("ied-nearshoring")
+        ? 3
       : folder.startsWith("credit-risk")
         ? 2
         : folder.startsWith("Telecom")
