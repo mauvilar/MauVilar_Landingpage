@@ -1,0 +1,13 @@
+Fuentes usadas solo para dibujar las imágenes de Open Graph (public/og/*.png).
+Son las tres familias de la marca, en instancias estáticas bajadas de Google
+Fonts, porque el motor de next/og no lee fuentes variables.
+
+Archivo-Expanded-ExtraBold.ttf
+  Copyright 2020 The Archivo Project Authors (https://github.com/Omnibus-Type/Archivo)
+Outfit-Regular.ttf, Outfit-Medium.ttf
+  Copyright 2021 The Outfit Project Authors (https://github.com/Outfitio/Outfit-Fonts)
+IBMPlexMono-Medium.ttf
+  Copyright 2017 IBM Corp., with Reserved Font Name "Plex"
+
+Las tres se distribuyen bajo la SIL Open Font License, versión 1.1:
+https://openfontlicense.org/open-font-license-official-text/

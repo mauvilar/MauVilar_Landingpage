@@ -1,0 +1,753 @@
+{
+  "series": [
+    {
+      "id": "nearshoring-en-cifras",
+      "nivel": "propio",
+      "titulo": "Nearshoring en cifras",
+      "descripcion": "Veinte años de inversión extranjera directa en México por estado, país de origen y tipo de inversión. Los datos salen de la API de datos.gob.mx y cuadran con los boletines de la Secretaría de Economía.",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/tree/main/ied-nearshoring-mx",
+      "portada": {
+        "src": "/projects/nearshoring-a-donde-llega-la-inversion/fig-01.webp",
+        "ancho": 1600,
+        "alto": 906,
+        "tono": "oscura",
+        "alt": "Gráfica de la sección «Una consulta, una gráfica»"
+      },
+      "herramientas": [
+        "Python",
+        "pandas",
+        "Matplotlib"
+      ],
+      "notebooks": [
+        "nearshoring-api-y-calidad",
+        "nearshoring-a-donde-llega-la-inversion"
+      ]
+    },
+    {
+      "id": "salarios-del-imss",
+      "nivel": "propio",
+      "titulo": "Salarios del IMSS",
+      "descripcion": "El salario base de cotización de los puestos formales afiliados al IMSS en cinco cortes de agosto, de 2018 a 2026: promedio, mediana, estados, sectores y brecha entre mujeres y hombres.",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/tree/main/salarios-imss-mx",
+      "portada": {
+        "src": "/projects/salarios-imss-cuanto-se-gana/fig-01.webp",
+        "ancho": 1600,
+        "alto": 906,
+        "tono": "oscura",
+        "alt": "El salario mínimo se acercó al promedio y a la mediana; Y cada vez más puestos cotizan a dos mínimos o menos"
+      },
+      "herramientas": [
+        "Python",
+        "pandas",
+        "Polars",
+        "Matplotlib"
+      ],
+      "notebooks": [
+        "salarios-imss-datos-abiertos",
+        "salarios-imss-cuanto-se-gana"
+      ]
+    },
+    {
+      "id": "mercado-de-ia",
+      "nivel": "propio",
+      "titulo": "Mercado de trabajo de IA: México vs. EE. UU.",
+      "descripcion": "Cuánto paga el trabajo de inteligencia artificial en México frente a Estados Unidos, y por qué es tan difícil saberlo: auditoría de fuentes, un corpus propio desde la API de Adzuna y medianas con intervalos de confianza.",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/tree/main/mercado-ia-mx-us",
+      "portada": {
+        "src": "/projects/mercado-de-ia-brecha-salarial/fig-01.webp",
+        "ancho": 1084,
+        "alto": 484,
+        "tono": "clara",
+        "alt": "Estados Unidos, mediana con IC 90 % por metro, sólo n ≥ 30"
+      },
+      "herramientas": [
+        "Python",
+        "pandas",
+        "scikit-learn"
+      ],
+      "notebooks": [
+        "mercado-de-ia-auditoria-de-fuentes-y-calidad",
+        "mercado-de-ia-brecha-salarial",
+        "mercado-de-ia-primas-por-habilidad",
+        "mercado-de-ia-modelo-de-imputacion-salarial"
+      ]
+    },
+    {
+      "id": "riesgo-crediticio",
+      "nivel": "propio",
+      "titulo": "Riesgo crediticio",
+      "descripcion": "Predicción del impago de 30,000 tarjetahabientes (UCI, Taiwán, 2005) con una clase minoritaria de 22 %: métricas elegidas desde el principio, una prueba de fuga de datos y el pipeline de variables de producción.",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/tree/main/credit-risk-scoring",
+      "portada": {
+        "src": "/projects/riesgo-crediticio-exploracion-y-fuga-de-datos/fig-02.webp",
+        "ancho": 1084,
+        "alto": 688,
+        "tono": "clara",
+        "alt": "Distributions of key numeric features"
+      },
+      "herramientas": [
+        "Python",
+        "pandas",
+        "NumPy",
+        "Matplotlib",
+        "seaborn",
+        "scikit-learn"
+      ],
+      "notebooks": [
+        "riesgo-crediticio-exploracion-y-fuga-de-datos",
+        "riesgo-crediticio-ingenieria-de-variables"
+      ]
+    },
+    {
+      "id": "proyecto-final",
+      "nivel": "final",
+      "titulo": "Proyecto final: telecomunicaciones",
+      "descripcion": "El cierre del bootcamp de TripleTen: un caso principal con los registros de llamadas de un servicio de telecomunicaciones y dos casos complementarios, una prueba A/B y un ejercicio de SQL.",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/tree/main/Telecomunicaciones-Operadores-Ineficaces",
+      "portada": null,
+      "herramientas": [
+        "Python",
+        "pandas",
+        "NumPy",
+        "Matplotlib",
+        "seaborn",
+        "SciPy",
+        "SQLAlchemy",
+        "SQL"
+      ],
+      "notebooks": [
+        "telecom-operadores-ineficaces",
+        "telecom-test-a-b-del-recomendador",
+        "telecom-analisis-sql-de-libros"
+      ]
+    },
+    {
+      "id": "formacion-tripleten",
+      "nivel": "formacion",
+      "titulo": "Formación TripleTen",
+      "descripcion": "Los sprints del bootcamp de ciencia de datos, del más avanzado al primero: machine learning, pruebas A/B, analítica de negocio, estadística, limpieza de datos y Python.",
+      "portada": null,
+      "herramientas": [
+        "Python",
+        "pandas",
+        "NumPy",
+        "Matplotlib",
+        "seaborn",
+        "SciPy",
+        "scikit-learn"
+      ],
+      "notebooks": [
+        "model-fitness-churn-y-segmentacion",
+        "embudo-de-eventos-test-a-a-b",
+        "tests-a-b-priorizados-con-ice-rice",
+        "showz-analisis-de-marketing",
+        "zuber-taxis-en-chicago",
+        "tienda-de-videojuegos-patrones-de-exito",
+        "megaline-cual-es-la-mejor-tarifa",
+        "instacart-llena-ese-carrito",
+        "dejame-escuchar-musica",
+        "store-1-perfilado-de-clientes",
+        "store-1-limpieza-de-datos-de-clientes"
+      ]
+    }
+  ],
+  "notebooks": [
+    {
+      "slug": "nearshoring-api-y-calidad",
+      "serie": "nearshoring-en-cifras",
+      "posicion": 1,
+      "titulo": "La API de datos.gob.mx y una tabla limpia",
+      "descripcion": "Ocho tablas de inversión extranjera bajadas de la API de datos.gob.mx, seis mañas del formato documentadas y tres validaciones contra los totales oficiales.",
+      "resumen": "La inversión extranjera directa de México vive en datos.gob.mx, pero el CSV directo responde 403 y los Excel de la Secretaría de Economía piden una verificación de navegador. La API del datastore es la única puerta abierta y exige un User-Agent de navegador. Este notebook baja ocho tablas paginadas (2006 a 2025 en cifras actualizadas, hasta el primer trimestre de 2026 en originales), documenta seis mañas del formato con su evidencia (montos acumulados dentro del año, nulos que significan confidencial, un total que cambia de nombre, eñes rotas, tres niveles del SCIAN en una columna, originales contra actualizadas) y cierra con tres validaciones como aserciones: los estados suman el total nacional con diferencia cero y las cifras originales cuadran al millón con los boletines oficiales.",
+      "ruta": "ied-nearshoring-mx/01_api_y_calidad.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/ied-nearshoring-mx/01_api_y_calidad.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas"
+      ],
+      "celdas": 34,
+      "figuras": 0,
+      "portada": null,
+      "tieneResultados": false
+    },
+    {
+      "slug": "nearshoring-a-donde-llega-la-inversion",
+      "serie": "nearshoring-en-cifras",
+      "posicion": 2,
+      "titulo": "A dónde llega la inversión extranjera",
+      "descripcion": "Cuánto del récord de inversión extranjera es dinero nuevo, a qué estados llega y de qué países viene, con veinte años de cifras de la Secretaría de Economía.",
+      "resumen": "Cuatro hallazgos sobre veinte años de IED: el récord de 2025 está hecho de reinversión de utilidades (68 %, contra 37 % de promedio entre 2006 y 2018) y las nuevas inversiones de 2024 son las más bajas de la serie; la Ciudad de México pasó de 20 % a 53 % de la inversión; los estados que suman el 80 % bajaron de 13 a 6; Estados Unidos aporta 39 % y China nunca ha pasado de 2.4 %. Empieza con una consulta en vivo a la API y la gráfica principal en cinco celdas, y cierra con la advertencia más importante para leer estas cifras: la Secretaría asigna cada flujo al estado del domicilio fiscal de la empresa, aunque la planta esté en otro.",
+      "ruta": "ied-nearshoring-mx/02_nearshoring_en_cifras.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/ied-nearshoring-mx/02_nearshoring_en_cifras.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas",
+        "Matplotlib"
+      ],
+      "celdas": 19,
+      "figuras": 5,
+      "portada": {
+        "src": "/projects/nearshoring-a-donde-llega-la-inversion/fig-01.webp",
+        "ancho": 1600,
+        "alto": 906,
+        "tono": "oscura",
+        "alt": "Gráfica de la sección «Una consulta, una gráfica»"
+      },
+      "tieneResultados": false
+    },
+    {
+      "slug": "salarios-imss-datos-abiertos",
+      "serie": "salarios-del-imss",
+      "posicion": 1,
+      "titulo": "Los datos abiertos del IMSS, 2018 a 2026",
+      "descripcion": "Cinco archivos de 300 a 400 MB leídos con Polars, cinco mañas del formato documentadas y el corte de agosto de 2026 validado contra el boletín del IMSS.",
+      "resumen": "El IMSS publica cada mes el salario base de cotización de cada puesto de trabajo afiliado, agregado por estado, municipio, sector, sexo, edad, rango salarial y tamaño del patrón, en archivos de 300 a 400 MB. Este notebook descarga cinco cortes de agosto (2018 a 2026) con caché, los lee con Polars sin cargarlos completos, documenta cinco mañas del formato (dos poblaciones en una tabla, un promedio que se calcula sobre los puestos con salario, el tope de 25 UMA, catálogos propios, y sexo y edad codificados) y valida el corte de 2026 contra el boletín oficial: 22,798,473 puestos y 673.1 pesos diarios, exactos. Cuantifica el tope legal de 25 UMA (2.3 % de los puestos lo cotizan y cargan 10 % de la masa salarial; el tope bajó de 22.8 a 9.3 salarios mínimos entre 2018 y 2026) y deja diez agregados compactos para el análisis.",
+      "ruta": "salarios-imss-mx/01_imss_datos_abiertos.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/salarios-imss-mx/01_imss_datos_abiertos.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas",
+        "Polars"
+      ],
+      "celdas": 31,
+      "figuras": 0,
+      "portada": null,
+      "tieneResultados": false
+    },
+    {
+      "slug": "salarios-imss-cuanto-se-gana",
+      "serie": "salarios-del-imss",
+      "posicion": 2,
+      "titulo": "¿Cuánto se gana en México?",
+      "descripcion": "Promedio, mediana y cuartiles del salario formal de 2018 a 2026 por estado, sector, sexo y tamaño de empresa, con el tope de 25 UMA a la vista.",
+      "resumen": "El promedio de cotización llegó a 673 pesos diarios en agosto de 2026, pero es una cota inferior: el salario está topado a 25 UMA, así que cada promedio va acompañado de la mediana y los cuartiles calculados desde los rangos salariales. La mediana es de 542 pesos, unos 16,500 al mes. El salario mínimo subió 257 % desde 2018 contra 145 % de la mediana, que pasó de 2.5 a 1.7 veces el mínimo, y los puestos que cotizan a dos mínimos o menos pasaron de 40 % a 69 %. Por promedio, la Ciudad de México parece pagar 1.5 veces lo que Nayarit; por mediana, los estados quedan a 15 % entre sí, porque la capital concentra a los topados. Las mujeres cotizan 89 pesos por cada 100 de los hombres en promedio y 96 en la mediana, y los 199 mil trabajadores de plataformas digitales cotizan 63 % de lo que cotiza el resto.",
+      "ruta": "salarios-imss-mx/02_cuanto_se_gana.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/salarios-imss-mx/02_cuanto_se_gana.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas",
+        "Matplotlib"
+      ],
+      "celdas": 24,
+      "figuras": 6,
+      "portada": {
+        "src": "/projects/salarios-imss-cuanto-se-gana/fig-01.webp",
+        "ancho": 1600,
+        "alto": 906,
+        "tono": "oscura",
+        "alt": "El salario mínimo se acercó al promedio y a la mediana; Y cada vez más puestos cotizan a dos mínimos o menos"
+      },
+      "tieneResultados": false
+    },
+    {
+      "slug": "mercado-de-ia-auditoria-de-fuentes-y-calidad",
+      "serie": "mercado-de-ia",
+      "posicion": 1,
+      "titulo": "Auditoría de fuentes y calidad de datos",
+      "descripcion": "Por qué se descartaron los datasets de Kaggle, cómo se armó un corpus propio con la API de Adzuna y cómo se detectan los salarios que el proveedor modela.",
+      "resumen": "Antes de analizar nada, se audita cada fuente candidata: el mejor dataset real de Kaggle tiene 12 filas mexicanas y ninguna con salario, y el más popular de la categoría resulta ser sintético (12 países, unas 4,300 filas cada uno, 100 % de sueldos publicados frente al 19 % de un agregador real). Con ambas descartadas, se construye un corpus propio desde la API de Adzuna (6,990 vacantes, 1,666 con salario) y se confirma en vivo que Adzuna modela sueldos que no tiene: Nueva York devolvió 151 vacantes y solo 1 con salario real.",
+      "ruta": "mercado-ia-mx-us/01_recoleccion_y_calidad.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/mercado-ia-mx-us/01_recoleccion_y_calidad.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas"
+      ],
+      "celdas": 32,
+      "figuras": 6,
+      "portada": {
+        "src": "/projects/mercado-de-ia-auditoria-de-fuentes-y-calidad/fig-01.webp",
+        "ancho": 1280,
+        "alto": 492,
+        "tono": "clara",
+        "alt": "Filas por país: uniformidad artificial vs. concentración real"
+      },
+      "tieneResultados": false
+    },
+    {
+      "slug": "mercado-de-ia-brecha-salarial",
+      "serie": "mercado-de-ia",
+      "posicion": 2,
+      "titulo": "Brecha salarial México vs. Estados Unidos",
+      "descripcion": "Medianas con intervalos de confianza bootstrap en cinco áreas metropolitanas de Estados Unidos, y por qué 4 salarios mexicanos no alcanzan para ninguna prueba.",
+      "resumen": "Medianas salariales con intervalos de confianza bootstrap en cinco áreas metropolitanas de Estados Unidos: San Francisco Bay Area $225,000 (n=319), Seattle $202,500, Nueva York $200,000 (n=116), Austin $197,575 y Boston $182,500. México solo tiene 4 vacantes de IA con salario publicado, así que el notebook no corre las pruebas de hipótesis y deja documentada la razón.",
+      "ruta": "mercado-ia-mx-us/02_brecha_salarial.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/mercado-ia-mx-us/02_brecha_salarial.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas"
+      ],
+      "celdas": 38,
+      "figuras": 3,
+      "portada": {
+        "src": "/projects/mercado-de-ia-brecha-salarial/fig-01.webp",
+        "ancho": 1084,
+        "alto": 484,
+        "tono": "clara",
+        "alt": "Estados Unidos, mediana con IC 90 % por metro, sólo n ≥ 30"
+      },
+      "tieneResultados": false
+    },
+    {
+      "slug": "mercado-de-ia-primas-por-habilidad",
+      "serie": "mercado-de-ia",
+      "posicion": 3,
+      "titulo": "Primas por habilidad y transparencia salarial",
+      "descripcion": "Cuánto paga cada habilidad de IA frente a la mediana nacional de Estados Unidos, y qué tipo de empresa publica el salario en sus vacantes.",
+      "resumen": "Primas salariales por habilidad: dominar prompt engineering o LangChain se paga cerca de 30 % por debajo de la mediana nacional, mientras que trabajar con agentes de IA se paga justo en ella, una brecha de $61,050 entre habilidades del mismo mercado. En Estados Unidos, además, las multinacionales publican el salario 3.4 veces menos que las empresas locales.",
+      "ruta": "mercado-ia-mx-us/03_skills_y_transparencia.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/mercado-ia-mx-us/03_skills_y_transparencia.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas"
+      ],
+      "celdas": 20,
+      "figuras": 6,
+      "portada": {
+        "src": "/projects/mercado-de-ia-primas-por-habilidad/fig-01.webp",
+        "ancho": 684,
+        "alto": 384,
+        "tono": "clara",
+        "alt": "Gráfica de la sección «México»"
+      },
+      "tieneResultados": false
+    },
+    {
+      "slug": "mercado-de-ia-modelo-de-imputacion-salarial",
+      "serie": "mercado-de-ia",
+      "posicion": 4,
+      "titulo": "Modelo de imputación salarial",
+      "descripcion": "Gradient boosting entrenado con salarios de Estados Unidos y validado contra los 4 salarios mexicanos observados: MdAPE de 958 %, así que no se publica.",
+      "resumen": "Un modelo de gradient boosting entrenado con salarios de Estados Unidos se valida contra un hold-out con los 4 salarios mexicanos observados. El veredicto es no publicable: un MdAPE de 958 % frente a un umbral de 35 %. Con n=4 ningún experimento puede validar la transferencia entre mercados, así que las estimaciones para México no se publican.",
+      "ruta": "mercado-ia-mx-us/04_modelo_imputacion.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/mercado-ia-mx-us/04_modelo_imputacion.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas",
+        "scikit-learn"
+      ],
+      "celdas": 29,
+      "figuras": 3,
+      "portada": {
+        "src": "/projects/mercado-de-ia-modelo-de-imputacion-salarial/fig-01.webp",
+        "ancho": 583,
+        "alto": 584,
+        "tono": "clara",
+        "alt": "Gráfica de la sección «Veredicto»"
+      },
+      "tieneResultados": false
+    },
+    {
+      "slug": "riesgo-crediticio-exploracion-y-fuga-de-datos",
+      "serie": "riesgo-crediticio",
+      "posicion": 1,
+      "titulo": "Exploración y prueba de fuga de datos",
+      "descripcion": "Análisis exploratorio de 30,000 tarjetahabientes con 22 % de impago: métricas elegidas desde el inicio y una prueba explícita de fuga de datos.",
+      "resumen": "Análisis exploratorio de 30,000 tarjetahabientes de Taiwán (UCI, abril a septiembre de 2005) para predecir el impago del mes siguiente. La clase positiva es minoría, 22 % de impago o unos 3.5 a 1, así que las métricas quedan elegidas desde el principio: ROC AUC, PR AUC, Gini y KS en lugar de exactitud. Incluye una prueba explícita de fuga de datos que descarta las tres vías por las que podría colarse, y cierra escribiendo la partición estratificada 80/20 que las fases siguientes reutilizan sin volver a tocar el test.",
+      "ruta": "credit-risk-scoring/01_eda.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/credit-risk-scoring/01_eda.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas",
+        "NumPy",
+        "Matplotlib",
+        "seaborn",
+        "scikit-learn"
+      ],
+      "celdas": 27,
+      "figuras": 6,
+      "portada": {
+        "src": "/projects/riesgo-crediticio-exploracion-y-fuga-de-datos/fig-01.webp",
+        "ancho": 484,
+        "alto": 384,
+        "tono": "clara",
+        "alt": "Class balance, default next month"
+      },
+      "tieneResultados": false
+    },
+    {
+      "slug": "riesgo-crediticio-ingenieria-de-variables",
+      "serie": "riesgo-crediticio",
+      "posicion": 2,
+      "titulo": "Ingeniería de variables",
+      "descripcion": "Un transformador de scikit-learn que deriva 15 variables de seis meses de saldo, pago y morosidad, cada una validada por su ROC AUC antes de entrar al modelo.",
+      "resumen": "Los datos crudos traen seis fotos mensuales de saldo, pago y morosidad. Las señales que de verdad predicen el impago son razones entre esas fotos, y ninguna existe como columna. Aquí se construye el pipeline de producción: un transformador de scikit-learn que añade 15 variables derivadas fila por fila, y un ColumnTransformer que imputa, escala y codifica según la cardinalidad. Cada variable derivada se valida por su ROC AUC univariado contra el objetivo antes de entrar.",
+      "ruta": "credit-risk-scoring/02_feature_engineering.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/credit-risk-scoring/02_feature_engineering.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas",
+        "NumPy",
+        "Matplotlib",
+        "seaborn",
+        "scikit-learn"
+      ],
+      "celdas": 16,
+      "figuras": 2,
+      "portada": {
+        "src": "/projects/riesgo-crediticio-ingenieria-de-variables/fig-01.webp",
+        "ancho": 784,
+        "alto": 484,
+        "tono": "clara",
+        "alt": "Univariate ROC AUC of engineered features"
+      },
+      "tieneResultados": true
+    },
+    {
+      "slug": "telecom-operadores-ineficaces",
+      "serie": "proyecto-final",
+      "posicion": 1,
+      "titulo": "Operadores ineficaces en un call center",
+      "descripcion": "Métricas por operador (llamadas perdidas, espera y salientes), una regla de percentiles para marcar a los ineficaces y pruebas de Mann-Whitney.",
+      "resumen": "Caso principal del proyecto final, con 53,902 registros de llamadas y 732 clientes. Por operador se calculan la proporción de llamadas entrantes perdidas, la espera promedio ponderada y el volumen de llamadas salientes. Un operador se marca como ineficaz si cae en el peor cuartil de al menos dos de las tres métricas, con un mínimo de llamadas para evitar ruido, y la diferencia entre grupos se valida con pruebas de Mann-Whitney.",
+      "ruta": "Telecomunicaciones-Operadores-Ineficaces/Operadores-Ineficaces.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Telecomunicaciones-Operadores-Ineficaces/Operadores-Ineficaces.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas",
+        "NumPy",
+        "Matplotlib",
+        "seaborn",
+        "SciPy"
+      ],
+      "celdas": 43,
+      "figuras": 7,
+      "portada": {
+        "src": "/projects/telecom-operadores-ineficaces/fig-01.webp",
+        "ancho": 492,
+        "alto": 335,
+        "tono": "clara",
+        "alt": "Distribución de direction"
+      },
+      "tieneResultados": false
+    },
+    {
+      "slug": "telecom-test-a-b-del-recomendador",
+      "serie": "proyecto-final",
+      "posicion": 2,
+      "titulo": "Test A/B del sistema de recomendaciones",
+      "descripcion": "Validación de audiencia y periodo, embudo de la página de producto a la compra y pruebas z con corrección de Bonferroni para decidir si se implementa.",
+      "resumen": "Segundo caso del proyecto final. Antes de leer resultados se valida el experimento: audiencia de la región EU, registros del 7 al 21 de diciembre de 2020, exclusión de usuarios que también estaban en otra prueba y una ventana de 14 días desde el registro. Después se compara la conversión de los grupos A y B en cada paso del embudo (página de producto, carrito y compra) con pruebas z para proporciones y corrección de Bonferroni.",
+      "ruta": "Telecomunicaciones-Operadores-Ineficaces/Test-AB-Recomendador.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Telecomunicaciones-Operadores-Ineficaces/Test-AB-Recomendador.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas",
+        "NumPy",
+        "Matplotlib",
+        "SciPy"
+      ],
+      "celdas": 30,
+      "figuras": 2,
+      "portada": {
+        "src": "/projects/telecom-test-a-b-del-recomendador/fig-01.webp",
+        "ancho": 1189,
+        "alto": 413,
+        "tono": "clara",
+        "alt": "Grupo A; Grupo B; Distribución del número de eventos por usuario"
+      },
+      "tieneResultados": false
+    },
+    {
+      "slug": "telecom-analisis-sql-de-libros",
+      "serie": "proyecto-final",
+      "posicion": 3,
+      "titulo": "Consultas SQL sobre un catálogo de libros",
+      "descripcion": "Cinco preguntas de negocio resueltas con SQL (joins, subconsultas y CTE) sobre una base de libros, autores, editoriales, calificaciones y reseñas.",
+      "resumen": "Tercer caso del proyecto final: cinco tareas resueltas con SQL sobre una base de datos de libros, autores, editoriales, calificaciones y reseñas, desde contar los libros publicados después del año 2000 hasta el promedio de reseñas de los usuarios que calificaron más de 50 libros. Usa joins, subconsultas y CTE, y lee cada resultado con pandas.",
+      "ruta": "Telecomunicaciones-Operadores-Ineficaces/SQL-Libros.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Telecomunicaciones-Operadores-Ineficaces/SQL-Libros.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas",
+        "SQLAlchemy",
+        "SQL"
+      ],
+      "celdas": 16,
+      "figuras": 0,
+      "portada": null,
+      "tieneResultados": false
+    },
+    {
+      "slug": "model-fitness-churn-y-segmentacion",
+      "serie": "formacion-tripleten",
+      "posicion": 1,
+      "titulo": "Model Fitness: cancelación y segmentación",
+      "descripcion": "Regresión logística y bosque aleatorio para predecir la cancelación en una cadena de gimnasios, y K-means con cinco segmentos para orientar la retención.",
+      "resumen": "Predicción de la cancelación del mes siguiente para 4,000 clientes de una cadena de gimnasios. La regresión logística supera al bosque aleatorio (exactitud 0.92, precisión 0.86 y recall 0.81, contra 0.90, 0.83 y 0.76), y la segmentación con dendrograma y K-means en cinco clústeres separa grupos cuya tasa de cancelación va de 3 % a 52 %. Cierra con recomendaciones de retención por segmento.",
+      "area": "Machine learning",
+      "ruta": "Sp_14/sp_14.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_14/sp_14.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas",
+        "NumPy",
+        "Matplotlib",
+        "seaborn",
+        "SciPy",
+        "scikit-learn"
+      ],
+      "celdas": 46,
+      "figuras": 7,
+      "portada": {
+        "src": "/projects/model-fitness-churn-y-segmentacion/fig-01.webp",
+        "ancho": 411,
+        "alto": 394,
+        "tono": "clara",
+        "alt": "Distribución de la variable objetivo Churn"
+      },
+      "tieneResultados": false
+    },
+    {
+      "slug": "embudo-de-eventos-test-a-a-b",
+      "serie": "formacion-tripleten",
+      "posicion": 2,
+      "titulo": "Embudo de eventos y test A/A/B",
+      "descripcion": "Embudo de conversión construido desde los registros de eventos de una app y un test A/A/B sobre un cambio de fuentes en la interfaz.",
+      "resumen": "Registros de eventos de una app convertidos en un embudo de conversión, desde la pantalla principal hasta el pago, y un test A/A/B con dos grupos de control y uno con fuentes nuevas. El test A/A confirma que los controles son equivalentes, y en las 6 pruebas de hipótesis al 0.05 ninguna diferencia resulta significativa, así que no hay evidencia de que el cambio de fuentes afecte la conversión.",
+      "area": "Pruebas A/B",
+      "ruta": "Sp_12/sp_12.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_12/sp_12.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas",
+        "NumPy",
+        "Matplotlib",
+        "seaborn",
+        "SciPy"
+      ],
+      "celdas": 44,
+      "figuras": 1,
+      "portada": {
+        "src": "/projects/embudo-de-eventos-test-a-a-b/fig-01.webp",
+        "ancho": 985,
+        "alto": 390,
+        "tono": "clara",
+        "alt": "Número de eventos por fecha"
+      },
+      "tieneResultados": false
+    },
+    {
+      "slug": "tests-a-b-priorizados-con-ice-rice",
+      "serie": "formacion-tripleten",
+      "posicion": 3,
+      "titulo": "Priorización ICE y RICE y test A/B",
+      "descripcion": "Hipótesis priorizadas con ICE y RICE, y un test A/B de conversión y ticket promedio analizado con datos brutos y sin valores atípicos.",
+      "resumen": "Primero se priorizan hipótesis para aumentar los ingresos con los marcos ICE y RICE. Después se analiza un test A/B con datos brutos y filtrados: el grupo B convierte mejor (2.90 % contra 2.50 %, p ≈ 0.017; 2.84 % contra 2.39 % sin atípicos, p ≈ 0.006) con el mismo ticket promedio, así que la recomendación es detener la prueba y adoptar B.",
+      "area": "Pruebas A/B",
+      "ruta": "Sp_11/sp_11.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_11/sp_11.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas",
+        "NumPy",
+        "Matplotlib",
+        "seaborn",
+        "SciPy"
+      ],
+      "celdas": 72,
+      "figuras": 6,
+      "portada": {
+        "src": "/projects/tests-a-b-priorizados-con-ice-rice/fig-01.webp",
+        "ancho": 1042,
+        "alto": 600,
+        "tono": "clara",
+        "alt": "Ingreso acumulado por grupo"
+      },
+      "tieneResultados": false
+    },
+    {
+      "slug": "showz-analisis-de-marketing",
+      "serie": "formacion-tripleten",
+      "posicion": 4,
+      "titulo": "Showz: métricas de marketing",
+      "descripcion": "Visitas, pedidos y gasto publicitario de una plataforma de eventos: usuarios activos, conversión, LTV, CAC y ROMI por fuente para decidir dónde invertir.",
+      "resumen": "Tres tablas de una plataforma de eventos (visitas, pedidos y costos de marketing) convertidas en métricas de producto y de negocio: usuarios activos por día, semana y mes, duración de las sesiones y frecuencia de regreso, tiempo hasta la primera compra, LTV, CAC y ROMI por fuente de adquisición. El resultado señala qué fuentes recuperan la inversión y en cuáles el costo de adquirir un cliente se acerca o supera a lo que ese cliente deja.",
+      "area": "Analítica de negocio",
+      "ruta": "Sp_10/sp_10.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_10/sp_10.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas",
+        "NumPy",
+        "Matplotlib",
+        "seaborn"
+      ],
+      "celdas": 65,
+      "figuras": 15,
+      "portada": {
+        "src": "/projects/showz-analisis-de-marketing/fig-01.webp",
+        "ancho": 1189,
+        "alto": 390,
+        "tono": "clara",
+        "alt": "Usuarios activos diarios (DAU)"
+      },
+      "tieneResultados": false
+    },
+    {
+      "slug": "zuber-taxis-en-chicago",
+      "serie": "formacion-tripleten",
+      "posicion": 5,
+      "titulo": "Zuber: viajes en taxi en Chicago",
+      "descripcion": "Demanda de taxis por barrio y empresa con datos extraídos por SQL, y una prueba de Welch sobre la duración de los viajes con mal clima.",
+      "resumen": "Datos de viajes en taxi de Chicago extraídos con SQL: la demanda se concentra en Loop, River North y Streeterville, y dos empresas se llevan la mayor parte de los viajes. Una prueba t de Welch confirma que los sábados con lluvia o tormenta el trayecto de Loop al aeropuerto O'Hare dura unos 7 minutos más (40.5 contra 33.3 minutos de media, p < 0.001).",
+      "area": "Pruebas de hipótesis",
+      "ruta": "Sp_8/sp_8.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_8/sp_8.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas",
+        "NumPy",
+        "Matplotlib",
+        "SciPy"
+      ],
+      "celdas": 25,
+      "figuras": 2,
+      "portada": {
+        "src": "/projects/zuber-taxis-en-chicago/fig-01.webp",
+        "ancho": 1189,
+        "alto": 640,
+        "tono": "clara",
+        "alt": "Top 10 barrios por promedio de finalizaciones (nov 2017)"
+      },
+      "tieneResultados": false
+    },
+    {
+      "slug": "tienda-de-videojuegos-patrones-de-exito",
+      "serie": "formacion-tripleten",
+      "posicion": 6,
+      "titulo": "Tienda de videojuegos: patrones de éxito",
+      "descripcion": "Ventas por plataforma, género y región para planear la campaña de 2017 de una tienda de videojuegos, con pruebas de hipótesis sobre calificaciones.",
+      "resumen": "Ciclo de vida de las plataformas, ventas por género y preferencias por región (Norteamérica, Europa y Japón), con pruebas de hipótesis sobre las calificaciones de los usuarios. La conclusión para 2017: priorizar PS4 y Xbox One, apostar por los géneros líderes de cada región y usar las críticas especializadas para afinar campañas e inventario.",
+      "area": "Análisis exploratorio",
+      "ruta": "Sp_6/sp_6.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_6/sp_6.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas",
+        "NumPy",
+        "Matplotlib",
+        "SciPy"
+      ],
+      "celdas": 68,
+      "figuras": 16,
+      "portada": {
+        "src": "/projects/tienda-de-videojuegos-patrones-de-exito/fig-01.webp",
+        "ancho": 1189,
+        "alto": 490,
+        "tono": "clara",
+        "alt": "Juegos por año"
+      },
+      "tieneResultados": false
+    },
+    {
+      "slug": "megaline-cual-es-la-mejor-tarifa",
+      "serie": "formacion-tripleten",
+      "posicion": 7,
+      "titulo": "Megaline: ¿cuál es la mejor tarifa?",
+      "descripcion": "Comparación de las tarifas Surf y Ultimate de un operador móvil con datos de 500 clientes, y pruebas de hipótesis sobre el ingreso por usuario.",
+      "resumen": "Llamadas, mensajes y datos móviles de 500 clientes de un operador de telecomunicaciones en 2018, convertidos en el ingreso mensual de cada usuario para comparar las tarifas Surf y Ultimate. Estadística descriptiva por tarifa y dos pruebas de hipótesis sobre el ingreso promedio: entre tarifas, y entre el área de Nueva York y Nueva Jersey y el resto de las regiones.",
+      "area": "Estadística",
+      "ruta": "Sp_5/sp_5.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_5/sp_5.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas",
+        "NumPy",
+        "Matplotlib",
+        "SciPy"
+      ],
+      "celdas": 89,
+      "figuras": 12,
+      "portada": {
+        "src": "/projects/megaline-cual-es-la-mejor-tarifa/fig-01.webp",
+        "ancho": 850,
+        "alto": 584,
+        "tono": "clara",
+        "alt": "Duración promedio de minutos por usuario, por plan y mes"
+      },
+      "tieneResultados": false
+    },
+    {
+      "slug": "instacart-llena-ese-carrito",
+      "serie": "formacion-tripleten",
+      "posicion": 8,
+      "titulo": "Instacart: hábitos de compra",
+      "descripcion": "Cinco tablas de pedidos limpiadas (duplicados, valores ausentes y tipos) y un análisis de cuándo, cada cuánto y qué compran los clientes de Instacart.",
+      "resumen": "Preprocesamiento de las cinco tablas de Instacart (pedidos, productos, pasillos, departamentos y productos por pedido): duplicados, valores ausentes y tipos, con cada decisión justificada. Después, cuándo se hacen los pedidos, cada cuánto vuelven los clientes, qué productos se compran y se vuelven a pedir más, y cuántos artículos lleva un pedido.",
+      "area": "Limpieza y EDA",
+      "ruta": "Sp_4/notebook.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_4/notebook.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas",
+        "NumPy",
+        "Matplotlib"
+      ],
+      "celdas": 120,
+      "figuras": 6,
+      "portada": {
+        "src": "/projects/instacart-llena-ese-carrito/fig-01.webp",
+        "ancho": 868,
+        "alto": 471,
+        "tono": "clara",
+        "alt": "Número de pedidos por hora del día"
+      },
+      "tieneResultados": false
+    },
+    {
+      "slug": "dejame-escuchar-musica",
+      "serie": "formacion-tripleten",
+      "posicion": 9,
+      "titulo": "Hábitos de escucha en dos ciudades",
+      "descripcion": "Limpieza de encabezados, valores ausentes y duplicados con pandas, y una comparación de la actividad musical de dos ciudades por día de la semana.",
+      "resumen": "Primer proyecto con pandas: normalizar encabezados, tratar valores ausentes y duplicados, y comparar cuánta música se escucha en Springfield y en Shelbyville según el día. Springfield reproduce más del doble (42,741 contra 18,512) y queda arriba tanto el lunes como el viernes.",
+      "area": "pandas",
+      "ruta": "Sp_3/BP_project_template_ES_updated.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_3/BP_project_template_ES_updated.ipynb",
+      "herramientas": [
+        "Python",
+        "pandas"
+      ],
+      "celdas": 93,
+      "figuras": 0,
+      "portada": null,
+      "tieneResultados": false
+    },
+    {
+      "slug": "store-1-perfilado-de-clientes",
+      "serie": "formacion-tripleten",
+      "posicion": 10,
+      "titulo": "Store 1: perfilado de clientes",
+      "descripcion": "Listas anidadas, bucles, condicionales y funciones en Python puro para limpiar registros de clientes y segmentarlos por edad, gasto y categoría.",
+      "resumen": "Segunda fase de Store 1, en Python sin librerías: una función que limpia cada registro, bucles y condicionales para encontrar a los clientes jóvenes, a los de alto gasto y a los compradores de cada categoría, y el ingreso total de la tienda.",
+      "area": "Python",
+      "ruta": "Sp_2/Proyecto_2_Bootcamp.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_2/Proyecto_2_Bootcamp.ipynb",
+      "herramientas": [
+        "Python"
+      ],
+      "celdas": 29,
+      "figuras": 0,
+      "portada": null,
+      "tieneResultados": false
+    },
+    {
+      "slug": "store-1-limpieza-de-datos-de-clientes",
+      "serie": "formacion-tripleten",
+      "posicion": 11,
+      "titulo": "Store 1: limpieza de datos de clientes",
+      "descripcion": "Cadenas, listas y tipos de datos en Python puro para limpiar los nombres, las edades y las categorías de compra de los clientes de una tienda.",
+      "resumen": "Primera fase de Store 1, en Python sin librerías: quitar espacios y guiones bajos de los nombres, convertir tipos, validar edades con try y except, ordenar listas y armar el resumen de cada cliente con f-strings.",
+      "area": "Python",
+      "ruta": "Sp_1/New_Project_1_student_version_ESP.ipynb",
+      "repoUrl": "https://github.com/mauvilar/Proyectos-data-science/blob/main/Sp_1/New_Project_1_student_version_ESP.ipynb",
+      "herramientas": [
+        "Python"
+      ],
+      "celdas": 29,
+      "figuras": 0,
+      "portada": null,
+      "tieneResultados": false
+    }
+  ]
+}
