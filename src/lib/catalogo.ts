@@ -37,7 +37,6 @@ export interface Serie {
   id: string;
   nivel: Nivel;
   titulo: string;
-  lema?: string;
   descripcion: string;
   repoUrl?: string;
   portada: Figura | null;
@@ -67,8 +66,10 @@ export interface Contenido {
   resultados: ResultsTable | null;
 }
 
-const catalogo = datos as unknown as { series: Serie[]; notebooks: NotebookMeta[] };
+const catalogo = datos as unknown as { repo: string; series: Serie[]; notebooks: NotebookMeta[] };
 
+/** Repositorio con los notebooks originales. */
+export const REPO = catalogo.repo;
 export const series = catalogo.series;
 export const notebooks = catalogo.notebooks;
 
@@ -88,8 +89,8 @@ export function vecinos(slug: string) {
   if (!n || !serie) return { anterior: null, siguiente: null };
   const i = serie.notebooks.indexOf(slug);
   return {
-    anterior: i > 0 ? porSlug.get(serie.notebooks[i - 1]) ?? null : null,
-    siguiente: i < serie.notebooks.length - 1 ? porSlug.get(serie.notebooks[i + 1]) ?? null : null,
+    anterior: i > 0 ? (porSlug.get(serie.notebooks[i - 1]) ?? null) : null,
+    siguiente: i < serie.notebooks.length - 1 ? (porSlug.get(serie.notebooks[i + 1]) ?? null) : null,
   };
 }
 
@@ -99,16 +100,28 @@ export function leerContenido(slug: string): Contenido {
   return JSON.parse(fs.readFileSync(archivo, "utf-8")) as Contenido;
 }
 
+/** Número de sprint de un notebook de formación, leído de su ruta (Sp_14/…). */
+export const sprintDe = (n: NotebookMeta) => /^Sp_(\d+)\//.exec(n.ruta)?.[1] ?? null;
+
 export const NIVEL_ETIQUETA: Record<Nivel, string> = {
   propio: "Proyecto propio",
   final: "Proyecto final del bootcamp",
   formacion: "Formación TripleTen",
 };
 
+/** Sección de la portada donde vive cada nivel. */
+export const ANCLA_NIVEL: Record<Nivel, string> = {
+  propio: "/#proyectos",
+  final: "/#bootcamp",
+  formacion: "/#bootcamp",
+};
+
 /** Cifras del portafolio, calculadas de los datos en el build. */
 export const cifras = {
   notebooks: notebooks.length,
   propios: seriesDeNivel("propio").length,
+  notebooksPropios: seriesDeNivel("propio").reduce((s, x) => s + x.notebooks.length, 0),
+  sprints: seriesDeNivel("formacion").reduce((s, x) => s + x.notebooks.length, 0),
   figuras: notebooks.reduce((s, n) => s + n.figuras, 0),
 };
 

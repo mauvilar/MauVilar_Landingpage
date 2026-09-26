@@ -24,7 +24,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { EXCLUIDOS, REPO, SERIES } from "./catalogo.mjs";
+import { EXCLUIDOS, REPO, SERIES, redirecciones } from "./catalogo.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const NOTEBOOKS_DIR = path.resolve(
@@ -574,6 +574,14 @@ function validarCatalogo() {
       }
     }
   }
+  // Un slug anterior no puede coincidir con uno vigente: sería un bucle.
+  try {
+    for (const r of redirecciones()) {
+      if (slugs.has(r.source.replace("/projects/", ""))) errores.push(`slug anterior que sigue vivo: ${r.source}`);
+    }
+  } catch (e) {
+    errores.push(e.message);
+  }
   if (errores.length) {
     for (const e of errores) console.error(`  ✗ ${e}`);
     throw new Error(`catálogo con ${errores.length} errores`);
@@ -621,7 +629,7 @@ async function main() {
   const r = await crearRender();
   limpiarSalidas();
 
-  const catalogo = { series: [], notebooks: [] };
+  const catalogo = { repo: REPO, series: [], notebooks: [] };
   const figurasPorRuta = new Map();
 
   for (const serie of SERIES) {

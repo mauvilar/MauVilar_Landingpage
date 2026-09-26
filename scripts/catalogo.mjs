@@ -329,3 +329,37 @@ export const SERIES = [
     ],
   },
 ];
+
+/**
+ * Slugs que existieron en producción y cambiaron con este catálogo. Cada uno
+ * redirige de forma permanente (308) al notebook que tenía esa ruta;
+ * next.config.ts arma las redirecciones con `redirecciones()`. Cuando un slug
+ * vuelva a cambiar, el anterior se agrega aquí y no se borra nunca.
+ */
+export const SLUGS_ANTERIORES = {
+  "telecom-identificacion-de-operadores-ineficaces":
+    "Telecomunicaciones-Operadores-Ineficaces/Operadores-Ineficaces.ipynb",
+  "mercado-de-ia-brecha-salarial-mexico-vs-estados-unidos":
+    "mercado-ia-mx-us/02_brecha_salarial.ipynb",
+  "mercado-de-ia-primas-por-skill-y-transparencia-salarial":
+    "mercado-ia-mx-us/03_skills_y_transparencia.ipynb",
+  "nearshoring-en-cifras-la-api-de-datos-gob-mx-y-una-tabla-limpia":
+    "ied-nearshoring-mx/01_api_y_calidad.ipynb",
+  "nearshoring-en-cifras-a-donde-llega-la-inversion-extranjera-en-mexico-2006-a-202":
+    "ied-nearshoring-mx/02_nearshoring_en_cifras.ipynb",
+  "salarios-del-imss-cinco-archivos-abiertos-23-millones-de-filas":
+    "salarios-imss-mx/01_imss_datos_abiertos.ipynb",
+  "salarios-del-imss-cuanto-se-gana-en-mexico-2018-a-2026":
+    "salarios-imss-mx/02_cuanto_se_gana.ipynb",
+};
+
+/** Redirecciones de Next: slug anterior → slug vigente, resuelto por la ruta. */
+export function redirecciones() {
+  const porRuta = new Map(SERIES.flatMap((s) => s.notebooks.map((n) => [n.ruta, n.slug])));
+  return Object.entries(SLUGS_ANTERIORES).map(([anterior, ruta]) => {
+    const vigente = porRuta.get(ruta);
+    if (!vigente) throw new Error(`SLUGS_ANTERIORES: ${anterior} apunta a una ruta fuera del catálogo: ${ruta}`);
+    if (vigente === anterior) throw new Error(`SLUGS_ANTERIORES: ${anterior} sigue siendo el slug vigente`);
+    return { source: `/projects/${anterior}`, destination: `/projects/${vigente}`, permanent: true };
+  });
+}
