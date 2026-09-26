@@ -1,15 +1,12 @@
 import type { MetadataRoute } from "next";
-import { projects } from "@/lib/projects";
-
-const BASE = "https://mauvilarlandingpage.vercel.app";
+import { notebooks } from "@/lib/catalogo";
+import { SITE_URL } from "@/lib/sitio";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
   return [
-    { url: BASE, lastModified, changeFrequency: "monthly", priority: 1 },
-    ...projects.map((p) => ({
-      url: `${BASE}/projects/${p.slug}`,
-      lastModified,
+    { url: SITE_URL, changeFrequency: "monthly", priority: 1 },
+    ...notebooks.map((n) => ({
+      url: `${SITE_URL}/projects/${n.slug}`,
       changeFrequency: "monthly" as const,
       priority: 0.8,
     })),

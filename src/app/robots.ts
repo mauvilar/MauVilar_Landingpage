@@ -1,11 +1,10 @@
 import type { MetadataRoute } from "next";
-
-const BASE = "https://mauvilarlandingpage.vercel.app";
+import { SITE_URL } from "@/lib/sitio";
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [{ userAgent: "*", allow: "/" }],
-    sitemap: `${BASE}/sitemap.xml`,
-    host: BASE,
+    sitemap: `${SITE_URL}/sitemap.xml`,
+    host: SITE_URL,
   };
 }
